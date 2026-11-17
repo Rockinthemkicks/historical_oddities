@@ -107,6 +107,6 @@ which is about 85–90 s of narration.
 | M4 | Shorts: pick 3 segments, write standalone narration, and recompose for 9:16 instead of letterboxing. | Later |
 | M5+ | Topic research and scoring, orchestration, publishing, analytics. | Later |
 
-**Decisions needed from the owner:** (a) which style is locked, (b) make the
-repo private, and (c) whether to keep the ChatGPT/CHAT.IMG creative stages
-for now (cheapest, and they already work) or move image generation to the API.
+**Owner decisions (2026-11-16):** (a) style: more color, so `style_bible.md` is
+the locked style; (b) the repo stays public; (c) automate image generation
+through the API. Done in the `auto-image-generation` PR.

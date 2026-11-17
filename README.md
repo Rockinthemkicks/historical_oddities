@@ -77,6 +77,40 @@ Images for scene N can be named `sceneNN.png`, `scene_NN.png` or `tb_NN.png`
 `tb_14_2.png` — they're shown in that sorted order, splitting the scene's time
 evenly. A missing scene image stops the run with an error naming the scene.
 
+## Automatic image generation
+
+If you don't pass `--skip-images`, scene images are generated with OpenAI
+(`gpt-image-2`, 1536×1024, medium quality by default). Prompts come from each
+scene's `image_prompt`, or from a CHAT.IMG-style `batch_prompts.txt` via
+`--prompts-file`. Every prompt gets the house style from
+`config/style_prompt.txt` added in front (turn that off with `--no-style`).
+
+```bash
+# 1. See what it will cost (free; nothing is generated)
+python3 main.py --project out/molasses --skip-script --script-file my_script.json \
+  --prompts-file batch_prompts.txt --estimate-only
+
+# 2. Generate images + narration and render both formats
+python3 main.py --project out/molasses --skip-script --script-file my_script.json \
+  --prompts-file batch_prompts.txt --format both
+```
+
+Spending safeguards:
+- Before anything is paid for, including narration, the image cost is estimated
+  and the run refuses to start if it's over `--max-image-cost` (default $5).
+  Spending is checked again before every call.
+- Images already in `<project>/images/` are reused, so re-running after a
+  failure only pays for what's missing. To redo one scene, delete its file.
+- Every paid call is logged to `<project>/costs.jsonl`.
+- `--reference-image my_ref.png` uses your own master reference instead of
+  generating one; `--no-reference` skips the reference (cheaper, less consistent).
+
+Prices in `modules/costs.py` were checked on 2026-11-16 and are estimates;
+re-check OpenAI's pricing page now and then. The saved episodes' prompt files
+were written for the older sepia notebook look, so they will fight the new
+colorful style. Regenerate those prompts with the current
+`pipeline_prompt.md`, or use `--no-style` to keep the old look.
+
 ## Automatic quality check
 
 After each render, `ffprobe` checks the file is readable and decodes to the
