@@ -1,0 +1,20 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Generated output and local media
+out/
+my_images/
+my_audio/
+episodes/*/images/
+episodes/*/audio/
+*.mp4
+*.mp3
+*.wav
+
+# Python / OS
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
