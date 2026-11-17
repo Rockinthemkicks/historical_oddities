@@ -19,6 +19,10 @@ Full requirements: `docs/PROJECT_BRIEF.md`. Current state and risks: `docs/AUDIT
   Every paid call goes through `modules/costs.CostLedger` (run, episode and overall limits that
   survive restarts; pending-before/closed-after logging). Reuse generated files only through a
   manifest of input hashes, never just because a file exists.
+- Narration (owner decision, 2026-11-16): an ElevenLabs AI voice, a British male narrator
+  picked from the voice library, set via ELEVENLABS_VOICE_ID. She tried recording her own voice
+  and decided against it. Owner-recorded narration (#15) is shelved; modules/voice.py stays for
+  clean-up if that changes. Never pick or create a voice that imitates a real, identifiable person.
 - The repo is public by the owner's choice; that makes the no-secrets rule even more important.
 - Publishing always needs the owner's explicit authorization.
 
