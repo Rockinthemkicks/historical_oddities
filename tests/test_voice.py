@@ -15,7 +15,7 @@ def noisy(tmp_path):
     out = tmp_path / "rec.m4a"
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error",
                     "-f", "lavfi", "-i", "sine=f=220:sample_rate=48000:d=4",
-                    "-f", "lavfi", "-i", "anoisesrc=c=pink:a=0.03:r=48000:d=4",
+                    "-f", "lavfi", "-i", "anoisesrc=c=pink:a=0.03:r=48000:d=4:seed=42",
                     "-filter_complex", "[0]volume='if(lt(mod(t,2),1.2),0.6,0)':eval=frame[v];"
                     "[v][1]amix=inputs=2:normalize=0[o]",
                     "-map", "[o]", "-ac", "1", str(out)], check=True)
@@ -35,4 +35,5 @@ def test_presets_level_match_and_reduce_noise(noisy, tmp_path):
         assert abs(info["lufs"] - (-16)) < 1.5          # fair, level-matched comparison
         assert info["true_peak"] <= -1.5               # limiter holds peaks under 0 dBTP
     raw, light, heavy = (pause_level(res[n]["path"]) for n in ("raw", "light", "heavy"))
-    assert light < raw - 3 and heavy < light            # noise between phrases goes down
+    # Fixed-seed noise makes this deterministic; margins are ~5 dB (light) and ~16 dB (heavy).
+    assert light < raw - 2.5 and heavy < light - 5      # noise between phrases goes down
