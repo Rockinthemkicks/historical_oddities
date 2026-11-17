@@ -153,7 +153,7 @@ def test_main_refuses_when_overall_budget_nearly_used(tmp_path, isolated_global_
         f.write(json.dumps({"call_id": "x", "status": "pending", "estimate_usd": 249.5}) + "\n")
     r = subprocess.run([sys.executable, "main.py", "--project", str(tmp_path / "p"),
                         "--skip-script", "--script-file", "episodes/london-beer-flood/script.json",
-                        "--prompts-file", "episodes/london-beer-flood/batch_prompts.txt"],
+                        "--prompts-file", "episodes/london-beer-flood/batch_prompts.txt", "--ignore-lint"],
                        capture_output=True, text=True,
                        env={**__import__("os").environ, "ELEVENLABS_VOICE_ID": "test-voice"})
     assert r.returncode != 0 and "Not starting" in r.stderr and "overall" in r.stderr

@@ -139,7 +139,7 @@ def test_main_estimate_only_spends_nothing(tmp_path):
     env["ELEVENLABS_VOICE_ID"] = "test-voice"
     r = subprocess.run([sys.executable, "main.py", "--project", str(tmp_path / "p"),
                         "--skip-script", "--script-file", "episodes/london-beer-flood/script.json",
-                        "--prompts-file", "episodes/london-beer-flood/batch_prompts.txt",
+                        "--prompts-file", "episodes/london-beer-flood/batch_prompts.txt", "--ignore-lint",
                         "--estimate-only"], capture_output=True, text=True, env=env)
     assert r.returncode == 0, r.stderr
     assert "estimated $" in r.stdout and "nothing was generated" in r.stdout.lower()
@@ -150,7 +150,7 @@ def test_main_refuses_over_cap(tmp_path):
     import subprocess, sys
     r = subprocess.run([sys.executable, "main.py", "--project", str(tmp_path / "p"),
                         "--skip-script", "--script-file", "episodes/london-beer-flood/script.json",
-                        "--prompts-file", "episodes/london-beer-flood/batch_prompts.txt",
+                        "--prompts-file", "episodes/london-beer-flood/batch_prompts.txt", "--ignore-lint",
                         "--image-quality", "high", "--max-image-cost", "1"],
                        capture_output=True, text=True,
                        env={**__import__("os").environ, "ELEVENLABS_VOICE_ID": "test-voice"})
