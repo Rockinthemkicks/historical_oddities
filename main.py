@@ -18,6 +18,10 @@ Examples:
   # Bring your own audio AND images, just assemble
   python3 main.py --project out/yamaguchi --skip-script --skip-audio --skip-images \\
       --script-file my_script.json --audio-dir my_audio/ --images-dir my_images/
+
+  # Render a 16:9 YouTube version as well as the vertical one
+  python3 main.py --project out/yamaguchi --skip-script --script-file my_script.json \\
+      --skip-images --images-dir my_images/ --format both
 """
 import argparse
 import glob
@@ -30,6 +34,12 @@ from modules.images import generate_all_images
 from modules.captions import build_caption_cues, wrap_lines
 from modules.caption_images import render_all_captions, render_cue_image
 from modules.assemble import concat_audio, build_video, generate_silence
+from modules.qc import check_video, format_report
+
+# Output formats. "vertical" is the original behavior (9:16 canvas, 16:9 image
+# letterboxed in the middle, title in the top black bar) and stays the default.
+# "landscape" is a full-frame 16:9 render for YouTube long-form.
+FORMATS = ("vertical", "landscape")
 
 
 def parse_args():
@@ -63,28 +73,59 @@ def parse_args():
     p.add_argument("--pause", type=float, default=0.3,
                     help="Silence in seconds inserted between scenes (default 0.3). Use 0 for none.")
     p.add_argument("--fps", type=int, default=30)
-    p.add_argument("--width", type=int, default=1080)
-    p.add_argument("--height", type=int, default=1920)
+    p.add_argument("--format", choices=["vertical", "landscape", "both"], default="vertical",
+                    help="vertical = 9:16 Shorts/Reels (default, original behavior) -> final_video.mp4; "
+                         "landscape = 16:9 YouTube -> final_video_landscape.mp4; both = render each")
+    p.add_argument("--width", type=int, default=1080, help="Vertical output width (default 1080)")
+    p.add_argument("--height", type=int, default=1920, help="Vertical output height (default 1920)")
+    p.add_argument("--landscape-width", type=int, default=1920)
+    p.add_argument("--landscape-height", type=int, default=1080)
+    p.add_argument("--skip-qc", action="store_true",
+                    help="Don't run the automatic ffprobe checks on the finished video(s)")
     p.add_argument("--no-title", action="store_true",
                     help="Don't show the script's title at the top of the video")
     return p.parse_args()
 
 
-def find_scene_file(directory, scene_number, extensions):
-    # Accepts both "sceneNN.ext" and "scene_NN.ext" naming (CHAT.IMG exports
-    # the underscore form; some other tools/manual naming use the no-underscore
-    # form), so either is fine to drop into the images/audio directory.
-    stems = [f"scene{scene_number:02d}", f"scene_{scene_number:02d}"]
+# Filename stems accepted for scene files, in priority order. "sceneNN" is the
+# documented convention; "scene_NN" is what CHAT.IMG exports; "tb_NN" is how the
+# August 2026 episode images were actually named.
+SCENE_STEMS = ("scene{n:02d}", "scene_{n:02d}", "tb_{n:02d}")
+
+
+def find_scene_files(directory, scene_number, extensions):
+    """
+    Returns a sorted list of files for one scene (empty list if none).
+
+    An exact match like scene03.png wins and is returned alone. Otherwise every
+    variant sharing the stem (e.g. tb_14_1.png, tb_14_2.png) is returned, in
+    sorted order, so a scene can have more than one illustration; main() then
+    splits that scene's on-screen time evenly between them.
+    """
+    stems = [t.format(n=scene_number) for t in SCENE_STEMS]
     for stem in stems:
         for ext in extensions:
             candidate = os.path.join(directory, f"{stem}.{ext}")
             if os.path.exists(candidate):
-                return candidate
+                return [candidate]
+    exts = {e.lower() for e in extensions}
     for stem in stems:
-        matches = glob.glob(os.path.join(directory, f"{stem}*"))
+        matches = sorted(
+            m for m in glob.glob(os.path.join(directory, f"{stem}*"))
+            if m.rsplit(".", 1)[-1].lower() in exts
+            # don't let scene01 grab scene010+; the next char after the stem
+            # must not be another digit
+            and not os.path.basename(m)[len(stem):len(stem) + 1].isdigit()
+        )
         if matches:
-            return matches[0]
-    return None
+            return matches
+    return []
+
+
+def find_scene_file(directory, scene_number, extensions):
+    """Backward-compatible single-file lookup: the first match, or None."""
+    files = find_scene_files(directory, scene_number, extensions)
+    return files[0] if files else None
 
 
 def main():
@@ -143,10 +184,11 @@ def main():
         print(f"[3/4] Using existing images from: {src_dir}")
         image_results = []
         for s in scenes:
-            path = find_scene_file(src_dir, s["scene_number"], ["png", "jpg", "jpeg"])
-            if not path:
+            paths = find_scene_files(src_dir, s["scene_number"], ["png", "jpg", "jpeg"])
+            if not paths:
                 raise FileNotFoundError(f"No image found for scene {s['scene_number']} in {src_dir}")
-            image_results.append({"scene_number": s["scene_number"], "image_path": path})
+            image_results.append({"scene_number": s["scene_number"], "image_path": paths[0],
+                                  "image_paths": paths})
     else:
         print(f"[3/4] Generating {len(scenes)} images via OpenAI...")
         image_results = generate_all_images(scenes, images_dir)
@@ -176,13 +218,18 @@ def main():
         is_last = (i == len(scenes) - 1)
 
         ordered_audio.append(nar["audio_path"])
-        ordered_images.append(img["image_path"])
 
         scene_duration = nar["duration"]
         if silence_path and not is_last:
             ordered_audio.append(silence_path)
             scene_duration += args.pause
-        ordered_durations.append(scene_duration)
+
+        # One image per scene (the usual case) or several, sharing the scene's
+        # time equally.
+        paths = img.get("image_paths") or [img["image_path"]]
+        for path in paths:
+            ordered_images.append(path)
+            ordered_durations.append(scene_duration / len(paths))
 
         if nar["words"]:
             caption_scenes.append({"start": cursor, "words": nar["words"]})
@@ -197,21 +244,49 @@ def main():
     caption_images_dir = os.path.join(args.project, "caption_images")
     caption_images = render_all_captions(caption_cues, caption_images_dir)
 
-    title_image = None
     title_text = script.get("title", "").strip()
-    if title_text and not args.no_title:
-        title_path = os.path.join(args.project, "title.png")
-        # Wider wrap than captions since the title sits alone at the top with
-        # more room to breathe; ~40% of frame width in characters at this font size.
-        lines = wrap_lines(title_text.upper(), max_chars=26)
-        _, tw, th = render_cue_image(lines, title_path, font_size=52)
-        title_image = {"path": title_path, "width": tw, "height": th}
+    formats = FORMATS if args.format == "both" else (args.format,)
+    expected_duration = sum(ordered_durations)
+    outputs, failed = [], []
 
-    out_path = os.path.join(args.project, "final_video.mp4")
-    build_video(ordered_images, ordered_durations, full_audio_path, caption_images, out_path,
-                size=(args.width, args.height), fps=args.fps, title_image=title_image)
+    for fmt in formats:
+        if fmt == "vertical":
+            size = (args.width, args.height)
+            out_path = os.path.join(args.project, "final_video.mp4")
+            bottom_margin = 0.18
+        else:
+            size = (args.landscape_width, args.landscape_height)
+            out_path = os.path.join(args.project, "final_video_landscape.mp4")
+            bottom_margin = 0.10
 
-    print(f"\nDone -> {out_path}")
+        title_image = None
+        # The title lives in the vertical video's top black bar. A full-frame
+        # landscape video has no bar (and YouTube shows the title anyway), so
+        # it's left off there.
+        if title_text and not args.no_title and fmt == "vertical":
+            title_path = os.path.join(args.project, "title.png")
+            # Wider wrap than captions since the title sits alone at the top with
+            # more room to breathe; ~40% of frame width in characters at this font size.
+            lines = wrap_lines(title_text.upper(), max_chars=26)
+            _, tw, th = render_cue_image(lines, title_path, font_size=52)
+            title_image = {"path": title_path, "width": tw, "height": th}
+
+        print(f"      Rendering {fmt} {size[0]}x{size[1]} -> {out_path}")
+        build_video(ordered_images, ordered_durations, full_audio_path, caption_images, out_path,
+                    size=size, fps=args.fps, title_image=title_image,
+                    bottom_margin_frac=bottom_margin)
+        outputs.append(out_path)
+
+        if not args.skip_qc:
+            report = check_video(out_path, expected_size=size, expected_duration=expected_duration)
+            save_json(report, os.path.splitext(out_path)[0] + "_qc.json")
+            print(format_report(report))
+            if not report["passed"]:
+                failed.append(out_path)
+
+    print("\nDone -> " + ", ".join(outputs))
+    if failed:
+        raise SystemExit(f"Quality check failed for: {', '.join(failed)}")
 
 
 if __name__ == "__main__":
