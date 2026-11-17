@@ -33,6 +33,6 @@ def test_presets_level_match_and_reduce_noise(noisy, tmp_path):
     assert set(res) == set(PRESETS) == {"raw", "light", "heavy"}
     for info in res.values():
         assert abs(info["lufs"] - (-16)) < 1.5          # fair, level-matched comparison
-        assert info["true_peak"] <= -1.0
+        assert info["true_peak"] <= -1.5               # limiter holds peaks under 0 dBTP
     raw, light, heavy = (pause_level(res[n]["path"]) for n in ("raw", "light", "heavy"))
     assert light < raw - 3 and heavy < light            # noise between phrases goes down

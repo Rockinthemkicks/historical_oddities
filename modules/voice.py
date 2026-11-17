@@ -12,7 +12,7 @@ Presets:
   light  - recommended default
   heavy  - stronger noise reduction and compression, for noisy rooms
 
-Loudness target: -16 LUFS integrated, -1.5 dBTP peak, the common target for
+Loudness target: about -16 LUFS integrated, peaks held at -2 dBTP, the common target for
 spoken content on YouTube and mobile platforms.
 
 Usage:
@@ -27,18 +27,26 @@ import subprocess
 
 from .utils import run_ffmpeg
 
-LOUDNESS = "loudnorm=I=-16:TP=-1.5:LRA=11"
+# Loudness is aimed a touch high because the safety limiter after it shaves a
+# little off; the result lands at about -16 LUFS with peaks held at -2 dBTP.
+# The limiter matters for real speech: loudnorm alone let plosives on a real
+# phone recording overshoot 0 dBTP (found on the owner's first sample).
+LOUDNESS = "loudnorm=I=-15.5:TP=-2:LRA=11"
+LIMITER = "aresample=48000,alimiter=limit=0.8:attack=5:release=50:level=false"
 
 PRESETS = {
-    "raw": [LOUDNESS],
+    "raw": [LOUDNESS, LIMITER],
     "light": [
         "highpass=f=80",                                   # rumble, handling noise
-        "afftdn=nr=10:nf=-45:tn=1",                        # gentle, adaptive hiss reduction
+        "afftdn=nr=12:nf=-50:tn=1",                        # gentle, adaptive hiss reduction
         "equalizer=f=250:t=q:w=1.2:g=-2",                  # less boxy/muddy room tone
         "equalizer=f=3500:t=q:w=1.0:g=2",                  # presence and clarity
         "deesser=i=0.3",                                   # soften harsh s sounds
-        "acompressor=threshold=-20dB:ratio=2.5:attack=15:release=200:makeup=2",
-        LOUDNESS,
+        "acompressor=threshold=-20dB:ratio=2:attack=15:release=200:makeup=1",
+        # soft expander: lowers room tone in pauses by up to ~10 dB without
+        # chopping word endings (range=0.3 means it never fully mutes)
+        "agate=threshold=0.01:ratio=1.5:range=0.3:attack=10:release=300",
+        LOUDNESS, LIMITER,
     ],
     "heavy": [
         "highpass=f=100",
@@ -49,7 +57,7 @@ PRESETS = {
         "equalizer=f=3500:t=q:w=1.0:g=3",
         "deesser=i=0.4",
         "acompressor=threshold=-24dB:ratio=4:attack=10:release=150:makeup=4",
-        LOUDNESS,
+        LOUDNESS, LIMITER,
     ],
 }
 
