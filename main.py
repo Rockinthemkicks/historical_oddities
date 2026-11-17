@@ -40,6 +40,7 @@ from modules.script_gen import generate_script, save_script, load_script
 from modules.narration import generate_all_narration, plan_narration, resolve_voice_id
 from modules.images import generate_all_images, plan_images
 from modules.image_prompts import resolve_scene_prompts
+from modules.prompt_lint import lint as lint_prompts, format_report as format_lint
 from modules.costs import BudgetExceeded, CostLedger, GLOBAL_LEDGER_PATH
 from modules.captions import build_caption_cues, wrap_lines
 from modules.caption_images import render_all_captions, render_cue_image
@@ -96,6 +97,8 @@ def parse_args():
     p.add_argument("--total-budget", type=float, default=250.00,
                     help="Limit across ALL projects, USD (default 250.00). Read from the global "
                          f"ledger ({GLOBAL_LEDGER_PATH}; override with HO_SPEND_LEDGER).")
+    p.add_argument("--ignore-lint", action="store_true",
+                    help="Generate images even if the prompt check finds errors (not recommended)")
     p.add_argument("--estimate-only", action="store_true",
                     help="Print what would be generated and the estimated cost, then stop. "
                          "Nothing is charged.")
@@ -214,6 +217,16 @@ def main():
         if not args.no_style and args.style_file and os.path.exists(args.style_file):
             with open(args.style_file, encoding="utf-8") as f:
                 style_text = f.read().strip()
+        prompts_text = ""
+        if args.prompts_file:
+            with open(args.prompts_file, encoding="utf-8") as f:
+                prompts_text = f.read()
+        lint_report = lint_prompts(scenes, prompts_text, style_text)
+        save_json(lint_report, os.path.join(args.project, "prompt_check.json"))
+        print(format_lint(lint_report))
+        if not lint_report["passed"] and not args.ignore_lint:
+            sys.exit("Prompt check failed, so no images were generated and nothing was charged. "
+                     "Fix the prompts above (or pass --ignore-lint to override).")
         plan = plan_images(scenes, images_dir, image_prompts, use_reference=not args.no_reference,
                            reference_image=args.reference_image, model=args.image_model,
                            size=args.image_size, quality=args.image_quality, style=style_text)

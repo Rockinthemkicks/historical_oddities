@@ -138,6 +138,38 @@ were written for the older sepia notebook look, so they will fight the new
 colorful style. Regenerate those prompts with the current
 `pipeline_prompt.md`, or use `--no-style` to keep the old look.
 
+## Prompt check (runs before any image is paid for)
+
+Every image prompt is checked first, and generation is refused if any check fails:
+- **Prompt count:** exactly one prompt per scene, with contiguous scene numbers.
+- **Old style words:** no sepia or notebook wording that fights the locked
+  colorful style. Negated mentions like "no paper texture" are fine.
+- **Risky wording:** no conflict or intensity words such as "aftermath" or "battle".
+- **Unusable references:** no "as established" or "Master Gen ID" pointers
+  the API can't see.
+- **Punctuation:** no em dashes or curly quotes.
+- **Character blocks:** each one is copied word for word wherever that character appears.
+
+Warnings, which don't block generation:
+- Filter-sensitive words, even inside "no ..." lists.
+- No tone frame at the start ("Lighthearted, non-graphic...").
+- Very long prompts.
+
+Results go to `<project>/prompt_check.json`. Run it by hand with
+`python3 -m modules.prompt_lint --script script.json --prompts batch_prompts.txt`.
+To override, use `--ignore-lint` (not recommended).
+
+## Recording your own narration: clean-up presets
+
+`python3 -m modules.voice my_recording.m4a --out-dir voice_test/` writes
+`_raw`, `_light` and `_heavy` versions, all at the same loudness (-16 LUFS),
+so you can compare them on headphones and on a phone speaker:
+- **light** (recommended): rumble filter, gentle hiss reduction, a bit of
+  clarity, softer "s" sounds, mild compression.
+- **heavy:** for noisy rooms; stronger noise reduction and compression.
+
+Noise reduction is kept gentle on purpose: overdone, it makes a voice sound metallic.
+
 ## Narration caching and voice
 
 `ELEVENLABS_VOICE_ID` (or `--voice-id`) is required: the run stops with a clear
