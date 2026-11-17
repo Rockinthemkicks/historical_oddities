@@ -77,6 +77,50 @@ Images for scene N can be named `sceneNN.png`, `scene_NN.png` or `tb_NN.png`
 `tb_14_2.png` — they're shown in that sorted order, splitting the scene's time
 evenly. A missing scene image stops the run with an error naming the scene.
 
+## Automatic image generation
+
+If you don't pass `--skip-images`, scene images are generated with OpenAI
+(`gpt-image-2`, 1536×1024, medium quality by default). Prompts come from each
+scene's `image_prompt`, or from a CHAT.IMG-style `batch_prompts.txt` via
+`--prompts-file`. Every prompt gets the house style from
+`config/style_prompt.txt` added in front (turn that off with `--no-style`).
+
+```bash
+# 1. See what it will cost (free; nothing is generated)
+python3 main.py --project out/molasses --skip-script --script-file my_script.json \
+  --prompts-file batch_prompts.txt --estimate-only
+
+# 2. Generate images + narration and render both formats
+python3 main.py --project out/molasses --skip-script --script-file my_script.json \
+  --prompts-file batch_prompts.txt --format both
+```
+
+Spending safeguards:
+- Three limits, all checked before anything is paid for (narration included)
+  and again before every single image:
+  - `--max-image-cost` (default $5): this run.
+  - `--episode-budget` (default $10): everything ever spent in this project
+    folder, from `<project>/costs.jsonl`.
+  - `--total-budget` (default $250): everything across all projects, from
+    `~/.historical_oddities/spend_ledger.jsonl` (move it with `HO_SPEND_LEDGER`).
+  Restarting or re-running can't reset these; only deleting a ledger file does.
+- Every call is logged as pending *before* it's made, then closed with the
+  actual cost OpenAI reports. A call that never closes (crash, timeout) is
+  counted at its estimate, since it may have been billed. An API error
+  response counts as $0.
+- `images/manifest.json` records what each image was made from (prompt,
+  style, model, size, quality, reference). An image is reused only if all of
+  that is unchanged and the file hasn't been edited. Otherwise the old file is
+  moved to `images/_replaced/` and a new one is generated.
+- `--reference-image my_ref.png` uses your own master reference instead of
+  generating one; `--no-reference` skips the reference (cheaper, less consistent).
+
+Prices in `modules/costs.py` were checked on 2026-11-16 and are estimates;
+re-check OpenAI's pricing page now and then. The saved episodes' prompt files
+were written for the older sepia notebook look, so they will fight the new
+colorful style. Regenerate those prompts with the current
+`pipeline_prompt.md`, or use `--no-style` to keep the old look.
+
 ## Automatic quality check
 
 After each render, `ffprobe` checks the file is readable and decodes to the

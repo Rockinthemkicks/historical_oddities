@@ -38,19 +38,39 @@ def load_env():
                 os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
 
 
+RETRY_STATUS = {429, 500, 502, 503, 504}
+
+
 def post_with_retry(post_fn, max_retries=5, base_delay=8):
     """
     Calls post_fn() (a zero-arg callable that performs one requests.post and
-    returns the Response) and retries on 429 (rate limit) with backoff,
-    honoring a Retry-After header when the API provides one.
+    returns the Response) and retries with backoff on rate limits (429),
+    temporary server errors (5xx) and dropped connections/timeouts, honoring a
+    Retry-After header when the API provides one. Retries are capped at
+    max_retries, so a persistent failure can't loop (or bill) forever.
     """
+    import requests  # local import keeps utils usable without requests installed
+
+    resp = None
     for attempt in range(max_retries + 1):
-        resp = post_fn()
-        if resp.status_code != 429 or attempt == max_retries:
+        try:
+            resp = post_fn()
+        except (requests.exceptions.ConnectionError, requests.exceptions.Timeout) as e:
+            if attempt == max_retries:
+                raise
+            delay = base_delay * (2 ** attempt)
+            print(f"      Network error ({type(e).__name__}), retrying in {delay:.0f}s "
+                  f"(attempt {attempt + 1}/{max_retries})...")
+            time.sleep(delay)
+            continue
+        if resp.status_code not in RETRY_STATUS or attempt == max_retries:
             return resp
         retry_after = resp.headers.get("retry-after")
-        delay = float(retry_after) if retry_after else base_delay * (2 ** attempt)
-        print(f"      Rate limited (429), retrying in {delay:.0f}s "
+        try:
+            delay = float(retry_after) if retry_after else base_delay * (2 ** attempt)
+        except ValueError:
+            delay = base_delay * (2 ** attempt)
+        print(f"      HTTP {resp.status_code}, retrying in {delay:.0f}s "
               f"(attempt {attempt + 1}/{max_retries})...")
         time.sleep(delay)
     return resp
