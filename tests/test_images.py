@@ -136,6 +136,7 @@ def test_api_error_message_is_readable(tmp_path, monkeypatch):
 def test_main_estimate_only_spends_nothing(tmp_path):
     import subprocess, sys, os
     env = {k: v for k, v in os.environ.items() if k != "OPENAI_API_KEY"}
+    env["ELEVENLABS_VOICE_ID"] = "test-voice"
     r = subprocess.run([sys.executable, "main.py", "--project", str(tmp_path / "p"),
                         "--skip-script", "--script-file", "episodes/london-beer-flood/script.json",
                         "--prompts-file", "episodes/london-beer-flood/batch_prompts.txt",
@@ -151,6 +152,7 @@ def test_main_refuses_over_cap(tmp_path):
                         "--skip-script", "--script-file", "episodes/london-beer-flood/script.json",
                         "--prompts-file", "episodes/london-beer-flood/batch_prompts.txt",
                         "--image-quality", "high", "--max-image-cost", "1"],
-                       capture_output=True, text=True)
+                       capture_output=True, text=True,
+                       env={**__import__("os").environ, "ELEVENLABS_VOICE_ID": "test-voice"})
     assert r.returncode != 0 and "over its $1.00 limit" in r.stderr
     assert not (tmp_path / "p" / "audio").exists()  # narration never started
