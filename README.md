@@ -98,7 +98,8 @@ python3 main.py --project out/molasses --skip-script --script-file my_script.jso
 Spending safeguards:
 - Three limits, all checked before anything is paid for (narration included)
   and again before every single image:
-  - `--max-image-cost` (default $5): this run.
+  - `--max-run-cost` (default $5; the old name `--max-image-cost` still works):
+    everything paid in this run, images and narration.
   - `--episode-budget` (default $10): everything ever spent in this project
     folder, from `<project>/costs.jsonl`.
   - `--total-budget` (default $250): everything across all projects, from
@@ -120,6 +121,19 @@ re-check OpenAI's pricing page now and then. The saved episodes' prompt files
 were written for the older sepia notebook look, so they will fight the new
 colorful style. Regenerate those prompts with the current
 `pipeline_prompt.md`, or use `--no-style` to keep the old look.
+
+## Narration caching and voice
+
+`ELEVENLABS_VOICE_ID` (or `--voice-id`) is required: the run stops with a clear
+message instead of silently using a stock voice.
+
+Each narration clip is cached in `<project>/audio/cache/`, keyed on its text,
+voice, model, speed and seed, with its word timings for captions. Rebuilding
+an unchanged episode makes no ElevenLabs calls. Editing one scene's line
+regenerates only that clip, and changing the voice or speed regenerates all of them.
+Narration counts toward the same run, episode and overall budgets as images,
+at `ELEVENLABS_USD_PER_1K_CHARS` (default $0.30, the conservative end of
+ElevenLabs' published rates; set it to your plan's rate).
 
 ## Automatic quality check
 

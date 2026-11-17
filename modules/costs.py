@@ -50,6 +50,21 @@ TOKEN_RATES = {
     "gpt-image-2": {"text_input": 5.00, "image_input": 8.00, "image_output": 30.00},
 }
 
+# ElevenLabs bills by character, at a rate that depends on your plan
+# (published figures in 2026 range from about $0.08 to $0.30 per 1,000
+# characters for Multilingual v2). The default is the conservative top of
+# that range so budgets err on the safe side; set ELEVENLABS_USD_PER_1K_CHARS
+# in .env to your plan's real effective rate.
+NARRATION_USD_PER_1K_CHARS_DEFAULT = 0.30
+# Credits per character by model (Flash/Turbo bill half).
+NARRATION_CREDIT_MULTIPLIER = {"eleven_flash_v2_5": 0.5, "eleven_turbo_v2_5": 0.5}
+
+
+def narration_unit_cost(characters, model_id="eleven_multilingual_v2"):
+    rate = float(os.environ.get("ELEVENLABS_USD_PER_1K_CHARS", NARRATION_USD_PER_1K_CHARS_DEFAULT))
+    return characters / 1000 * rate * NARRATION_CREDIT_MULTIPLIER.get(model_id, 1.0)
+
+
 GLOBAL_LEDGER_PATH = os.environ.get(
     "HO_SPEND_LEDGER",
     os.path.join(os.path.expanduser("~"), ".historical_oddities", "spend_ledger.jsonl"),
@@ -155,7 +170,7 @@ class CostLedger:
     def check_room(self, next_cost):
         """Raises BudgetExceeded if spending `next_cost` more would break any cap."""
         checks = [
-            ("this run's", self.run_cap, self.run_spent, "--max-image-cost"),
+            ("this run's", self.run_cap, self.run_spent, "--max-run-cost"),
             ("this episode's", self.episode_cap, self.episode_spent(), "--episode-budget"),
             ("the overall", self.total_cap, self.total_spent(), "--total-budget"),
         ]

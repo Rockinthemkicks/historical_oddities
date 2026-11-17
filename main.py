@@ -37,7 +37,7 @@ _HERE = os.path.dirname(os.path.abspath(__file__))
 
 from modules.utils import load_env, save_json, load_json, get_duration
 from modules.script_gen import generate_script, save_script, load_script
-from modules.narration import generate_all_narration
+from modules.narration import generate_all_narration, plan_narration, resolve_voice_id
 from modules.images import generate_all_images, plan_images
 from modules.image_prompts import resolve_scene_prompts
 from modules.costs import BudgetExceeded, CostLedger, GLOBAL_LEDGER_PATH
@@ -87,8 +87,8 @@ def parse_args():
                          "instead of generating one")
     p.add_argument("--no-reference", action="store_true",
                     help="Generate each scene independently (cheaper, less consistent)")
-    p.add_argument("--max-image-cost", type=float, default=5.00,
-                    help="Limit for images in THIS run, USD (default 5.00)")
+    p.add_argument("--max-run-cost", "--max-image-cost", dest="max_run_cost", type=float, default=5.00,
+                    help="Limit for everything paid in THIS run (images + narration), USD (default 5.00)")
     p.add_argument("--episode-budget", type=float, default=10.00,
                     help="Limit for everything ever spent on this project folder, USD (default 10.00). "
                          "Read from <project>/costs.jsonl, so re-running can't reset it.")
@@ -99,7 +99,8 @@ def parse_args():
                     help="Print what would be generated and the estimated cost, then stop. "
                          "Nothing is charged.")
 
-    p.add_argument("--voice-id", help="ElevenLabs voice ID (defaults to ELEVENLABS_VOICE_ID env or a stock voice)")
+    p.add_argument("--voice-id", help="ElevenLabs voice ID (default: ELEVENLABS_VOICE_ID from .env; required, "
+                                      "no fallback voice)")
     p.add_argument("--voice-speed", type=float, default=1.0,
                     help="Narration speed, 0.7 (slower) - 1.2 (faster), 1.0 = normal (default)")
     p.add_argument("--voice-seed", type=int, default=None,
@@ -193,7 +194,11 @@ def main():
 
     # ---- Pre-flight: work out image prompts and cost before paying for anything ----
     images_dir = os.path.join(args.project, "images")
+    audio_dir = os.path.join(args.project, "audio")
     image_prompts, style_text = None, ""
+    ledger = CostLedger(args.project, run_cap=args.max_run_cost,
+                        episode_cap=args.episode_budget, total_cap=args.total_budget)
+    run_estimate = 0.0
     if not args.skip_images:
         try:
             image_prompts = resolve_scene_prompts(scenes, args.prompts_file)
@@ -205,28 +210,34 @@ def main():
         plan = plan_images(scenes, images_dir, image_prompts, use_reference=not args.no_reference,
                            reference_image=args.reference_image, model=args.image_model,
                            size=args.image_size, quality=args.image_quality, style=style_text)
-        ledger = CostLedger(args.project, run_cap=args.max_image_cost,
-                            episode_cap=args.episode_budget, total_cap=args.total_budget)
+        run_estimate += plan["estimate_usd"]
         print(f"[pre-flight] Images: {len(plan['to_generate'])} to generate "
               f"({len(plan['stale'])} replacing outdated files, {len(plan['existing'])} reused), "
               f"estimated ${plan['estimate_usd']:.2f}")
+    voice_id = None
+    if not args.skip_audio:
+        try:
+            voice_id = resolve_voice_id(args.voice_id)
+        except RuntimeError as e:
+            sys.exit(str(e))
+        nplan = plan_narration(scenes, audio_dir, voice_id, speed=args.voice_speed, seed=args.voice_seed)
+        run_estimate += nplan["estimate_usd"]
+        print(f"[pre-flight] Narration: {len(nplan['to_generate'])} clips to generate "
+              f"({nplan['characters']} characters), {len(nplan['cached'])} cached, "
+              f"estimated ${nplan['estimate_usd']:.2f}")
+    if not (args.skip_images and args.skip_audio):
         print(f"[pre-flight] Spent so far: episode ~${ledger.episode_spent():.2f} of "
               f"${args.episode_budget:.2f}, overall ~${ledger.total_spent():.2f} of "
-              f"${args.total_budget:.2f}; this run's limit ${args.max_image_cost:.2f}")
+              f"${args.total_budget:.2f}; this run's limit ${args.max_run_cost:.2f}")
         try:
-            ledger.check_room(plan["estimate_usd"])
+            ledger.check_room(run_estimate)
         except BudgetExceeded as e:
             sys.exit(str(e).replace("Stopping:", "Not starting:"))
-    if not args.skip_audio:
-        chars = sum(len(s["narration"]) for s in scenes)
-        print(f"[pre-flight] Narration: {len(scenes)} clips, {chars} characters "
-              f"(ElevenLabs bills by character)")
     if args.estimate_only:
         print("\nEstimate only: nothing was generated or charged.")
         return
 
     # ---- Stage 2: narration ----
-    audio_dir = os.path.join(args.project, "audio")
     if args.skip_audio:
         src_dir = args.audio_dir or audio_dir
         print(f"[2/4] Using existing audio from: {src_dir}")
@@ -243,8 +254,12 @@ def main():
             })
     else:
         print(f"[2/4] Generating narration for {len(scenes)} scenes via ElevenLabs...")
-        narration_results = generate_all_narration(scenes, audio_dir, voice_id=args.voice_id,
-                                                     speed=args.voice_speed, seed=args.voice_seed)
+        try:
+            narration_results = generate_all_narration(scenes, audio_dir, voice_id=voice_id,
+                                                       speed=args.voice_speed, seed=args.voice_seed,
+                                                       ledger=ledger)
+        except BudgetExceeded as e:
+            sys.exit(str(e))
         save_json(narration_results, os.path.join(args.project, "narration_timing.json"))
     print(f"      {len(narration_results)} narration clips ready")
 
