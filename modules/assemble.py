@@ -127,6 +127,10 @@ def build_video(scene_images, scene_durations, audio_path, caption_images, out_p
         "-map", f"{n}:a",
         "-c:v", "libx264", "-pix_fmt", "yuv420p", "-preset", "medium", "-crf", "20",
         "-c:a", "aac", "-b:a", "192k",
+        # Writes the MP4 index ("moov" atom) at the start of the file: the
+        # video is playable/streamable before it fully downloads, and an
+        # interrupted upload can't leave a file with the index missing.
+        "-movflags", "+faststart",
         "-shortest",
         out_path,
     ]

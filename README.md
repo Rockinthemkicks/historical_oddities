@@ -1,14 +1,15 @@
 # Video Pipeline: topic → finished captioned MP4
 
 Turns a topic into a numbered-scene script, narration audio (ElevenLabs), scene
-images (OpenAI), and a finished vertical MP4 with Ken Burns zoom/pan and
-word-synced captions — or run only the stages you want and bring your own
+images (OpenAI), and a finished captioned MP4 (vertical 9:16, landscape 16:9,
+or both) with word-synced captions — or run only the stages you want and bring your own
 audio/images for the rest.
 
 ## Setup
 
 ```bash
 pip install -r requirements.txt
+pip install -r requirements-dev.txt   # optional: for running tests (pytest -q)
 cp .env.example .env   # then fill in your API keys
 ```
 
@@ -50,13 +51,39 @@ project folder.
 | Script (topic → numbered scenes) | `modules/script_gen.py` | `--skip-script` |
 | Narration (ElevenLabs, with word timestamps) | `modules/narration.py` | `--skip-audio` |
 | Images (OpenAI) | `modules/images.py` | `--skip-images` |
-| Assembly (ffmpeg: zoom/pan, captions, mux) | `modules/assemble.py` + `modules/captions.py` | always runs |
+| Assembly (ffmpeg: captions, title, mux) + QC | `modules/assemble.py` + `modules/captions.py` | always runs |
 
 Narration audio is generated **per scene**, so each scene's exact duration
 comes directly from its own clip — no error-prone alignment across a full
 narration track is needed. Scene clips are concatenated with hard cuts
-(frame-accurate sync with the audio) and each gets an alternating Ken Burns
-zoom-in / zoom-out / pan movement for visual variety.
+(frame-accurate sync with the audio). Images are currently held static — no
+zoom/pan yet (that's planned for Milestone 3; see `docs/AUDIT.md`).
+
+## Output formats
+
+`--format vertical` (default, the original behavior) → `final_video.mp4`, a 9:16
+canvas with the 16:9 image in the middle, the title in the top black bar and
+captions below.
+
+`--format landscape` → `final_video_landscape.mp4`, full-frame 16:9 (1920×1080)
+for YouTube, captions near the bottom, no title overlay.
+
+`--format both` renders both from the same narration and captions.
+
+## Image file names
+
+Images for scene N can be named `sceneNN.png`, `scene_NN.png` or `tb_NN.png`
+(png/jpg). If a scene has several images — e.g. `tb_14_1.png` and
+`tb_14_2.png` — they're shown in that sorted order, splitting the scene's time
+evenly. A missing scene image stops the run with an error naming the scene.
+
+## Automatic quality check
+
+After each render, `ffprobe` checks the file is readable and decodes to the
+end, is H.264/yuv420p, has audio, has the expected dimensions, and matches the
+narration length (±1 s). Results go to `final_video*_qc.json`, and the run
+exits with an error if any check fails. Skip with `--skip-qc`, or check any
+file by hand: `python3 -m modules.qc path/to/video.mp4 --size 1920x1080`.
 
 If you bring your own audio (`--skip-audio`), captions fall back to splitting
 each scene's script text evenly across its measured duration, since word-level
