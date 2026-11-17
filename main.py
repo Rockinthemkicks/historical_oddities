@@ -40,7 +40,7 @@ from modules.script_gen import generate_script, save_script, load_script
 from modules.narration import generate_all_narration
 from modules.images import generate_all_images, plan_images
 from modules.image_prompts import resolve_scene_prompts
-from modules.costs import BudgetExceeded
+from modules.costs import BudgetExceeded, CostLedger, GLOBAL_LEDGER_PATH
 from modules.captions import build_caption_cues, wrap_lines
 from modules.caption_images import render_all_captions, render_cue_image
 from modules.assemble import concat_audio, build_video, generate_silence
@@ -88,7 +88,13 @@ def parse_args():
     p.add_argument("--no-reference", action="store_true",
                     help="Generate each scene independently (cheaper, less consistent)")
     p.add_argument("--max-image-cost", type=float, default=5.00,
-                    help="Stop before spending more than this many USD on images in one run (default 5.00)")
+                    help="Limit for images in THIS run, USD (default 5.00)")
+    p.add_argument("--episode-budget", type=float, default=10.00,
+                    help="Limit for everything ever spent on this project folder, USD (default 10.00). "
+                         "Read from <project>/costs.jsonl, so re-running can't reset it.")
+    p.add_argument("--total-budget", type=float, default=250.00,
+                    help="Limit across ALL projects, USD (default 250.00). Read from the global "
+                         f"ledger ({GLOBAL_LEDGER_PATH}; override with HO_SPEND_LEDGER).")
     p.add_argument("--estimate-only", action="store_true",
                     help="Print what would be generated and the estimated cost, then stop. "
                          "Nothing is charged.")
@@ -198,13 +204,19 @@ def main():
                 style_text = f.read().strip()
         plan = plan_images(scenes, images_dir, image_prompts, use_reference=not args.no_reference,
                            reference_image=args.reference_image, model=args.image_model,
-                           size=args.image_size, quality=args.image_quality)
+                           size=args.image_size, quality=args.image_quality, style=style_text)
+        ledger = CostLedger(args.project, run_cap=args.max_image_cost,
+                            episode_cap=args.episode_budget, total_cap=args.total_budget)
         print(f"[pre-flight] Images: {len(plan['to_generate'])} to generate "
-              f"({len(plan['existing'])} already done), estimated ${plan['estimate_usd']:.2f}; "
-              f"cap ${args.max_image_cost:.2f}")
-        if plan["estimate_usd"] > args.max_image_cost:
-            sys.exit(f"Estimated image cost ${plan['estimate_usd']:.2f} is over the "
-                     f"${args.max_image_cost:.2f} cap. Raise --max-image-cost or lower --image-quality.")
+              f"({len(plan['stale'])} replacing outdated files, {len(plan['existing'])} reused), "
+              f"estimated ${plan['estimate_usd']:.2f}")
+        print(f"[pre-flight] Spent so far: episode ~${ledger.episode_spent():.2f} of "
+              f"${args.episode_budget:.2f}, overall ~${ledger.total_spent():.2f} of "
+              f"${args.total_budget:.2f}; this run's limit ${args.max_image_cost:.2f}")
+        try:
+            ledger.check_room(plan["estimate_usd"])
+        except BudgetExceeded as e:
+            sys.exit(str(e).replace("Stopping:", "Not starting:"))
     if not args.skip_audio:
         chars = sum(len(s["narration"]) for s in scenes)
         print(f"[pre-flight] Narration: {len(scenes)} clips, {chars} characters "
@@ -254,7 +266,7 @@ def main():
                 scenes, images_dir, size=args.image_size, use_reference=not args.no_reference,
                 prompts=image_prompts, style=style_text, quality=args.image_quality,
                 model=args.image_model, reference_image=args.reference_image,
-                project_dir=args.project, max_cost=args.max_image_cost)
+                project_dir=args.project, ledger=ledger)
         except BudgetExceeded as e:
             sys.exit(str(e))
     print(f"      {len(image_results)} images ready")

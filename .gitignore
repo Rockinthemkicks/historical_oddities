@@ -4,6 +4,8 @@
 !.env.example
 
 # Generated output and local media
+costs.jsonl
+spend_ledger.jsonl
 out/
 my_images/
 my_audio/

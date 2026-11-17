@@ -96,12 +96,22 @@ python3 main.py --project out/molasses --skip-script --script-file my_script.jso
 ```
 
 Spending safeguards:
-- Before anything is paid for, including narration, the image cost is estimated
-  and the run refuses to start if it's over `--max-image-cost` (default $5).
-  Spending is checked again before every call.
-- Images already in `<project>/images/` are reused, so re-running after a
-  failure only pays for what's missing. To redo one scene, delete its file.
-- Every paid call is logged to `<project>/costs.jsonl`.
+- Three limits, all checked before anything is paid for (narration included)
+  and again before every single image:
+  - `--max-image-cost` (default $5): this run.
+  - `--episode-budget` (default $10): everything ever spent in this project
+    folder, from `<project>/costs.jsonl`.
+  - `--total-budget` (default $250): everything across all projects, from
+    `~/.historical_oddities/spend_ledger.jsonl` (move it with `HO_SPEND_LEDGER`).
+  Restarting or re-running can't reset these; only deleting a ledger file does.
+- Every call is logged as pending *before* it's made, then closed with the
+  actual cost OpenAI reports. A call that never closes (crash, timeout) is
+  counted at its estimate, since it may have been billed. An API error
+  response counts as $0.
+- `images/manifest.json` records what each image was made from (prompt,
+  style, model, size, quality, reference). An image is reused only if all of
+  that is unchanged and the file hasn't been edited. Otherwise the old file is
+  moved to `images/_replaced/` and a new one is generated.
 - `--reference-image my_ref.png` uses your own master reference instead of
   generating one; `--no-reference` skips the reference (cheaper, less consistent).
 

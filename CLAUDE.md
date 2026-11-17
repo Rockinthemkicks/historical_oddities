@@ -16,7 +16,9 @@ Full requirements: `docs/PROJECT_BRIEF.md`. Current state and risks: `docs/AUDIT
   the brief's sepia "Vintage Notebook-Cartoon". `config/style_prompt.txt` is its short form and is
   prepended to every generated image prompt. Change the style there, not in code.
 - The owner wants image generation automated via the API (no more manual CHAT.IMG step).
-  Every paid run must stay under `--max-image-cost`, reuse finished files, and log to costs.jsonl.
+  Every paid call goes through `modules/costs.CostLedger` (run, episode and overall limits that
+  survive restarts; pending-before/closed-after logging). Reuse generated files only through a
+  manifest of input hashes, never just because a file exists.
 - The repo is public by the owner's choice; that makes the no-secrets rule even more important.
 - Publishing always needs the owner's explicit authorization.
 

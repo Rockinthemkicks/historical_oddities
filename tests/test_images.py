@@ -7,7 +7,7 @@ import pytest
 from PIL import Image
 
 from modules import images
-from modules.costs import BudgetExceeded, CostLedger
+from modules.costs import BudgetExceeded, CostLedger, ledger_total
 from modules.image_prompts import parse_batch_prompts, resolve_scene_prompts
 
 PNG = io.BytesIO()
@@ -80,7 +80,9 @@ def test_generates_reference_then_scenes_with_style(tmp_path, fake_api):
     assert fake_api[1]["data"]["size"] == "1536x1024"
     assert fake_api[1]["data"]["quality"] == "medium"
     log = [json.loads(l) for l in open(tmp_path / "costs.jsonl")]
-    assert len(log) == 4 and all(e["actual_usd"] > 0 for e in log)
+    done = [e for e in log if e["status"] == "done"]
+    assert len(done) == 4 and all(e["actual_usd"] > 0 for e in done)
+    assert len([e for e in log if e["status"] == "pending"]) == 4  # written before each call
 
 
 def test_rerun_skips_finished_images(tmp_path, fake_api):
@@ -109,8 +111,9 @@ def test_estimate_over_cap_refuses_before_spending(tmp_path, fake_api):
 
 
 def test_ledger_stops_mid_run(tmp_path):
-    ledger = CostLedger(str(tmp_path), cap_usd=0.10)
-    ledger.record("x", "a", 0.06)
+    ledger = CostLedger(str(tmp_path), run_cap=0.10)
+    cid = ledger.begin("x", "a", 0.06)
+    ledger.finish(cid, 0.06, 0.05)
     with pytest.raises(BudgetExceeded):
         ledger.check_room(0.06)
 
@@ -149,5 +152,5 @@ def test_main_refuses_over_cap(tmp_path):
                         "--prompts-file", "episodes/london-beer-flood/batch_prompts.txt",
                         "--image-quality", "high", "--max-image-cost", "1"],
                        capture_output=True, text=True)
-    assert r.returncode != 0 and "over the $1.00 cap" in r.stderr
+    assert r.returncode != 0 and "over its $1.00 limit" in r.stderr
     assert not (tmp_path / "p" / "audio").exists()  # narration never started
