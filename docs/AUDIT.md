@@ -101,8 +101,8 @@ which is about 85–90 s of narration.
 | Step | Change | Status |
 |---|---|---|
 | M2 | `--format vertical\|landscape\|both`, with vertical as the untouched default. Automatic ffprobe QC (`*_qc.json`, exits non-zero on failure). `+faststart` MP4s. `tb_NN` and multi-image scenes. Tests and CI. | **This PR** |
-| M3a | Render per scene, then concat (cached and restartable). Ken Burns pan/zoom on each segment. Captions burned per segment. | Next |
-| M3b | Narration cache keyed on text + voice + settings. Voice pinned in config. Cost log per run with a spend cap. | Next |
+| M3a | Render per scene, then concat (cached and restartable). Ken Burns pan/zoom on each segment. Captions burned per segment. | PR for #4 |
+| M3b | Narration cache keyed on text + voice + settings. Voice pinned in config. Cost log per run with a spend cap. | PR #13 |
 | M3c | Long-form script structure (hook → context → mechanism → consequences → payoff) in `pipeline_prompt.md`, kept to the same JSON schema. | Needs owner input |
 | M4 | Shorts: pick 3 segments, write standalone narration, and recompose for 9:16 instead of letterboxing. | Later |
 | M5+ | Topic research and scoring, orchestration, publishing, analytics. | Later |

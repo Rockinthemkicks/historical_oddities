@@ -56,8 +56,24 @@ project folder.
 Narration audio is generated **per scene**, so each scene's exact duration
 comes directly from its own clip — no error-prone alignment across a full
 narration track is needed. Scene clips are concatenated with hard cuts
-(frame-accurate sync with the audio). Images are currently held static — no
-zoom/pan yet (that's planned for Milestone 3; see `docs/AUDIT.md`).
+(frame-accurate sync with the audio).
+
+## Camera motion and scene-by-scene rendering
+
+`--motion kenburns` adds slow, eased camera moves to every image, cycling
+zoom in, pan right, zoom out and pan left. You can also pick one move, e.g.
+`--motion zoom_in`. The default is `none`: still images, exactly like before.
+
+Each scene is rendered as its own clip, cached in
+`<project>/render_cache/<format>/` by a hash of its images, timing, captions,
+title, motion and size. The clips are then joined and the narration is added.
+Re-running an unchanged episode reuses every clip. Changing one scene's image
+or narration re-renders just that scene. Scene boundaries are snapped to whole
+frames on the running total, so the picture never drifts from the audio, even
+at 8–10 minutes.
+
+`--legacy-render` uses the original one-pass assembler, which has no motion
+support. Keep it as a fallback.
 
 ## Output formats
 
