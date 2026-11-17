@@ -83,14 +83,19 @@ def check_video(path, expected_size=None, expected_duration=None,
     add("duration_positive", duration > 0, f"{duration:.2f}s")
 
     # A file whose header is fine but whose data was cut off (interrupted write
-    # or copy) still probes OK, so actually decode the final second.
-    if duration > 0:
+    # or copy) still probes OK, so actually decode the final second and require
+    # real video frames to come out of it.
+    if duration > 0 and video:
         tail = subprocess.run(
-            ["ffmpeg", "-v", "error", "-sseof", "-1", "-i", path, "-f", "null", "-"],
+            ["ffmpeg", "-v", "error", "-sseof", "-1", "-i", path, "-map", "0:v:0",
+             "-f", "framemd5", "-"],
             capture_output=True, text=True,
         )
+        decoded = sum(1 for line in tail.stdout.splitlines() if line and not line.startswith("#"))
         tail_err = tail.stderr.strip()
-        add("decodes_to_end", tail.returncode == 0 and not tail_err, tail_err[:200])
+        ok = tail.returncode == 0 and not tail_err and decoded > 0
+        add("decodes_to_end", ok, tail_err[:200] or f"{decoded} frame(s) decoded from the last second")
+
     if expected_duration is not None:
         diff = abs(duration - expected_duration)
         add("duration_matches", diff <= duration_tolerance,

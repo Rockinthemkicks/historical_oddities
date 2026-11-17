@@ -45,6 +45,7 @@ from modules.captions import build_caption_cues, wrap_lines
 from modules.caption_images import render_all_captions, render_cue_image
 from modules.assemble import concat_audio, build_video, generate_silence
 from modules.qc import check_video, format_report
+from modules.render import render_episode, MOTIONS
 
 # Output formats. "vertical" is the original behavior (9:16 canvas, 16:9 image
 # letterboxed in the middle, title in the top black bar) and stays the default.
@@ -118,6 +119,12 @@ def parse_args():
     p.add_argument("--height", type=int, default=1920, help="Vertical output height (default 1920)")
     p.add_argument("--landscape-width", type=int, default=1920)
     p.add_argument("--landscape-height", type=int, default=1080)
+    p.add_argument("--motion", default="none", choices=["none", "kenburns", *MOTIONS],
+                    help="Camera movement on scene images: none (default, static like before), "
+                         "kenburns (cycles zoom in / pan right / zoom out / pan left), or one movement")
+    p.add_argument("--legacy-render", action="store_true",
+                    help="Use the original single-pass assembler instead of cached per-scene clips "
+                         "(no motion support)")
     p.add_argument("--skip-qc", action="store_true",
                     help="Don't run the automatic ffprobe checks on the finished video(s)")
     p.add_argument("--no-title", action="store_true",
@@ -301,7 +308,7 @@ def main():
         generate_silence(args.pause, silence_path)
 
     ordered_audio, ordered_images, ordered_durations = [], [], []
-    caption_scenes = []
+    caption_scenes, scene_specs = [], []
     cursor = 0.0
     for i, s in enumerate(scenes):
         n = s["scene_number"]
@@ -322,6 +329,7 @@ def main():
         for path in paths:
             ordered_images.append(path)
             ordered_durations.append(scene_duration / len(paths))
+        scene_specs.append({"image_paths": paths, "duration": scene_duration})
 
         if nar["words"]:
             caption_scenes.append({"start": cursor, "words": nar["words"]})
@@ -349,7 +357,7 @@ def main():
         else:
             size = (args.landscape_width, args.landscape_height)
             out_path = os.path.join(args.project, "final_video_landscape.mp4")
-            bottom_margin = 0.10
+            bottom_margin = -0.06  # caption's bottom edge 6% above the frame bottom
 
         title_image = None
         # The title lives in the vertical video's top black bar. A full-frame
@@ -364,9 +372,19 @@ def main():
             title_image = {"path": title_path, "width": tw, "height": th}
 
         print(f"      Rendering {fmt} {size[0]}x{size[1]} -> {out_path}")
-        build_video(ordered_images, ordered_durations, full_audio_path, caption_images, out_path,
-                    size=size, fps=args.fps, title_image=title_image,
-                    bottom_margin_frac=bottom_margin)
+        if args.legacy_render:
+            if args.motion != "none":
+                sys.exit("--motion needs the per-scene renderer; drop --legacy-render")
+            build_video(ordered_images, ordered_durations, full_audio_path, caption_images, out_path,
+                        size=size, fps=args.fps, title_image=title_image,
+                        bottom_margin_frac=bottom_margin)
+        else:
+            result = render_episode(scene_specs, full_audio_path, caption_images, out_path,
+                                    cache_dir=os.path.join(args.project, "render_cache", fmt),
+                                    size=size, fps=args.fps, title_image=title_image,
+                                    bottom_margin_frac=bottom_margin, motion=args.motion)
+            print(f"      {len(result['rendered'])} scene clip(s) rendered, "
+                  f"{len(result['reused'])} reused from cache")
         outputs.append(out_path)
 
         if not args.skip_qc:

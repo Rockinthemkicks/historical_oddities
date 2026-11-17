@@ -108,7 +108,10 @@ def build_video(scene_images, scene_durations, audio_path, caption_images, out_p
         next_input_index += 1
 
     if caption_images:
-        y_pos = f"H-{int(h * bottom_margin_frac)}"
+        # >= 0: caption top that far up from the bottom (original layout);
+        # < 0: caption bottom edge abs(value) up from the bottom.
+        y_pos = (f"H-{int(h * bottom_margin_frac)}" if bottom_margin_frac >= 0
+                 else f"H-h-{int(h * -bottom_margin_frac)}")
         for i, cap in enumerate(caption_images):
             inputs += ["-loop", "1", "-i", cap["path"]]
             out_label = f"cap{i}"
