@@ -69,6 +69,35 @@ SPOILER_NOTES = {
 }
 
 
+MONETIZATION_CHECKLIST = """# Before you upload: monetization checklist
+
+Based on YouTube and Rockstar policies as checked on 2026-11-23. Policies change, so re-check them.
+This is not legal advice.
+
+## YouTube ads (advertiser-friendly guidelines)
+- [ ] Thumbnail shows no graphic violence (blood, injury, gore) and no sexualized imagery.
+- [ ] The first 7 seconds contain no graphic violence (that earns no ads); seconds 8-15 earn limited ads.
+- [ ] Title and thumbnail have no profanity or shock wording.
+
+## Reused / inauthentic content (YPP)
+- [ ] The video is original research, writing and narration, not a re-read of a wiki or another video.
+- [ ] The channel description says how the videos are made (researched scripts, original illustrations,
+      AI narration voice, human fact-check).
+- [ ] This episode differs clearly from earlier ones (topic, structure, hook, visuals).
+
+## Copyright
+- [ ] No game music or radio audio anywhere (Content ID claims; the songs are licensed, not Rockstar's).
+      The renderer drops the audio of every gameplay clip, and ambient audio must be licensed.
+- [ ] No isolated cutscene runs and no ending footage (Rockstar removes these).
+- [ ] Every asset in assets/provenance.json is resolved, and the owner has accepted any
+      "publisher_policy" footage (Rockstar's policy covers occasional, non-commercial use only).
+
+## Disclosure
+- [ ] YouTube "altered or synthetic content": not required for clearly animated or illustrated content.
+      Re-check if any realistic-looking imagery is used.
+"""
+
+
 def build_package(production, script, dossier, markers, manifest, out_dir):
     """Writes description.txt, chapters.txt and sources.json. Returns the description text."""
     os.makedirs(out_dir, exist_ok=True)
@@ -118,6 +147,8 @@ def build_package(production, script, dossier, markers, manifest, out_dir):
     description = "\n".join(lines) + "\n"
     with open(os.path.join(out_dir, "description.txt"), "w") as f:
         f.write(description)
+    with open(os.path.join(out_dir, "monetization_checklist.md"), "w") as f:
+        f.write(MONETIZATION_CHECKLIST)
     with open(os.path.join(out_dir, "chapters.txt"), "w") as f:
         f.write(chapters_txt + "\n")
     with open(os.path.join(out_dir, "sources.json"), "w") as f:

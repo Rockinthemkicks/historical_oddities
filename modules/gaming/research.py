@@ -83,8 +83,9 @@ def validate_dossier(dossier, production):
             out.append(_finding("error", where, "source_locator",
                                 "game sources need a locator (mission, dialogue line, location or timestamp)"))
         if not s.get("verified"):
-            out.append(_finding("warning", where, "source_unverified",
-                                "not yet opened and checked by a human"))
+            detail = ("read by the assistant, not yet checked by a human" if s.get("read_by_assistant")
+                      else "not yet opened and checked by a human")
+            out.append(_finding("warning", where, "source_unverified", detail))
 
     claims = {}
     events = {}
@@ -188,8 +189,9 @@ def dossier_markdown(dossier, report):
     lines += ["", "## Sources", ""]
     for s in dossier.get("sources", []):
         loc = s.get("url") or s.get("locator", "")
-        lines.append(f"- **{s['id']}** ({s.get('type')}) {s.get('title', '')}: {loc}"
-                     f"{'' if s.get('verified') else ' (UNVERIFIED)'}"
+        state = "" if s.get("verified") else (" (READ BY ASSISTANT, not human-verified)"
+                                              if s.get("read_by_assistant") else " (UNVERIFIED)")
+        lines.append(f"- **{s['id']}** ({s.get('type')}) {s.get('title', '')}: {loc}{state}"
                      + (f"  \n  Note: {s['notes']}" if s.get("notes") else ""))
     if report["errors"] or report["warnings"]:
         lines += ["", "## Flags for review", ""]

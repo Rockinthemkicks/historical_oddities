@@ -65,13 +65,13 @@
       "level": "warning",
       "where": "source S11",
       "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
+      "detail": "read by the assistant, not yet checked by a human"
     },
     {
       "level": "warning",
       "where": "source S12",
       "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
+      "detail": "read by the assistant, not yet checked by a human"
     },
     {
       "level": "warning",
@@ -101,7 +101,7 @@
       "level": "warning",
       "where": "source S17",
       "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
+      "detail": "read by the assistant, not yet checked by a human"
     },
     {
       "level": "warning",
@@ -166,6 +166,54 @@
     {
       "level": "warning",
       "where": "source S28",
+      "rule": "source_unverified",
+      "detail": "not yet opened and checked by a human"
+    },
+    {
+      "level": "warning",
+      "where": "source S29",
+      "rule": "source_unverified",
+      "detail": "read by the assistant, not yet checked by a human"
+    },
+    {
+      "level": "warning",
+      "where": "source S30",
+      "rule": "source_unverified",
+      "detail": "not yet opened and checked by a human"
+    },
+    {
+      "level": "warning",
+      "where": "source S31",
+      "rule": "source_unverified",
+      "detail": "not yet opened and checked by a human"
+    },
+    {
+      "level": "warning",
+      "where": "source S32",
+      "rule": "source_unverified",
+      "detail": "not yet opened and checked by a human"
+    },
+    {
+      "level": "warning",
+      "where": "source S33",
+      "rule": "source_unverified",
+      "detail": "not yet opened and checked by a human"
+    },
+    {
+      "level": "warning",
+      "where": "source S34",
+      "rule": "source_unverified",
+      "detail": "not yet opened and checked by a human"
+    },
+    {
+      "level": "warning",
+      "where": "source S35",
+      "rule": "source_unverified",
+      "detail": "not yet opened and checked by a human"
+    },
+    {
+      "level": "warning",
+      "where": "source S36",
       "rule": "source_unverified",
       "detail": "not yet opened and checked by a human"
     },
@@ -303,21 +351,39 @@
     },
     {
       "level": "warning",
+      "where": "claim C31",
+      "rule": "canon_unverified",
+      "detail": "its game/official source hasn't been verified by a human yet"
+    },
+    {
+      "level": "warning",
+      "where": "claim C32",
+      "rule": "canon_unverified",
+      "detail": "its game/official source hasn't been verified by a human yet"
+    },
+    {
+      "level": "warning",
+      "where": "claim C33",
+      "rule": "canon_unverified",
+      "detail": "its game/official source hasn't been verified by a human yet"
+    },
+    {
+      "level": "warning",
+      "where": "claim C34",
+      "rule": "canon_unverified",
+      "detail": "its game/official source hasn't been verified by a human yet"
+    },
+    {
+      "level": "warning",
+      "where": "claim C35",
+      "rule": "canon_unverified",
+      "detail": "its game/official source hasn't been verified by a human yet"
+    },
+    {
+      "level": "warning",
       "where": "dossier",
       "rule": "open_question",
       "detail": "Verify every primary_game locator by watching the cutscene or mission, or reading a full transcript."
-    },
-    {
-      "level": "warning",
-      "where": "dossier",
-      "rule": "open_question",
-      "detail": "C24: confirm what Sonny actually says about Harwood in 'Keep Your Friends Close...'."
-    },
-    {
-      "level": "warning",
-      "where": "dossier",
-      "rule": "open_question",
-      "detail": "C29: find a stronger source for the Tommy-Ken falling-out (San Andreas dialogue)."
     },
     {
       "level": "warning",
@@ -335,12 +401,6 @@
       "level": "warning",
       "where": "dossier",
       "rule": "open_question",
-      "detail": "Coverage gaps for 20-25 minutes: Colonel Cortez, Avery Carrington and the real-estate side of the city, the Haitian/Cuban gang war, Vice City's police and media. Add claims for any that the outline needs."
-    },
-    {
-      "level": "warning",
-      "where": "dossier",
-      "rule": "open_question",
       "detail": "GTA VI: check for any official nods to 1980s Vice City before C30 is narrated (setting-level only; no story spoilers)."
     },
     {
@@ -348,14 +408,32 @@
       "where": "dossier",
       "rule": "open_question",
       "detail": "Rights: decide on gameplay footage. Rockstar's posting policy covers occasional non-commercial use only."
+    },
+    {
+      "level": "warning",
+      "where": "dossier",
+      "rule": "open_question",
+      "detail": "Vice City Stories: confirm whether Vic and Lance left Vice City after 1984 (one wiki lists Panama 1984-1986; not used yet)."
+    },
+    {
+      "level": "warning",
+      "where": "dossier",
+      "rule": "open_question",
+      "detail": "Avery's funeral mission: confirm its name in-game (S36)."
+    },
+    {
+      "level": "warning",
+      "where": "dossier",
+      "rule": "open_question",
+      "detail": "Optional threads not yet researched: Auntie Poulet drugging Tommy, Kent Paul, the VCPD and corrupt detective Bryan Forbes (VCS)."
     }
   ],
   "passed": true,
   "stats": {
-    "sources": 28,
-    "claims": 30,
-    "confirmed_canon": 22,
-    "interpretation": 2,
+    "sources": 36,
+    "claims": 37,
+    "confirmed_canon": 27,
+    "interpretation": 4,
     "fan_theory": 1,
     "speculation": 1,
     "real_world_fact": 4

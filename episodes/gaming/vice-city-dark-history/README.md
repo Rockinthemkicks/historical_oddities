@@ -7,8 +7,9 @@ Stories (1984) and Vice City (1986), framed for GTA VI audiences. GTA VI's Vice 
 the opening and closing, at setting level. Spoiler level "full" covers the 2002 and 2006 games' plots;
 every GTA VI claim is rated "none".
 
-**Status:** stage 1, research, first pass done. `research.json` has 30 claims and 28 sources and
-passes its checks (0 errors). **No source is verified yet:** the first pass came from search results.
+**Status:** stage 1, research, second pass done. `research.json` has 37 claims and 36 sources and
+passes its checks (0 errors). The key wiki pages and the finale transcript were read in full by Claude,
+and four claims were corrected. **No source is human-verified yet.**
 Read `research_review.md`, open or play through the sources, set `"verified": true` on the ones you've
 checked, and work through the open questions. Then approve the research stage.
 

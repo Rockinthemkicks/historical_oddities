@@ -315,6 +315,7 @@ def test_full_dry_run_pipeline(prod_dir):
     desc = open(prod_dir / "publish" / "description.txt").read()
     assert "0:00 Three Dark Days" in desc and "example.com/neon-harbor/manual" in desc
     assert "Not affiliated" in desc
+    assert (prod_dir / "publish" / "monetization_checklist.md").exists()
     assert not (prod_dir / "costs.jsonl").exists()               # nothing was ever spent
     # re-running is free and reuses every rendered scene
     assert run(prod_dir, "produce", "--dry-run") == 0
@@ -343,3 +344,16 @@ def test_mixed_still_and_video_with_ambient_bed(tmp_path):
     assert res["scene_starts"] == [0.0, 2.0]
     assert check_video(res["path"], expected_size=(640, 360), expected_duration=3.0,
                        duration_tolerance=0.2)["passed"]
+
+
+def test_violent_imagery_in_opening_seconds_warns(prod_dir):
+    assert run(prod_dir, "outline", "--dry-run") == 0
+    assert run(prod_dir, "write", "--dry-run") == 0
+    s = json.load(open(prod_dir / "script.json"))
+    s["scenes"][0]["visuals"][1]["prompt"] = "Atmospheric documentary scene of a shooting at the docks, blood on the pier"
+    s["scenes"][-1]["visuals"][-1]["prompt"] = "Atmospheric documentary scene with blood on the pier at night"
+    (prod_dir / "script.json").write_text(json.dumps(s))
+    run(prod_dir, "storyboard")
+    sb = json.load(open(prod_dir / "storyboard.json"))
+    opening = [w for w in sb["warnings"] if "first 15s" in w]
+    assert len(opening) == 1 and "scene 1" in opening[0]      # only the opening is held to the strict rule

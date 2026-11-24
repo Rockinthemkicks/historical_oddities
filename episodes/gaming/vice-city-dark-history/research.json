@@ -1,7 +1,7 @@
 {
   "topic": "The Dark History of Vice City (3D-universe deep dive, GTA VI framing)",
   "scope": "Deep dive on the 3D-universe (1980s) Vice City from Vice City Stories (1984) and Vice City (1986), framed for GTA VI audiences: the HD-universe Vice City appears only in the opening and closing, at setting level (spoiler 'none'). The 2D original is mentioned only as real-world history.",
-  "research_status": "First pass by Claude on 2026-11-23 from search results. Every source is UNVERIFIED until someone opens it (or checks it in-game) and sets verified: true.",
+  "research_status": "Second pass by Claude on 2026-11-23: key wiki pages and the finale transcript read in full; four claims corrected (C11, C16, C24, C25), Ken's later years updated (C28, C29), seven claims added (C31-C37). No source is human-verified yet.",
   "sources": [
     {
       "id": "S01",
@@ -99,8 +99,9 @@
       "title": "GTA Wiki (Fandom) - Grand Theft Auto: Vice City",
       "accessed": "2026-11-23",
       "verified": false,
-      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
-      "url": "https://gta.fandom.com/wiki/Grand_Theft_Auto:_Vice_City"
+      "notes": "Read in full by Claude on 2026-11-23 (claims below checked against it). Not yet checked by a human.",
+      "url": "https://gta.fandom.com/wiki/Grand_Theft_Auto:_Vice_City",
+      "read_by_assistant": "2026-11-23"
     },
     {
       "id": "S12",
@@ -108,8 +109,9 @@
       "title": "GTA Wiki (Fandom) - Grand Theft Auto: Vice City Stories",
       "accessed": "2026-11-23",
       "verified": false,
-      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
-      "url": "https://gta.fandom.com/wiki/Grand_Theft_Auto:_Vice_City_Stories"
+      "notes": "Read in full by Claude on 2026-11-23 (claims below checked against it). Not yet checked by a human.",
+      "url": "https://gta.fandom.com/wiki/Grand_Theft_Auto:_Vice_City_Stories",
+      "read_by_assistant": "2026-11-23"
     },
     {
       "id": "S13",
@@ -153,8 +155,9 @@
       "title": "Grand Theft Wiki - Ken Rosenberg",
       "accessed": "2026-11-23",
       "verified": false,
-      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
-      "url": "https://www.grandtheftwiki.com/Ken_Rosenberg"
+      "notes": "Read (first ~30% of a very long page) by Claude on 2026-11-23. Not yet checked by a human.",
+      "url": "https://www.grandtheftwiki.com/Ken_Rosenberg",
+      "read_by_assistant": "2026-11-23"
     },
     {
       "id": "S18",
@@ -254,6 +257,79 @@
       "verified": false,
       "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
       "url": "https://gta.fandom.com/wiki/Diego_Mendez"
+    },
+    {
+      "id": "S29",
+      "type": "secondary",
+      "title": "Grand Theft Wiki - 'Keep Your Friends Close...' mission script",
+      "url": "https://www.grandtheftwiki.com/Keep_Your_Friends_Close.../Script",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Read in full by Claude on 2026-11-23 (claims below checked against it). Not yet checked by a human. Fan transcript of the finale dialogue.",
+      "read_by_assistant": "2026-11-23"
+    },
+    {
+      "id": "S30",
+      "type": "secondary",
+      "title": "GTA Wiki (gta.wiki) - Avery Carrington",
+      "url": "https://gta.wiki/w/Avery_Carrington",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full."
+    },
+    {
+      "id": "S31",
+      "type": "secondary",
+      "title": "GTA Wiki (gta.wiki) - Cuban-Haitian Gang War",
+      "url": "https://gta.wiki/w/Cuban-Haitian_Gang_War",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full."
+    },
+    {
+      "id": "S32",
+      "type": "secondary",
+      "title": "Wikipedia - Grand Theft Auto: Vice City (plot)",
+      "url": "https://en.wikipedia.com/wiki/VCPR",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full. URL is a redirect to the Vice City article."
+    },
+    {
+      "id": "S33",
+      "type": "secondary",
+      "title": "Grand Theft Wiki - Missions in GTA Vice City",
+      "url": "https://www.grandtheftwiki.com/GTA_Vice_City_Missions",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full."
+    },
+    {
+      "id": "S34",
+      "type": "secondary",
+      "title": "GTA Wiki (gta.wiki) - Ricardo Diaz's Hitmen",
+      "url": "https://gta.wiki/w/Ricardo_Diaz%27s_Hitmen",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full."
+    },
+    {
+      "id": "S35",
+      "type": "primary_game",
+      "title": "GTA: Vice City - Colonel Cortez missions ('The Party' onward)",
+      "locator": "Vice City: 'The Party' (Cortez's yacht) and Cortez's early missions incl. the Gonzalez job",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Not checked in-game yet. Locator from wiki mission pages."
+    },
+    {
+      "id": "S36",
+      "type": "primary_game",
+      "title": "GTA: Vice City - Avery Carrington missions (funeral mission)",
+      "locator": "Vice City: Avery Carrington's missions; the funeral/ganglord mission (exact name to confirm)",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Not checked in-game yet. Mission name unconfirmed."
     }
   ],
   "claims": [
@@ -398,7 +474,7 @@
     },
     {
       "id": "C11",
-      "text": "Vic's corrupt superior, Sergeant Jerry Martinez, sets him up, and Vic is thrown out of the army.",
+      "text": "Vic's sergeant, Jerry Martinez, runs a secret drug business, then frames Vic for drugs and for bringing a prostitute onto the base, and Vic is dishonorably discharged.",
       "status": "confirmed_canon",
       "continuity": "3D",
       "games": [
@@ -406,14 +482,14 @@
       ],
       "source_ids": [
         "S04",
-        "S26",
-        "S15"
+        "S12",
+        "S26"
       ],
       "spoiler": "minor"
     },
     {
       "id": "C12",
-      "text": "A drug shipment the Vance brothers take turns out to belong to the Mendez brothers, Armando and Diego.",
+      "text": "The cocaine Vic and Lance steal from Martinez turns out to belong to the Mendez brothers, Armando and Diego; Martinez was only moving it for them.",
       "status": "confirmed_canon",
       "continuity": "3D",
       "games": [
@@ -458,7 +534,7 @@
     },
     {
       "id": "C15",
-      "text": "The Mendez brothers turn on the Vances and lure them into a deadly trap at their mansion; the brothers escape and go to war with the cartel.",
+      "text": "After using the Vance brothers for a few jobs, the Mendez brothers betray them, and the Vances go to war with the cartel.",
       "status": "confirmed_canon",
       "continuity": "3D",
       "games": [
@@ -466,13 +542,14 @@
       ],
       "source_ids": [
         "S05",
+        "S12",
         "S14"
       ],
       "spoiler": "major"
     },
     {
       "id": "C16",
-      "text": "Vic's partner Louise dies, Vic kills Armando, the war ends at the Mendez Building, and Vic and Lance leave Vice City together.",
+      "text": "The war costs Vic dearly: Louise dies after the Mendez brothers kidnap her, Armando is killed at the Mendez mansion, and Vic kills Diego and Martinez on the roof of the Mendez Building.",
       "status": "confirmed_canon",
       "continuity": "3D",
       "games": [
@@ -480,8 +557,8 @@
       ],
       "source_ids": [
         "S05",
-        "S27",
-        "S14"
+        "S12",
+        "S27"
       ],
       "spoiler": "major"
     },
@@ -534,7 +611,7 @@
     },
     {
       "id": "C20",
-      "text": "The deal is ambushed: two Forelli men and Victor Vance are killed, and Tommy, lawyer Ken Rosenberg and Lance Vance escape without the money or the drugs.",
+      "text": "The deal is ambushed: Victor Vance and two Forelli men, Harry and Lee, are killed, the money and cocaine are taken, and Tommy, Ken Rosenberg and Lance escape.",
       "status": "confirmed_canon",
       "continuity": "3D",
       "games": [
@@ -543,7 +620,7 @@
       "source_ids": [
         "S01",
         "S11",
-        "S21"
+        "S12"
       ],
       "spoiler": "minor"
     },
@@ -572,14 +649,14 @@
       ],
       "source_ids": [
         "S02",
-        "S13",
-        "S11"
+        "S11",
+        "S13"
       ],
       "spoiler": "major"
     },
     {
       "id": "C23",
-      "text": "Sonny Forelli comes to Vice City to claim Tommy's profits; Lance sides with Sonny, and Tommy kills both of them in the final mission.",
+      "text": "Sonny Forelli comes to Vice City to collect money he considers his; Lance reveals Tommy's plan to Sonny, and Tommy kills both of them in the final mission.",
       "status": "confirmed_canon",
       "continuity": "3D",
       "games": [
@@ -587,14 +664,14 @@
       ],
       "source_ids": [
         "S03",
-        "S16",
-        "S21"
+        "S11",
+        "S29"
       ],
       "spoiler": "major"
     },
     {
       "id": "C24",
-      "text": "In the finale, Sonny's words confirm that Tommy had been set up in Harwood years earlier.",
+      "text": "In the finale Tommy accuses Sonny of sending him to Harwood after a man who knew he was coming; Sonny deflects rather than denies, and claims Tommy's fifteen years in prison were his to spend.",
       "status": "confirmed_canon",
       "continuity": "3D",
       "games": [
@@ -602,21 +679,23 @@
       ],
       "source_ids": [
         "S03",
-        "S25"
+        "S29"
       ],
       "spoiler": "major",
-      "notes": "Only a lower-reliability wiki supports this so far. Check the exact line in the final cutscene before using."
+      "notes": "Checked against a fan transcript (S29): the dialogue implies, but does not state, that Sonny set Tommy up. Confirm in the cutscene."
     },
     {
       "id": "C25",
-      "text": "Lance's betrayal grew out of resentment at being sidelined in Tommy's rise.",
+      "text": "Lance's betrayal grew out of feeling underappreciated and sidelined in Tommy's rise; in the game he only calls it business.",
       "status": "interpretation",
       "continuity": "3D",
       "games": [
         "gtavc"
       ],
       "source_ids": [
-        "S21"
+        "S11",
+        "S21",
+        "S29"
       ],
       "spoiler": "major"
     },
@@ -640,6 +719,7 @@
       "status": "confirmed_canon",
       "continuity": "3D",
       "games": [
+        "gtavc",
         "gtasa"
       ],
       "source_ids": [
@@ -650,7 +730,7 @@
     },
     {
       "id": "C28",
-      "text": "By 1992 Ken Rosenberg has left Vice City and is managing a casino in Las Venturas.",
+      "text": "By 1992 Ken has been through rehab, lost his law license and is running Caligula's Palace casino in Las Venturas for three mafia families.",
       "status": "confirmed_canon",
       "continuity": "3D",
       "games": [
@@ -664,7 +744,7 @@
     },
     {
       "id": "C29",
-      "text": "After 1986 Tommy's relationship with Ken grows strained over Ken's cocaine use.",
+      "text": "Ken's cocaine addiction drives a rift with Tommy; after Ken's rehab, Tommy stops taking his calls.",
       "status": "confirmed_canon",
       "continuity": "3D",
       "games": [
@@ -672,10 +752,10 @@
       ],
       "source_ids": [
         "S06",
-        "S25"
+        "S17"
       ],
       "spoiler": "minor",
-      "notes": "Supported only by a lower-reliability wiki plus an unchecked game locator; verify before use."
+      "notes": "Per the wiki, the Tommy detail comes from San Andreas' 'The Introduction'. Confirm there."
     },
     {
       "id": "C30",
@@ -687,16 +767,120 @@
       ],
       "source_ids": [],
       "spoiler": "none"
+    },
+    {
+      "id": "C31",
+      "text": "Vic joined the army to pay for his brother Pete's asthma medication.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "source_ids": [
+        "S04",
+        "S12"
+      ],
+      "spoiler": "none"
+    },
+    {
+      "id": "C32",
+      "text": "Vic ends 1984 wealthy and wanting out of the drug trade, but Lance pulls him back in, leading to the 1986 deal with the Forellis.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "source_ids": [
+        "S05",
+        "S12"
+      ],
+      "spoiler": "major"
+    },
+    {
+      "id": "C33",
+      "text": "Retired colonel Juan Garcia Cortez helped set up the 1986 exchange, and afterwards promises Tommy he will find out who was behind the ambush.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S35",
+        "S11",
+        "S32"
+      ],
+      "spoiler": "minor"
+    },
+    {
+      "id": "C34",
+      "text": "Cortez has Tommy kill Gonzalez, a former associate blamed for the deal going wrong; wiki accounts say Gonzalez had leaked the deal to Diaz.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S35",
+        "S11",
+        "S34"
+      ],
+      "spoiler": "minor",
+      "notes": "The leak detail rests on one wiki (S34); narrate it as 'reportedly' unless confirmed in-game."
+    },
+    {
+      "id": "C35",
+      "text": "Real-estate developer Avery Carrington has Tommy, disguised as a Cuban gang member, kill the new Haitian ganglord at a funeral, starting a gang war to drive down property prices.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S36",
+        "S30",
+        "S31",
+        "S33"
+      ],
+      "spoiler": "minor"
+    },
+    {
+      "id": "C36",
+      "text": "Vice City's 1986 property boom was built in part on deliberately started gang violence.",
+      "status": "interpretation",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S30",
+        "S31"
+      ],
+      "spoiler": "minor"
+    },
+    {
+      "id": "C37",
+      "text": "Wiki accounts treat Sonny's earlier Harwood setup as fact; the game itself only implies it.",
+      "status": "interpretation",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S11",
+        "S16",
+        "S29"
+      ],
+      "spoiler": "major"
     }
   ],
   "open_questions": [
     "Verify every primary_game locator by watching the cutscene or mission, or reading a full transcript.",
-    "C24: confirm what Sonny actually says about Harwood in 'Keep Your Friends Close...'.",
-    "C29: find a stronger source for the Tommy-Ken falling-out (San Andreas dialogue).",
     "Vice City Stories: confirm the name of the final mission(s) at the Mendez Building (S05).",
     "Possible extra thread: one Vice City hitman reportedly works for an unexplained 'Mr. Black' and isn't clearly tied to Diaz (gta.wiki 'Ricardo Diaz's Hitmen'). Research before using it.",
-    "Coverage gaps for 20-25 minutes: Colonel Cortez, Avery Carrington and the real-estate side of the city, the Haitian/Cuban gang war, Vice City's police and media. Add claims for any that the outline needs.",
     "GTA VI: check for any official nods to 1980s Vice City before C30 is narrated (setting-level only; no story spoilers).",
-    "Rights: decide on gameplay footage. Rockstar's posting policy covers occasional non-commercial use only."
+    "Rights: decide on gameplay footage. Rockstar's posting policy covers occasional non-commercial use only.",
+    "Vice City Stories: confirm whether Vic and Lance left Vice City after 1984 (one wiki lists Panama 1984-1986; not used yet).",
+    "Avery's funeral mission: confirm its name in-game (S36).",
+    "Optional threads not yet researched: Auntie Poulet drugging Tommy, Kent Paul, the VCPD and corrupt detective Bryan Forbes (VCS)."
   ]
 }

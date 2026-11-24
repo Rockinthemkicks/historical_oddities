@@ -204,12 +204,33 @@ def script_markdown(script, dossier):
     return "\n".join(lines) + "\n"
 
 
+# YouTube ad rules (Sep 2026 update): graphic game violence in the first 7 seconds earns no
+# ads, 8-15 seconds limited ads; thumbnails are judged separately. Our art is illustrated, but
+# keep the opening clean: these words in a visual's prompt during the first 15 s draw a warning.
+OPENING_SECONDS = 15
+OPENING_RISK_WORDS = ("blood", "gore", "corpse", "dead body", "gun", "shooting", "shoot", "kill", "murder",
+                      "chainsaw", "torture", "explosion", "cocaine", "drugs", "syringe", "wound")
+
+
 def _storyboard(prod, script):
-    """Every visual in the script, with checks: generated prompt lint + IP, user asset rights."""
+    """Every visual in the script, with checks: generated prompt lint + IP, user asset rights,
+    and the ad-safe opening rule."""
     franchise = prod["_franchise"]
     manifest = provenance.load(prod["_dir"])
     errors, warnings, items, used_assets = [], [], [], []
+    wpm = prod["_settings"].get("words_per_minute", 140)
+    t = 0.0
     for sc in script["scenes"]:
+        if t < OPENING_SECONDS:
+            for v in sc.get("visuals", []):
+                hits = [w for w in OPENING_RISK_WORDS if w in (v.get("prompt") or "").lower()]
+                if hits:
+                    warnings.append(f"{v['id']} (scene {sc['scene_number']}): in the first {OPENING_SECONDS}s, "
+                                    f"which YouTube judges strictly for ads; avoid {', '.join(hits)} imagery here")
+                if v["kind"] == "user_asset":
+                    warnings.append(f"{v['id']} (scene {sc['scene_number']}): gameplay footage in the first "
+                                    f"{OPENING_SECONDS}s; make sure it shows no graphic violence")
+        t += len(sc["narration"].split()) / wpm * 60
         for v in sc.get("visuals", []):
             item = {"visual_id": v["id"], "scene": sc["scene_number"], "chapter": sc.get("chapter"),
                     "kind": v["kind"]}
