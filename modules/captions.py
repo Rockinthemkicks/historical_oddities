@@ -42,7 +42,7 @@ def wrap_lines(text, max_chars=16, max_lines=2):
     return [" ".join(line) for line in lines]
 
 
-def build_caption_cues(scenes):
+def build_caption_cues(scenes, max_words=3, max_chars=16, uppercase=True, max_lines=2):
     """
     scenes: list of dicts, each either:
       {"start": float, "words": [{"word": str, "start": float, "end": float}, ...]}
@@ -60,11 +60,13 @@ def build_caption_cues(scenes):
         scene_start = scene["start"]
 
         if "words" in scene and scene["words"]:
-            for chunk in _chunk_words(scene["words"]):
+            for chunk in _chunk_words(scene["words"], max_words=max_words, max_chars=max_chars):
                 cue_start = scene_start + chunk[0]["start"]
                 cue_end = scene_start + chunk[-1]["end"]
-                text = " ".join(w["word"] for w in chunk).upper()
-                cues.append({"start": cue_start, "end": cue_end, "lines": wrap_lines(text)})
+                text = " ".join(w["word"] for w in chunk)
+                text = text.upper() if uppercase else text
+                cues.append({"start": cue_start, "end": cue_end,
+                             "lines": wrap_lines(text, max_chars=max_chars, max_lines=max_lines)})
         else:
             # Fallback: no word timings, split scene text evenly across its duration.
             text = scene.get("text", "").strip()
@@ -72,7 +74,7 @@ def build_caption_cues(scenes):
             words = text.split()
             if not words or duration <= 0:
                 continue
-            chunks = [words[i:i + 3] for i in range(0, len(words), 3)]
+            chunks = [words[i:i + max_words] for i in range(0, len(words), max_words)]
             per_chunk = duration / len(chunks)
             for i, chunk in enumerate(chunks):
                 cue_start = scene_start + i * per_chunk
@@ -80,7 +82,8 @@ def build_caption_cues(scenes):
                 cues.append({
                     "start": cue_start,
                     "end": cue_end,
-                    "lines": wrap_lines(" ".join(chunk).upper()),
+                    "lines": wrap_lines(" ".join(chunk).upper() if uppercase else " ".join(chunk),
+                                        max_chars=max_chars, max_lines=max_lines),
                 })
 
     return cues

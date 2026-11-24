@@ -50,6 +50,23 @@ TOKEN_RATES = {
     "gpt-image-2": {"text_input": 5.00, "image_input": 8.00, "image_output": 30.00},
 }
 
+# Text models used for outline and script writing: USD per 1M tokens
+# (input, output). From OpenAI's pricing page, checked 2026-11-23. Reasoning
+# tokens bill as output; estimates assume the full max_output_tokens.
+TEXT_PRICES = {
+    "gpt-5.4": (2.50, 15.00),
+    "gpt-5-mini": (0.25, 2.00),
+}
+
+
+def text_unit_cost(model, input_tokens, output_tokens):
+    try:
+        rate_in, rate_out = TEXT_PRICES[model]
+    except KeyError:
+        raise ValueError(f"No text price on file for {model}; add it to modules/costs.py TEXT_PRICES")
+    return (input_tokens * rate_in + output_tokens * rate_out) / 1_000_000
+
+
 # ElevenLabs bills by character, at a rate that depends on your plan
 # (published figures in 2026 range from about $0.08 to $0.30 per 1,000
 # characters for Multilingual v2). The default is the conservative top of

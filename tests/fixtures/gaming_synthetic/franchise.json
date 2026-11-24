@@ -1,0 +1,30 @@
+{
+  "franchise_id": "neon-harbor",
+  "name": "Neon Harbor (SYNTHETIC TEST FRANCHISE)",
+  "continuities": {
+    "classic": {
+      "label": "Classic",
+      "note": "fictional"
+    },
+    "remake": {
+      "label": "Remake",
+      "note": "fictional"
+    }
+  },
+  "games": [
+    {
+      "id": "nh1",
+      "title": "Neon Harbor",
+      "continuity": "classic"
+    },
+    {
+      "id": "nh-remake",
+      "title": "Neon Harbor Remake",
+      "continuity": "remake"
+    }
+  ],
+  "protected_terms": [
+    "Neon Harbor Studios",
+    "Captain Vex"
+  ]
+}

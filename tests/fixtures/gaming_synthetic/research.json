@@ -1,0 +1,101 @@
+{
+  "topic": "The 1987 blackout (SYNTHETIC)",
+  "sources": [
+    {
+      "id": "S1",
+      "type": "primary_game",
+      "title": "Neon Harbor: mission 'Lights Out', opening dialogue",
+      "locator": "classic game, mission 'Lights Out', first cutscene",
+      "accessed": "2026-11-23",
+      "verified": true
+    },
+    {
+      "id": "S2",
+      "type": "official",
+      "title": "Neon Harbor manual (fictional)",
+      "url": "https://example.com/neon-harbor/manual",
+      "accessed": "2026-11-23",
+      "verified": true,
+      "excerpt": "The Saltworks Syndicate ran every night shipment that left the harbor and answered to no one on the waterfront"
+    },
+    {
+      "id": "S3",
+      "type": "community",
+      "title": "Forum thread: was the blackout staged? (fictional)",
+      "url": "https://example.com/forum/blackout-theory",
+      "accessed": "2026-11-23",
+      "verified": false
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "text": "In the classic game the 1987 blackout leaves the harbor district dark for three days.",
+      "status": "confirmed_canon",
+      "continuity": "classic",
+      "games": [
+        "nh1"
+      ],
+      "source_ids": [
+        "S1"
+      ],
+      "spoiler": "none",
+      "event": "blackout",
+      "year": 1987
+    },
+    {
+      "id": "C2",
+      "text": "The Saltworks Syndicate controls the harbor's night shipping.",
+      "status": "confirmed_canon",
+      "continuity": "classic",
+      "games": [
+        "nh1"
+      ],
+      "source_ids": [
+        "S2"
+      ],
+      "spoiler": "none"
+    },
+    {
+      "id": "C3",
+      "text": "The blackout gave the Syndicate cover to move shipments unseen.",
+      "status": "interpretation",
+      "continuity": "classic",
+      "games": [
+        "nh1"
+      ],
+      "source_ids": [
+        "S1",
+        "S2"
+      ],
+      "spoiler": "none"
+    },
+    {
+      "id": "C4",
+      "text": "Some players believe the Syndicate staged the blackout itself.",
+      "status": "fan_theory",
+      "continuity": "classic",
+      "games": [
+        "nh1"
+      ],
+      "source_ids": [
+        "S3"
+      ],
+      "spoiler": "minor"
+    },
+    {
+      "id": "C5",
+      "text": "The remake may revisit the blackout from the Syndicate's side.",
+      "status": "speculation",
+      "continuity": "remake",
+      "games": [
+        "nh-remake"
+      ],
+      "source_ids": [],
+      "spoiler": "none"
+    }
+  ],
+  "open_questions": [
+    "Synthetic fixture: no real research questions."
+  ]
+}

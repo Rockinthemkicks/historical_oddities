@@ -114,6 +114,9 @@ def parse_args():
                          "fixed seed makes repeats sound much closer to identical.")
     p.add_argument("--pause", type=float, default=0.3,
                     help="Silence in seconds inserted between scenes (default 0.3). Use 0 for none.")
+    p.add_argument("--mode", choices=["historical", "gaming-lore"], default="historical",
+                    help="historical (default, this pipeline) or gaming-lore (long-form game documentaries; "
+                         "see modules/gaming/pipeline.py)")
     p.add_argument("--fps", type=int, default=30)
     p.add_argument("--format", choices=["vertical", "landscape", "both"], default="vertical",
                     help="vertical = 9:16 Shorts/Reels (default, original behavior) -> final_video.mp4; "
@@ -176,7 +179,23 @@ def find_scene_file(directory, scene_number, extensions):
     return files[0] if files else None
 
 
+def _requested_mode(argv):
+    """--mode historical (default) | gaming-lore, read before the historical parser."""
+    for i, a in enumerate(argv):
+        if a == "--mode" and i + 1 < len(argv):
+            return argv[i + 1]
+        if a.startswith("--mode="):
+            return a.split("=", 1)[1]
+    return "historical"
+
+
 def main():
+    mode = _requested_mode(sys.argv[1:])
+    if mode == "gaming-lore":
+        from modules.gaming.pipeline import main as gaming_main
+        sys.exit(gaming_main(sys.argv[1:]))
+    if mode != "historical":
+        sys.exit(f"Unknown --mode {mode!r}; use historical (default) or gaming-lore")
     load_env()
     args = parse_args()
     os.makedirs(args.project, exist_ok=True)

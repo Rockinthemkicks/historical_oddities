@@ -51,7 +51,8 @@ REFERENCE_POINTERS = [
 ]
 
 NON_GRAPHIC_FRAMES = ["non-graphic", "lighthearted", "light-hearted", "comedic",
-                      "somber", "respectful", "playful", "whimsical"]
+                      "somber", "respectful", "playful", "whimsical", "atmospheric", "moody",
+                      "documentary", "cinematic", "tense", "suspenseful"]
 
 NON_ASCII_PUNCT = re.compile("[—–“”‘’…]")
 CHAR_BLOCK = re.compile(r"^([A-Z][A-Z0-9 .'&-]{1,40}):\s+(.+)$", re.S)
@@ -97,6 +98,41 @@ def character_blocks(prompts_text):
     return blocks
 
 
+def lint_prompt(n, p, errors, warnings, style_conflicts=STYLE_CONFLICTS, intensity_level="error",
+                protected_terms=(), blocks=None):
+    """Checks one prompt; appends findings. Shared by the historical and gaming checks."""
+    def add(level, rule, detail):
+        (errors if level == "error" else warnings).append({"scene": n, "rule": rule, "detail": detail})
+
+    hits = _find(style_conflicts, p, skip_negated=True) if style_conflicts else []
+    if hits:
+        add("error", "style_conflict", f"old sepia/notebook-style words fight the locked style: {', '.join(hits)}")
+    hits = _find(INTENSITY_WORDS, p)
+    if hits:
+        add(intensity_level, "intensity_words", f"conflict/intensity words (pipeline_prompt.md): {', '.join(hits)}")
+    hits = _find(SENSITIVE_WORDS, p)
+    if hits:
+        add("warning", "sensitive_words", f"filter-sensitive words, even if negated: {', '.join(hits)}. "
+            f"Keep only if the scene literally needs them")
+    hits = _find(REFERENCE_POINTERS, p)
+    if hits:
+        add("error", "reference_pointer", f"points at something the image API never sees: {', '.join(hits)}")
+    hits = _find([t.lower() for t in protected_terms], p, skip_negated=True)
+    if hits:
+        add("error", "protected_ip", f"names protected characters/brands ({', '.join(hits)}); describe an "
+            f"original, unnamed figure or place instead")
+    if NON_ASCII_PUNCT.search(p):
+        add("error", "non_ascii", "em dash, en dash, curly quote or ellipsis character: use plain - and \" '")
+    if not _find(NON_GRAPHIC_FRAMES, p[:250]):
+        add("warning", "tone_frame", "doesn't state its tone up front (e.g. 'Lighthearted, non-graphic' "
+            "or 'Somber, respectful, non-graphic') in the first sentence")
+    if len(p) > MAX_PROMPT_CHARS:
+        add("warning", "too_long", f"{len(p)} characters; long prompts drift and cost more input tokens")
+    for label, block in (blocks or {}).items():
+        if label.lower() in p.lower() and block not in p:
+            add("error", "character_block", f"mentions {label} but doesn't include its reference block word for word")
+
+
 def lint(scenes, prompts_text, style_text=""):
     """
     Returns {"errors": [...], "warnings": [...], "passed": bool}.
@@ -131,29 +167,7 @@ def lint(scenes, prompts_text, style_text=""):
         p = effective[n]
         if not p:
             continue
-        hits = _find(STYLE_CONFLICTS, p, skip_negated=True)
-        if hits:
-            err(n, "style_conflict", f"old sepia/notebook-style words fight the locked style: {', '.join(hits)}")
-        hits = _find(INTENSITY_WORDS, p)
-        if hits:
-            err(n, "intensity_words", f"conflict/intensity words (pipeline_prompt.md): {', '.join(hits)}")
-        hits = _find(SENSITIVE_WORDS, p)
-        if hits:
-            warn(n, "sensitive_words", f"filter-sensitive words, even if negated: {', '.join(hits)}. "
-                 f"Keep only if the scene literally needs them")
-        hits = _find(REFERENCE_POINTERS, p)
-        if hits:
-            err(n, "reference_pointer", f"points at something the image API never sees: {', '.join(hits)}")
-        if NON_ASCII_PUNCT.search(p):
-            err(n, "non_ascii", "em dash, en dash, curly quote or ellipsis character: use plain - and \" '")
-        if not _find(NON_GRAPHIC_FRAMES, p[:250]):
-            warn(n, "tone_frame", "doesn't state its tone up front (e.g. 'Lighthearted, non-graphic' "
-                 "or 'Somber, respectful, non-graphic') in the first sentence")
-        if len(p) > MAX_PROMPT_CHARS:
-            warn(n, "too_long", f"{len(p)} characters; long prompts drift and cost more input tokens")
-        for label, block in blocks.items():
-            if label.lower() in p.lower() and block not in p:
-                err(n, "character_block", f"mentions {label} but doesn't include its reference block word for word")
+        lint_prompt(n, p, errors, warnings, blocks=blocks)
 
     if style_text:
         hits = _find(STYLE_CONFLICTS, style_text, skip_negated=True)

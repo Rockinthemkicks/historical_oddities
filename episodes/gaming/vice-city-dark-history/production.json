@@ -1,0 +1,22 @@
+{
+  "mode": "gaming-lore",
+  "title": "The Dark History of Vice City",
+  "franchise": "gta",
+  "games": [
+    "gtavc",
+    "gtavcs",
+    "gta6"
+  ],
+  "continuity": [
+    "3D",
+    "HD"
+  ],
+  "documentary_format": "fictional investigative history",
+  "target_minutes": [
+    20,
+    25
+  ],
+  "spoiler_level": "light",
+  "description": "",
+  "overrides": {}
+}

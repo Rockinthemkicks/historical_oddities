@@ -27,6 +27,13 @@ Full requirements: `docs/PROJECT_BRIEF.md`. Current state and risks: `docs/AUDIT
 - The repo is public by the owner's choice; that makes the no-secrets rule even more important.
 - Publishing always needs the owner's explicit authorization.
 
+- Gaming-lore mode (owner brief, 2026-11-23; see docs/GAMING_LORE.md): `--mode gaming-lore` runs a
+  separate, approval-gated pipeline in modules/gaming/. Historical mode stays the default and unchanged.
+  Never fabricate sources, claims or game events; missing evidence is flagged, never filled in. Never
+  download footage, music or art; the owner supplies it with rights in assets/provenance.json. Image
+  prompts must not name protected characters, brands or logos (franchise protected_terms). Keep
+  continuities (e.g. GTA 2D/3D/HD) separate, and verify release info instead of hardcoding it.
+
 ## Commands
 - Tests: `pip install -r requirements.txt -r requirements-dev.txt && pytest -q` (needs ffmpeg)
 - Assemble from your own files:
@@ -34,6 +41,8 @@ Full requirements: `docs/PROJECT_BRIEF.md`. Current state and risks: `docs/AUDIT
 - Image cost estimate (free): add `--prompts-file batch_prompts.txt --estimate-only`
 - Motion: add `--motion kenburns` (default `none` keeps the original static look);
   rendering is per-scene and cached in `<project>/render_cache/`; `--legacy-render` = old path.
+- Gaming dry run (free, offline): `python3 main.py --mode gaming-lore --production tests/fixtures/gaming_synthetic/production.json <command> --dry-run`
+  (work on a copy; it writes outputs next to production.json)
 - QC an existing video: `python3 -m modules.qc out/x/final_video.mp4 --size 1080x1920`
 
 ## Layout

@@ -42,6 +42,26 @@ def _sha_file(path):
     return h.hexdigest()
 
 
+VIDEO_EXTS = (".mp4", ".mov", ".m4v", ".mkv", ".webm")
+
+
+def as_segment(seg):
+    """A scene segment is an image path (original behavior) or a dict
+    {"path", "type": "image"|"video", "motion": optional per-segment override}."""
+    if isinstance(seg, dict):
+        path = seg["path"]
+        kind = seg.get("type") or ("video" if path.lower().endswith(VIDEO_EXTS) else "image")
+        return {"path": path, "type": kind, "motion": seg.get("motion")}
+    kind = "video" if str(seg).lower().endswith(VIDEO_EXTS) else "image"
+    return {"path": seg, "type": kind, "motion": None}
+
+
+def _segment_motion(seg, index, mode):
+    if seg["type"] == "video":
+        return "none"
+    return motion_for(index, seg["motion"]) if seg["motion"] else motion_for(index, mode)
+
+
 def motion_for(index, mode):
     """mode: 'none' | 'kenburns' (cycles through MOTIONS) | one of MOTIONS."""
     if mode in (None, "none"):
@@ -84,6 +104,13 @@ def _segment_filter(label_in, label_out, box_w, box_h, frames, fps, motion):
             f"trim=end_frame={frames},setpts=PTS-STARTPTS[{label_out}]")
 
 
+def _video_filter(label_in, label_out, box_w, box_h, frames, fps):
+    """User footage: fill the box, conform frame rate, loop if short (input is
+    -stream_loop'ed), cut to exactly `frames`. Its own audio is never used."""
+    return (f"[{label_in}]scale={box_w}:{box_h}:force_original_aspect_ratio=increase,"
+            f"crop={box_w}:{box_h},fps={fps},setsar=1,trim=end_frame={frames},setpts=PTS-STARTPTS[{label_out}]")
+
+
 def frame_plan(scene_durations, fps):
     """Whole-frame counts per scene that add up exactly to round(total*fps)."""
     frames, cum, prev = [], 0.0, 0
@@ -99,21 +126,27 @@ def render_scene_clip(segments, frames, out_path, size, fps, motion_index, motio
                       captions=None, title_image=None, bottom_margin_frac=0.18,
                       image_aspect=(16, 9), crf=20, preset="veryfast"):
     """
-    segments: list of image paths shown in order within this scene (split evenly).
+    segments: images and/or video clips shown in order within this scene (split
+        evenly); each an image path or a dict, see as_segment().
     frames: total frames for the scene.
     captions: list of {"start", "end", "path", "height"} with times RELATIVE to the scene.
     Writes a silent H.264 clip of exactly `frames` frames.
     """
     w, h = size
     box_w, box_h, pad_y = _box(size, image_aspect)
+    segments = [as_segment(x) for x in segments]
     n = len(segments)
     seg_frames = [frames // n + (1 if i < frames % n else 0) for i in range(n)]
 
     inputs, filters = [], []
-    for i, path in enumerate(segments):
-        inputs += ["-loop", "1", "-framerate", str(fps), "-i", path]
-        filters.append(_segment_filter(f"{i}:v", f"s{i}", box_w, box_h, seg_frames[i], fps,
-                                       motion_for(motion_index + i, motion_mode)))
+    for i, seg in enumerate(segments):
+        if seg["type"] == "video":
+            inputs += ["-stream_loop", "-1", "-i", seg["path"]]
+            filters.append(_video_filter(f"{i}:v", f"s{i}", box_w, box_h, seg_frames[i], fps))
+        else:
+            inputs += ["-loop", "1", "-framerate", str(fps), "-i", seg["path"]]
+            filters.append(_segment_filter(f"{i}:v", f"s{i}", box_w, box_h, seg_frames[i], fps,
+                                           _segment_motion(seg, motion_index + i, motion_mode)))
     if n > 1:
         filters.append("".join(f"[s{i}]" for i in range(n)) + f"concat=n={n}:v=1:a=0[img]")
     else:
@@ -155,8 +188,9 @@ def _clip_key(segments, frames, size, fps, motion_index, motion_mode, captions, 
               bottom_margin_frac, image_aspect, crf, preset):
     payload = {
         "v": RENDER_VERSION, "frames": frames, "size": list(size), "fps": fps,
-        "motions": [motion_for(motion_index + i, motion_mode) for i in range(len(segments))],
-        "images": [_sha_file(p) for p in segments],
+        "motions": [_segment_motion(as_segment(x), motion_index + i, motion_mode)
+                    for i, x in enumerate(segments)],
+        "images": [[as_segment(x)["type"], _sha_file(as_segment(x)["path"])] for x in segments],
         "captions": [[round(c["start"], 3), round(c["end"], 3), _sha_file(c["path"])]
                      for c in (captions or [])],
         "title": _sha_file(title_image["path"]) if title_image else None,
@@ -179,12 +213,16 @@ def split_captions(caption_images, scene_starts, scene_ends):
 
 def render_episode(scenes, audio_path, caption_images, out_path, cache_dir, size=(1080, 1920),
                    fps=30, title_image=None, bottom_margin_frac=0.18, motion="none",
-                   image_aspect=(16, 9), crf=20, preset="veryfast"):
+                   image_aspect=(16, 9), crf=20, preset="veryfast", ambient=None):
     """
-    scenes: list of {"image_paths": [...], "duration": seconds} in order.
+    scenes: list of {"image_paths": [...], "duration": seconds} in order
+        (image_paths entries may also be video clips, see as_segment()).
     caption_images: as from modules.caption_images.render_all_captions (absolute times).
+    ambient: optional {"path": licensed audio bed, "gain_db": -26}; looped under
+        the narration and ducked automatically while the narrator speaks.
     Renders/reuses one clip per scene in cache_dir, joins them, adds audio.
-    Returns {"path", "rendered": [scene indexes re-rendered], "reused": [...]}.
+    Returns {"path", "rendered", "reused", "scene_starts", "scene_ends", "fps"};
+    scene times are the actual rendered times (whole frames), for chapter markers.
     """
     os.makedirs(cache_dir, exist_ok=True)
     durations = [s["duration"] for s in scenes]
@@ -221,11 +259,24 @@ def render_episode(scenes, audio_path, caption_images, out_path, cache_dir, size
         list_path = f.name
     tmp = out_path + ".part.mp4"
     try:
-        run_ffmpeg(["-f", "concat", "-safe", "0", "-i", list_path, "-i", audio_path,
-                    "-map", "0:v", "-map", "1:a", "-c:v", "copy",
-                    "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", "-shortest", tmp],
-                   description="join scene clips + audio")
+        if ambient:
+            gain = ambient.get("gain_db", -26)
+            run_ffmpeg(["-f", "concat", "-safe", "0", "-i", list_path, "-i", audio_path,
+                        "-stream_loop", "-1", "-i", ambient["path"],
+                        "-filter_complex",
+                        f"[2:a]volume={gain}dB,aresample=48000[bed];[1:a]aresample=48000,asplit=2[nar][key];"
+                        f"[bed][key]sidechaincompress=threshold=0.02:ratio=6:attack=20:release=400[duck];"
+                        f"[nar][duck]amix=inputs=2:duration=first:normalize=0[aout]",
+                        "-map", "0:v", "-map", "[aout]", "-c:v", "copy",
+                        "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", "-shortest", tmp],
+                       description="join scene clips + narration + ambient bed")
+        else:
+            run_ffmpeg(["-f", "concat", "-safe", "0", "-i", list_path, "-i", audio_path,
+                        "-map", "0:v", "-map", "1:a", "-c:v", "copy",
+                        "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", "-shortest", tmp],
+                       description="join scene clips + audio")
     finally:
         os.unlink(list_path)
     os.replace(tmp, out_path)
-    return {"path": out_path, "rendered": rendered, "reused": reused}
+    return {"path": out_path, "rendered": rendered, "reused": reused,
+            "scene_starts": starts, "scene_ends": ends, "fps": fps}
