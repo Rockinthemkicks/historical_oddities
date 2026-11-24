@@ -27,6 +27,9 @@ Full requirements: `docs/PROJECT_BRIEF.md`. Current state and risks: `docs/AUDIT
 - The repo is public by the owner's choice; that makes the no-secrets rule even more important.
 - Publishing always needs the owner's explicit authorization.
 
+- Channel focus (owner decision, 2026-11-23): the long-form gaming-lore channel is the priority.
+  Historical Oddities is on hold (the Kentucky Meat Shower demo, #5, is paused, not cancelled);
+  keep historical mode working, but don't build new historical features unless asked.
 - Gaming-lore mode (owner brief, 2026-11-23; see docs/GAMING_LORE.md): `--mode gaming-lore` runs a
   separate, approval-gated pipeline in modules/gaming/. Historical mode stays the default and unchanged.
   Never fabricate sources, claims or game events; missing evidence is flagged, never filled in. Never
