@@ -4,12 +4,12 @@ Thesis: Vice City was not corrupted by Tommy Vercetti. He inherited an existing 
 
 ## Readiness
 
-- Structural validation: PASSED (0 error(s), 10 warning(s))
-- Factual verification: NOT COMPLETE (verified 0, corroborated 4, single-family 26, unsupported 12, disputed 1; 15 claim(s) need attention)
+- Structural validation: PASSED (0 error(s), 9 warning(s))
+- Factual verification: NOT COMPLETE (verified 0, corroborated 5, single-family 26, unsupported 11, disputed 1; 14 claim(s) need attention)
 - Editorial approval: NOT GIVEN
 - Production approval: NOT GIVEN
 
-Stats: {'sources': 47, 'claims': 43, 'confirmed_canon': 31, 'interpretation': 6, 'fan_theory': 1, 'speculation': 1, 'real_world_fact': 4}
+Stats: {'sources': 53, 'claims': 43, 'confirmed_canon': 31, 'interpretation': 6, 'fan_theory': 1, 'speculation': 1, 'real_world_fact': 4}
 
 ## Real-world facts
 
@@ -81,11 +81,11 @@ Stats: {'sources': 47, 'claims': 43, 'confirmed_canon': 31, 'interpretation': 6,
 - **C33** [3D, spoiler: minor, standing: MATCHED] Retired colonel Juan Garcia Cortez helped set up the 1986 exchange; the VCS wiki attributes this to Ken Rosenberg ('apparently').  
   Evidence: S35 [game] discovered; S11 [fan_wiki] matched: Cortez is a retired colonel who helped set up the deal.; S12 [fan_wiki] matched: The Forelli deal was set up 'apparently with the help of Colonel Cortez according to Ken Rosenberg'.; S32 [encyclopedia] discovered  
   Note: The earlier detail that Cortez promises to find who was behind the ambush is NOT on S11 (re-read); removed until checked in-game (S35).
-- **C34** [3D, spoiler: minor, standing: MATCHED, risk: high] Cortez has Tommy kill Gonzalez, a former associate blamed for the deal going wrong; wiki accounts say Gonzalez had leaked the deal to Diaz.  
-  Evidence: S35 [game] discovered; S11 [fan_wiki] matched: Cortez has Tommy kill Gonzalez, a former right-hand man responsible for botching the deal.; S34 [fan_wiki] discovered  
-  Note: The leak detail rests on one wiki (S34); narrate it as 'reportedly' unless confirmed in-game.
+- **C34** [3D, spoiler: minor, standing: CORROBORATED, risk: high] Cortez tells Tommy that his right-hand man Gonzalez gave away information about the deal, and has Tommy kill him ('Treacherous Swine'). Who received the leak is implied to be Diaz but never stated outright.  
+  Evidence: S35 [game] discovered; S11 [fan_wiki] matched: Cortez has Tommy kill Gonzalez, a former right-hand man responsible for botching the deal.; S51 [fan_wiki] matched: Mission brief: Gonzalez gave away vital information about Tommy's deal to someone, and that someone organized the ambush.; S52 [fan_wiki] matched: Gonzalez is killed for his involvement in the opening drug deal and for betraying Cortez.; S53 [community] matched: The culprit is implied to be Gonzalez and Diaz but never outright confirmed; VCS shows Diaz blackmailing Gonzalez two years earlier.  
+  Note: Explicit vs implied: the mission names Gonzalez as the leak; Diaz as the recipient is inference (Vice City Stories shows Diaz blackmailing Gonzalez in 1984, two years earlier).
 - **C35** [3D, spoiler: minor, standing: MATCHED] Real-estate developer Avery Carrington has Tommy, disguised as a Cuban gang member, kill the new Haitian ganglord at a funeral, starting a gang war to drive down property prices.  
-  Evidence: S36 [game] discovered; S30 [fan_wiki] discovered; S31 [fan_wiki] discovered; S33 [fan_wiki] discovered; S11 [fan_wiki] matched: Carrington is a property developer who gives Tommy work (no funeral or gang war on this page).  
+  Evidence: S36 [game] discovered; S30 [fan_wiki] discovered; S31 [fan_wiki] discovered; S33 [fan_wiki] discovered; S11 [fan_wiki] matched: Carrington is a property developer who gives Tommy work (no funeral or gang war on this page).; S48 [fan_wiki] matched: Avery has Tommy dress as a Cuban and attack a Haitian funeral so the Haitians blame the Cubans.; S49 [fan_wiki] matched: Tommy ambushes a Haitian gang funeral disguised as a Cuban, sparking a Cuban-Haitian gang war.  
   Note: S11 (re-read) does not mention the funeral, gang war or property prices. This rests on unopened pages (S30, S31) and the unchecked mission (S36).
 - **C38** [3D, spoiler: major, standing: MATCHED] Vice City Stories ends with 'Last Stand': Vic attacks the Mendez Building and kills Diego Mendez and Jerry Martinez on the roof, after stealing an attack helicopter from Fort Baxter in 'Over the Top'.  
   Evidence: S05 [game] discovered; S39 [fan_wiki] matched: Objectives: fly to the Mendez building, take out the guards, take out Mendez and Martinez.; S40 [fan_wiki] matched: Climax of VCS, given by Diaz; Victor kills both Diego and Martinez.; S12 [fan_wiki] matched: Final confrontation on the Mendez Building rooftop; Vic kills Diego and Martinez.
@@ -104,8 +104,9 @@ Stats: {'sources': 47, 'claims': 43, 'confirmed_canon': 31, 'interpretation': 6,
   Evidence: S18 [community] discovered; S10 [encyclopedia] discovered; S11 [fan_wiki] matched: Tommy is sent to profit from the city's growing drug trade.
 - **C25** [3D, spoiler: major, standing: MATCHED] Lance's betrayal grew out of feeling underappreciated and sidelined in Tommy's rise; in the game he only calls it business.  
   Evidence: S11 [fan_wiki] matched: Lance begins to feel under-appreciated, causing a rift.; S21 [press] discovered; S29 [fan_wiki] matched: Lance gives no personal motive in the scene: 'This is business.'
-- **C36** [3D, spoiler: minor, standing: UNSUPPORTED, risk: high] Vice City's 1986 property boom was built in part on deliberately started gang violence.  
-  Evidence: S30 [fan_wiki] discovered; S31 [fan_wiki] discovered
+- **C36** [3D, spoiler: minor, standing: MATCHED, risk: high] Vice City's 1986 property boom was built in part on deliberately started gang violence.  
+  Evidence: S30 [fan_wiki] discovered; S31 [fan_wiki] discovered; S50 [fan_wiki] matched: Avery's briefing: nothing brings real-estate prices down faster than a gang war.; S48 [fan_wiki] matched: Avery frames the gang war as a business opportunity, with his protege Donald Love listening.  
+  Note: Now supported by Avery's own briefing in 'Two Bit Hit' (as quoted by fan wikis). The interpretation (the boom was built on violence) is ours; the motive (lower property prices via gang war) is explicit dialogue.
 - **C37** [3D, spoiler: major, standing: MATCHED] Wiki accounts treat Sonny's earlier Harwood setup as fact; the game itself only implies it.  
   Evidence: S11 [fan_wiki] matched: Page states Sonny 'set Tommy up' and made him serve 15 years.; S29 [fan_wiki] matched: In the dialogue Sonny only deflects; nothing is admitted.
 - **C42** [3D, spoiler: major, standing: CORROBORATED, risk: high] Before Tommy arrives, the people meant to police Vice City's drug trade are inside it: an Army sergeant moving cartel cocaine, an undercover federal agent selling deal information, and a retired colonel helping broker the 1986 exchange.  
@@ -195,9 +196,9 @@ Stats: {'sources': 47, 'claims': 43, 'confirmed_canon': 31, 'interpretation': 6,
   Note: Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.
 - **S34** (secondary, fan_wiki) GTA Wiki (gta.wiki) - Ricardo Diaz's Hitmen: https://gta.wiki/w/Ricardo_Diaz%27s_Hitmen (UNVERIFIED)  
   Note: Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.
-- **S35** (primary_game, game) GTA: Vice City - Colonel Cortez missions ('The Party' onward): Vice City: 'The Party' (Cortez's yacht) and Cortez's early missions incl. the Gonzalez job (UNVERIFIED)  
+- **S35** (primary_game, game) GTA: Vice City - Colonel Cortez missions ('The Party' onward): Vice City mission 'Treacherous Swine' (Cortez's yacht briefing) (UNVERIFIED)  
   Note: Not checked in-game yet. Locator from wiki mission pages.
-- **S36** (primary_game, game) GTA: Vice City - Avery Carrington missions (funeral mission): Vice City: Avery Carrington's missions; the funeral/ganglord mission (exact name to confirm) (UNVERIFIED)  
+- **S36** (primary_game, game) GTA: Vice City - Avery Carrington mission 'Two Bit Hit': Vice City mission 'Two Bit Hit' (Avery's briefing at his construction site) (UNVERIFIED)  
   Note: Not checked in-game yet. Mission name unconfirmed.
 - **S37** (official, official) Rockstar Newswire - 'Grand Theft Auto VI Now Available' (Nov 19, 2026): https://www.rockstargames.com/newswire/article/39akk424a9oo53/grand-theft-auto-vi-now-available (READ BY ASSISTANT, not human-verified)  
   Note: URL supplied by the owner's editorial review. The Newswire page itself could not be opened from Claude's tools; the same Rockstar release was read via its Business Wire distribution (finviz.com/news/425095, dated Nov 19, 2026 6:00 AM). A human should open the Newswire page.
@@ -221,6 +222,18 @@ Stats: {'sources': 47, 'claims': 43, 'confirmed_canon': 31, 'interpretation': 6,
   Note: Read as a search-result excerpt.
 - **S47** (secondary, press) FOX 5 DC - GTA VI estimated $1.84 billion by release day (Sensor Tower): https://www.fox5dc.com/news/gta-vi-pulls-estimated-1-84-billion-release-day-more-than-double-gta-vs-launch-record (READ BY ASSISTANT, not human-verified)  
   Note: Read as a search-result excerpt. Third-party estimate, different method from Take-Two.
+- **S48** (secondary, fan_wiki) Grand Theft Wiki - 'Two Bit Hit': https://www.grandtheftwiki.com/Two_Bit_Hit (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt.
+- **S49** (secondary, fan_wiki) GTABase - 'Two Bit Hit': https://www.gtabase.com/gta-vice-city/missions/two-bit-hit (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt.
+- **S50** (secondary, fan_wiki) Grand Theft Wiki - 'Two Bit Hit' walkthrough (quotes Avery's briefing): https://www.grandtheftwiki.com/Two_Bit_Hit/Walkthrough (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt.
+- **S51** (secondary, fan_wiki) Grand Theft Wiki - 'Treacherous Swine' walkthrough: https://www.grandtheftwiki.com/Treacherous_Swine/Walkthrough (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt.
+- **S52** (secondary, fan_wiki) GTA Wiki (gta.wiki) - 'Treacherous Swine': https://gta.wiki/w/Treacherous_Swine (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt.
+- **S53** (community, community) TV Tropes - GTA Vice City (main page and YMMV): https://tvtropes.org/pmwiki/pmwiki.php/YMMV/GrandTheftAutoViceCity (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt.
 
 ## Claims needing attention before scripting
 
@@ -236,15 +249,13 @@ Stats: {'sources': 47, 'claims': 43, 'confirmed_canon': 31, 'interpretation': 6,
 - C28: no supporting passage matched yet
 - C29: no supporting passage matched yet
 - C32: high-risk claim without independent or primary support
-- C34: high-risk claim without independent or primary support
-- C36: no supporting passage matched yet
+- C36: high-risk claim without independent or primary support
 - C40: evidence conflicts
 
 ## Flags for review
 
-- [WARNING] dossier: open_question: Verify every primary_game locator by watching the cutscene or mission (or a full transcript). Priority: S03 for C24, S05/S45 for C32 and C39-C41, S35 for C33/C34, S36 for C35.
+- [WARNING] dossier: open_question: The owner can't capture gameplay. Human check option: watch the cutscenes in a published playthrough on YouTube (viewing only, nothing downloaded) and note timestamps for S03 (C24), S05 (C32/C38), S35 (C34), S36 (C35/C36) and the Forbes missions (C40).
 - [WARNING] dossier: open_question: Bryan Forbes's agency: DEA (most wikis), VCPD detective (VCS Fandom page) or FBI (official-site news item, reportedly). Needs the in-game line (C40).
-- [WARNING] dossier: open_question: C36/C35: open the Avery Carrington and gang-war pages and check the funeral mission in-game; the main Vice City wiki page says nothing about it.
 - [WARNING] dossier: open_question: C13: is there in-game support for the Mendez brothers posing as philanthropists, beyond the "Mendez Foundation" building name?
 - [WARNING] dossier: open_question: C17/C43: find a source for Diaz building his empire between 1984 and 1986.
 - [WARNING] dossier: open_question: Institutional corruption in 1986 (VCPD, politicians such as Alex Shrub, Tommy's 'legitimate' fronts like the Print Works): not researched in this pass; the main Vice City wiki page doesn't cover them.

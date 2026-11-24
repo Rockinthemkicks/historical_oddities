@@ -137,7 +137,7 @@ def test_pilot_dossier_is_structurally_valid_but_not_factually_verified():
     assert not rep["factually_verified"]               # structure passing never implies facts are checked
     assert rep["readiness_counts"]["verified"] == 0    # nothing checked in-game or by a human yet
     flagged = {e["claim"] for e in rep["escalate"]}
-    assert {"C24", "C32", "C34", "C36"} <= flagged     # the review's priority claims stay flagged
+    assert {"C24", "C32", "C36"} <= flagged            # still need a human or in-game check
     assert rep["readiness"]["C40"] == "disputed"       # Forbes's agency: sources disagree
     assert rep["readiness"]["C01"] == rep["readiness"]["C02"] == "corroborated"  # official sources
     fan = [c for c in d["claims"] if c["status"] == "fan_theory"]

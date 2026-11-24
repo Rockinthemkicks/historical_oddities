@@ -5,19 +5,13 @@
       "level": "warning",
       "where": "dossier",
       "rule": "open_question",
-      "detail": "Verify every primary_game locator by watching the cutscene or mission (or a full transcript). Priority: S03 for C24, S05/S45 for C32 and C39-C41, S35 for C33/C34, S36 for C35."
+      "detail": "The owner can't capture gameplay. Human check option: watch the cutscenes in a published playthrough on YouTube (viewing only, nothing downloaded) and note timestamps for S03 (C24), S05 (C32/C38), S35 (C34), S36 (C35/C36) and the Forbes missions (C40)."
     },
     {
       "level": "warning",
       "where": "dossier",
       "rule": "open_question",
       "detail": "Bryan Forbes's agency: DEA (most wikis), VCPD detective (VCS Fandom page) or FBI (official-site news item, reportedly). Needs the in-game line (C40)."
-    },
-    {
-      "level": "warning",
-      "where": "dossier",
-      "rule": "open_question",
-      "detail": "C36/C35: open the Avery Carrington and gang-war pages and check the funeral mission in-game; the main Vice City wiki page says nothing about it."
     },
     {
       "level": "warning",
@@ -99,9 +93,9 @@
     "C31": "matched",
     "C32": "matched",
     "C33": "matched",
-    "C34": "matched",
+    "C34": "corroborated",
     "C35": "matched",
-    "C36": "unsupported",
+    "C36": "matched",
     "C37": "matched",
     "C38": "matched",
     "C39": "corroborated",
@@ -112,9 +106,9 @@
   },
   "readiness_counts": {
     "verified": 0,
-    "corroborated": 4,
+    "corroborated": 5,
     "matched": 26,
-    "unsupported": 12,
+    "unsupported": 11,
     "disputed": 1
   },
   "escalate": [
@@ -167,12 +161,8 @@
       "reason": "high-risk claim without independent or primary support"
     },
     {
-      "claim": "C34",
-      "reason": "high-risk claim without independent or primary support"
-    },
-    {
       "claim": "C36",
-      "reason": "no supporting passage matched yet"
+      "reason": "high-risk claim without independent or primary support"
     },
     {
       "claim": "C40",
@@ -180,7 +170,7 @@
     }
   ],
   "stats": {
-    "sources": 47,
+    "sources": 53,
     "claims": 43,
     "confirmed_canon": 31,
     "interpretation": 6,

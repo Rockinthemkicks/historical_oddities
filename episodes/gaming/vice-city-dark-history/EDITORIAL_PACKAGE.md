@@ -11,8 +11,8 @@ Target: 12-16 minutes (about 2,060 words at 140 wpm, about 14.7 min).
 
 | Level | State |
 |---|---|
-| Structural validation | **PASSED** (0 errors; 10 warnings, all open research questions) |
-| Factual verification | **NOT COMPLETE**: verified 0, corroborated 4, single-family 26, unsupported 12, disputed 1 (of 43) |
+| Structural validation | **PASSED** (0 errors; 9 warnings, all open research questions) |
+| Factual verification | **NOT COMPLETE**: verified 0, corroborated 5, single-family 26, unsupported 11, disputed 1 (of 43) |
 | Editorial approval | **NOT GIVEN** |
 | Production approval | **NOT GIVEN** |
 
@@ -98,9 +98,9 @@ Note: "corroborated" for story claims still means fan wikis plus TV Tropes or pr
 | C31 | confirmed canon | 3D | **matched** | ch03 | S12 (fan_wiki, matched) | Confirm in-game before final script. |
 | C32 | confirmed canon | 3D | **matched** / risk high | ch06 | S12 (fan_wiki, matched) | Watch the VCS ending (S05). Until then: "the game suggests". |
 | C33 | confirmed canon | 3D | **matched** | ch06 | S11 (fan_wiki, matched); S12 (fan_wiki, matched) | Confirm in-game before final script. |
-| C34 | confirmed canon | 3D | **matched** / risk high | ch06 | S11 (fan_wiki, matched) | In-game Gonzalez mission (S35); keep the leak detail as "reportedly". |
-| C35 | confirmed canon | 3D | **matched** | ch07 | S11 (fan_wiki, matched) | Same as C36. |
-| C36 | interpretation | 3D | **unsupported** / risk high | ch07 | none matched (S30 discovered, S31 discovered) | Open S30/S31 and play the funeral mission (S36). Cut from ch07 if unconfirmed. |
+| C34 | confirmed canon | 3D | **corroborated** / risk high | ch06 | S11, S51, S52 (fan_wiki, matched); S53 (community, matched) | 'Treacherous Swine': Gonzalez is named as the leak. Diaz as the recipient is implied only; say so. |
+| C35 | confirmed canon | 3D | **matched** | ch07 | S11, S48, S49 (fan_wiki, matched) | 'Two Bit Hit'. Watch the briefing cutscene. |
+| C36 | interpretation | 3D | **matched** / risk high | ch07 | S48, S50 (fan_wiki, matched) | Avery's briefing states the motive (a gang war lowers property prices). 'Built on violence' is our reading; label it as such. |
 | C37 | interpretation | 3D | **matched** | ch08 | S11 (fan_wiki, matched); S29 (fan_wiki, matched) | Confirm in-game before final script. |
 | C38 | confirmed canon | 3D | **matched** | ch05 | S39 (fan_wiki, matched); S40 (fan_wiki, matched); S12 (fan_wiki, matched) | Confirm in-game before final script. |
 | C39 | confirmed canon | 3D | **corroborated** / risk high | ch04 | S41 (fan_wiki, matched); S42 (fan_wiki, matched); S26 (community, matched) | Confirm in-game before final script. |
@@ -112,23 +112,23 @@ Note: "corroborated" for story claims still means fan wikis plus TV Tropes or pr
 **Priority claims from the review:**
 - **C24 (finale/Harwood):** matched to a fan transcript only. It's dialogue, and the setup is *implied*. Needs the cutscene.
 - **C32 (Lance pulls Vic back in):** matched on one fan wiki only, which doesn't date the deal or say Vic left town. Needs the VCS ending.
-- **C34 (Gonzalez):** the killing is matched. The "leaked to Diaz" detail rests on one unopened wiki page, so narrate it as "reportedly" or cut it.
-- **C36 (property boom built on violence):** **unsupported**. The main Vice City wiki page has no funeral, gang war or property-price story, so it depends on unopened pages and an in-game check. If that check doesn't happen, ch07 drops it.
+- **C34 (Gonzalez):** updated Nov 24. In "Treacherous Swine", Cortez names Gonzalez as the man who leaked the deal. That Diaz received the leak is only implied (Vice City Stories shows Diaz blackmailing Gonzalez in 1984), so the script must say "implied".
+- **C36 (property boom built on violence):** updated Nov 24. Avery's own briefing in "Two Bit Hit" gives the motive: start a Cuban-Haitian gang war at a funeral to drive property prices down. The motive is explicit dialogue; "the boom was built on violence" is our interpretation and is labelled that way.
 
 ## 3. Questions for the owner
 
-1. **In-game checks.** Can you (or someone) watch or play these and note timestamps?
+1. **Human check (no game needed).** You can't capture gameplay, so the pilot is illustration-only. Would you watch these cutscenes in any published playthrough on YouTube and note the timestamps? Viewing only; nothing is downloaded. About 15 minutes in total:
    - VC "Keep Your Friends Close..." (C24)
-   - The VCS ending after "Last Stand" (C32, C38)
-   - Cortez's Gonzalez mission (C34)
-   - Avery's funeral mission (C35, C36)
-   - Forbes's missions, to settle his agency (C40)
+   - The VCS ending, "Last Stand" (C32, C38)
+   - VC "Treacherous Swine" (C34)
+   - VC "Two Bit Hit" (C35, C36)
+   - A Forbes mission, to settle his agency (C40)
 
-   If you capture them yourself, that also gives us cleared footage.
-2. **Copies.** Do you own Vice City (any edition) and Vice City Stories, so we can capture footage?
+   If you'd rather not, these claims stay at "transcript-matched" and the script hedges them.
+2. **Footage.** Decided: none. The owner doesn't have the games, so the pilot is illustration-only (also the lowest monetization risk).
 3. **Thesis and outline.** Do you approve the thesis, the 12-16 minute target and the chapter outline below?
 4. **Title.** Which title and thumbnail concept (section 5)?
-5. **Footage.** For the pilot, illustration-only (lowest risk), or include short clips you capture yourself (muted game audio)?
+5. **Thumbnail.** Which concept from section 5?
 6. **Forbes.** If his agency can't be confirmed, is "an undercover agent" acceptable wording?
 7. **1986 corruption.** Do you want another research pass on 1986 corruption (VCPD, politicians, Tommy's fronts)? Or keep the thesis built on 1984 plus Cortez and Avery?
 8. **Budget.** Do you approve an episode spending limit of $15 for the pilot (section 7)?
@@ -176,7 +176,7 @@ About 74 visual beats at ~12 s each.
 | Relationship diagrams (who worked for whom; Forbes and Martinez's ID) | ~6 | Rendered locally | Ours | Free |
 | Stylised maps (Fort Baxter, downtown, Starfish Island) | ~5 | Original drawing, not traced from game maps | Ours | Free or cheap |
 | Evidence boards and on-screen sources | ~4 | Rendered locally; sources cited on screen | Ours | Free |
-| Gameplay clips (optional) | 0-10 short | **Only** footage you capture, logged in `assets/provenance.json` | Rockstar policy: non-commercial, removable at any time; ad revenue is at risk | Free |
+| Gameplay clips | **0 (decided Nov 24)** | **Only** footage you capture, logged in `assets/provenance.json` | Rockstar policy: non-commercial, removable at any time; ad revenue is at risk | Free |
 | Music | bed only | Licensed library or owner-supplied, logged | No game music or radio (Content ID claims) | Free or licence |
 
 **Rules carried into production:**
