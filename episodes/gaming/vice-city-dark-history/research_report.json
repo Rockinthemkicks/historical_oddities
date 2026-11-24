@@ -23,37 +23,13 @@
       "level": "warning",
       "where": "dossier",
       "rule": "open_question",
-      "detail": "C17/C43: find a source for Diaz building his empire between 1984 and 1986."
-    },
-    {
-      "level": "warning",
-      "where": "dossier",
-      "rule": "open_question",
-      "detail": "Institutional corruption in 1986 (VCPD, politicians such as Alex Shrub, Tommy's 'legitimate' fronts like the Print Works): not researched in this pass; the main Vice City wiki page doesn't cover them."
-    },
-    {
-      "level": "warning",
-      "where": "dossier",
-      "rule": "open_question",
       "detail": "Possible extra thread: a Vice City hitman reportedly works for an unexplained 'Mr. Black' (gta.wiki 'Ricardo Diaz's Hitmen'). Research before using it."
     },
     {
       "level": "warning",
       "where": "dossier",
       "rule": "open_question",
-      "detail": "GTA VI: setting-level only. Open rockstargames.com/VI to confirm C05-C07 wording; no story spoilers."
-    },
-    {
-      "level": "warning",
-      "where": "dossier",
-      "rule": "open_question",
       "detail": "Rights: decide on gameplay footage. Rockstar's posting policy covers occasional non-commercial use only."
-    },
-    {
-      "level": "warning",
-      "where": "dossier",
-      "rule": "open_question",
-      "detail": "Vice City Stories: do Vic and Lance leave Vice City after 1984? (one wiki lists Panama 1984-1986; S12 does not say). Not used."
     }
   ],
   "passed": true,
@@ -62,11 +38,11 @@
   "readiness": {
     "C01": "corroborated",
     "C02": "corroborated",
-    "C03": "unsupported",
-    "C04": "unsupported",
-    "C05": "unsupported",
-    "C06": "unsupported",
-    "C07": "unsupported",
+    "C03": "corroborated",
+    "C04": "corroborated",
+    "C05": "corroborated",
+    "C06": "corroborated",
+    "C07": "corroborated",
     "C08": "matched",
     "C09": "matched",
     "C10": "matched",
@@ -102,36 +78,22 @@
     "C40": "disputed",
     "C41": "matched",
     "C42": "corroborated",
-    "C43": "matched"
+    "C43": "matched",
+    "C44": "corroborated",
+    "C45": "matched",
+    "C46": "matched",
+    "C47": "matched",
+    "C48": "matched",
+    "C49": "matched"
   },
   "readiness_counts": {
     "verified": 0,
-    "corroborated": 5,
-    "matched": 26,
-    "unsupported": 11,
+    "corroborated": 11,
+    "matched": 31,
+    "unsupported": 6,
     "disputed": 1
   },
   "escalate": [
-    {
-      "claim": "C03",
-      "reason": "no supporting passage matched yet"
-    },
-    {
-      "claim": "C04",
-      "reason": "no supporting passage matched yet"
-    },
-    {
-      "claim": "C05",
-      "reason": "no supporting passage matched yet"
-    },
-    {
-      "claim": "C06",
-      "reason": "no supporting passage matched yet"
-    },
-    {
-      "claim": "C07",
-      "reason": "no supporting passage matched yet"
-    },
     {
       "claim": "C17",
       "reason": "no supporting passage matched yet"
@@ -170,9 +132,9 @@
     }
   ],
   "stats": {
-    "sources": 53,
-    "claims": 43,
-    "confirmed_canon": 31,
+    "sources": 69,
+    "claims": 49,
+    "confirmed_canon": 37,
     "interpretation": 6,
     "fan_theory": 1,
     "speculation": 1,

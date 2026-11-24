@@ -177,6 +177,31 @@ def test_matched_evidence_must_record_a_passage(prod_dir):
     assert any(e["rule"] == "evidence_status" for e in validate_dossier(d, p)["errors"])
 
 
+def test_outline_dependencies_keep_single_family_claims():
+    from modules.gaming.script_engine import outline_dependencies
+    outline = {"chapters": [{"id": "ch01", "claim_ids": ["A", "B", "C", "D"]}]}
+    deps = outline_dependencies(outline, {"A": "verified", "B": "matched", "C": "corroborated", "D": "unsupported"})
+    assert [u["claim"] for u in deps[0]["unverified"]] == ["B", "C"]
+    assert [o["claim"] for o in deps[0]["omit"]] == ["D"]
+
+
+def test_chapter_prompt_sends_only_that_chapters_claims_without_evidence():
+    from modules.gaming.script_engine import chapter_prompts, script_estimate
+    p = load_production(PILOT)
+    d = json.load(open(os.path.join(os.path.dirname(PILOT), "research.json")))
+    outline = {"chapters": [{"id": "ch01", "title": "t", "target_words": 200, "claim_ids": ["C11"]},
+                            {"id": "ch02", "title": "u", "target_words": 200, "claim_ids": ["C12"]}]}
+    _, user = chapter_prompts(p, d, outline, outline["chapters"][0], [])
+    sent = json.loads(user)["claims"]
+    assert [c["id"] for c in sent] == ["C11"] and "evidence" not in sent[0] and "source_ids" not in sent[0]
+    assert len(user) < 6000                      # not the whole dossier
+
+    class Paid:
+        is_paid = True
+    est = script_estimate(Paid(), p, d, outline)
+    assert 0 < est["expected_usd"] < est["worst_case_usd"] < 0.5
+
+
 # ---------- outline & script schema ----------
 
 def test_outline_budget_and_ids(prod_dir):

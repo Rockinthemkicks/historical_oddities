@@ -4,12 +4,12 @@ Thesis: Vice City was not corrupted by Tommy Vercetti. He inherited an existing 
 
 ## Readiness
 
-- Structural validation: PASSED (0 error(s), 9 warning(s))
-- Factual verification: NOT COMPLETE (verified 0, corroborated 5, single-family 26, unsupported 11, disputed 1; 14 claim(s) need attention)
+- Structural validation: PASSED (0 error(s), 5 warning(s))
+- Factual verification: NOT COMPLETE (verified 0, corroborated 11, single-family 31, unsupported 6, disputed 1; 9 claim(s) need attention)
 - Editorial approval: NOT GIVEN
 - Production approval: NOT GIVEN
 
-Stats: {'sources': 53, 'claims': 43, 'confirmed_canon': 31, 'interpretation': 6, 'fan_theory': 1, 'speculation': 1, 'real_world_fact': 4}
+Stats: {'sources': 69, 'claims': 49, 'confirmed_canon': 37, 'interpretation': 6, 'fan_theory': 1, 'speculation': 1, 'real_world_fact': 4}
 
 ## Real-world facts
 
@@ -17,19 +17,19 @@ Stats: {'sources': 53, 'claims': 43, 'confirmed_canon': 31, 'interpretation': 6,
   Evidence: S37 [official] matched: Rockstar release dated Nov 19, 2026: GTA VI 'is now available' on PS5 and Xbox Series X|S (read via Business Wire copy).; S22 [press] discovered
 - **C02** [real world, spoiler: none, standing: CORROBORATED] Take-Two reported $3.79 billion in GTA VI day-one retail sales, its own figure; the analytics firm Sensor Tower separately estimated about $1.84 billion by release day.  
   Evidence: S38 [official] matched: Release dated Nov 20, 2026: GTA VI day one retail sales 'reached $3.79 billion' (asterisked, company figure).; S47 [press] matched: Sensor Tower estimated about $1.84 billion in revenue by the Thursday release.; S22 [press] discovered
-- **C03** [real world, spoiler: none, standing: UNSUPPORTED] Vice City first appeared in the original Grand Theft Auto in 1997, in the separate top-down (2D) continuity.  
-  Evidence: S23 [encyclopedia] discovered
-- **C04** [real world, spoiler: none, standing: UNSUPPORTED] The 1980s Vice City of the 3D games is a fictional city modeled on Miami.  
-  Evidence: S09 [encyclopedia] discovered
+- **C03** [real world, spoiler: none, standing: CORROBORATED] Vice City first appeared in the original Grand Theft Auto in 1997, in the separate top-down (2D) continuity.  
+  Evidence: S23 [encyclopedia] discovered; S55 [encyclopedia] matched: The original game's three cities include Vice City (based on Miami).; S56 [press] matched: Vice City first appeared in the original Grand Theft Auto as one of three playable cities.
+- **C04** [real world, spoiler: none, standing: CORROBORATED] The 1980s Vice City of the 3D games is a fictional city modeled on Miami.  
+  Evidence: S09 [encyclopedia] discovered; S55 [encyclopedia] matched: Vice City is based on Miami.; S56 [press] matched: Grand Theft Auto's version of Miami, Florida.
 
 ## Confirmed canon
 
-- **C05** [HD, spoiler: none, standing: UNSUPPORTED] GTA VI is set in the fictional state of Leonida, with Vice City as its central city.  
-  Evidence: S07 [official] discovered; S08 [official] discovered; S23 [encyclopedia] discovered
-- **C06** [HD, spoiler: none, standing: UNSUPPORTED] Rockstar's own description calls GTA VI's Vice City 'the darkest side of the sunniest place in America'.  
-  Evidence: S07 [official] discovered
-- **C07** [HD, spoiler: none, standing: UNSUPPORTED] GTA VI's protagonists are Jason and Lucia.  
-  Evidence: S07 [official] discovered
+- **C05** [HD, spoiler: none, standing: CORROBORATED] GTA VI is set in the fictional state of Leonida, with Vice City as its central city.  
+  Evidence: S07 [official] discovered; S08 [official] discovered; S23 [encyclopedia] discovered; S54 [official] matched: Official site: the state of Leonida; 'Vice City, USA'; 'the neon-soaked streets of Vice City and beyond'.
+- **C06** [HD, spoiler: none, standing: CORROBORATED] Rockstar's own description calls GTA VI's Vice City 'the darkest side of the sunniest place in America'.  
+  Evidence: S07 [official] discovered; S54 [official] matched: Official site: 'Vice City, USA. The darkest side of the sunniest place in America.'
+- **C07** [HD, spoiler: none, standing: CORROBORATED] GTA VI's protagonists are Jason and Lucia.  
+  Evidence: S07 [official] discovered; S54 [official] matched: Official site profiles Jason Duval and Lucia Caminos.
 - **C08** [3D, spoiler: none, standing: MATCHED] Vice City Stories is set in 1984, two years before Vice City.  
   Evidence: S04 [game] discovered; S10 [encyclopedia] discovered; S12 [fan_wiki] matched: Set in 1984, 'roughly two years before the events of' Vice City.
 - **C10** [3D, spoiler: none, standing: MATCHED] Victor 'Vic' Vance is a U.S. Army corporal stationed at Fort Baxter in Vice City.  
@@ -50,12 +50,12 @@ Stats: {'sources': 53, 'claims': 43, 'confirmed_canon': 31, 'interpretation': 6,
   Evidence: S05 [game] discovered; S12 [fan_wiki] matched: Vic is 'too late to save Louise'; Armando killed at the mansion; Vic kills Diego and Martinez on the Mendez Building roof.; S27 [press] discovered
 - **C17** [3D, spoiler: none, standing: UNSUPPORTED] Between 1984 and 1986 Diaz establishes himself as Vice City's dominant drug baron.  
   Evidence: S01 [game] discovered; S24 [fan_wiki] discovered
-- **C18** [3D, spoiler: none, standing: MATCHED] Tommy Vercetti served fifteen years in prison for the killings in Harwood, Liberty City, and the press called him 'the Harwood Butcher'.  
+- **C18** [3D, spoiler: none, standing: MATCHED] Tommy Vercetti spent fifteen years in prison before 1986; in the finale Sonny calls him 'the Harwood Butcher' and says those fifteen years were his to spend.  
   Evidence: S01 [game] discovered; S09 [encyclopedia] discovered; S16 [fan_wiki] discovered; S29 [fan_wiki] matched: Sonny calls Tommy 'the Harwood Butcher'; 'Those fifteen years were mine to spend!'  
-  Note: The finale transcript has Sonny calling Tommy 'the Harwood Butcher' (S29). The 15-year sentence is said by Sonny there too. The Harwood killings detail still needs a better source.
+  Note: Narrowed 2026-11-24: the cause of the sentence (the Harwood killings) is not sourced well enough and is no longer claimed.
 - **C19** [3D, spoiler: none, standing: MATCHED] In 1986 Sonny Forelli sends the newly released Tommy to Vice City to oversee a drug deal and expand the family's business south.  
   Evidence: S01 [game] discovered; S09 [encyclopedia] discovered; S11 [fan_wiki] matched: Sonny sends the recently released Tommy to profit from the city's growing drug trade.
-- **C20** [3D, spoiler: minor, standing: MATCHED] The deal is ambushed: Victor Vance and two Forelli men, Harry and Lee, are killed, the money and cocaine are taken, and Tommy, Ken Rosenberg and Lance escape.  
+- **C20** [3D, spoiler: minor, standing: MATCHED] The deal is ambushed: Victor Vance and two Forelli men, Harry and Lee, are killed, the money and cocaine are taken, and Lance escapes.  
   Evidence: S01 [game] discovered; S11 [fan_wiki] matched: A Vance brother, Harry and Lee are killed; money and cocaine stolen; Lance survives.; S12 [fan_wiki] matched: Hitmen kill Vic and two Forelli members, starting the events of Vice City.  
   Note: S11 does not name which Vance brother dies; S12 says hitmen kill Vic.
 - **C21** [3D, spoiler: major, standing: MATCHED] While working for Diaz, Lance learns that Diaz's gang carried out the ambush; he and Tommy then turn on Diaz.  
@@ -66,7 +66,7 @@ Stats: {'sources': 53, 'claims': 43, 'confirmed_canon': 31, 'interpretation': 6,
   Evidence: S03 [game] discovered; S11 [fan_wiki] matched: Sonny comes to collect; Lance reveals Tommy's fake-money plan; Tommy kills Lance, then Sonny.; S29 [fan_wiki] matched: Lance: 'This is Vice City. This is business.'
 - **C24** [3D, spoiler: major, standing: MATCHED, risk: high] In the finale Tommy tells Sonny he was sent to kill one man who knew he was coming; Sonny deflects ('Anyone would think you blame me...') rather than admitting or denying it, and says Tommy's fifteen years were his to spend.  
   Evidence: S03 [game] discovered; S29 [fan_wiki] matched: Tommy: 'You sent me to kill one man... They knew I was coming, Sonny'. Sonny: 'Anyone would think you blame me...'  
-  Note: Explicit dialogue vs inference: Tommy never says 'Harwood' (Sonny does, as 'the Harwood Butcher'). The setup is implied, not stated. Confirm in the cutscene (S03).
+  Note: Explicit dialogue vs inference: Tommy never says 'Harwood' (Sonny does, as 'the Harwood Butcher'). The setup is implied, not stated. Confirm in the cutscene (S03). Review 4: use only the dialogue as spoken. Do not state that Sonny set Tommy up.
 - **C27** [3D, spoiler: minor, standing: UNSUPPORTED] After Sonny's death, Marco Forelli becomes the family's new don.  
   Evidence: S06 [game] discovered; S16 [fan_wiki] discovered
 - **C28** [3D, spoiler: minor, standing: UNSUPPORTED] By 1992 Ken has been through rehab, lost his law license and is running Caligula's Palace casino in Las Venturas for three mafia families.  
@@ -76,8 +76,9 @@ Stats: {'sources': 53, 'claims': 43, 'confirmed_canon': 31, 'interpretation': 6,
   Note: Per the wiki, the Tommy detail comes from San Andreas' 'The Introduction'. Confirm there.
 - **C31** [3D, spoiler: none, standing: MATCHED] Vic needs money for his brother Pete's asthma medication, which is why he goes along with Martinez's schemes.  
   Evidence: S04 [game] discovered; S12 [fan_wiki] matched: Vic is 'desperate to raise money for his brother's asthma medication'; later sends money to Pete.
-- **C32** [3D, spoiler: major, standing: MATCHED, risk: high] Vic ends 1984 wealthy and wanting out of the drug trade, but Lance pulls him back in, leading to the 1986 deal with the Forellis.  
-  Evidence: S05 [game] discovered; S12 [fan_wiki] matched: Vic refuses Lance's cocaine and wants out; Lance later drags him back; they set up a deal with the Forelli family.
+- **C32** [3D, spoiler: major, standing: MATCHED, risk: high] Vice City Stories ends with Vic and Lance deciding to leave town and lay low, yet two years later Vic is the dealer at the 1986 exchange where he is killed. The games don't show how he got back in.  
+  Evidence: S05 [game] discovered; S12 [fan_wiki] matched: Vic refuses Lance's cocaine and wants out; Lance later drags him back; they set up a deal with the Forelli family.; S39 [fan_wiki] matched: After 'Last Stand' the brothers take out their remaining enemies and decide to get out of town and lay low.; S65 [fan_wiki] matched: Vic decides to retire from criminal life and leaves Vice City with Lance.; S40 [fan_wiki] matched: Script: Vic tells Lance 'it's done'.  
+  Note: Narrowed 2026-11-24 per review 4. The earlier 'Lance pulls him back in' rests on one wiki (S12) and is no longer claimed.
 - **C33** [3D, spoiler: minor, standing: MATCHED] Retired colonel Juan Garcia Cortez helped set up the 1986 exchange; the VCS wiki attributes this to Ken Rosenberg ('apparently').  
   Evidence: S35 [game] discovered; S11 [fan_wiki] matched: Cortez is a retired colonel who helped set up the deal.; S12 [fan_wiki] matched: The Forelli deal was set up 'apparently with the help of Colonel Cortez according to Ken Rosenberg'.; S32 [encyclopedia] discovered  
   Note: The earlier detail that Cortez promises to find who was behind the ambush is NOT on S11 (re-read); removed until checked in-game (S35).
@@ -89,14 +90,27 @@ Stats: {'sources': 53, 'claims': 43, 'confirmed_canon': 31, 'interpretation': 6,
   Note: S11 (re-read) does not mention the funeral, gang war or property prices. This rests on unopened pages (S30, S31) and the unchecked mission (S36).
 - **C38** [3D, spoiler: major, standing: MATCHED] Vice City Stories ends with 'Last Stand': Vic attacks the Mendez Building and kills Diego Mendez and Jerry Martinez on the roof, after stealing an attack helicopter from Fort Baxter in 'Over the Top'.  
   Evidence: S05 [game] discovered; S39 [fan_wiki] matched: Objectives: fly to the Mendez building, take out the guards, take out Mendez and Martinez.; S40 [fan_wiki] matched: Climax of VCS, given by Diaz; Victor kills both Diego and Martinez.; S12 [fan_wiki] matched: Final confrontation on the Mendez Building rooftop; Vic kills Diego and Martinez.
-- **C39** [3D, spoiler: major, standing: CORROBORATED, risk: high] Bryan Forbes is an undercover federal agent who sells the Vance brothers information about drug deals, a lawman working the criminal side.  
+- **C39** [3D, spoiler: major, standing: CORROBORATED, risk: high] Bryan Forbes is an undercover agent who sells the Vance brothers information about drug deals.  
   Evidence: S45 [game] discovered; S41 [fan_wiki] matched: 'a corrupt DEA agent'... 'bribe-taking official'; has chosen crime over law.; S42 [fan_wiki] matched: Offers the Vances information regarding drug deals.; S26 [community] matched: Trope entry 'Dirty Cop' for Forbes.  
-  Note: Which agency is disputed between sources (see C40). Use 'undercover agent' unless confirmed in-game.
+  Note: Use 'undercover agent' only. His agency is disputed (C40) and must not be named.
 - **C40** [3D, spoiler: major, standing: DISPUTED] Bryan Forbes works for the DEA.  
   Evidence: S45 [game] discovered; S41 [fan_wiki] matched: 'a corrupt DEA agent'.; S42 [fan_wiki] matched: Lance fakes a card so Martinez looks like a DEA agent.; S12 [fan_wiki] disputed: Influence section: 'the corrupt VCPD detective Bryan Forbes'.  
   Note: Sources disagree: most wikis say DEA; the VCS Fandom page calls him 'the corrupt VCPD detective Bryan Forbes'; an official-site news item reportedly mentions an undercover FBI agent 'BF'. Needs the in-game line.
 - **C41** [3D, spoiler: major, standing: MATCHED] In 'The Mugshot Longshot', Lance pastes Martinez's photo onto Forbes's government ID to convince the Mendez brothers that Martinez is a DEA agent.  
   Evidence: S45 [game] discovered; S41 [fan_wiki] matched: Lance sticks Martinez's photo onto Forbes's ID to fabricate that Martinez is a DEA agent.; S42 [fan_wiki] matched: Forbes's ID card is used to fabricate a fake card for Martinez.; S43 [fan_wiki] matched: Vic takes photos of Martinez to paste onto Forbes' ID for the Mendez Brothers.
+- **C44** [3D, spoiler: major, standing: CORROBORATED] Congressman Alex Shrub plans to ban the legal distribution of pornography to win puritan votes; Tommy, who has just bought a film studio, obtains incriminating photos of him in 'Martha's Mug Shot' to stop it.  
+  Evidence: S69 [game] discovered; S57 [fan_wiki] matched: Shrub seeks to ban legal pornography to gain favor with puritan voters; Tommy, having bought a porn studio, plans to stop this.; S58 [fan_wiki] matched: 'Martha's Mug Shot': acquire incriminating pictures of Alex Shrub.; S59 [press] matched: Tommy blackmails the corrupt congressman with the help of Candy Suxxx.
+- **C45** [3D, spoiler: major, standing: MATCHED] Tommy buys the Print Works, turns it into a counterfeiting operation by stealing printing plates from a courier ('Hit the Courier'), and plans to pay Sonny with fake money.  
+  Evidence: S69 [game] discovered; S60 [fan_wiki] matched: Tommy buys the Print Works for $70,000; the foreman wants to print counterfeit money; Tommy uses it to make the fake money for Sonny.; S61 [fan_wiki] matched: Earnest suggests printing money; Tommy steals the courier's counterfeit plates and takes them to the Print Works.; S11 [fan_wiki] matched: Sonny comes to collect; Lance reveals Tommy's fake-money plan.
+- **C46** [3D, spoiler: major, standing: MATCHED] In optional side missions, developer Avery Carrington has Tommy kill a rival developer who won't sell him land ('Four Iron'), bomb a competing construction site ('Demolition Man') and start a gang war at a funeral ('Two Bit Hit').  
+  Evidence: S69 [game] discovered; S62 [fan_wiki] matched: A rival property developer refuses to sell Avery land; Avery asks Tommy to 'persuade' him; Tommy kills him at the golf course.; S63 [fan_wiki] matched: Avery wants a rival construction site down the street destroyed; script: 'save the rejuvenation of an important area of the city'.; S48 [fan_wiki] matched: Tommy attacks a Haitian funeral dressed as a Cuban to start a gang war.; S64 [fan_wiki] matched: Avery's missions are not necessary for the story and can be completed after the final mission.  
+  Note: These missions are optional; say so on screen or in narration.
+- **C47** [3D, spoiler: major, standing: MATCHED] Vic turns down Lance's offer of cocaine, saying he wants to stay away from drugs, and repeatedly says he wants out of the drug game but has no choice.  
+  Evidence: S04 [game] discovered; S12 [fan_wiki] matched: Lance offers twenty kilos of cocaine; Victor denies interest and says he wants to stay away from drugs.; S66 [fan_wiki] matched: He claims he wants out of the drug game but has no choice; he shows regret.
+- **C48** [3D, spoiler: major, standing: MATCHED] Tommy rises to become Vice City's major criminal power.  
+  Evidence: S02 [game] discovered; S68 [fan_wiki] matched: The game concerns Tommy Vercetti 'as he rises to become Vice City's major criminal power'.
+- **C49** [3D, spoiler: major, standing: MATCHED] In 1984 Diaz blackmails Gonzalez for information on Cortez's drug shipments, as part of his plan to become the city's drug baron.  
+  Evidence: S04 [game] discovered; S67 [fan_wiki] matched: Diaz blackmails Gonzalez for secrets about Cortez's drug shipments, planning to become the city's drug baron; spares his life in return.
 
 ## Interpretation
 
@@ -104,14 +118,14 @@ Stats: {'sources': 53, 'claims': 43, 'confirmed_canon': 31, 'interpretation': 6,
   Evidence: S18 [community] discovered; S10 [encyclopedia] discovered; S11 [fan_wiki] matched: Tommy is sent to profit from the city's growing drug trade.
 - **C25** [3D, spoiler: major, standing: MATCHED] Lance's betrayal grew out of feeling underappreciated and sidelined in Tommy's rise; in the game he only calls it business.  
   Evidence: S11 [fan_wiki] matched: Lance begins to feel under-appreciated, causing a rift.; S21 [press] discovered; S29 [fan_wiki] matched: Lance gives no personal motive in the scene: 'This is business.'
-- **C36** [3D, spoiler: minor, standing: MATCHED, risk: high] Vice City's 1986 property boom was built in part on deliberately started gang violence.  
+- **C36** [3D, spoiler: minor, standing: MATCHED, risk: high] Avery Carrington's stated reason for starting a gang war is to drive property prices down; the game presents violence as a tool of real-estate business.  
   Evidence: S30 [fan_wiki] discovered; S31 [fan_wiki] discovered; S50 [fan_wiki] matched: Avery's briefing: nothing brings real-estate prices down faster than a gang war.; S48 [fan_wiki] matched: Avery frames the gang war as a business opportunity, with his protege Donald Love listening.  
-  Note: Now supported by Avery's own briefing in 'Two Bit Hit' (as quoted by fan wikis). The interpretation (the boom was built on violence) is ours; the motive (lower property prices via gang war) is explicit dialogue.
+  Note: Narrowed 2026-11-24: the motive is Avery's own briefing line; the second half is our reading of that scene only, not a claim about the whole city.
 - **C37** [3D, spoiler: major, standing: MATCHED] Wiki accounts treat Sonny's earlier Harwood setup as fact; the game itself only implies it.  
   Evidence: S11 [fan_wiki] matched: Page states Sonny 'set Tommy up' and made him serve 15 years.; S29 [fan_wiki] matched: In the dialogue Sonny only deflects; nothing is admitted.
-- **C42** [3D, spoiler: major, standing: CORROBORATED, risk: high] Before Tommy arrives, the people meant to police Vice City's drug trade are inside it: an Army sergeant moving cartel cocaine, an undercover federal agent selling deal information, and a retired colonel helping broker the 1986 exchange.  
-  Evidence: S12 [fan_wiki] matched: Martinez, 'his corrupt sergeant', transports the drugs for the Mendez Brothers.; S41 [fan_wiki] matched: Forbes: corrupt, bribe-taking, chose crime over law.; S11 [fan_wiki] matched: Cortez, a retired colonel, helped set up the deal.; S26 [community] matched: Martinez is officially only a sergeant but effectively a major crime lord.  
-  Note: Thesis claim. Built from C11/C12, C39 and C33; each part must be verified before this is narrated as the episode's argument.
+- **C42** [3D, spoiler: major, standing: CORROBORATED, risk: high] Before Tommy arrives, several individuals with official authority are personally inside Vice City's drug trade: an Army sergeant moving cartel cocaine and an undercover agent selling deal information. The games show individual misconduct, not whole institutions shown to be corrupt.  
+  Evidence: S12 [fan_wiki] matched: Martinez, 'his corrupt sergeant', transports the drugs for the Mendez Brothers.; S41 [fan_wiki] matched: Forbes: corrupt, bribe-taking, chose crime over law.; S26 [community] matched: Martinez is officially only a sergeant but effectively a major crime lord.  
+  Note: Narrowed 2026-11-24 per review 4: individual misconduct does not establish institution-wide corruption. Cortez moved to C33 (he is retired, not serving).
 - **C43** [3D, spoiler: major, standing: MATCHED] Tommy does not create Vice City's criminal order: he takes over an empire Diaz had already built, by killing Diaz and moving into his mansion.  
   Evidence: S11 [fan_wiki] matched: Tommy and Lance kill Diaz at his mansion; Tommy expands into many businesses.; S24 [fan_wiki] discovered  
   Note: Thesis claim. Depends on C17 (Diaz's rise 1984-86), which is still unsupported.
@@ -234,14 +248,41 @@ Stats: {'sources': 53, 'claims': 43, 'confirmed_canon': 31, 'interpretation': 6,
   Note: Read as a search-result excerpt.
 - **S53** (community, community) TV Tropes - GTA Vice City (main page and YMMV): https://tvtropes.org/pmwiki/pmwiki.php/YMMV/GrandTheftAutoViceCity (READ BY ASSISTANT, not human-verified)  
   Note: Read as a search-result excerpt.
+- **S54** (official, official) Rockstar Games - Grand Theft Auto VI official site (People & Places): https://www.rockstargames.com/VI (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt.
+- **S55** (secondary, encyclopedia) Wikipedia - Grand Theft Auto (1997 game): https://en.wikipedia.org/wiki/Grand_Theft_Auto_(video_game) (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt.
+- **S56** (secondary, press) Giant Bomb - Vice City (location): https://www.giantbomb.com/vice-city/3035-16/ (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt.
+- **S57** (secondary, fan_wiki) GTA Wiki (gta.wiki) - Alex Shrub: https://gta.wiki/w/Alex_Shrub (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt.
+- **S58** (secondary, fan_wiki) GTA Wiki (gta.wiki) - Missions in GTA Vice City: https://gta.wiki/w/Missions_in_GTA_Vice_City (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt.
+- **S59** (secondary, press) Sportskeeda - 5 awesome GTA moments of Tommy Vercetti: https://www.sportskeeda.com/gta/5-awesome-gta-moments-tommy-vercetti (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt.
+- **S60** (secondary, fan_wiki) Grand Theft Wiki - Print Works: https://www.grandtheftwiki.com/Printworks (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt.
+- **S61** (secondary, fan_wiki) GTA Wiki (gta.wiki) - 'Hit the Courier' / 'Spilling the Beans': https://gta.wiki/w/Hit_the_Courier (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt.
+- **S62** (secondary, fan_wiki) Grand Theft Wiki - 'Four Iron': https://www.grandtheftwiki.com/Four_Iron (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt.
+- **S63** (secondary, fan_wiki) Grand Theft Wiki - 'Demolition Man' (includes script excerpt): https://www.grandtheftwiki.com/Demolition_Man (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt.
+- **S64** (secondary, fan_wiki) GTA Wiki (gta.wiki) - Avery Carrington: https://gta.wiki/w/Avery_Carrington (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt.
+- **S65** (secondary, fan_wiki) GTA Wiki (gta.wiki) - Victor Vance: https://gta.wiki/w/Vic_Vance (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt.
+- **S66** (secondary, fan_wiki) Grand Theft Wiki - Victor Vance: https://www.grandtheftwiki.com/Victor_Vance (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt.
+- **S67** (secondary, fan_wiki) GTA Wiki (Fandom) - Gonzalez: https://gta.fandom.com/wiki/Gonzales (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt.
+- **S68** (secondary, fan_wiki) GTA Wiki (gta.wiki) - Grand Theft Auto: Vice City: https://gta.wiki/w/GTA:_Vice_City (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt.
+- **S69** (primary_game, game) GTA: Vice City - asset and side missions: 'Martha's Mug Shot' (film studio), 'Spilling the Beans' and 'Hit the Courier' (Print Works), 'Four Iron' and 'Demolition Man' (Avery) (UNVERIFIED)  
+  Note: Not checked in-game. Mission names from wiki lists.
 
 ## Claims needing attention before scripting
 
-- C03: no supporting passage matched yet
-- C04: no supporting passage matched yet
-- C05: no supporting passage matched yet
-- C06: no supporting passage matched yet
-- C07: no supporting passage matched yet
 - C17: no supporting passage matched yet
 - C24: high-risk claim without independent or primary support
 - C26: no supporting passage matched yet
@@ -257,9 +298,5 @@ Stats: {'sources': 53, 'claims': 43, 'confirmed_canon': 31, 'interpretation': 6,
 - [WARNING] dossier: open_question: The owner can't capture gameplay. Human check option: watch the cutscenes in a published playthrough on YouTube (viewing only, nothing downloaded) and note timestamps for S03 (C24), S05 (C32/C38), S35 (C34), S36 (C35/C36) and the Forbes missions (C40).
 - [WARNING] dossier: open_question: Bryan Forbes's agency: DEA (most wikis), VCPD detective (VCS Fandom page) or FBI (official-site news item, reportedly). Needs the in-game line (C40).
 - [WARNING] dossier: open_question: C13: is there in-game support for the Mendez brothers posing as philanthropists, beyond the "Mendez Foundation" building name?
-- [WARNING] dossier: open_question: C17/C43: find a source for Diaz building his empire between 1984 and 1986.
-- [WARNING] dossier: open_question: Institutional corruption in 1986 (VCPD, politicians such as Alex Shrub, Tommy's 'legitimate' fronts like the Print Works): not researched in this pass; the main Vice City wiki page doesn't cover them.
 - [WARNING] dossier: open_question: Possible extra thread: a Vice City hitman reportedly works for an unexplained 'Mr. Black' (gta.wiki 'Ricardo Diaz's Hitmen'). Research before using it.
-- [WARNING] dossier: open_question: GTA VI: setting-level only. Open rockstargames.com/VI to confirm C05-C07 wording; no story spoilers.
 - [WARNING] dossier: open_question: Rights: decide on gameplay footage. Rockstar's posting policy covers occasional non-commercial use only.
-- [WARNING] dossier: open_question: Vice City Stories: do Vic and Lance leave Vice City after 1984? (one wiki lists Panama 1984-1986; S12 does not say). Not used.

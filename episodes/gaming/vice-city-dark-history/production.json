@@ -1,6 +1,6 @@
 {
   "mode": "gaming-lore",
-  "title": "Vice City's Dark History: How a City Was Built on Crime",
+  "title": "The Dark History of Vice City Before GTA 6",
   "franchise": "gta",
   "games": [
     "gta1",
@@ -20,7 +20,7 @@
     16
   ],
   "spoiler_level": "full",
-  "description": "Vice City didn't become corrupt when Tommy Vercetti arrived. An investigation into the soldiers, agents, cartels and developers who built 1980s Vice City on crime, across Vice City Stories (1984) and Vice City (1986).",
+  "description": "Before GTA 6, there was another Vice City. An investigation into the soldiers, agents, cartels, developers and politicians who built the 1980s city of Vice City Stories (1984) and Vice City (1986), in the older 3D continuity. Not GTA VI's backstory; no GTA VI story spoilers.",
   "overrides": {
     "target_minutes_range": [
       10,
@@ -31,7 +31,8 @@
   "owner_decisions": {
     "2026-11-23": "Scope: 80s Vice City with GTA VI framing (owner choice). Full spoilers for the 2002/2006 games; GTA VI kept to setting-level detail.",
     "2026-11-23 (review 3)": "Reframed as an investigative documentary about the city (thesis: Tommy inherited an existing system). Target 12-16 minutes. GTA VI: no story spoilers. Script generation not approved yet.",
-    "2026-11-24": "Owner does not have the games: no owner-captured footage. Pilot is illustration-only unless that changes."
+    "2026-11-24": "Owner does not have the games: no owner-captured footage. Pilot is illustration-only unless that changes.",
+    "2026-11-24 (review 4)": "Concept approved for draft script development. Title 'The Dark History of Vice City Before GTA 6'; thumbnail: neon skyline with cracked badge, text 'BUILT ON CRIME'. Illustration-only. Pilot ceiling $15 proposed, pending owner authorization. Final script and paid production not approved."
   },
   "thesis": "Vice City was not corrupted by Tommy Vercetti. He inherited an existing system of corruption and criminal power."
 }

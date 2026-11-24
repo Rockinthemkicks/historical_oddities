@@ -40,7 +40,7 @@ from .dryrun import synthetic_image, synthetic_narration
 from .llm import FixtureLLM, LLMError, OpenAIText
 from .packaging import build_package, chapter_card, chapter_markers, validate_youtube_chapters
 from .research import dossier_markdown, validate_dossier
-from .script_engine import (GENERATED_KINDS, assemble_script, chapter_path, outline_prompts,
+from .script_engine import (script_estimate, GENERATED_KINDS, assemble_script, chapter_path, outline_prompts,
                             plan_estimate, validate_outline, write_chapters)
 
 DEFAULT_SIZE = (1920, 1080)
@@ -168,8 +168,10 @@ def cmd_write(prod, args):
         raise SystemExit("Fix outline.json first.")
     llm = _llm(prod, args)
     todo = [c for c in outline["chapters"] if not os.path.exists(chapter_path(prod["_dir"], c["id"]))]
-    est = sum(llm.estimate("", json.dumps(c) + json.dumps(dossier)[:20000], 12000) for c in todo)
-    print(f"Script: {len(todo)} chapter(s) to write, estimated ${est:.2f}")
+    est = script_estimate(llm, prod, dossier, outline, todo) if getattr(llm, "is_paid", False) else \
+        {"expected_usd": 0.0, "worst_case_usd": 0.0, "input_tokens": 0}
+    print(f"Script: {len(todo)} chapter(s) to write, estimated ${est['expected_usd']:.2f} "
+          f"(worst case ${est['worst_case_usd']:.2f}; ~{est['input_tokens']:,} input tokens)")
     if args.estimate_only:
         print("Estimate only: nothing was called or charged.")
         return 0

@@ -114,11 +114,39 @@ def validate_outline(outline, dossier, budget):
     return {"errors": errors, "warnings": warnings, "passed": not errors}
 
 
+def outline_dependencies(outline, readiness):
+    """
+    For each chapter, every claim it relies on that is not verified (checked in-game or by a human).
+    Single-family 'matched' and even 'corroborated' claims stay listed: they are assistant-matched,
+    not verified. Unsupported or disputed claims are listed under 'omit' (review rule: omit, don't hedge).
+    """
+    out = []
+    for ch in outline.get("chapters", []):
+        unverified, omit = [], []
+        for cid in ch.get("claim_ids", []):
+            st = readiness.get(cid, "unknown")
+            if st in ("unsupported", "disputed", "unknown"):
+                omit.append({"claim": cid, "standing": st})
+            elif st != "verified":
+                unverified.append({"claim": cid, "standing": st})
+        out.append({"chapter": ch.get("id"), "unverified": unverified, "omit": omit})
+    return out
+
+
 # ---------- chapters ----------
+
+WRITER_CLAIM_KEYS = ("id", "text", "status", "continuity", "spoiler", "notes")
+
+
+def _writer_claim(c):
+    """The claim as the writer sees it: no evidence passages, URLs or source lists (they cost tokens
+    and invite copying source wording)."""
+    return {k: c[k] for k in WRITER_CLAIM_KEYS if k in c}
+
 
 def chapter_prompts(production, dossier, outline, chapter, prior_summaries):
     by_id = {c["id"]: c for c in dossier["claims"]}
-    claims = [by_id[c] for c in chapter.get("claim_ids", []) if c in by_id]
+    claims = [_writer_claim(by_id[c]) for c in chapter.get("claim_ids", []) if c in by_id]
     system = (
         "You write narration for a serious investigative documentary about a fictional game world, read "
         "aloud by one narrator. Use ONLY the claims provided. Say plainly when something is confirmed in the "
@@ -277,6 +305,33 @@ def assemble_script(production, outline, chapters):
                            "chapter": ch["chapter_id"], "chapter_title": titles.get(ch["chapter_id"], ""),
                            "claim_ids": seg.get("claim_ids", []), "visuals": visuals})
     return {"title": production["title"], "mode": "gaming-lore", "scenes": scenes}
+
+
+CHAPTER_MAX_OUTPUT = 12000   # hard ceiling per call (reasoning tokens count as output)
+
+
+def expected_chapter_output(chapter):
+    """Planning guess for output tokens: narration + visual prompts + JSON + reasoning headroom."""
+    return min(CHAPTER_MAX_OUTPUT, 2000 + 8 * int(chapter.get("target_words") or 300))
+
+
+def script_estimate(llm, production, dossier, outline, todo=None):
+    """Estimate from the real prompts each chapter would send (only that chapter's claims),
+    with an expected figure and a worst case at the output ceiling."""
+    from modules.gaming.llm import estimate_tokens
+    from modules.costs import text_unit_cost
+    model = production["_settings"].get("script_model", "gpt-5.4")
+    chapters = todo if todo is not None else outline["chapters"]
+    expected = worst = 0.0
+    tokens_in = 0
+    for ch in chapters:
+        system, user = chapter_prompts(production, dossier, outline, ch, ["(summary of earlier chapters)"] * 3)
+        t_in = estimate_tokens(system + user)
+        tokens_in += t_in
+        expected += text_unit_cost(model, t_in, expected_chapter_output(ch))
+        worst += text_unit_cost(model, t_in, CHAPTER_MAX_OUTPUT)
+    return {"chapters": len(chapters), "input_tokens": tokens_in,
+            "expected_usd": round(expected, 2), "worst_case_usd": round(worst, 2)}
 
 
 def plan_estimate(production, outline_words=None):

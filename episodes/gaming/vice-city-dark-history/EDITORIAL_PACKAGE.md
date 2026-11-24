@@ -1,5 +1,7 @@
 # Editorial package: Vice City pilot (response to editorial review 3)
 
+> **Superseded by [DRAFT_PACKAGE.md](DRAFT_PACKAGE.md) (review 4, Nov 24).** Kept as the record of review 3.
+
 Date: 2026-11-23. Branch `gaming-lore-pilot` (draft PR #21, not merged).
 **Status: waiting for editorial approval. No script has been generated and no paid call has been made.**
 

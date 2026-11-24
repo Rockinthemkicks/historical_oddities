@@ -1,6 +1,6 @@
-# Pilot: Vice City's Dark History: How a City Was Built on Crime
+# Pilot: The Dark History of Vice City Before GTA 6
 
-**Review 3 (Nov 23): see [EDITORIAL_PACKAGE.md](EDITORIAL_PACKAGE.md). Reframed as an investigative documentary, 12-16 min. Waiting for editorial approval.**
+**Review 4 (Nov 24): see [DRAFT_PACKAGE.md](DRAFT_PACKAGE.md) (draft script, source map, visual plan). Review 3: [EDITORIAL_PACKAGE.md](EDITORIAL_PACKAGE.md). Draft script waiting for script and visual-direction approval.**
 
 Gaming-lore pilot (20–25 min, fictional investigative history).
 
