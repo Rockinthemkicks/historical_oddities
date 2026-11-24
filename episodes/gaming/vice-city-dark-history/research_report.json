@@ -3,405 +3,51 @@
   "warnings": [
     {
       "level": "warning",
-      "where": "source S01",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S02",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S03",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S04",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S05",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S06",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S07",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S08",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S09",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S10",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S11",
-      "rule": "source_unverified",
-      "detail": "read by the assistant, not yet checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S12",
-      "rule": "source_unverified",
-      "detail": "read by the assistant, not yet checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S13",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S14",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S15",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S16",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S17",
-      "rule": "source_unverified",
-      "detail": "read by the assistant, not yet checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S18",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S19",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S20",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S21",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S22",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S23",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S24",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S25",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S26",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S27",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S28",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S29",
-      "rule": "source_unverified",
-      "detail": "read by the assistant, not yet checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S30",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S31",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S32",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S33",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S34",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S35",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "source S36",
-      "rule": "source_unverified",
-      "detail": "not yet opened and checked by a human"
-    },
-    {
-      "level": "warning",
-      "where": "claim C05",
-      "rule": "canon_unverified",
-      "detail": "its game/official source hasn't been verified by a human yet"
-    },
-    {
-      "level": "warning",
-      "where": "claim C06",
-      "rule": "canon_unverified",
-      "detail": "its game/official source hasn't been verified by a human yet"
-    },
-    {
-      "level": "warning",
-      "where": "claim C07",
-      "rule": "canon_unverified",
-      "detail": "its game/official source hasn't been verified by a human yet"
-    },
-    {
-      "level": "warning",
-      "where": "claim C08",
-      "rule": "canon_unverified",
-      "detail": "its game/official source hasn't been verified by a human yet"
-    },
-    {
-      "level": "warning",
-      "where": "claim C10",
-      "rule": "canon_unverified",
-      "detail": "its game/official source hasn't been verified by a human yet"
-    },
-    {
-      "level": "warning",
-      "where": "claim C11",
-      "rule": "canon_unverified",
-      "detail": "its game/official source hasn't been verified by a human yet"
-    },
-    {
-      "level": "warning",
-      "where": "claim C12",
-      "rule": "canon_unverified",
-      "detail": "its game/official source hasn't been verified by a human yet"
-    },
-    {
-      "level": "warning",
-      "where": "claim C13",
-      "rule": "canon_unverified",
-      "detail": "its game/official source hasn't been verified by a human yet"
-    },
-    {
-      "level": "warning",
-      "where": "claim C14",
-      "rule": "canon_unverified",
-      "detail": "its game/official source hasn't been verified by a human yet"
-    },
-    {
-      "level": "warning",
-      "where": "claim C15",
-      "rule": "canon_unverified",
-      "detail": "its game/official source hasn't been verified by a human yet"
-    },
-    {
-      "level": "warning",
-      "where": "claim C16",
-      "rule": "canon_unverified",
-      "detail": "its game/official source hasn't been verified by a human yet"
-    },
-    {
-      "level": "warning",
-      "where": "claim C17",
-      "rule": "canon_unverified",
-      "detail": "its game/official source hasn't been verified by a human yet"
-    },
-    {
-      "level": "warning",
-      "where": "claim C18",
-      "rule": "canon_unverified",
-      "detail": "its game/official source hasn't been verified by a human yet"
-    },
-    {
-      "level": "warning",
-      "where": "claim C19",
-      "rule": "canon_unverified",
-      "detail": "its game/official source hasn't been verified by a human yet"
-    },
-    {
-      "level": "warning",
-      "where": "claim C20",
-      "rule": "canon_unverified",
-      "detail": "its game/official source hasn't been verified by a human yet"
-    },
-    {
-      "level": "warning",
-      "where": "claim C21",
-      "rule": "canon_unverified",
-      "detail": "its game/official source hasn't been verified by a human yet"
-    },
-    {
-      "level": "warning",
-      "where": "claim C22",
-      "rule": "canon_unverified",
-      "detail": "its game/official source hasn't been verified by a human yet"
-    },
-    {
-      "level": "warning",
-      "where": "claim C23",
-      "rule": "canon_unverified",
-      "detail": "its game/official source hasn't been verified by a human yet"
-    },
-    {
-      "level": "warning",
-      "where": "claim C24",
-      "rule": "canon_unverified",
-      "detail": "its game/official source hasn't been verified by a human yet"
-    },
-    {
-      "level": "warning",
-      "where": "claim C27",
-      "rule": "canon_unverified",
-      "detail": "its game/official source hasn't been verified by a human yet"
-    },
-    {
-      "level": "warning",
-      "where": "claim C28",
-      "rule": "canon_unverified",
-      "detail": "its game/official source hasn't been verified by a human yet"
-    },
-    {
-      "level": "warning",
-      "where": "claim C29",
-      "rule": "canon_unverified",
-      "detail": "its game/official source hasn't been verified by a human yet"
-    },
-    {
-      "level": "warning",
-      "where": "claim C31",
-      "rule": "canon_unverified",
-      "detail": "its game/official source hasn't been verified by a human yet"
-    },
-    {
-      "level": "warning",
-      "where": "claim C32",
-      "rule": "canon_unverified",
-      "detail": "its game/official source hasn't been verified by a human yet"
-    },
-    {
-      "level": "warning",
-      "where": "claim C33",
-      "rule": "canon_unverified",
-      "detail": "its game/official source hasn't been verified by a human yet"
-    },
-    {
-      "level": "warning",
-      "where": "claim C34",
-      "rule": "canon_unverified",
-      "detail": "its game/official source hasn't been verified by a human yet"
-    },
-    {
-      "level": "warning",
-      "where": "claim C35",
-      "rule": "canon_unverified",
-      "detail": "its game/official source hasn't been verified by a human yet"
+      "where": "dossier",
+      "rule": "open_question",
+      "detail": "Verify every primary_game locator by watching the cutscene or mission (or a full transcript). Priority: S03 for C24, S05/S45 for C32 and C39-C41, S35 for C33/C34, S36 for C35."
     },
     {
       "level": "warning",
       "where": "dossier",
       "rule": "open_question",
-      "detail": "Verify every primary_game locator by watching the cutscene or mission, or reading a full transcript."
+      "detail": "Bryan Forbes's agency: DEA (most wikis), VCPD detective (VCS Fandom page) or FBI (official-site news item, reportedly). Needs the in-game line (C40)."
     },
     {
       "level": "warning",
       "where": "dossier",
       "rule": "open_question",
-      "detail": "Vice City Stories: confirm the name of the final mission(s) at the Mendez Building (S05)."
+      "detail": "C36/C35: open the Avery Carrington and gang-war pages and check the funeral mission in-game; the main Vice City wiki page says nothing about it."
     },
     {
       "level": "warning",
       "where": "dossier",
       "rule": "open_question",
-      "detail": "Possible extra thread: one Vice City hitman reportedly works for an unexplained 'Mr. Black' and isn't clearly tied to Diaz (gta.wiki 'Ricardo Diaz's Hitmen'). Research before using it."
+      "detail": "C13: is there in-game support for the Mendez brothers posing as philanthropists, beyond the \"Mendez Foundation\" building name?"
     },
     {
       "level": "warning",
       "where": "dossier",
       "rule": "open_question",
-      "detail": "GTA VI: check for any official nods to 1980s Vice City before C30 is narrated (setting-level only; no story spoilers)."
+      "detail": "C17/C43: find a source for Diaz building his empire between 1984 and 1986."
+    },
+    {
+      "level": "warning",
+      "where": "dossier",
+      "rule": "open_question",
+      "detail": "Institutional corruption in 1986 (VCPD, politicians such as Alex Shrub, Tommy's 'legitimate' fronts like the Print Works): not researched in this pass; the main Vice City wiki page doesn't cover them."
+    },
+    {
+      "level": "warning",
+      "where": "dossier",
+      "rule": "open_question",
+      "detail": "Possible extra thread: a Vice City hitman reportedly works for an unexplained 'Mr. Black' (gta.wiki 'Ricardo Diaz's Hitmen'). Research before using it."
+    },
+    {
+      "level": "warning",
+      "where": "dossier",
+      "rule": "open_question",
+      "detail": "GTA VI: setting-level only. Open rockstargames.com/VI to confirm C05-C07 wording; no story spoilers."
     },
     {
       "level": "warning",
@@ -413,27 +59,131 @@
       "level": "warning",
       "where": "dossier",
       "rule": "open_question",
-      "detail": "Vice City Stories: confirm whether Vic and Lance left Vice City after 1984 (one wiki lists Panama 1984-1986; not used yet)."
-    },
-    {
-      "level": "warning",
-      "where": "dossier",
-      "rule": "open_question",
-      "detail": "Avery's funeral mission: confirm its name in-game (S36)."
-    },
-    {
-      "level": "warning",
-      "where": "dossier",
-      "rule": "open_question",
-      "detail": "Optional threads not yet researched: Auntie Poulet drugging Tommy, Kent Paul, the VCPD and corrupt detective Bryan Forbes (VCS)."
+      "detail": "Vice City Stories: do Vic and Lance leave Vice City after 1984? (one wiki lists Panama 1984-1986; S12 does not say). Not used."
     }
   ],
   "passed": true,
+  "structurally_valid": true,
+  "factually_verified": false,
+  "readiness": {
+    "C01": "corroborated",
+    "C02": "corroborated",
+    "C03": "unsupported",
+    "C04": "unsupported",
+    "C05": "unsupported",
+    "C06": "unsupported",
+    "C07": "unsupported",
+    "C08": "matched",
+    "C09": "matched",
+    "C10": "matched",
+    "C11": "matched",
+    "C12": "matched",
+    "C13": "matched",
+    "C14": "matched",
+    "C15": "matched",
+    "C16": "matched",
+    "C17": "unsupported",
+    "C18": "matched",
+    "C19": "matched",
+    "C20": "matched",
+    "C21": "matched",
+    "C22": "matched",
+    "C23": "matched",
+    "C24": "matched",
+    "C25": "matched",
+    "C26": "unsupported",
+    "C27": "unsupported",
+    "C28": "unsupported",
+    "C29": "unsupported",
+    "C30": "unsupported",
+    "C31": "matched",
+    "C32": "matched",
+    "C33": "matched",
+    "C34": "matched",
+    "C35": "matched",
+    "C36": "unsupported",
+    "C37": "matched",
+    "C38": "matched",
+    "C39": "corroborated",
+    "C40": "disputed",
+    "C41": "matched",
+    "C42": "corroborated",
+    "C43": "matched"
+  },
+  "readiness_counts": {
+    "verified": 0,
+    "corroborated": 4,
+    "matched": 26,
+    "unsupported": 12,
+    "disputed": 1
+  },
+  "escalate": [
+    {
+      "claim": "C03",
+      "reason": "no supporting passage matched yet"
+    },
+    {
+      "claim": "C04",
+      "reason": "no supporting passage matched yet"
+    },
+    {
+      "claim": "C05",
+      "reason": "no supporting passage matched yet"
+    },
+    {
+      "claim": "C06",
+      "reason": "no supporting passage matched yet"
+    },
+    {
+      "claim": "C07",
+      "reason": "no supporting passage matched yet"
+    },
+    {
+      "claim": "C17",
+      "reason": "no supporting passage matched yet"
+    },
+    {
+      "claim": "C24",
+      "reason": "high-risk claim without independent or primary support"
+    },
+    {
+      "claim": "C26",
+      "reason": "no supporting passage matched yet"
+    },
+    {
+      "claim": "C27",
+      "reason": "no supporting passage matched yet"
+    },
+    {
+      "claim": "C28",
+      "reason": "no supporting passage matched yet"
+    },
+    {
+      "claim": "C29",
+      "reason": "no supporting passage matched yet"
+    },
+    {
+      "claim": "C32",
+      "reason": "high-risk claim without independent or primary support"
+    },
+    {
+      "claim": "C34",
+      "reason": "high-risk claim without independent or primary support"
+    },
+    {
+      "claim": "C36",
+      "reason": "no supporting passage matched yet"
+    },
+    {
+      "claim": "C40",
+      "reason": "evidence conflicts"
+    }
+  ],
   "stats": {
-    "sources": 36,
-    "claims": 37,
-    "confirmed_canon": 27,
-    "interpretation": 4,
+    "sources": 47,
+    "claims": 43,
+    "confirmed_canon": 31,
+    "interpretation": 6,
     "fan_theory": 1,
     "speculation": 1,
     "real_world_fact": 4

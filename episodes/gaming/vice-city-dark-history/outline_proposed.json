@@ -1,0 +1,120 @@
+{
+  "status": "PROPOSED - not approved. Not used by the pipeline until it is reviewed, renamed to outline.json and the research stage is approved.",
+  "title": "Vice City's Dark History: How a City Was Built on Crime",
+  "thesis": "Vice City was not corrupted by Tommy Vercetti. He inherited an existing system of corruption and criminal power.",
+  "chapters": [
+    {
+      "id": "ch01",
+      "title": "A City That Was Already Waiting",
+      "purpose": "Hook. Open on the city, not violence (first 15 seconds stay calm for ad suitability). Pose the question: who really ran Vice City before Tommy? Brief GTA VI framing at setting level only.",
+      "target_words": 200,
+      "claim_ids": [
+        "C01",
+        "C05",
+        "C06",
+        "C19",
+        "C20"
+      ]
+    },
+    {
+      "id": "ch02",
+      "title": "Boomtown, 1984",
+      "purpose": "Context: the 3D-universe city, its real-world model, the drug-money boom. One line separating the 2D original.",
+      "target_words": 180,
+      "claim_ids": [
+        "C03",
+        "C04",
+        "C08",
+        "C09"
+      ]
+    },
+    {
+      "id": "ch03",
+      "title": "The Sergeant",
+      "purpose": "Evidence 1: the Army. Martinez runs drugs through Fort Baxter for the cartel and discards Vic.",
+      "target_words": 260,
+      "claim_ids": [
+        "C10",
+        "C11",
+        "C31",
+        "C12"
+      ]
+    },
+    {
+      "id": "ch04",
+      "title": "The Agent",
+      "purpose": "Evidence 2: law enforcement. Forbes sells deal information; his ID becomes a weapon. Say plainly that his agency is disputed.",
+      "target_words": 220,
+      "claim_ids": [
+        "C39",
+        "C40",
+        "C41"
+      ]
+    },
+    {
+      "id": "ch05",
+      "title": "The Cartel's Tower",
+      "purpose": "Evidence 3: the cartel's respectable front, the Mendez war, and the 'Last Stand' ending.",
+      "target_words": 280,
+      "claim_ids": [
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C38"
+      ]
+    },
+    {
+      "id": "ch06",
+      "title": "The Exchange",
+      "purpose": "1984 to 1986: Lance pulls Vic back in; a retired colonel helps broker the deal that becomes the ambush.",
+      "target_words": 220,
+      "claim_ids": [
+        "C32",
+        "C33",
+        "C34",
+        "C20"
+      ]
+    },
+    {
+      "id": "ch07",
+      "title": "The Heir",
+      "purpose": "Tommy steps into Diaz's empire and a developer's gang-war scheme: he inherits and accelerates the system rather than creating it.",
+      "target_words": 300,
+      "claim_ids": [
+        "C17",
+        "C21",
+        "C22",
+        "C43",
+        "C35",
+        "C36"
+      ]
+    },
+    {
+      "id": "ch08",
+      "title": "This Is Business",
+      "purpose": "The finale as the system's verdict: Sonny, Lance, what is said vs implied about Harwood; the Sonny theory clearly labelled as a fan theory.",
+      "target_words": 240,
+      "claim_ids": [
+        "C18",
+        "C23",
+        "C24",
+        "C37",
+        "C25",
+        "C26"
+      ]
+    },
+    {
+      "id": "ch09",
+      "title": "The System Outlives Its Kings",
+      "purpose": "Conclusion: restate the thesis on the evidence; aftermath; GTA VI's Vice City as an open question, no story spoilers.",
+      "target_words": 160,
+      "claim_ids": [
+        "C42",
+        "C27",
+        "C28",
+        "C30"
+      ]
+    }
+  ]
+}

@@ -76,7 +76,7 @@ def test_pilot_production_loads_with_landscape_defaults():
     assert prod["_settings"]["format"] == "landscape"
     assert prod["_settings"]["motion"] == "kenburns"
     b = word_budget(prod["target_minutes"])
-    assert b["target_words"] == 3150 and b["min_words"] == 2600 and b["max_words"] == 3750
+    assert b["target_words"] == 1960 and b["min_words"] == 1560 and b["max_words"] == 2400
 
 
 def test_production_rejects_game_outside_continuity(tmp_path):
@@ -129,15 +129,52 @@ def test_dossier_flags(prod_dir, mutate, rule):
     assert not rep["passed"] and rule in {e["rule"] for e in rep["errors"]}
 
 
-def test_pilot_dossier_is_valid_but_flags_every_unverified_source():
+def test_pilot_dossier_is_structurally_valid_but_not_factually_verified():
     p = load_production(PILOT)
     d = json.load(open(os.path.join(os.path.dirname(PILOT), "research.json")))
     rep = validate_dossier(d, p)
-    assert rep["passed"], rep["errors"]
-    unverified = [w for w in rep["warnings"] if w["rule"] == "source_unverified"]
-    assert len(unverified) == len(d["sources"])          # nothing is marked verified by the assistant
+    assert rep["structurally_valid"], rep["errors"]
+    assert not rep["factually_verified"]               # structure passing never implies facts are checked
+    assert rep["readiness_counts"]["verified"] == 0    # nothing checked in-game or by a human yet
+    flagged = {e["claim"] for e in rep["escalate"]}
+    assert {"C24", "C32", "C34", "C36"} <= flagged     # the review's priority claims stay flagged
+    assert rep["readiness"]["C40"] == "disputed"       # Forbes's agency: sources disagree
+    assert rep["readiness"]["C01"] == rep["readiness"]["C02"] == "corroborated"  # official sources
+    fan = [c for c in d["claims"] if c["status"] == "fan_theory"]
+    assert fan and all(c["id"] == "C26" for c in fan)
     hd = [c for c in d["claims"] if c.get("continuity") == "HD"]
     assert hd and all(c["spoiler"] == "none" for c in hd)  # GTA VI stays setting-level
+    assert 12 <= p["target_minutes"][0] and p["target_minutes"][1] <= 16
+
+
+def _ev_dossier(evidence, families):
+    sources = [{"id": sid, "type": "secondary", "url": "https://example.org/" + sid, "family": fam}
+               for sid, fam in families.items()]
+    return {"sources": sources, "claims": [{"id": "C1", "text": "x", "status": "interpretation",
+                                            "continuity": "3D", "games": [], "spoiler": "none",
+                                            "source_ids": list(families), "evidence": evidence}]}
+
+
+def test_wiki_repetition_is_not_independent_corroboration():
+    from modules.gaming.research import claim_readiness
+    d = _ev_dossier([{"source_id": "A", "status": "matched", "passage": "p"},
+                     {"source_id": "B", "status": "matched", "passage": "p"}],
+                    {"A": "fan_wiki", "B": "fan_wiki"})
+    srcs = {s["id"]: s for s in d["sources"]}
+    assert claim_readiness(d["claims"][0], srcs) == "matched"
+    srcs["B"]["family"] = "press"
+    assert claim_readiness(d["claims"][0], srcs) == "corroborated"
+    d["claims"][0]["evidence"].append({"source_id": "A", "status": "disputed", "passage": "q"})
+    assert claim_readiness(d["claims"][0], srcs) == "disputed"
+
+
+def test_matched_evidence_must_record_a_passage(prod_dir):
+    _, p = dossier_and_prod(prod_dir)
+    d = _ev_dossier([{"source_id": "A", "status": "matched"}], {"A": "fan_wiki"})
+    rep = validate_dossier(d, p)
+    assert any(e["rule"] == "evidence_passage" for e in rep["errors"])
+    d["claims"][0]["evidence"][0]["status"] = "proven"
+    assert any(e["rule"] == "evidence_status" for e in validate_dossier(d, p)["errors"])
 
 
 # ---------- outline & script schema ----------

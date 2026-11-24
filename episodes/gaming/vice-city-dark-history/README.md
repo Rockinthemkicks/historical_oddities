@@ -1,4 +1,6 @@
-# Pilot: The Dark History of Vice City
+# Pilot: Vice City's Dark History: How a City Was Built on Crime
+
+**Review 3 (Nov 23): see [EDITORIAL_PACKAGE.md](EDITORIAL_PACKAGE.md). Reframed as an investigative documentary, 12-16 min. Waiting for editorial approval.**
 
 Gaming-lore pilot (20–25 min, fictional investigative history).
 

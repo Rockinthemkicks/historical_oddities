@@ -114,7 +114,9 @@ def cmd_check_research(prod, args):
     dossier = _read(prod, "research.json")
     rep = validate_dossier(dossier, prod)
     _write(prod, "research_report.json", rep)
-    _write(prod, "research_review.md", dossier_markdown(dossier, rep))
+    approvals = {"editorial": workflow.is_approved(prod["_dir"], "research"),
+                 "production": all(workflow.is_approved(prod["_dir"], st) for st in workflow.REQUIRED_FOR_PAID)}
+    _write(prod, "research_review.md", dossier_markdown(dossier, rep, approvals))
     _report("Research check", rep)
     print(f"  Review: {os.path.join(prod['_dir'], 'research_review.md')}")
     return 0 if rep["passed"] else 1
