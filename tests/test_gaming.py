@@ -72,7 +72,7 @@ def test_gta_franchise_continuities():
 
 def test_pilot_production_loads_with_landscape_defaults():
     prod = load_production(PILOT)
-    assert prod["_continuities"] == ["3D", "HD"]
+    assert prod["_continuities"] == ["2D", "3D", "HD"]
     assert prod["_settings"]["format"] == "landscape"
     assert prod["_settings"]["motion"] == "kenburns"
     b = word_budget(prod["target_minutes"])
@@ -81,10 +81,10 @@ def test_pilot_production_loads_with_landscape_defaults():
 
 def test_production_rejects_game_outside_continuity(tmp_path):
     p = json.load(open(PILOT))
-    p["continuity"] = "3D"  # but games include gta6 (HD)
+    p["continuity"] = "3D"  # but games include gta1 (2D) and gta6 (HD)
     path = tmp_path / "production.json"
     path.write_text(json.dumps(p))
-    with pytest.raises(ConfigError, match="HD universe"):
+    with pytest.raises(ConfigError, match="production doesn.t cover"):
         load_production(str(path))
 
 
@@ -129,11 +129,15 @@ def test_dossier_flags(prod_dir, mutate, rule):
     assert not rep["passed"] and rule in {e["rule"] for e in rep["errors"]}
 
 
-def test_pilot_research_is_not_ready_until_real_sources_exist():
+def test_pilot_dossier_is_valid_but_flags_every_unverified_source():
     p = load_production(PILOT)
     d = json.load(open(os.path.join(os.path.dirname(PILOT), "research.json")))
     rep = validate_dossier(d, p)
-    assert not rep["passed"] and rep["errors"][0]["rule"] == "empty"
+    assert rep["passed"], rep["errors"]
+    unverified = [w for w in rep["warnings"] if w["rule"] == "source_unverified"]
+    assert len(unverified) == len(d["sources"])          # nothing is marked verified by the assistant
+    hd = [c for c in d["claims"] if c.get("continuity") == "HD"]
+    assert hd and all(c["spoiler"] == "none" for c in hd)  # GTA VI stays setting-level
 
 
 # ---------- outline & script schema ----------

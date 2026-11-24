@@ -20,6 +20,7 @@ evidence and how certain it is:
     {"id": "C1",
      "text": "...",
      "status": "confirmed_canon",              -> confirmed_canon | interpretation | fan_theory | speculation
+                                                  | real_world_fact (release dates, sales: no continuity)
      "continuity": "3D",
      "games": ["gtavc"],
      "source_ids": ["S1"],
@@ -38,7 +39,9 @@ from urllib.parse import urlparse
 from .config import SPOILER_ALLOWED
 
 SOURCE_TYPES = ("primary_game", "official", "secondary", "community")
-STATUSES = ("confirmed_canon", "interpretation", "fan_theory", "speculation")
+STATUSES = ("confirmed_canon", "interpretation", "fan_theory", "speculation", "real_world_fact")
+# real_world_fact: facts about the real world (release dates, sales, inspirations), not
+# in-universe canon. They need a non-community source and sit outside any continuity.
 SPOILERS = ("none", "minor", "major")
 # What a status needs as evidence.
 CANON_SOURCE_TYPES = {"primary_game", "official"}
@@ -99,14 +102,16 @@ def validate_dossier(dossier, production):
         if not (c.get("text") or "").strip():
             out.append(_finding("error", where, "claim_text", "empty claim"))
         cont = c.get("continuity")
-        if cont not in continuities:
+        if status == "real_world_fact":
+            cont = None
+        elif cont not in continuities:
             out.append(_finding("error", where, "continuity",
                                 f"continuity {cont!r} isn't in this production's scope {continuities}"))
         for gid in c.get("games", []):
             g = games.get(gid)
             if not g:
                 out.append(_finding("error", where, "game", f"unknown game id {gid!r}"))
-            elif g["continuity"] != cont:
+            elif cont is not None and g["continuity"] != cont:
                 out.append(_finding("error", where, "continuity_mix",
                                     f"{g['title']} is {g['continuity']} universe but the claim is {cont}; "
                                     f"cross-universe statements must be split per universe"))
@@ -123,6 +128,9 @@ def validate_dossier(dossier, production):
             elif not any(s.get("type") in CANON_SOURCE_TYPES and s.get("verified") for s in cited):
                 out.append(_finding("warning", where, "canon_unverified",
                                     "its game/official source hasn't been verified by a human yet"))
+        elif status == "real_world_fact" and not any(s.get("type") in ("official", "secondary") for s in cited):
+            out.append(_finding("error", where, "missing_evidence",
+                                "a real-world fact needs an official or reputable secondary source"))
         elif status == "interpretation" and not cited:
             out.append(_finding("error", where, "missing_evidence",
                                 "an interpretation must point at the evidence it interprets"))
@@ -136,7 +144,7 @@ def validate_dossier(dossier, production):
             out.append(_finding("error", where, "spoiler_level",
                                 f"{spoiler} spoiler exceeds this production's '{production['spoiler_level']}' "
                                 f"spoiler level; cut it or raise the level and add a warning"))
-        if c.get("event") is not None and c.get("year") is not None:
+        if cont is not None and c.get("event") is not None and c.get("year") is not None:
             key = (cont, c["event"])
             if key in events and events[key][1] != c["year"]:
                 out.append(_finding("error", where, "timeline_conflict",
@@ -163,8 +171,9 @@ def dossier_markdown(dossier, report):
     lines.append(f"Check: {'PASSED' if report['passed'] else 'FAILED'} - "
                  f"{len(report['errors'])} error(s), {len(report['warnings'])} warning(s). "
                  f"{report['stats']}")
-    for title, status in (("Confirmed canon", "confirmed_canon"), ("Interpretation", "interpretation"),
-                          ("Fan theory", "fan_theory"), ("Speculation", "speculation")):
+    for title, status in (("Real-world facts", "real_world_fact"), ("Confirmed canon", "confirmed_canon"),
+                          ("Interpretation", "interpretation"), ("Fan theory", "fan_theory"),
+                          ("Speculation", "speculation")):
         items = [c for c in dossier.get("claims", []) if c.get("status") == status]
         if not items:
             continue
@@ -172,13 +181,16 @@ def dossier_markdown(dossier, report):
         for c in items:
             cites = ", ".join(f"{s} ({srcs[s]['type']}{'' if srcs[s].get('verified') else ', UNVERIFIED'})"
                               for s in c.get("source_ids", []) if s in srcs) or "no source"
-            lines.append(f"- **{c['id']}** [{c.get('continuity')}, spoiler: {c.get('spoiler', 'none')}] "
-                         f"{c.get('text', '')}  \n  Evidence: {cites}")
+            scope = "real world" if status == "real_world_fact" else c.get("continuity")
+            lines.append(f"- **{c['id']}** [{scope}, spoiler: {c.get('spoiler', 'none')}] "
+                         f"{c.get('text', '')}  \n  Evidence: {cites}"
+                         + (f"  \n  Note: {c['notes']}" if c.get("notes") else ""))
     lines += ["", "## Sources", ""]
     for s in dossier.get("sources", []):
         loc = s.get("url") or s.get("locator", "")
         lines.append(f"- **{s['id']}** ({s.get('type')}) {s.get('title', '')}: {loc}"
-                     f"{'' if s.get('verified') else ' (UNVERIFIED)'}")
+                     f"{'' if s.get('verified') else ' (UNVERIFIED)'}"
+                     + (f"  \n  Note: {s['notes']}" if s.get("notes") else ""))
     if report["errors"] or report["warnings"]:
         lines += ["", "## Flags for review", ""]
         for f in report["errors"] + report["warnings"]:

@@ -1,9 +1,16 @@
 # Pilot: The Dark History of Vice City
 
-Gaming-lore pilot (20–25 min, fictional investigative history, spoiler level "light").
+Gaming-lore pilot (20–25 min, fictional investigative history).
 
-**Status:** stage 1, research. `research.json` has no claims yet, so `check-research` will
-report it isn't ready. That's expected: the claims have to come from sources a human has checked.
+**Scope (owner decision, Nov 23):** a deep dive on the 1980s (3D-universe) Vice City, from Vice City
+Stories (1984) and Vice City (1986), framed for GTA VI audiences. GTA VI's Vice City appears only in
+the opening and closing, at setting level. Spoiler level "full" covers the 2002 and 2006 games' plots;
+every GTA VI claim is rated "none".
+
+**Status:** stage 1, research, first pass done. `research.json` has 30 claims and 28 sources and
+passes its checks (0 errors). **No source is verified yet:** the first pass came from search results.
+Read `research_review.md`, open or play through the sources, set `"verified": true` on the ones you've
+checked, and work through the open questions. Then approve the research stage.
 
 ## Steps
 1. Fill in `research.json` (sources and claims) and run

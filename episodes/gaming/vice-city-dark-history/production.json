@@ -3,11 +3,14 @@
   "title": "The Dark History of Vice City",
   "franchise": "gta",
   "games": [
+    "gta1",
     "gtavc",
     "gtavcs",
+    "gtasa",
     "gta6"
   ],
   "continuity": [
+    "2D",
     "3D",
     "HD"
   ],
@@ -16,7 +19,11 @@
     20,
     25
   ],
-  "spoiler_level": "light",
-  "description": "",
-  "overrides": {}
+  "spoiler_level": "full",
+  "description": "Before Leonida, there was 1980s Vice City. How two brothers, a cartel and a man fresh out of prison built a city on crime and betrayal: the full story of Vice City Stories and Vice City.",
+  "overrides": {},
+  "scope": "Deep dive on the 3D-universe (1980s) Vice City from Vice City Stories (1984) and Vice City (1986), framed for GTA VI audiences: the HD-universe Vice City appears only in the opening and closing, at setting level (spoiler 'none'). The 2D original is mentioned only as real-world history.",
+  "owner_decisions": {
+    "2026-11-23": "Scope: 80s Vice City with GTA VI framing (owner choice). Full spoilers for the 2002/2006 games; GTA VI kept to setting-level detail."
+  }
 }

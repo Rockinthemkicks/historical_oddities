@@ -1,13 +1,702 @@
 {
-  "topic": "The Dark History of Vice City",
-  "sources": [],
-  "claims": [],
+  "topic": "The Dark History of Vice City (3D-universe deep dive, GTA VI framing)",
+  "scope": "Deep dive on the 3D-universe (1980s) Vice City from Vice City Stories (1984) and Vice City (1986), framed for GTA VI audiences: the HD-universe Vice City appears only in the opening and closing, at setting level (spoiler 'none'). The 2D original is mentioned only as real-world history.",
+  "research_status": "First pass by Claude on 2026-11-23 from search results. Every source is UNVERIFIED until someone opens it (or checks it in-game) and sets verified: true.",
+  "sources": [
+    {
+      "id": "S01",
+      "type": "primary_game",
+      "title": "GTA: Vice City - opening cutscene (the docks drug deal)",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Not checked in-game yet. Locator from wiki mission pages; confirm by watching the cutscene or mission.",
+      "locator": "Vice City, game opening: Introduction cutscene and drug deal at the docks"
+    },
+    {
+      "id": "S02",
+      "type": "primary_game",
+      "title": "GTA: Vice City - mission 'Rub Out'",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Not checked in-game yet. Locator from wiki mission pages; confirm by watching the cutscene or mission.",
+      "locator": "Vice City, story mission 'Rub Out' (Diaz's mansion, Starfish Island)"
+    },
+    {
+      "id": "S03",
+      "type": "primary_game",
+      "title": "GTA: Vice City - final mission 'Keep Your Friends Close...'",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Not checked in-game yet. Locator from wiki mission pages; confirm by watching the cutscene or mission.",
+      "locator": "Vice City, final story mission 'Keep Your Friends Close...' (Vercetti Estate)"
+    },
+    {
+      "id": "S04",
+      "type": "primary_game",
+      "title": "GTA: Vice City Stories - opening missions at Fort Baxter and 'Brawn of the Dead'",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Not checked in-game yet. Locator from wiki mission pages; confirm by watching the cutscene or mission.",
+      "locator": "Vice City Stories, opening Fort Baxter missions; mission 'Brawn of the Dead'"
+    },
+    {
+      "id": "S05",
+      "type": "primary_game",
+      "title": "GTA: Vice City Stories - final missions (Mendez Building)",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Not checked in-game yet. Locator from wiki mission pages; confirm by watching the cutscene or mission.",
+      "locator": "Vice City Stories, closing missions ending at the Mendez Building (exact mission name to confirm)"
+    },
+    {
+      "id": "S06",
+      "type": "primary_game",
+      "title": "GTA: San Andreas - Las Venturas storyline and 'The Introduction' (1992)",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Not checked in-game yet. Locator from wiki mission pages; confirm by watching the cutscene or mission.",
+      "locator": "San Andreas: Las Venturas casino storyline; 'The Introduction' prequel film"
+    },
+    {
+      "id": "S07",
+      "type": "official",
+      "title": "Rockstar Games - Grand Theft Auto VI official site",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://www.rockstargames.com/VI"
+    },
+    {
+      "id": "S08",
+      "type": "official",
+      "title": "Rockstar Games - GTA VI 'Only in Leonida: Vice City'",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://www.rockstargames.com/VI/only-in-leonida/vice-city"
+    },
+    {
+      "id": "S09",
+      "type": "secondary",
+      "title": "Wikipedia - Tommy Vercetti",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://en.wikipedia.org/wiki/Tommy_Vercetti"
+    },
+    {
+      "id": "S10",
+      "type": "secondary",
+      "title": "Wikipedia - Grand Theft Auto: Vice City Stories",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://Www.wikipedia.org/wiki/Vic_Vance"
+    },
+    {
+      "id": "S11",
+      "type": "secondary",
+      "title": "GTA Wiki (Fandom) - Grand Theft Auto: Vice City",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://gta.fandom.com/wiki/Grand_Theft_Auto:_Vice_City"
+    },
+    {
+      "id": "S12",
+      "type": "secondary",
+      "title": "GTA Wiki (Fandom) - Grand Theft Auto: Vice City Stories",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://gta.fandom.com/wiki/Grand_Theft_Auto:_Vice_City_Stories"
+    },
+    {
+      "id": "S13",
+      "type": "secondary",
+      "title": "GTA Wiki (gta.wiki) - Rub Out",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://gta.wiki/w/Rub_Out"
+    },
+    {
+      "id": "S14",
+      "type": "secondary",
+      "title": "GTA Wiki (gta.wiki) - Mendez Cartel",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://gta.wiki/w/Mendez_Brothers"
+    },
+    {
+      "id": "S15",
+      "type": "secondary",
+      "title": "Grand Theft Wiki - Victor Vance",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://www.grandtheftwiki.com/Victor_Vance"
+    },
+    {
+      "id": "S16",
+      "type": "secondary",
+      "title": "GTA Wiki (Fandom) - Forelli Mafia Family",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://gta.fandom.com/wiki/Forelli_Mafia-Family"
+    },
+    {
+      "id": "S17",
+      "type": "secondary",
+      "title": "Grand Theft Wiki - Ken Rosenberg",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://www.grandtheftwiki.com/Ken_Rosenberg"
+    },
+    {
+      "id": "S18",
+      "type": "secondary",
+      "title": "IMDb - Vice City Stories plot summary",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://m.imdb.com/title/tt0815168/plotsummary"
+    },
+    {
+      "id": "S19",
+      "type": "community",
+      "title": "Sportskeeda - Who ambushed the deal in GTA Vice City?",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://sportskeeda.com/gta/who-ambushed-deal-gta-vice-city"
+    },
+    {
+      "id": "S20",
+      "type": "community",
+      "title": "TV Tropes - GTA Forelli Crime Family characters",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://tvtropes.org/pmwiki/pmwiki.php/Characters/GrandTheftAutoForelliCrimeFamily"
+    },
+    {
+      "id": "S21",
+      "type": "secondary",
+      "title": "GTA Intel - The Lance Vance subplot",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://gtaintel.com/news/vice-city-lance-vance-subplot"
+    },
+    {
+      "id": "S22",
+      "type": "secondary",
+      "title": "CNN - GTA VI launch sales (Nov 20, 2026)",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://www.cnn.com/2026/11/20/media/gta-vi-launch-sales-numbers"
+    },
+    {
+      "id": "S23",
+      "type": "secondary",
+      "title": "Wikiwand (Wikipedia) - Grand Theft Auto VI",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://wikiwand.com/en/articles/Grand_Theft_Auto_VI"
+    },
+    {
+      "id": "S24",
+      "type": "secondary",
+      "title": "GTA Wiki (gta.wiki) - Ricardo Diaz",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://gta.wiki/w/Ricardo_Diaz"
+    },
+    {
+      "id": "S25",
+      "type": "secondary",
+      "title": "VGC Database (Fandom) - Tommy Vercetti",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full. Lower-reliability wiki; used only where a better source should replace it.",
+      "url": "https://vgcdatabase.fandom.com/wiki/Tommy_Vercetti"
+    },
+    {
+      "id": "S26",
+      "type": "secondary",
+      "title": "TV Tropes - Grand Theft Auto: Vice City Stories",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://tvtropes.org/pmwiki/pmwiki.php/Videogame/GrandTheftAutoViceCityStories"
+    },
+    {
+      "id": "S27",
+      "type": "secondary",
+      "title": "Digit - GTA recap: Vice City Stories and Vice City",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://www.digit.in/features/gaming/gta-recap-1-vice-city-stories-and-vice-city.html"
+    },
+    {
+      "id": "S28",
+      "type": "secondary",
+      "title": "GTA Wiki (Fandom) - Diego Mendez",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://gta.fandom.com/wiki/Diego_Mendez"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "text": "Grand Theft Auto VI launched on November 19, 2026.",
+      "status": "real_world_fact",
+      "continuity": null,
+      "games": [
+        "gta6"
+      ],
+      "source_ids": [
+        "S22"
+      ],
+      "spoiler": "none"
+    },
+    {
+      "id": "C02",
+      "text": "Take-Two reported about $3.79 billion in GTA VI sales by the end of launch day, a company estimate.",
+      "status": "real_world_fact",
+      "continuity": null,
+      "games": [
+        "gta6"
+      ],
+      "source_ids": [
+        "S22"
+      ],
+      "spoiler": "none"
+    },
+    {
+      "id": "C03",
+      "text": "Vice City first appeared in the original Grand Theft Auto in 1997, in the separate top-down (2D) continuity.",
+      "status": "real_world_fact",
+      "continuity": null,
+      "games": [
+        "gta1"
+      ],
+      "source_ids": [
+        "S23"
+      ],
+      "spoiler": "none"
+    },
+    {
+      "id": "C04",
+      "text": "The 1980s Vice City of the 3D games is a fictional city modeled on Miami.",
+      "status": "real_world_fact",
+      "continuity": null,
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S09"
+      ],
+      "spoiler": "none"
+    },
+    {
+      "id": "C05",
+      "text": "GTA VI is set in the fictional state of Leonida, with Vice City as its central city.",
+      "status": "confirmed_canon",
+      "continuity": "HD",
+      "games": [
+        "gta6"
+      ],
+      "source_ids": [
+        "S07",
+        "S08",
+        "S23"
+      ],
+      "spoiler": "none"
+    },
+    {
+      "id": "C06",
+      "text": "Rockstar's own description calls GTA VI's Vice City 'the darkest side of the sunniest place in America'.",
+      "status": "confirmed_canon",
+      "continuity": "HD",
+      "games": [
+        "gta6"
+      ],
+      "source_ids": [
+        "S07"
+      ],
+      "spoiler": "none"
+    },
+    {
+      "id": "C07",
+      "text": "GTA VI's protagonists are Jason and Lucia.",
+      "status": "confirmed_canon",
+      "continuity": "HD",
+      "games": [
+        "gta6"
+      ],
+      "source_ids": [
+        "S07"
+      ],
+      "spoiler": "none"
+    },
+    {
+      "id": "C08",
+      "text": "Vice City Stories is set in 1984, two years before Vice City.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "source_ids": [
+        "S04",
+        "S10",
+        "S12"
+      ],
+      "spoiler": "none",
+      "event": "vcs_story",
+      "year": 1984
+    },
+    {
+      "id": "C09",
+      "text": "The game's own framing presents 1984 Vice City as a boomtown whose growth is fueled by the drug trade, a city built on crime and betrayal.",
+      "status": "interpretation",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "source_ids": [
+        "S18",
+        "S10"
+      ],
+      "spoiler": "none"
+    },
+    {
+      "id": "C10",
+      "text": "Victor 'Vic' Vance is a U.S. Army corporal stationed at Fort Baxter in Vice City.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "source_ids": [
+        "S04",
+        "S10",
+        "S12"
+      ],
+      "spoiler": "none"
+    },
+    {
+      "id": "C11",
+      "text": "Vic's corrupt superior, Sergeant Jerry Martinez, sets him up, and Vic is thrown out of the army.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "source_ids": [
+        "S04",
+        "S26",
+        "S15"
+      ],
+      "spoiler": "minor"
+    },
+    {
+      "id": "C12",
+      "text": "A drug shipment the Vance brothers take turns out to belong to the Mendez brothers, Armando and Diego.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "source_ids": [
+        "S04",
+        "S12",
+        "S28"
+      ],
+      "spoiler": "minor"
+    },
+    {
+      "id": "C13",
+      "text": "In 1984 the Mendez brothers are the city's most powerful drug kingpins, while presenting themselves publicly as philanthropists.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "source_ids": [
+        "S04",
+        "S28",
+        "S14"
+      ],
+      "spoiler": "none"
+    },
+    {
+      "id": "C14",
+      "text": "Ricardo Diaz, a rival drug baron, employs the Vance brothers against the Mendez operation.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "source_ids": [
+        "S04",
+        "S10",
+        "S14"
+      ],
+      "spoiler": "minor"
+    },
+    {
+      "id": "C15",
+      "text": "The Mendez brothers turn on the Vances and lure them into a deadly trap at their mansion; the brothers escape and go to war with the cartel.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "source_ids": [
+        "S05",
+        "S14"
+      ],
+      "spoiler": "major"
+    },
+    {
+      "id": "C16",
+      "text": "Vic's partner Louise dies, Vic kills Armando, the war ends at the Mendez Building, and Vic and Lance leave Vice City together.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "source_ids": [
+        "S05",
+        "S27",
+        "S14"
+      ],
+      "spoiler": "major"
+    },
+    {
+      "id": "C17",
+      "text": "Between 1984 and 1986 Diaz establishes himself as Vice City's dominant drug baron.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc",
+        "gtavcs"
+      ],
+      "source_ids": [
+        "S01",
+        "S24"
+      ],
+      "spoiler": "none"
+    },
+    {
+      "id": "C18",
+      "text": "Tommy Vercetti served fifteen years in prison for the killings in Harwood, Liberty City, and the press called him 'the Harwood Butcher'.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S01",
+        "S09",
+        "S16"
+      ],
+      "spoiler": "none"
+    },
+    {
+      "id": "C19",
+      "text": "In 1986 Sonny Forelli sends the newly released Tommy to Vice City to oversee a drug deal and expand the family's business south.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S01",
+        "S09",
+        "S11"
+      ],
+      "spoiler": "none",
+      "event": "vc_ambush",
+      "year": 1986
+    },
+    {
+      "id": "C20",
+      "text": "The deal is ambushed: two Forelli men and Victor Vance are killed, and Tommy, lawyer Ken Rosenberg and Lance Vance escape without the money or the drugs.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S01",
+        "S11",
+        "S21"
+      ],
+      "spoiler": "minor"
+    },
+    {
+      "id": "C21",
+      "text": "While working for Diaz, Tommy and Lance learn that Diaz's people were behind the ambush.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S02",
+        "S09",
+        "S11"
+      ],
+      "spoiler": "major"
+    },
+    {
+      "id": "C22",
+      "text": "Tommy and Lance storm Diaz's mansion on Starfish Island and kill him, and Tommy takes the mansion and Diaz's empire.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S02",
+        "S13",
+        "S11"
+      ],
+      "spoiler": "major"
+    },
+    {
+      "id": "C23",
+      "text": "Sonny Forelli comes to Vice City to claim Tommy's profits; Lance sides with Sonny, and Tommy kills both of them in the final mission.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S03",
+        "S16",
+        "S21"
+      ],
+      "spoiler": "major"
+    },
+    {
+      "id": "C24",
+      "text": "In the finale, Sonny's words confirm that Tommy had been set up in Harwood years earlier.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S03",
+        "S25"
+      ],
+      "spoiler": "major",
+      "notes": "Only a lower-reliability wiki supports this so far. Check the exact line in the final cutscene before using."
+    },
+    {
+      "id": "C25",
+      "text": "Lance's betrayal grew out of resentment at being sidelined in Tommy's rise.",
+      "status": "interpretation",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S21"
+      ],
+      "spoiler": "major"
+    },
+    {
+      "id": "C26",
+      "text": "Some players believe Sonny Forelli, not Diaz, arranged the ambush to get rid of Tommy.",
+      "status": "fan_theory",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S19",
+        "S20"
+      ],
+      "spoiler": "minor"
+    },
+    {
+      "id": "C27",
+      "text": "After Sonny's death, Marco Forelli becomes the family's new don.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtasa"
+      ],
+      "source_ids": [
+        "S06",
+        "S16"
+      ],
+      "spoiler": "minor"
+    },
+    {
+      "id": "C28",
+      "text": "By 1992 Ken Rosenberg has left Vice City and is managing a casino in Las Venturas.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtasa"
+      ],
+      "source_ids": [
+        "S06",
+        "S17"
+      ],
+      "spoiler": "minor"
+    },
+    {
+      "id": "C29",
+      "text": "After 1986 Tommy's relationship with Ken grows strained over Ken's cocaine use.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtasa"
+      ],
+      "source_ids": [
+        "S06",
+        "S25"
+      ],
+      "spoiler": "minor",
+      "notes": "Supported only by a lower-reliability wiki plus an unchecked game locator; verify before use."
+    },
+    {
+      "id": "C30",
+      "text": "Whether anything from 1980s Vice City carries over into GTA VI's Vice City is unconfirmed; the two may share only a name.",
+      "status": "speculation",
+      "continuity": "HD",
+      "games": [
+        "gta6"
+      ],
+      "source_ids": [],
+      "spoiler": "none"
+    }
+  ],
   "open_questions": [
-    "Scope decision: the 3D-universe Vice City (1980s) and the HD-universe Vice City (GTA VI) are separate continuities. Decide whether this episode covers the 3D city only, or compares both explicitly.",
-    "3D universe: what do Grand Theft Auto: Vice City and Vice City Stories establish about who held power in the city, and in what order? Cite missions or dialogue for each claim.",
-    "HD universe: what do GTA VI and Rockstar's official material establish about modern Vice City and Leonida, kept at a 'light' spoiler level (setting only; no endings, twists or cutscene runs)?",
-    "Connections: which apparent links between the 3D and HD versions of Vice City are confirmed by Rockstar, and which are only fan theory?",
-    "Release information: verify each game's release details against an official Rockstar or Take-Two source and record it as a source here.",
-    "Rights: what gameplay footage or screenshots will be used, and has the owner accepted the risk that Rockstar's posting policy covers only non-commercial use?"
+    "Verify every primary_game locator by watching the cutscene or mission, or reading a full transcript.",
+    "C24: confirm what Sonny actually says about Harwood in 'Keep Your Friends Close...'.",
+    "C29: find a stronger source for the Tommy-Ken falling-out (San Andreas dialogue).",
+    "Vice City Stories: confirm the name of the final mission(s) at the Mendez Building (S05).",
+    "Possible extra thread: one Vice City hitman reportedly works for an unexplained 'Mr. Black' and isn't clearly tied to Diaz (gta.wiki 'Ricardo Diaz's Hitmen'). Research before using it.",
+    "Coverage gaps for 20-25 minutes: Colonel Cortez, Avery Carrington and the real-estate side of the city, the Haitian/Cuban gang war, Vice City's police and media. Add claims for any that the outline needs.",
+    "GTA VI: check for any official nods to 1980s Vice City before C30 is narrated (setting-level only; no story spoilers).",
+    "Rights: decide on gameplay footage. Rockstar's posting policy covers occasional non-commercial use only."
   ]
 }
