@@ -1,0 +1,115 @@
+name: Vice City 60-second test (paid, max $2)
+
+# Manual button: Actions tab -> "Vice City 60-second test" -> Run workflow, type RUN.
+# Only people with write access to the repo can start it. It spends real money (OpenAI images,
+# ElevenLabs narration), capped at $2.00 per run and $2.00 for the test episode. The caps are fixed
+# here on purpose; there is no input that raises them.
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: "Type RUN to approve the test and spend up to $2.00"
+        required: true
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: paid-runs
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+      ELEVENLABS_VOICE_ID: ${{ secrets.ELEVENLABS_VOICE_ID }}
+      T: episodes/gaming/vice-city-60s-test
+      CAPS: --max-run-cost 2 --episode-budget 2
+    steps:
+      - name: Check approval and keys
+        env:
+          CONFIRM: ${{ github.event.inputs.confirm }}
+        run: |
+          if [ "$CONFIRM" != "RUN" ]; then
+            echo "::error::Not approved: type RUN in the confirm box. Nothing was spent."; exit 1
+          fi
+          for k in OPENAI_API_KEY ELEVENLABS_API_KEY ELEVENLABS_VOICE_ID; do
+            if [ -z "${!k}" ]; then echo "::error::Missing repository secret $k. Nothing was spent."; exit 1; fi
+          done
+
+      - uses: actions/checkout@v4
+        with:
+          ref: gaming-lore-pilot
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu-core zip
+      - run: pip install -r requirements.txt
+
+      # The spend ledger lives on the runner, which is wiped after every run; carry it between runs
+      # so episode limits keep counting earlier test spend.
+      - name: Restore spend ledger
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/.historical_oddities
+          key: spend-ledger-${{ github.run_id }}
+          restore-keys: spend-ledger-
+
+      - name: Build test and estimate (free)
+        run: |
+          python3 episodes/gaming/vice-city-dark-history/draft/make_test.py
+          P="python3 main.py --mode gaming-lore --production $T/production.json"
+          $P storyboard
+          $P estimate $CAPS
+
+      - name: Approve stages (owner typed RUN)
+        run: |
+          P="python3 main.py --mode gaming-lore --production $T/production.json"
+          for s in research outline script storyboard budget; do
+            $P approve "$s" --note "60-second test; RUN confirmed by ${{ github.actor }} in Actions run ${{ github.run_id }}; \$2 cap"
+          done
+
+      - name: Produce (paid)
+        run: python3 main.py --mode gaming-lore --production $T/production.json produce $CAPS
+
+      - name: Thumbnail mockup
+        run: |
+          BG=$(python3 -c "import json;a={x['id']:x for x in json.load(open('$T/assets/provenance.json'))['assets']};print(a['thumbnail_bg']['path'])")
+          python3 episodes/gaming/vice-city-dark-history/draft/make_thumbnail.py "$T/$BG" "$T/out/thumbnail_mockup.png"
+
+      - name: Save spend ledger
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: ~/.historical_oddities
+          key: spend-ledger-${{ github.run_id }}
+
+      - name: Cost summary
+        if: always()
+        run: |
+          if [ -f "$T/out/qc_report.json" ]; then
+            python3 -c "import json;r=json.load(open('$T/out/qc_report.json'));print(f\"Spent this run: \${r['spent_this_run_usd']:.2f}; video {r['duration_seconds']:.1f} s; QC {'passed' if r['qc']['passed'] else 'FAILED'}\")" | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+          tail -n 20 ~/.historical_oddities/spend_ledger.jsonl 2>/dev/null > ledger_tail.jsonl || true
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vice-city-60s-test-results
+          retention-days: 14
+          if-no-files-found: warn
+          path: |
+            ${{ env.T }}/out/documentary.mp4
+            ${{ env.T }}/out/thumbnail_mockup.png
+            ${{ env.T }}/out/images/
+            ${{ env.T }}/out/qc_report.json
+            ${{ env.T }}/estimate.json
+            ${{ env.T }}/script.json
+            ledger_tail.jsonl
