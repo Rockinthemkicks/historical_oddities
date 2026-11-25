@@ -1,0 +1,84 @@
+{
+  "visuals": [
+    {
+      "visual_id": "img_waterfront",
+      "scene": 1,
+      "chapter": "ch01",
+      "kind": "illustration",
+      "prompt": "Calm, atmospheric, non-graphic. Wide establishing view of a fictional 1980s subtropical coastal city at dusk: pastel art-deco hotels along a beachfront boulevard, palm silhouettes, the first neon signs flickering on in pink and teal, a single speedboat wake heading out across the calm bay toward open sea. Signs are abstract glowing shapes with no letters."
+    },
+    {
+      "visual_id": "v002",
+      "scene": 2,
+      "chapter": "ch01",
+      "kind": "text_card"
+    },
+    {
+      "visual_id": "img_corporal_base",
+      "scene": 3,
+      "chapter": "ch01",
+      "kind": "illustration",
+      "prompt": "Somber, non-graphic. The Corporal from the reference sheet, in his olive army field jacket, standing alone at dawn outside the chain-link fence of a military airbase, hangars and palm trees behind him, looking back over his shoulder."
+    },
+    {
+      "visual_id": "img_corporal_hospital",
+      "scene": 3,
+      "chapter": "ch01",
+      "kind": "illustration",
+      "prompt": "Somber, non-graphic. The Corporal from the reference sheet, in civilian clothes, sitting alone on a plastic chair in an empty hospital corridor at night, elbows on his knees, rain streaking the window beside him. Quiet grief."
+    },
+    {
+      "visual_id": "v005",
+      "scene": 4,
+      "chapter": "ch01",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v006",
+      "scene": 5,
+      "chapter": "ch01",
+      "kind": "text_card"
+    },
+    {
+      "visual_id": "img_corporal_dock",
+      "scene": 5,
+      "chapter": "ch01",
+      "kind": "illustration",
+      "prompt": "Tense, non-graphic. The Corporal from the reference sheet, now in his pale blue civilian shirt, two years older, waiting at a folding table on a dark harbor pier at night, a closed briefcase in front of him, harbor lights and a moored freighter behind."
+    },
+    {
+      "visual_id": "img_clockwork",
+      "scene": 6,
+      "chapter": "ch01",
+      "kind": "illustration",
+      "prompt": "Somber, investigative, non-graphic. Surreal editorial illustration: an enormous brass clockwork mechanism whose gears are built from miniature city blocks, palm trees, hotel towers and neon tubes, glowing softly at dusk. At its center sits a single empty leather executive chair under a spotlight. Wide composition, deep perspective."
+    },
+    {
+      "visual_id": "v009",
+      "scene": 7,
+      "chapter": "ch01",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v_rows1984",
+      "scene": 8,
+      "chapter": "ch01",
+      "kind": "text_card"
+    },
+    {
+      "visual_id": "v011",
+      "scene": 9,
+      "chapter": "ch01",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v012",
+      "scene": 9,
+      "chapter": "ch01",
+      "kind": "text_card"
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "passed": true
+}

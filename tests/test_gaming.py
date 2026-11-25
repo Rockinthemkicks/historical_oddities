@@ -419,3 +419,42 @@ def test_violent_imagery_in_opening_seconds_warns(prod_dir):
     sb = json.load(open(prod_dir / "storyboard.json"))
     opening = [w for w in sb["warnings"] if "first 15s" in w]
     assert len(opening) == 1 and "scene 1" in opening[0]      # only the opening is held to the strict rule
+
+
+# ---------- review 5: local typography, reuse, reframing, extra visuals ----------
+
+def test_text_card_styles_render(tmp_path):
+    from PIL import Image
+    from modules.gaming.packaging import text_card
+    for style, spec in [("stamp", {"heading": "1986", "lines": ["TWO YEARS LATER"]}),
+                        ("rows", {"heading": "VICE CITY, 1984", "rows": [["THE SERGEANT", "x"], ["THE AGENT", "y"]]}),
+                        ("title", {"heading": "THE DARK HISTORY OF VICE CITY", "lines": ["Before GTA 6"], "note": "n"})]:
+        p = text_card({"style": style, **spec}, str(tmp_path / f"{style}.png"))
+        assert Image.open(p).size == (1920, 1080)
+
+
+def test_zoom_to_motion_is_validated():
+    from modules.render import motion_for, _parse_zoom_to
+    assert _parse_zoom_to("zoom_to:0.5,0.6") == (0.5, 0.6, 0.35)
+    assert _parse_zoom_to("zoom_to:0.2,0.3,0.9") == (0.2, 0.3, 0.9)
+    assert _parse_zoom_to("zoom_to:1.5,0.3") is None and _parse_zoom_to("zoom_in") is None
+    assert motion_for(0, "zoom_to:0.5,0.5") == "zoom_to:0.5,0.5"
+    with pytest.raises(ValueError):
+        motion_for(0, "zoom_to:abc")
+
+
+def test_local_kinds_are_never_paid():
+    from modules.gaming.script_engine import GENERATED_KINDS, LOCAL_KINDS
+    assert not set(GENERATED_KINDS) & set(LOCAL_KINDS)
+
+
+def test_regenerated_assets_missing_on_disk_do_not_block(tmp_path):
+    from modules.gaming import provenance
+    m = provenance.load(str(tmp_path))
+    card = tmp_path / "out" / "cards" / "v1.png"
+    card.parent.mkdir(parents=True)
+    card.write_bytes(b"x")
+    provenance.register(str(tmp_path), m, "v1", str(card), "chapter_card", "pipeline", "generated", "card")
+    card.unlink()
+    rep = provenance.check(str(tmp_path), m, [])
+    assert not rep["errors"]

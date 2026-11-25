@@ -5,11 +5,11 @@ Thesis: Vice City was not corrupted by Tommy Vercetti. He inherited an existing 
 ## Readiness
 
 - Structural validation: PASSED (0 error(s), 5 warning(s))
-- Factual verification: NOT COMPLETE (verified 0, corroborated 11, single-family 31, unsupported 6, disputed 1; 9 claim(s) need attention)
+- Factual verification: NOT COMPLETE (verified 0, corroborated 13, single-family 32, unsupported 6, disputed 1; 9 claim(s) need attention)
 - Editorial approval: NOT GIVEN
 - Production approval: NOT GIVEN
 
-Stats: {'sources': 69, 'claims': 49, 'confirmed_canon': 37, 'interpretation': 6, 'fan_theory': 1, 'speculation': 1, 'real_world_fact': 4}
+Stats: {'sources': 75, 'claims': 52, 'confirmed_canon': 40, 'interpretation': 6, 'fan_theory': 1, 'speculation': 1, 'real_world_fact': 4}
 
 ## Real-world facts
 
@@ -34,8 +34,8 @@ Stats: {'sources': 69, 'claims': 49, 'confirmed_canon': 37, 'interpretation': 6,
   Evidence: S04 [game] discovered; S10 [encyclopedia] discovered; S12 [fan_wiki] matched: Set in 1984, 'roughly two years before the events of' Vice City.
 - **C10** [3D, spoiler: none, standing: MATCHED] Victor 'Vic' Vance is a U.S. Army corporal stationed at Fort Baxter in Vice City.  
   Evidence: S04 [game] discovered; S10 [encyclopedia] discovered; S12 [fan_wiki] matched: Vic is 'a U.S. Army corporal stationed at Fort Baxter'.
-- **C11** [3D, spoiler: minor, standing: MATCHED] Vic's sergeant, Jerry Martinez, runs a secret drug business, then frames Vic for drugs and for bringing a prostitute onto the base, and Vic is dishonorably discharged.  
-  Evidence: S04 [game] discovered; S12 [fan_wiki] matched: Martinez is 'his corrupt sergeant', in a secret drug trafficking business; frames Vic; Sgt. Peppah orders a dishonorable discharge.; S43 [fan_wiki] matched: Drill sergeant says they found the drugs and asks about the prostitute in his car; Vic is dishonorably discharged.; S26 [community] discovered
+- **C11** [3D, spoiler: minor, standing: MATCHED] Vic's sergeant, Jerry Martinez, runs a secret drug business with Vic as his reluctant middleman, then frames Vic for drugs and for bringing a prostitute onto the base, and Vic is dishonorably discharged.  
+  Evidence: S04 [game] discovered; S12 [fan_wiki] matched: Vic 'works as a reluctant middleman for his corrupt sergeant, Jerry Martinez', who runs a secret drug trafficking business; frames Vic; dishonorable discharge.; S43 [fan_wiki] matched: Drill sergeant says they found the drugs and asks about the prostitute in his car; Vic is dishonorably discharged.; S26 [community] discovered
 - **C12** [3D, spoiler: minor, standing: MATCHED] The cocaine Vic and Lance steal from Martinez turns out to belong to the Mendez brothers, Armando and Diego; Martinez was only moving it for them.  
   Evidence: S04 [game] discovered; S12 [fan_wiki] matched: Vic learns Martinez was only transporting the drugs for the Mendez Brothers.; S28 [fan_wiki] matched: Martinez tells Vic the stolen shipment belonged to the Mendez.
 - **C13** [3D, spoiler: none, standing: MATCHED] In 1984 the Mendez brothers are the city's most powerful drug kingpins, and their headquarters is a downtown tower also known as the Mendez Foundation building.  
@@ -111,6 +111,13 @@ Stats: {'sources': 69, 'claims': 49, 'confirmed_canon': 37, 'interpretation': 6,
   Evidence: S02 [game] discovered; S68 [fan_wiki] matched: The game concerns Tommy Vercetti 'as he rises to become Vice City's major criminal power'.
 - **C49** [3D, spoiler: major, standing: MATCHED] In 1984 Diaz blackmails Gonzalez for information on Cortez's drug shipments, as part of his plan to become the city's drug baron.  
   Evidence: S04 [game] discovered; S67 [fan_wiki] matched: Diaz blackmails Gonzalez for secrets about Cortez's drug shipments, planning to become the city's drug baron; spares his life in return.
+- **C50** [3D, spoiler: major, standing: CORROBORATED] Louise Cassidy-Williams is Vic's love interest in Vice City Stories.  
+  Evidence: S04 [game] discovered; S73 [fan_wiki] matched: Louise is Vic's love interest and a business associate.; S74 [fan_wiki] matched: Vic founds the Vance Crime Family with Lance and his girlfriend, Louise.; S75 [press] matched: Louise is the tritagonist and Victor Vance's love interest.
+- **C51** [3D, spoiler: none, standing: CORROBORATED] Vice City Stories and Vice City belong to the same 3D-era continuity.  
+  Evidence: S04 [game] discovered; S01 [game] discovered; S70 [fan_wiki] matched: The series is split into separate parallel universes, named 2D, 3D and HD; city names are reused in each.; S72 [press] matched: 3D Universe games include Vice City (1986) and Vice City Stories (1984); HD and 3D are separate continuities.  
+  Note: The universe names are reported by fan wikis as Rockstar North's terms; the script avoids quoting them as official.
+- **C52** [HD, spoiler: none, standing: MATCHED] GTA VI's modern Vice City belongs to a separate continuity from the 3D-era games.  
+  Evidence: S54 [official] discovered; S71 [press] matched: GTA VI's Vice City is not the same continuity as the 2002 game's, which belongs to the 3D Universe.; S72 [press] matched: The HD and 3D universe games are separate continuities; GTA VI is in the HD universe.
 
 ## Interpretation
 
@@ -280,6 +287,18 @@ Stats: {'sources': 69, 'claims': 49, 'confirmed_canon': 37, 'interpretation': 6,
   Note: Read as a search-result excerpt.
 - **S69** (primary_game, game) GTA: Vice City - asset and side missions: 'Martha's Mug Shot' (film studio), 'Spilling the Beans' and 'Hit the Courier' (Print Works), 'Four Iron' and 'Demolition Man' (Avery) (UNVERIFIED)  
   Note: Not checked in-game. Mission names from wiki lists.
+- **S70** (secondary, fan_wiki) GTA Wiki (gta.wiki) - Grand Theft Auto World (2D/3D/HD universes): https://gta.wiki/w/Grand_Theft_Auto_World (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt.
+- **S71** (secondary, press) iTechPost - GTA VI has its own universe (HD Universe continuity): https://www.itechpost.com/articles/237106/20260823/gta-vi-has-its-own-universe-what-hd-universe-continuity-means-its-timeline.htm (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt.
+- **S72** (secondary, press) GTA Intel - HD Universe vs 3D Universe, explained: https://gtaintel.com/news/hd-universe-vs-3d-universe-explained (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt.
+- **S73** (secondary, fan_wiki) GTA Wiki (gta.wiki) - Louise Cassidy-Williams: https://gta.wiki/w/Louise (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt.
+- **S74** (secondary, fan_wiki) GTABase - Victor Vance: https://www.gtabase.com/gta-vice-city-stories/characters/victor-vance (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt.
+- **S75** (secondary, press) Sportskeeda - Top 5 characters in GTA Vice City Stories: https://sportskeeda.com/gta/top-5-characters-gta-vice-city-stories-ranked (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt.
 
 ## Claims needing attention before scripting
 

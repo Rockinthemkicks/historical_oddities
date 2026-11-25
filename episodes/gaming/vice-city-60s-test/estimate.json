@@ -1,0 +1,24 @@
+{
+  "images": {
+    "generated_visuals": 6,
+    "to_generate": 7,
+    "reused": 0,
+    "quality": "medium",
+    "unit_usd": 0.056,
+    "estimate_usd": 0.38
+  },
+  "narration": {
+    "characters": 726,
+    "clips_to_generate": 10,
+    "estimate_usd": 0.22
+  },
+  "total_usd": 0.59,
+  "words": 135,
+  "minutes_at_wpm": 0.9,
+  "limits": {
+    "run": 2.0,
+    "episode": 10.0,
+    "overall": 250.0
+  },
+  "note": "Estimates; prices in modules/costs.py. Limits are never raised automatically."
+}

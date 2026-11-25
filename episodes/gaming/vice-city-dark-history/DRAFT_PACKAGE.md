@@ -1,3 +1,5 @@
+> **Superseded by [REVIEW5_TEST.md](REVIEW5_TEST.md) (review 5, Nov 24).** Kept as the record of review 4; its narration is out of date.
+
 # Draft package: The Dark History of Vice City Before GTA 6
 
 Response to editorial review 4 (Nov 24, 2026). Branch `gaming-lore-pilot`, draft PR #21 (not merged).

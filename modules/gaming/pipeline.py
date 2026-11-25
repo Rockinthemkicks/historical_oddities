@@ -38,7 +38,7 @@ from . import provenance, workflow
 from .config import ConfigError, load_production, word_budget
 from .dryrun import synthetic_image, synthetic_narration
 from .llm import FixtureLLM, LLMError, OpenAIText
-from .packaging import build_package, chapter_card, chapter_markers, validate_youtube_chapters
+from .packaging import build_package, chapter_card, text_card, chapter_markers, validate_youtube_chapters
 from .research import dossier_markdown, validate_dossier
 from .script_engine import (script_estimate, GENERATED_KINDS, assemble_script, chapter_path, outline_prompts,
                             plan_estimate, validate_outline, write_chapters)
@@ -272,11 +272,12 @@ def _estimate(prod, script, args):
     quality = s.get("image_quality", "medium")
     voice = prod.get("voice_id") or os.environ.get("ELEVENLABS_VOICE_ID") or "unset"
     gen = [v for sc in script["scenes"] for v in sc.get("visuals", []) if v["kind"] in GENERATED_KINDS]
+    gen += _extra_visuals(prod)
     pseudo = [{"scene_number": i + 1} for i in range(len(gen))]
     prompts = {i + 1: v["prompt"] for i, v in enumerate(gen)}
     style = _style(prod)
     iplan = images_mod.plan_images(pseudo, os.path.join(prod["_dir"], "out", "images"), prompts,
-                                   use_reference=True, quality=quality, style=style) if gen else \
+                                   use_reference=True, quality=quality, style=style, **_reference(prod)) if gen else \
         {"to_generate": [], "existing": [], "estimate_usd": 0.0}
     nplan = narration_mod.plan_narration(_tts_scenes(script), os.path.join(prod["_dir"], "out", "audio"), voice)
     total = iplan["estimate_usd"] + nplan["estimate_usd"]
@@ -302,6 +303,21 @@ def _style(prod):
                         prod["_settings"]["style_file"])
     with open(path) as f:
         return f.read().strip()
+
+
+def _reference(prod):
+    """Optional character reference for every generated image: production 'reference_prompt'
+    (generated once, paid) or 'reference_image' (your own file, free)."""
+    ref_img = prod.get("reference_image")
+    if ref_img:
+        ref_img = os.path.join(prod["_dir"], ref_img)
+    return {"reference_prompt": prod.get("reference_prompt"), "reference_image": ref_img}
+
+
+def _extra_visuals(prod):
+    """Generated images that aren't placed in the video (e.g. a thumbnail background), from
+    production 'extra_visuals': [{"id", "prompt"}]. Same ledger, cache and provenance as the rest."""
+    return [{"kind": "illustration", **v} for v in prod.get("extra_visuals", [])]
 
 
 def _tts_scenes(script):
@@ -361,6 +377,7 @@ def cmd_produce(prod, args):
     # ---- visuals ----
     print("[6] Visuals" + (" (placeholders)" if args.dry_run else ""))
     gen = [(sc, v) for sc in script["scenes"] for v in sc.get("visuals", []) if v["kind"] in GENERATED_KINDS]
+    gen += [(None, v) for v in _extra_visuals(prod)]
     files = {}
     img_dir = os.path.join(out, "images")
     if args.dry_run:
@@ -374,7 +391,7 @@ def cmd_produce(prod, args):
         prompts = {i + 1: v["prompt"] for i, (_, v) in enumerate(gen)}
         res = images_mod.generate_all_images(pseudo, img_dir, prompts=prompts, style=_style(prod),
                                              quality=s.get("image_quality", "medium"),
-                                             project_dir=prod["_dir"], ledger=ledger)
+                                             project_dir=prod["_dir"], ledger=ledger, **_reference(prod))
         for (sc, v), r in zip(gen, res):
             files[v["id"]] = r["image_path"]
             provenance.register(prod["_dir"], manifest, v["id"], r["image_path"], "generated_image",
@@ -389,8 +406,26 @@ def cmd_produce(prod, args):
                 files[v["id"]] = {"path": path, "motion": "none"}
                 provenance.register(prod["_dir"], manifest, v["id"], path, "chapter_card",
                                     "made locally by the pipeline", "generated", "chapter title card")
+            elif v["kind"] == "text_card":
+                path = text_card(v, os.path.join(out, "cards", f"{v['id']}.png"), size=_size_fps(prod)[0])
+                files[v["id"]] = {"path": path, "motion": v.get("motion", "zoom_in")}
+                provenance.register(prod["_dir"], manifest, v["id"], path, "chapter_card",
+                                    "made locally by the pipeline", "generated", "documentary typography")
             elif v["kind"] == "user_asset":
                 files[v["id"]] = os.path.join(prod["_dir"], assets[v["asset_id"]]["path"])
+    for sc in script["scenes"]:
+        for v in sc.get("visuals", []):
+            if v["kind"] in GENERATED_KINDS and v.get("motion") and v["id"] in files:
+                p = files[v["id"]]
+                files[v["id"]] = {"path": p["path"] if isinstance(p, dict) else p, "motion": v["motion"]}
+    for sc in script["scenes"]:
+        for v in sc.get("visuals", []):
+            if v["kind"] == "reuse":
+                src = files.get(v["of"])
+                if src is None:
+                    raise SystemExit(f"{v['id']}: reuses {v.get('of')!r}, which has no file")
+                files[v["id"]] = {"path": src["path"] if isinstance(src, dict) else src,
+                                  "motion": v.get("motion")}
     provenance.save(prod["_dir"], manifest)
 
     # ---- assembly ----

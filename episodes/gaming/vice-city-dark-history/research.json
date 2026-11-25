@@ -727,6 +727,72 @@
       "accessed": "2026-11-24",
       "verified": false,
       "notes": "Not checked in-game. Mission names from wiki lists."
+    },
+    {
+      "id": "S70",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTA Wiki (gta.wiki) - Grand Theft Auto World (2D/3D/HD universes)",
+      "url": "https://gta.wiki/w/Grand_Theft_Auto_World",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S71",
+      "type": "secondary",
+      "family": "press",
+      "title": "iTechPost - GTA VI has its own universe (HD Universe continuity)",
+      "url": "https://www.itechpost.com/articles/237106/20260823/gta-vi-has-its-own-universe-what-hd-universe-continuity-means-its-timeline.htm",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S72",
+      "type": "secondary",
+      "family": "press",
+      "title": "GTA Intel - HD Universe vs 3D Universe, explained",
+      "url": "https://gtaintel.com/news/hd-universe-vs-3d-universe-explained",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S73",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTA Wiki (gta.wiki) - Louise Cassidy-Williams",
+      "url": "https://gta.wiki/w/Louise",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S74",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTABase - Victor Vance",
+      "url": "https://www.gtabase.com/gta-vice-city-stories/characters/victor-vance",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S75",
+      "type": "secondary",
+      "family": "press",
+      "title": "Sportskeeda - Top 5 characters in GTA Vice City Stories",
+      "url": "https://sportskeeda.com/gta/top-5-characters-gta-vice-city-stories-ranked",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
     }
   ],
   "claims": [
@@ -1040,7 +1106,7 @@
     },
     {
       "id": "C11",
-      "text": "Vic's sergeant, Jerry Martinez, runs a secret drug business, then frames Vic for drugs and for bringing a prostitute onto the base, and Vic is dishonorably discharged.",
+      "text": "Vic's sergeant, Jerry Martinez, runs a secret drug business with Vic as his reluctant middleman, then frames Vic for drugs and for bringing a prostitute onto the base, and Vic is dishonorably discharged.",
       "status": "confirmed_canon",
       "continuity": "3D",
       "games": [
@@ -1061,7 +1127,7 @@
         {
           "source_id": "S12",
           "status": "matched",
-          "passage": "Martinez is 'his corrupt sergeant', in a secret drug trafficking business; frames Vic; Sgt. Peppah orders a dishonorable discharge.",
+          "passage": "Vic 'works as a reluctant middleman for his corrupt sergeant, Jerry Martinez', who runs a secret drug trafficking business; frames Vic; dishonorable discharge.",
           "accessed": "2026-11-23"
         },
         {
@@ -2375,6 +2441,119 @@
       "source_ids": [
         "S04",
         "S67"
+      ]
+    },
+    {
+      "id": "C50",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "spoiler": "major",
+      "text": "Louise Cassidy-Williams is Vic's love interest in Vice City Stories.",
+      "evidence": [
+        {
+          "source_id": "S04",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S73",
+          "status": "matched",
+          "passage": "Louise is Vic's love interest and a business associate.",
+          "accessed": "2026-11-24"
+        },
+        {
+          "source_id": "S74",
+          "status": "matched",
+          "passage": "Vic founds the Vance Crime Family with Lance and his girlfriend, Louise.",
+          "accessed": "2026-11-24"
+        },
+        {
+          "source_id": "S75",
+          "status": "matched",
+          "passage": "Louise is the tritagonist and Victor Vance's love interest.",
+          "accessed": "2026-11-24"
+        }
+      ],
+      "source_ids": [
+        "S04",
+        "S73",
+        "S74",
+        "S75"
+      ]
+    },
+    {
+      "id": "C51",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs",
+        "gtavc"
+      ],
+      "spoiler": "none",
+      "text": "Vice City Stories and Vice City belong to the same 3D-era continuity.",
+      "notes": "The universe names are reported by fan wikis as Rockstar North's terms; the script avoids quoting them as official.",
+      "evidence": [
+        {
+          "source_id": "S04",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S01",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S70",
+          "status": "matched",
+          "passage": "The series is split into separate parallel universes, named 2D, 3D and HD; city names are reused in each.",
+          "accessed": "2026-11-24"
+        },
+        {
+          "source_id": "S72",
+          "status": "matched",
+          "passage": "3D Universe games include Vice City (1986) and Vice City Stories (1984); HD and 3D are separate continuities.",
+          "accessed": "2026-11-24"
+        }
+      ],
+      "source_ids": [
+        "S01",
+        "S04",
+        "S70",
+        "S72"
+      ]
+    },
+    {
+      "id": "C52",
+      "status": "confirmed_canon",
+      "continuity": "HD",
+      "games": [
+        "gta6"
+      ],
+      "spoiler": "none",
+      "text": "GTA VI's modern Vice City belongs to a separate continuity from the 3D-era games.",
+      "evidence": [
+        {
+          "source_id": "S54",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S71",
+          "status": "matched",
+          "passage": "GTA VI's Vice City is not the same continuity as the 2002 game's, which belongs to the 3D Universe.",
+          "accessed": "2026-11-24"
+        },
+        {
+          "source_id": "S72",
+          "status": "matched",
+          "passage": "The HD and 3D universe games are separate continuities; GTA VI is in the HD universe.",
+          "accessed": "2026-11-24"
+        }
+      ],
+      "source_ids": [
+        "S54",
+        "S71",
+        "S72"
       ]
     }
   ],

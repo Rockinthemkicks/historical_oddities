@@ -1,0 +1,2568 @@
+{
+  "topic": "Vice City's Dark History: How a City Was Built on Crime",
+  "scope": "Deep dive on the 3D-universe (1980s) Vice City from Vice City Stories (1984) and Vice City (1986), framed for GTA VI audiences: the HD-universe Vice City appears only in the opening and closing, at setting level (spoiler 'none'). The 2D original is mentioned only as real-world history.",
+  "research_status": "Third pass by Claude on 2026-11-23 after editorial review 3: official sources added for C01/C02; S11, S12 and S29 re-read to record supporting passages, which corrected C13, C14, C21, C24, C31 and C33; 'Last Stand' confirmed as the VCS finale by two wikis; Forbes, Martinez and the institutional-corruption thesis added (C38-C43). Nothing has been checked in-game or by a human; wiki agreement is not treated as independent proof. Fourth pass 2026-11-24: 'Two Bit Hit' and 'Treacherous Swine' briefings matched (C34-C36); the Gonzalez leak recipient is implied, not stated. Final focused pass 2026-11-24 (review 4): 1986 economic and institutional corruption (Shrub, Print Works, Avery's three missions), GTA VI setting confirmed on Rockstar's site, C32/C36/C42 narrowed. The dossier is now closed for expansion; only verification changes from here.",
+  "sources": [
+    {
+      "id": "S01",
+      "type": "primary_game",
+      "title": "GTA: Vice City - opening cutscene (the docks drug deal)",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Not checked in-game yet. Locator from wiki mission pages; confirm by watching the cutscene or mission.",
+      "locator": "Vice City, game opening: Introduction cutscene and drug deal at the docks",
+      "family": "game"
+    },
+    {
+      "id": "S02",
+      "type": "primary_game",
+      "title": "GTA: Vice City - mission 'Rub Out'",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Not checked in-game yet. Locator from wiki mission pages; confirm by watching the cutscene or mission.",
+      "locator": "Vice City, story mission 'Rub Out' (Diaz's mansion, Starfish Island)",
+      "family": "game"
+    },
+    {
+      "id": "S03",
+      "type": "primary_game",
+      "title": "GTA: Vice City - final mission 'Keep Your Friends Close...'",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Not checked in-game yet. Locator from wiki mission pages; confirm by watching the cutscene or mission.",
+      "locator": "Vice City, final story mission 'Keep Your Friends Close...' (Vercetti Estate)",
+      "family": "game"
+    },
+    {
+      "id": "S04",
+      "type": "primary_game",
+      "title": "GTA: Vice City Stories - opening missions at Fort Baxter and 'Brawn of the Dead'",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Not checked in-game yet. Locator from wiki mission pages; confirm by watching the cutscene or mission.",
+      "locator": "Vice City Stories, opening Fort Baxter missions; mission 'Brawn of the Dead'",
+      "family": "game"
+    },
+    {
+      "id": "S05",
+      "type": "primary_game",
+      "title": "GTA: Vice City Stories - final mission 'Last Stand' (given by Ricardo Diaz)",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Mission name confirmed by two fan wikis on 2026-11-23 (S39, S40). Not checked in-game yet.",
+      "locator": "Vice City Stories, final story mission 'Last Stand' (Mendez Building rooftop), unlocked by 'Over the Top'",
+      "family": "game"
+    },
+    {
+      "id": "S06",
+      "type": "primary_game",
+      "title": "GTA: San Andreas - Las Venturas storyline and 'The Introduction' (1992)",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Not checked in-game yet. Locator from wiki mission pages; confirm by watching the cutscene or mission.",
+      "locator": "San Andreas: Las Venturas casino storyline; 'The Introduction' prequel film",
+      "family": "game"
+    },
+    {
+      "id": "S07",
+      "type": "official",
+      "title": "Rockstar Games - Grand Theft Auto VI official site",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://www.rockstargames.com/VI",
+      "family": "official"
+    },
+    {
+      "id": "S08",
+      "type": "official",
+      "title": "Rockstar Games - GTA VI 'Only in Leonida: Vice City'",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://www.rockstargames.com/VI/only-in-leonida/vice-city",
+      "family": "official"
+    },
+    {
+      "id": "S09",
+      "type": "secondary",
+      "title": "Wikipedia - Tommy Vercetti",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://en.wikipedia.org/wiki/Tommy_Vercetti",
+      "family": "encyclopedia"
+    },
+    {
+      "id": "S10",
+      "type": "secondary",
+      "title": "Wikipedia - Grand Theft Auto: Vice City Stories",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "URL corrected 2026-11-23 (was a malformed Wikipedia link). Not yet opened and read in full.",
+      "url": "https://en.wikipedia.org/wiki/Grand_Theft_Auto:_Vice_City_Stories",
+      "family": "encyclopedia"
+    },
+    {
+      "id": "S11",
+      "type": "secondary",
+      "title": "GTA Wiki (Fandom) - Grand Theft Auto: Vice City",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Read in full by Claude on 2026-11-23 and re-read the same day to record supporting passages. Not yet checked by a human.",
+      "url": "https://gta.fandom.com/wiki/Grand_Theft_Auto:_Vice_City",
+      "read_by_assistant": "2026-11-23",
+      "family": "fan_wiki"
+    },
+    {
+      "id": "S12",
+      "type": "secondary",
+      "title": "GTA Wiki (Fandom) - Grand Theft Auto: Vice City Stories",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Read in full by Claude on 2026-11-23 and re-read the same day to record supporting passages. Not yet checked by a human.",
+      "url": "https://gta.fandom.com/wiki/Grand_Theft_Auto:_Vice_City_Stories",
+      "read_by_assistant": "2026-11-23",
+      "family": "fan_wiki"
+    },
+    {
+      "id": "S13",
+      "type": "secondary",
+      "title": "GTA Wiki (gta.wiki) - Rub Out",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://gta.wiki/w/Rub_Out",
+      "family": "fan_wiki"
+    },
+    {
+      "id": "S14",
+      "type": "secondary",
+      "title": "GTA Wiki (gta.wiki) - Mendez Cartel",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://gta.wiki/w/Mendez_Brothers",
+      "family": "fan_wiki"
+    },
+    {
+      "id": "S15",
+      "type": "secondary",
+      "title": "Grand Theft Wiki - Victor Vance",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://www.grandtheftwiki.com/Victor_Vance",
+      "family": "fan_wiki"
+    },
+    {
+      "id": "S16",
+      "type": "secondary",
+      "title": "GTA Wiki (Fandom) - Forelli Mafia Family",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://gta.fandom.com/wiki/Forelli_Mafia-Family",
+      "family": "fan_wiki"
+    },
+    {
+      "id": "S17",
+      "type": "secondary",
+      "title": "Grand Theft Wiki - Ken Rosenberg",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Read (first ~30% of a very long page) by Claude on 2026-11-23. Not yet checked by a human.",
+      "url": "https://www.grandtheftwiki.com/Ken_Rosenberg",
+      "read_by_assistant": "2026-11-23",
+      "family": "fan_wiki"
+    },
+    {
+      "id": "S18",
+      "type": "secondary",
+      "title": "IMDb - Vice City Stories plot summary",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://m.imdb.com/title/tt0815168/plotsummary",
+      "family": "community"
+    },
+    {
+      "id": "S19",
+      "type": "community",
+      "title": "Sportskeeda - Who ambushed the deal in GTA Vice City?",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://sportskeeda.com/gta/who-ambushed-deal-gta-vice-city",
+      "family": "press"
+    },
+    {
+      "id": "S20",
+      "type": "community",
+      "title": "TV Tropes - GTA Forelli Crime Family characters",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://tvtropes.org/pmwiki/pmwiki.php/Characters/GrandTheftAutoForelliCrimeFamily",
+      "family": "community"
+    },
+    {
+      "id": "S21",
+      "type": "secondary",
+      "title": "GTA Intel - The Lance Vance subplot",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://gtaintel.com/news/vice-city-lance-vance-subplot",
+      "family": "press"
+    },
+    {
+      "id": "S22",
+      "type": "secondary",
+      "title": "CNN - GTA VI launch sales (Nov 20, 2026)",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://www.cnn.com/2026/11/20/media/gta-vi-launch-sales-numbers",
+      "family": "press"
+    },
+    {
+      "id": "S23",
+      "type": "secondary",
+      "title": "Wikiwand (Wikipedia) - Grand Theft Auto VI",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://wikiwand.com/en/articles/Grand_Theft_Auto_VI",
+      "family": "encyclopedia"
+    },
+    {
+      "id": "S24",
+      "type": "secondary",
+      "title": "GTA Wiki (gta.wiki) - Ricardo Diaz",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://gta.wiki/w/Ricardo_Diaz",
+      "family": "fan_wiki"
+    },
+    {
+      "id": "S25",
+      "type": "secondary",
+      "title": "VGC Database (Fandom) - Tommy Vercetti",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full. Lower-reliability wiki; used only where a better source should replace it.",
+      "url": "https://vgcdatabase.fandom.com/wiki/Tommy_Vercetti",
+      "family": "fan_wiki"
+    },
+    {
+      "id": "S26",
+      "type": "secondary",
+      "title": "TV Tropes - Grand Theft Auto: Vice City Stories",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://tvtropes.org/pmwiki/pmwiki.php/Videogame/GrandTheftAutoViceCityStories",
+      "family": "community"
+    },
+    {
+      "id": "S27",
+      "type": "secondary",
+      "title": "Digit - GTA recap: Vice City Stories and Vice City",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://www.digit.in/features/gaming/gta-recap-1-vice-city-stories-and-vice-city.html",
+      "family": "press"
+    },
+    {
+      "id": "S28",
+      "type": "secondary",
+      "title": "GTA Wiki (Fandom) - Diego Mendez",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "url": "https://gta.fandom.com/wiki/Diego_Mendez",
+      "family": "fan_wiki"
+    },
+    {
+      "id": "S29",
+      "type": "secondary",
+      "title": "Grand Theft Wiki - 'Keep Your Friends Close...' mission script",
+      "url": "https://www.grandtheftwiki.com/Keep_Your_Friends_Close.../Script",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Read in full by Claude on 2026-11-23 and re-read the same day to record supporting passages. Not yet checked by a human.",
+      "read_by_assistant": "2026-11-23",
+      "family": "fan_wiki"
+    },
+    {
+      "id": "S30",
+      "type": "secondary",
+      "title": "GTA Wiki (gta.wiki) - Avery Carrington",
+      "url": "https://gta.wiki/w/Avery_Carrington",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "family": "fan_wiki"
+    },
+    {
+      "id": "S31",
+      "type": "secondary",
+      "title": "GTA Wiki (gta.wiki) - Cuban-Haitian Gang War",
+      "url": "https://gta.wiki/w/Cuban-Haitian_Gang_War",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "family": "fan_wiki"
+    },
+    {
+      "id": "S32",
+      "type": "secondary",
+      "title": "Wikipedia - Grand Theft Auto: Vice City (plot)",
+      "url": "https://en.wikipedia.org/wiki/Grand_Theft_Auto:_Vice_City",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "URL corrected 2026-11-23 (was a redirect on a non-canonical domain). Not yet opened and read in full.",
+      "family": "encyclopedia"
+    },
+    {
+      "id": "S33",
+      "type": "secondary",
+      "title": "Grand Theft Wiki - Missions in GTA Vice City",
+      "url": "https://www.grandtheftwiki.com/GTA_Vice_City_Missions",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "family": "fan_wiki"
+    },
+    {
+      "id": "S34",
+      "type": "secondary",
+      "title": "GTA Wiki (gta.wiki) - Ricardo Diaz's Hitmen",
+      "url": "https://gta.wiki/w/Ricardo_Diaz%27s_Hitmen",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Found via web search on 2026-11-23 by Claude; page not yet opened and read in full.",
+      "family": "fan_wiki"
+    },
+    {
+      "id": "S35",
+      "type": "primary_game",
+      "title": "GTA: Vice City - Colonel Cortez missions ('The Party' onward)",
+      "locator": "Vice City mission 'Treacherous Swine' (Cortez's yacht briefing)",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Not checked in-game yet. Locator from wiki mission pages.",
+      "family": "game"
+    },
+    {
+      "id": "S36",
+      "type": "primary_game",
+      "title": "GTA: Vice City - Avery Carrington mission 'Two Bit Hit'",
+      "locator": "Vice City mission 'Two Bit Hit' (Avery's briefing at his construction site)",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Not checked in-game yet. Mission name unconfirmed.",
+      "family": "game"
+    },
+    {
+      "id": "S37",
+      "type": "official",
+      "family": "official",
+      "title": "Rockstar Newswire - 'Grand Theft Auto VI Now Available' (Nov 19, 2026)",
+      "url": "https://www.rockstargames.com/newswire/article/39akk424a9oo53/grand-theft-auto-vi-now-available",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "read_by_assistant": "2026-11-23",
+      "notes": "URL supplied by the owner's editorial review. The Newswire page itself could not be opened from Claude's tools; the same Rockstar release was read via its Business Wire distribution (finviz.com/news/425095, dated Nov 19, 2026 6:00 AM). A human should open the Newswire page."
+    },
+    {
+      "id": "S38",
+      "type": "official",
+      "family": "official",
+      "title": "Take-Two / Rockstar press release - 'Grand Theft Auto VI Shatters Entertainment Box Office Records' (Nov 20, 2026)",
+      "url": "https://www.sec.gov/Archives/edgar/data/0000946581/000162828026075217/exhibit9918k.htm",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "read_by_assistant": "2026-11-23",
+      "notes": "Read as Exhibit 99.1 to Take-Two's Form 8-K. The owner also supplied the IR copy: https://www.take2games.com/ir/news/grand-theft-auto-vi-shatters-entertainment-box-office-records (not openable from Claude's tools). Footnote on how 'day one retail sales' is defined not yet read."
+    },
+    {
+      "id": "S39",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTABase - VCS mission 'Last Stand'",
+      "url": "https://gtabase.com/gta-vice-city-stories/missions/last-stand",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "read_by_assistant": "2026-11-23",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S40",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "Grand Theft Wiki - 'Last Stand'",
+      "url": "https://www.grandtheftwiki.com/Last_Stand",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "read_by_assistant": "2026-11-23",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S41",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTA Wiki (gta.wiki) - Bryan Forbes",
+      "url": "https://gta.wiki/w/Bryan_Forbes",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "read_by_assistant": "2026-11-23",
+      "notes": "Read as search-result excerpts (page and a revision dated Oct 14, 2026)."
+    },
+    {
+      "id": "S42",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTABase - Bryan Forbes",
+      "url": "https://gtabase.com/gta-vice-city-stories/characters/bryan-forbes",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "read_by_assistant": "2026-11-23",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S43",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTA Wiki (gta.wiki) - Sgt. Jerry Martinez",
+      "url": "https://gta.wiki/w/Sgt._Jerry_Martinez",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "read_by_assistant": "2026-11-23",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S44",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTABase - Jerry Martinez",
+      "url": "https://www.gtabase.com/gta-vice-city-stories/characters/jerry-martinez",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "read_by_assistant": "2026-11-23",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S45",
+      "type": "primary_game",
+      "family": "game",
+      "title": "GTA: Vice City Stories - Bryan Forbes missions and 'The Mugshot Longshot'",
+      "locator": "Vice City Stories: Forbes missions 'The Audition' to 'The Bum Deal'; Mendez mission 'The Mugshot Longshot'",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "notes": "Not checked in-game yet. Mission names from wiki lists."
+    },
+    {
+      "id": "S46",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "Grand Theft Wiki - Mendez Building (Mendez Foundation)",
+      "url": "https://www.grandtheftwiki.com/Mendez_Compound",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "read_by_assistant": "2026-11-23",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S47",
+      "type": "secondary",
+      "family": "press",
+      "title": "FOX 5 DC - GTA VI estimated $1.84 billion by release day (Sensor Tower)",
+      "url": "https://www.fox5dc.com/news/gta-vi-pulls-estimated-1-84-billion-release-day-more-than-double-gta-vs-launch-record",
+      "accessed": "2026-11-23",
+      "verified": false,
+      "read_by_assistant": "2026-11-23",
+      "notes": "Read as a search-result excerpt. Third-party estimate, different method from Take-Two."
+    },
+    {
+      "id": "S48",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "Grand Theft Wiki - 'Two Bit Hit'",
+      "url": "https://www.grandtheftwiki.com/Two_Bit_Hit",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S49",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTABase - 'Two Bit Hit'",
+      "url": "https://www.gtabase.com/gta-vice-city/missions/two-bit-hit",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S50",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "Grand Theft Wiki - 'Two Bit Hit' walkthrough (quotes Avery's briefing)",
+      "url": "https://www.grandtheftwiki.com/Two_Bit_Hit/Walkthrough",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S51",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "Grand Theft Wiki - 'Treacherous Swine' walkthrough",
+      "url": "https://www.grandtheftwiki.com/Treacherous_Swine/Walkthrough",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S52",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTA Wiki (gta.wiki) - 'Treacherous Swine'",
+      "url": "https://gta.wiki/w/Treacherous_Swine",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S53",
+      "type": "community",
+      "family": "community",
+      "title": "TV Tropes - GTA Vice City (main page and YMMV)",
+      "url": "https://tvtropes.org/pmwiki/pmwiki.php/YMMV/GrandTheftAutoViceCity",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S54",
+      "type": "official",
+      "family": "official",
+      "title": "Rockstar Games - Grand Theft Auto VI official site (People & Places)",
+      "url": "https://www.rockstargames.com/VI",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S55",
+      "type": "secondary",
+      "family": "encyclopedia",
+      "title": "Wikipedia - Grand Theft Auto (1997 game)",
+      "url": "https://en.wikipedia.org/wiki/Grand_Theft_Auto_(video_game)",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S56",
+      "type": "secondary",
+      "family": "press",
+      "title": "Giant Bomb - Vice City (location)",
+      "url": "https://www.giantbomb.com/vice-city/3035-16/",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S57",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTA Wiki (gta.wiki) - Alex Shrub",
+      "url": "https://gta.wiki/w/Alex_Shrub",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S58",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTA Wiki (gta.wiki) - Missions in GTA Vice City",
+      "url": "https://gta.wiki/w/Missions_in_GTA_Vice_City",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S59",
+      "type": "secondary",
+      "family": "press",
+      "title": "Sportskeeda - 5 awesome GTA moments of Tommy Vercetti",
+      "url": "https://www.sportskeeda.com/gta/5-awesome-gta-moments-tommy-vercetti",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S60",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "Grand Theft Wiki - Print Works",
+      "url": "https://www.grandtheftwiki.com/Printworks",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S61",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTA Wiki (gta.wiki) - 'Hit the Courier' / 'Spilling the Beans'",
+      "url": "https://gta.wiki/w/Hit_the_Courier",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S62",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "Grand Theft Wiki - 'Four Iron'",
+      "url": "https://www.grandtheftwiki.com/Four_Iron",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S63",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "Grand Theft Wiki - 'Demolition Man' (includes script excerpt)",
+      "url": "https://www.grandtheftwiki.com/Demolition_Man",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S64",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTA Wiki (gta.wiki) - Avery Carrington",
+      "url": "https://gta.wiki/w/Avery_Carrington",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S65",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTA Wiki (gta.wiki) - Victor Vance",
+      "url": "https://gta.wiki/w/Vic_Vance",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S66",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "Grand Theft Wiki - Victor Vance",
+      "url": "https://www.grandtheftwiki.com/Victor_Vance",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S67",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTA Wiki (Fandom) - Gonzalez",
+      "url": "https://gta.fandom.com/wiki/Gonzales",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S68",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTA Wiki (gta.wiki) - Grand Theft Auto: Vice City",
+      "url": "https://gta.wiki/w/GTA:_Vice_City",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S69",
+      "type": "primary_game",
+      "family": "game",
+      "title": "GTA: Vice City - asset and side missions",
+      "locator": "'Martha's Mug Shot' (film studio), 'Spilling the Beans' and 'Hit the Courier' (Print Works), 'Four Iron' and 'Demolition Man' (Avery)",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "notes": "Not checked in-game. Mission names from wiki lists."
+    },
+    {
+      "id": "S70",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTA Wiki (gta.wiki) - Grand Theft Auto World (2D/3D/HD universes)",
+      "url": "https://gta.wiki/w/Grand_Theft_Auto_World",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S71",
+      "type": "secondary",
+      "family": "press",
+      "title": "iTechPost - GTA VI has its own universe (HD Universe continuity)",
+      "url": "https://www.itechpost.com/articles/237106/20260823/gta-vi-has-its-own-universe-what-hd-universe-continuity-means-its-timeline.htm",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S72",
+      "type": "secondary",
+      "family": "press",
+      "title": "GTA Intel - HD Universe vs 3D Universe, explained",
+      "url": "https://gtaintel.com/news/hd-universe-vs-3d-universe-explained",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S73",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTA Wiki (gta.wiki) - Louise Cassidy-Williams",
+      "url": "https://gta.wiki/w/Louise",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S74",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTABase - Victor Vance",
+      "url": "https://www.gtabase.com/gta-vice-city-stories/characters/victor-vance",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S75",
+      "type": "secondary",
+      "family": "press",
+      "title": "Sportskeeda - Top 5 characters in GTA Vice City Stories",
+      "url": "https://sportskeeda.com/gta/top-5-characters-gta-vice-city-stories-ranked",
+      "accessed": "2026-11-24",
+      "verified": false,
+      "read_by_assistant": "2026-11-24",
+      "notes": "Read as a search-result excerpt."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "text": "Grand Theft Auto VI launched on November 19, 2026.",
+      "status": "real_world_fact",
+      "continuity": null,
+      "games": [
+        "gta6"
+      ],
+      "source_ids": [
+        "S22",
+        "S37"
+      ],
+      "spoiler": "none",
+      "evidence": [
+        {
+          "source_id": "S37",
+          "status": "matched",
+          "passage": "Rockstar release dated Nov 19, 2026: GTA VI 'is now available' on PS5 and Xbox Series X|S (read via Business Wire copy).",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S22",
+          "status": "discovered"
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "text": "Take-Two reported $3.79 billion in GTA VI day-one retail sales, its own figure; the analytics firm Sensor Tower separately estimated about $1.84 billion by release day.",
+      "status": "real_world_fact",
+      "continuity": null,
+      "games": [
+        "gta6"
+      ],
+      "source_ids": [
+        "S22",
+        "S38",
+        "S47"
+      ],
+      "spoiler": "none",
+      "evidence": [
+        {
+          "source_id": "S38",
+          "status": "matched",
+          "passage": "Release dated Nov 20, 2026: GTA VI day one retail sales 'reached $3.79 billion' (asterisked, company figure).",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S47",
+          "status": "matched",
+          "passage": "Sensor Tower estimated about $1.84 billion in revenue by the Thursday release.",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S22",
+          "status": "discovered"
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "text": "Vice City first appeared in the original Grand Theft Auto in 1997, in the separate top-down (2D) continuity.",
+      "status": "real_world_fact",
+      "continuity": null,
+      "games": [
+        "gta1"
+      ],
+      "source_ids": [
+        "S23",
+        "S55",
+        "S56"
+      ],
+      "spoiler": "none",
+      "evidence": [
+        {
+          "source_id": "S23",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S55",
+          "status": "matched",
+          "passage": "The original game's three cities include Vice City (based on Miami).",
+          "accessed": "2026-11-24"
+        },
+        {
+          "source_id": "S56",
+          "status": "matched",
+          "passage": "Vice City first appeared in the original Grand Theft Auto as one of three playable cities.",
+          "accessed": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "text": "The 1980s Vice City of the 3D games is a fictional city modeled on Miami.",
+      "status": "real_world_fact",
+      "continuity": null,
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S09",
+        "S55",
+        "S56"
+      ],
+      "spoiler": "none",
+      "evidence": [
+        {
+          "source_id": "S09",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S55",
+          "status": "matched",
+          "passage": "Vice City is based on Miami.",
+          "accessed": "2026-11-24"
+        },
+        {
+          "source_id": "S56",
+          "status": "matched",
+          "passage": "Grand Theft Auto's version of Miami, Florida.",
+          "accessed": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "text": "GTA VI is set in the fictional state of Leonida, with Vice City as its central city.",
+      "status": "confirmed_canon",
+      "continuity": "HD",
+      "games": [
+        "gta6"
+      ],
+      "source_ids": [
+        "S07",
+        "S08",
+        "S23",
+        "S54"
+      ],
+      "spoiler": "none",
+      "evidence": [
+        {
+          "source_id": "S07",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S08",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S23",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S54",
+          "status": "matched",
+          "passage": "Official site: the state of Leonida; 'Vice City, USA'; 'the neon-soaked streets of Vice City and beyond'.",
+          "accessed": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "id": "C06",
+      "text": "Rockstar's own description calls GTA VI's Vice City 'the darkest side of the sunniest place in America'.",
+      "status": "confirmed_canon",
+      "continuity": "HD",
+      "games": [
+        "gta6"
+      ],
+      "source_ids": [
+        "S07",
+        "S54"
+      ],
+      "spoiler": "none",
+      "evidence": [
+        {
+          "source_id": "S07",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S54",
+          "status": "matched",
+          "passage": "Official site: 'Vice City, USA. The darkest side of the sunniest place in America.'",
+          "accessed": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "id": "C07",
+      "text": "GTA VI's protagonists are Jason and Lucia.",
+      "status": "confirmed_canon",
+      "continuity": "HD",
+      "games": [
+        "gta6"
+      ],
+      "source_ids": [
+        "S07",
+        "S54"
+      ],
+      "spoiler": "none",
+      "evidence": [
+        {
+          "source_id": "S07",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S54",
+          "status": "matched",
+          "passage": "Official site profiles Jason Duval and Lucia Caminos.",
+          "accessed": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "id": "C08",
+      "text": "Vice City Stories is set in 1984, two years before Vice City.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "source_ids": [
+        "S04",
+        "S10",
+        "S12"
+      ],
+      "spoiler": "none",
+      "event": "vcs_story",
+      "year": 1984,
+      "evidence": [
+        {
+          "source_id": "S04",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S10",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S12",
+          "status": "matched",
+          "passage": "Set in 1984, 'roughly two years before the events of' Vice City.",
+          "accessed": "2026-11-23"
+        }
+      ]
+    },
+    {
+      "id": "C09",
+      "text": "The game's own framing presents 1984 Vice City as a boomtown whose growth is fueled by the drug trade, a city built on crime and betrayal.",
+      "status": "interpretation",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "source_ids": [
+        "S10",
+        "S11",
+        "S18"
+      ],
+      "spoiler": "none",
+      "evidence": [
+        {
+          "source_id": "S18",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S10",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S11",
+          "status": "matched",
+          "passage": "Tommy is sent to profit from the city's growing drug trade.",
+          "accessed": "2026-11-23"
+        }
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "Victor 'Vic' Vance is a U.S. Army corporal stationed at Fort Baxter in Vice City.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "source_ids": [
+        "S04",
+        "S10",
+        "S12"
+      ],
+      "spoiler": "none",
+      "evidence": [
+        {
+          "source_id": "S04",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S10",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S12",
+          "status": "matched",
+          "passage": "Vic is 'a U.S. Army corporal stationed at Fort Baxter'.",
+          "accessed": "2026-11-23"
+        }
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "Vic's sergeant, Jerry Martinez, runs a secret drug business with Vic as his reluctant middleman, then frames Vic for drugs and for bringing a prostitute onto the base, and Vic is dishonorably discharged.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "source_ids": [
+        "S04",
+        "S12",
+        "S26",
+        "S43"
+      ],
+      "spoiler": "minor",
+      "evidence": [
+        {
+          "source_id": "S04",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S12",
+          "status": "matched",
+          "passage": "Vic 'works as a reluctant middleman for his corrupt sergeant, Jerry Martinez', who runs a secret drug trafficking business; frames Vic; dishonorable discharge.",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S43",
+          "status": "matched",
+          "passage": "Drill sergeant says they found the drugs and asks about the prostitute in his car; Vic is dishonorably discharged.",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S26",
+          "status": "discovered"
+        }
+      ]
+    },
+    {
+      "id": "C12",
+      "text": "The cocaine Vic and Lance steal from Martinez turns out to belong to the Mendez brothers, Armando and Diego; Martinez was only moving it for them.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "source_ids": [
+        "S04",
+        "S12",
+        "S28"
+      ],
+      "spoiler": "minor",
+      "evidence": [
+        {
+          "source_id": "S04",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S12",
+          "status": "matched",
+          "passage": "Vic learns Martinez was only transporting the drugs for the Mendez Brothers.",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S28",
+          "status": "matched",
+          "passage": "Martinez tells Vic the stolen shipment belonged to the Mendez.",
+          "accessed": "2026-11-23"
+        }
+      ]
+    },
+    {
+      "id": "C13",
+      "text": "In 1984 the Mendez brothers are the city's most powerful drug kingpins, and their headquarters is a downtown tower also known as the Mendez Foundation building.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "source_ids": [
+        "S04",
+        "S14",
+        "S28",
+        "S46"
+      ],
+      "spoiler": "none",
+      "notes": "The earlier 'public philanthropists' wording is NOT on the VCS wiki page (S12, re-read 2026-11-23). Only the 'Mendez Foundation' name is supported so far; don't claim philanthropy unless confirmed in-game.",
+      "evidence": [
+        {
+          "source_id": "S04",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S28",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S14",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S46",
+          "status": "matched",
+          "passage": "The Mendez Building, also called the Mendez Foundation, is the cartel's headquarters in 1984.",
+          "accessed": "2026-11-23"
+        }
+      ]
+    },
+    {
+      "id": "C14",
+      "text": "Rival drug baron Ricardo Diaz gives Vic work against the Mendez operation late in the story, including the final assault ('Last Stand' is a Diaz mission).",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "source_ids": [
+        "S04",
+        "S10",
+        "S14",
+        "S39",
+        "S40"
+      ],
+      "spoiler": "minor",
+      "notes": "S12 (re-read) does not describe Diaz employing the Vances; support comes from mission credits on two fan wikis.",
+      "evidence": [
+        {
+          "source_id": "S04",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S10",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S14",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S40",
+          "status": "matched",
+          "passage": "'Last Stand' infobox: For Ricardo Diaz; targets Diego Mendez and Jerry Martinez.",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S39",
+          "status": "matched",
+          "passage": "'Last Stand' is a main story mission given by Ricardo Diaz.",
+          "accessed": "2026-11-23"
+        }
+      ]
+    },
+    {
+      "id": "C15",
+      "text": "After using the Vance brothers for a few jobs, the Mendez brothers betray them, and the Vances go to war with the cartel.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "source_ids": [
+        "S05",
+        "S12",
+        "S14"
+      ],
+      "spoiler": "major",
+      "evidence": [
+        {
+          "source_id": "S05",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S12",
+          "status": "matched",
+          "passage": "The brothers are 'betrayed after doing a few jobs for them'.",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S14",
+          "status": "discovered"
+        }
+      ]
+    },
+    {
+      "id": "C16",
+      "text": "The war costs Vic dearly: Louise dies after the Mendez brothers kidnap her, Armando is killed at the Mendez mansion, and Vic kills Diego and Martinez on the roof of the Mendez Building.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "source_ids": [
+        "S05",
+        "S12",
+        "S27"
+      ],
+      "spoiler": "major",
+      "evidence": [
+        {
+          "source_id": "S05",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S12",
+          "status": "matched",
+          "passage": "Vic is 'too late to save Louise'; Armando killed at the mansion; Vic kills Diego and Martinez on the Mendez Building roof.",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S27",
+          "status": "discovered"
+        }
+      ]
+    },
+    {
+      "id": "C17",
+      "text": "Between 1984 and 1986 Diaz establishes himself as Vice City's dominant drug baron.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc",
+        "gtavcs"
+      ],
+      "source_ids": [
+        "S01",
+        "S24"
+      ],
+      "spoiler": "none",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S24",
+          "status": "discovered"
+        }
+      ]
+    },
+    {
+      "id": "C18",
+      "text": "Tommy Vercetti spent fifteen years in prison before 1986; in the finale Sonny calls him 'the Harwood Butcher' and says those fifteen years were his to spend.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S01",
+        "S09",
+        "S16",
+        "S29"
+      ],
+      "spoiler": "none",
+      "notes": "Narrowed 2026-11-24: the cause of the sentence (the Harwood killings) is not sourced well enough and is no longer claimed.",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S09",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S16",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S29",
+          "status": "matched",
+          "passage": "Sonny calls Tommy 'the Harwood Butcher'; 'Those fifteen years were mine to spend!'",
+          "accessed": "2026-11-23"
+        }
+      ]
+    },
+    {
+      "id": "C19",
+      "text": "In 1986 Sonny Forelli sends the newly released Tommy to Vice City to oversee a drug deal and expand the family's business south.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S01",
+        "S09",
+        "S11"
+      ],
+      "spoiler": "none",
+      "event": "vc_ambush",
+      "year": 1986,
+      "evidence": [
+        {
+          "source_id": "S01",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S09",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S11",
+          "status": "matched",
+          "passage": "Sonny sends the recently released Tommy to profit from the city's growing drug trade.",
+          "accessed": "2026-11-23"
+        }
+      ]
+    },
+    {
+      "id": "C20",
+      "text": "The deal is ambushed: Victor Vance and two Forelli men, Harry and Lee, are killed, the money and cocaine are taken, and Lance escapes.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S01",
+        "S11",
+        "S12"
+      ],
+      "spoiler": "minor",
+      "notes": "S11 does not name which Vance brother dies; S12 says hitmen kill Vic.",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S11",
+          "status": "matched",
+          "passage": "A Vance brother, Harry and Lee are killed; money and cocaine stolen; Lance survives.",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S12",
+          "status": "matched",
+          "passage": "Hitmen kill Vic and two Forelli members, starting the events of Vice City.",
+          "accessed": "2026-11-23"
+        }
+      ]
+    },
+    {
+      "id": "C21",
+      "text": "While working for Diaz, Lance learns that Diaz's gang carried out the ambush; he and Tommy then turn on Diaz.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S02",
+        "S09",
+        "S11"
+      ],
+      "spoiler": "major",
+      "evidence": [
+        {
+          "source_id": "S02",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S09",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S11",
+          "status": "matched",
+          "passage": "While working for Diaz, Lance learns that Diaz's gang carried out the ambush.",
+          "accessed": "2026-11-23"
+        }
+      ]
+    },
+    {
+      "id": "C22",
+      "text": "Tommy and Lance storm Diaz's mansion on Starfish Island and kill him, and Tommy takes the mansion and Diaz's empire.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S02",
+        "S11",
+        "S13"
+      ],
+      "spoiler": "major",
+      "evidence": [
+        {
+          "source_id": "S02",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S11",
+          "status": "matched",
+          "passage": "Tommy and Lance go to Diaz's mansion and kill him.",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S13",
+          "status": "discovered"
+        }
+      ]
+    },
+    {
+      "id": "C23",
+      "text": "Sonny Forelli comes to Vice City to collect money he considers his; Lance reveals Tommy's plan to Sonny, and Tommy kills both of them in the final mission.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S03",
+        "S11",
+        "S29"
+      ],
+      "spoiler": "major",
+      "evidence": [
+        {
+          "source_id": "S03",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S11",
+          "status": "matched",
+          "passage": "Sonny comes to collect; Lance reveals Tommy's fake-money plan; Tommy kills Lance, then Sonny.",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S29",
+          "status": "matched",
+          "passage": "Lance: 'This is Vice City. This is business.'",
+          "accessed": "2026-11-23"
+        }
+      ]
+    },
+    {
+      "id": "C24",
+      "text": "In the finale Tommy tells Sonny he was sent to kill one man who knew he was coming; Sonny deflects ('Anyone would think you blame me...') rather than admitting or denying it, and says Tommy's fifteen years were his to spend.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S03",
+        "S29"
+      ],
+      "spoiler": "major",
+      "notes": "Explicit dialogue vs inference: Tommy never says 'Harwood' (Sonny does, as 'the Harwood Butcher'). The setup is implied, not stated. Confirm in the cutscene (S03). Review 4: use only the dialogue as spoken. Do not state that Sonny set Tommy up.",
+      "risk": "high",
+      "evidence": [
+        {
+          "source_id": "S03",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S29",
+          "status": "matched",
+          "passage": "Tommy: 'You sent me to kill one man... They knew I was coming, Sonny'. Sonny: 'Anyone would think you blame me...'",
+          "accessed": "2026-11-23"
+        }
+      ]
+    },
+    {
+      "id": "C25",
+      "text": "Lance's betrayal grew out of feeling underappreciated and sidelined in Tommy's rise; in the game he only calls it business.",
+      "status": "interpretation",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S11",
+        "S21",
+        "S29"
+      ],
+      "spoiler": "major",
+      "evidence": [
+        {
+          "source_id": "S11",
+          "status": "matched",
+          "passage": "Lance begins to feel under-appreciated, causing a rift.",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S21",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S29",
+          "status": "matched",
+          "passage": "Lance gives no personal motive in the scene: 'This is business.'",
+          "accessed": "2026-11-23"
+        }
+      ]
+    },
+    {
+      "id": "C26",
+      "text": "Some players believe Sonny Forelli, not Diaz, arranged the ambush to get rid of Tommy.",
+      "status": "fan_theory",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S19",
+        "S20"
+      ],
+      "spoiler": "minor",
+      "evidence": [
+        {
+          "source_id": "S19",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S20",
+          "status": "discovered"
+        }
+      ]
+    },
+    {
+      "id": "C27",
+      "text": "After Sonny's death, Marco Forelli becomes the family's new don.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc",
+        "gtasa"
+      ],
+      "source_ids": [
+        "S06",
+        "S16"
+      ],
+      "spoiler": "minor",
+      "evidence": [
+        {
+          "source_id": "S06",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S16",
+          "status": "discovered"
+        }
+      ]
+    },
+    {
+      "id": "C28",
+      "text": "By 1992 Ken has been through rehab, lost his law license and is running Caligula's Palace casino in Las Venturas for three mafia families.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtasa"
+      ],
+      "source_ids": [
+        "S06",
+        "S17"
+      ],
+      "spoiler": "minor",
+      "evidence": [
+        {
+          "source_id": "S06",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S17",
+          "status": "accessed",
+          "note": "Checked against the page in pass 2; supporting passage not recorded. Re-record."
+        }
+      ]
+    },
+    {
+      "id": "C29",
+      "text": "Ken's cocaine addiction drives a rift with Tommy; after Ken's rehab, Tommy stops taking his calls.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtasa"
+      ],
+      "source_ids": [
+        "S06",
+        "S17"
+      ],
+      "spoiler": "minor",
+      "notes": "Per the wiki, the Tommy detail comes from San Andreas' 'The Introduction'. Confirm there.",
+      "evidence": [
+        {
+          "source_id": "S06",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S17",
+          "status": "accessed",
+          "note": "Checked against the page in pass 2; supporting passage not recorded. Re-record."
+        }
+      ]
+    },
+    {
+      "id": "C30",
+      "text": "Whether anything from 1980s Vice City carries over into GTA VI's Vice City is unconfirmed; the two may share only a name.",
+      "status": "speculation",
+      "continuity": "HD",
+      "games": [
+        "gta6"
+      ],
+      "source_ids": [],
+      "spoiler": "none",
+      "evidence": []
+    },
+    {
+      "id": "C31",
+      "text": "Vic needs money for his brother Pete's asthma medication, which is why he goes along with Martinez's schemes.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "source_ids": [
+        "S04",
+        "S12"
+      ],
+      "spoiler": "none",
+      "evidence": [
+        {
+          "source_id": "S04",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S12",
+          "status": "matched",
+          "passage": "Vic is 'desperate to raise money for his brother's asthma medication'; later sends money to Pete.",
+          "accessed": "2026-11-23"
+        }
+      ]
+    },
+    {
+      "id": "C32",
+      "text": "Vice City Stories ends with Vic and Lance deciding to leave town and lay low, yet two years later Vic is the dealer at the 1986 exchange where he is killed. The games don't show how he got back in.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "source_ids": [
+        "S05",
+        "S12",
+        "S39",
+        "S40",
+        "S65"
+      ],
+      "spoiler": "major",
+      "risk": "high",
+      "evidence": [
+        {
+          "source_id": "S05",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S12",
+          "status": "matched",
+          "passage": "Vic refuses Lance's cocaine and wants out; Lance later drags him back; they set up a deal with the Forelli family.",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S39",
+          "status": "matched",
+          "passage": "After 'Last Stand' the brothers take out their remaining enemies and decide to get out of town and lay low.",
+          "accessed": "2026-11-24"
+        },
+        {
+          "source_id": "S65",
+          "status": "matched",
+          "passage": "Vic decides to retire from criminal life and leaves Vice City with Lance.",
+          "accessed": "2026-11-24"
+        },
+        {
+          "source_id": "S40",
+          "status": "matched",
+          "passage": "Script: Vic tells Lance 'it's done'.",
+          "accessed": "2026-11-24"
+        }
+      ],
+      "notes": "Narrowed 2026-11-24 per review 4. The earlier 'Lance pulls him back in' rests on one wiki (S12) and is no longer claimed."
+    },
+    {
+      "id": "C33",
+      "text": "Retired colonel Juan Garcia Cortez helped set up the 1986 exchange; the VCS wiki attributes this to Ken Rosenberg ('apparently').",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S11",
+        "S12",
+        "S32",
+        "S35"
+      ],
+      "spoiler": "minor",
+      "notes": "The earlier detail that Cortez promises to find who was behind the ambush is NOT on S11 (re-read); removed until checked in-game (S35).",
+      "evidence": [
+        {
+          "source_id": "S35",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S11",
+          "status": "matched",
+          "passage": "Cortez is a retired colonel who helped set up the deal.",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S12",
+          "status": "matched",
+          "passage": "The Forelli deal was set up 'apparently with the help of Colonel Cortez according to Ken Rosenberg'.",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S32",
+          "status": "discovered"
+        }
+      ]
+    },
+    {
+      "id": "C34",
+      "text": "Cortez tells Tommy that his right-hand man Gonzalez gave away information about the deal, and has Tommy kill him ('Treacherous Swine'). Who received the leak is implied to be Diaz but never stated outright.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S11",
+        "S35",
+        "S51",
+        "S52",
+        "S53"
+      ],
+      "spoiler": "minor",
+      "notes": "Explicit vs implied: the mission names Gonzalez as the leak; Diaz as the recipient is inference (Vice City Stories shows Diaz blackmailing Gonzalez in 1984, two years earlier).",
+      "risk": "high",
+      "evidence": [
+        {
+          "source_id": "S35",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S11",
+          "status": "matched",
+          "passage": "Cortez has Tommy kill Gonzalez, a former right-hand man responsible for botching the deal.",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S51",
+          "status": "matched",
+          "passage": "Mission brief: Gonzalez gave away vital information about Tommy's deal to someone, and that someone organized the ambush.",
+          "accessed": "2026-11-24"
+        },
+        {
+          "source_id": "S52",
+          "status": "matched",
+          "passage": "Gonzalez is killed for his involvement in the opening drug deal and for betraying Cortez.",
+          "accessed": "2026-11-24"
+        },
+        {
+          "source_id": "S53",
+          "status": "matched",
+          "passage": "The culprit is implied to be Gonzalez and Diaz but never outright confirmed; VCS shows Diaz blackmailing Gonzalez two years earlier.",
+          "accessed": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "id": "C35",
+      "text": "Real-estate developer Avery Carrington has Tommy, disguised as a Cuban gang member, kill the new Haitian ganglord at a funeral, starting a gang war to drive down property prices.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S11",
+        "S30",
+        "S31",
+        "S33",
+        "S36",
+        "S48",
+        "S49"
+      ],
+      "spoiler": "minor",
+      "notes": "S11 (re-read) does not mention the funeral, gang war or property prices. This rests on unopened pages (S30, S31) and the unchecked mission (S36).",
+      "evidence": [
+        {
+          "source_id": "S36",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S30",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S31",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S33",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S11",
+          "status": "matched",
+          "passage": "Carrington is a property developer who gives Tommy work (no funeral or gang war on this page).",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S48",
+          "status": "matched",
+          "passage": "Avery has Tommy dress as a Cuban and attack a Haitian funeral so the Haitians blame the Cubans.",
+          "accessed": "2026-11-24"
+        },
+        {
+          "source_id": "S49",
+          "status": "matched",
+          "passage": "Tommy ambushes a Haitian gang funeral disguised as a Cuban, sparking a Cuban-Haitian gang war.",
+          "accessed": "2026-11-24"
+        }
+      ]
+    },
+    {
+      "id": "C36",
+      "text": "Avery Carrington's stated reason for starting a gang war is to drive property prices down; the game presents violence as a tool of real-estate business.",
+      "status": "interpretation",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S30",
+        "S31",
+        "S48",
+        "S50"
+      ],
+      "spoiler": "minor",
+      "risk": "high",
+      "evidence": [
+        {
+          "source_id": "S30",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S31",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S50",
+          "status": "matched",
+          "passage": "Avery's briefing: nothing brings real-estate prices down faster than a gang war.",
+          "accessed": "2026-11-24"
+        },
+        {
+          "source_id": "S48",
+          "status": "matched",
+          "passage": "Avery frames the gang war as a business opportunity, with his protege Donald Love listening.",
+          "accessed": "2026-11-24"
+        }
+      ],
+      "notes": "Narrowed 2026-11-24: the motive is Avery's own briefing line; the second half is our reading of that scene only, not a claim about the whole city."
+    },
+    {
+      "id": "C37",
+      "text": "Wiki accounts treat Sonny's earlier Harwood setup as fact; the game itself only implies it.",
+      "status": "interpretation",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "source_ids": [
+        "S11",
+        "S29"
+      ],
+      "spoiler": "major",
+      "evidence": [
+        {
+          "source_id": "S11",
+          "status": "matched",
+          "passage": "Page states Sonny 'set Tommy up' and made him serve 15 years.",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S29",
+          "status": "matched",
+          "passage": "In the dialogue Sonny only deflects; nothing is admitted.",
+          "accessed": "2026-11-23"
+        }
+      ]
+    },
+    {
+      "id": "C38",
+      "text": "Vice City Stories ends with 'Last Stand': Vic attacks the Mendez Building and kills Diego Mendez and Jerry Martinez on the roof, after stealing an attack helicopter from Fort Baxter in 'Over the Top'.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "spoiler": "major",
+      "evidence": [
+        {
+          "source_id": "S05",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S39",
+          "status": "matched",
+          "passage": "Objectives: fly to the Mendez building, take out the guards, take out Mendez and Martinez.",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S40",
+          "status": "matched",
+          "passage": "Climax of VCS, given by Diaz; Victor kills both Diego and Martinez.",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S12",
+          "status": "matched",
+          "passage": "Final confrontation on the Mendez Building rooftop; Vic kills Diego and Martinez.",
+          "accessed": "2026-11-23"
+        }
+      ],
+      "source_ids": [
+        "S05",
+        "S12",
+        "S39",
+        "S40"
+      ]
+    },
+    {
+      "id": "C39",
+      "text": "Bryan Forbes is an undercover agent who sells the Vance brothers information about drug deals.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "spoiler": "major",
+      "risk": "high",
+      "notes": "Use 'undercover agent' only. His agency is disputed (C40) and must not be named.",
+      "evidence": [
+        {
+          "source_id": "S45",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S41",
+          "status": "matched",
+          "passage": "'a corrupt DEA agent'... 'bribe-taking official'; has chosen crime over law.",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S42",
+          "status": "matched",
+          "passage": "Offers the Vances information regarding drug deals.",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S26",
+          "status": "matched",
+          "passage": "Trope entry 'Dirty Cop' for Forbes.",
+          "accessed": "2026-11-23"
+        }
+      ],
+      "source_ids": [
+        "S26",
+        "S41",
+        "S42",
+        "S45"
+      ]
+    },
+    {
+      "id": "C40",
+      "text": "Bryan Forbes works for the DEA.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "spoiler": "major",
+      "notes": "Sources disagree: most wikis say DEA; the VCS Fandom page calls him 'the corrupt VCPD detective Bryan Forbes'; an official-site news item reportedly mentions an undercover FBI agent 'BF'. Needs the in-game line.",
+      "evidence": [
+        {
+          "source_id": "S45",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S41",
+          "status": "matched",
+          "passage": "'a corrupt DEA agent'.",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S42",
+          "status": "matched",
+          "passage": "Lance fakes a card so Martinez looks like a DEA agent.",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S12",
+          "status": "disputed",
+          "passage": "Influence section: 'the corrupt VCPD detective Bryan Forbes'.",
+          "accessed": "2026-11-23"
+        }
+      ],
+      "source_ids": [
+        "S12",
+        "S41",
+        "S42",
+        "S45"
+      ]
+    },
+    {
+      "id": "C41",
+      "text": "In 'The Mugshot Longshot', Lance pastes Martinez's photo onto Forbes's government ID to convince the Mendez brothers that Martinez is a DEA agent.",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "spoiler": "major",
+      "evidence": [
+        {
+          "source_id": "S45",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S41",
+          "status": "matched",
+          "passage": "Lance sticks Martinez's photo onto Forbes's ID to fabricate that Martinez is a DEA agent.",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S42",
+          "status": "matched",
+          "passage": "Forbes's ID card is used to fabricate a fake card for Martinez.",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S43",
+          "status": "matched",
+          "passage": "Vic takes photos of Martinez to paste onto Forbes' ID for the Mendez Brothers.",
+          "accessed": "2026-11-23"
+        }
+      ],
+      "source_ids": [
+        "S41",
+        "S42",
+        "S43",
+        "S45"
+      ]
+    },
+    {
+      "id": "C42",
+      "text": "Before Tommy arrives, several individuals with official authority are personally inside Vice City's drug trade: an Army sergeant moving cartel cocaine and an undercover agent selling deal information. The games show individual misconduct, not whole institutions shown to be corrupt.",
+      "status": "interpretation",
+      "continuity": "3D",
+      "games": [
+        "gtavcs",
+        "gtavc"
+      ],
+      "spoiler": "major",
+      "risk": "high",
+      "notes": "Narrowed 2026-11-24 per review 4: individual misconduct does not establish institution-wide corruption. Cortez moved to C33 (he is retired, not serving).",
+      "evidence": [
+        {
+          "source_id": "S12",
+          "status": "matched",
+          "passage": "Martinez, 'his corrupt sergeant', transports the drugs for the Mendez Brothers.",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S41",
+          "status": "matched",
+          "passage": "Forbes: corrupt, bribe-taking, chose crime over law.",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S26",
+          "status": "matched",
+          "passage": "Martinez is officially only a sergeant but effectively a major crime lord.",
+          "accessed": "2026-11-23"
+        }
+      ],
+      "source_ids": [
+        "S12",
+        "S26",
+        "S41"
+      ]
+    },
+    {
+      "id": "C43",
+      "text": "Tommy does not create Vice City's criminal order: he takes over an empire Diaz had already built, by killing Diaz and moving into his mansion.",
+      "status": "interpretation",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "spoiler": "major",
+      "notes": "Thesis claim. Depends on C17 (Diaz's rise 1984-86), which is still unsupported.",
+      "evidence": [
+        {
+          "source_id": "S11",
+          "status": "matched",
+          "passage": "Tommy and Lance kill Diaz at his mansion; Tommy expands into many businesses.",
+          "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S24",
+          "status": "discovered"
+        }
+      ],
+      "source_ids": [
+        "S11",
+        "S24"
+      ]
+    },
+    {
+      "id": "C44",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "spoiler": "major",
+      "text": "Congressman Alex Shrub plans to ban the legal distribution of pornography to win puritan votes; Tommy, who has just bought a film studio, obtains incriminating photos of him in 'Martha's Mug Shot' to stop it.",
+      "evidence": [
+        {
+          "source_id": "S69",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S57",
+          "status": "matched",
+          "passage": "Shrub seeks to ban legal pornography to gain favor with puritan voters; Tommy, having bought a porn studio, plans to stop this.",
+          "accessed": "2026-11-24"
+        },
+        {
+          "source_id": "S58",
+          "status": "matched",
+          "passage": "'Martha's Mug Shot': acquire incriminating pictures of Alex Shrub.",
+          "accessed": "2026-11-24"
+        },
+        {
+          "source_id": "S59",
+          "status": "matched",
+          "passage": "Tommy blackmails the corrupt congressman with the help of Candy Suxxx.",
+          "accessed": "2026-11-24"
+        }
+      ],
+      "source_ids": [
+        "S57",
+        "S58",
+        "S59",
+        "S69"
+      ]
+    },
+    {
+      "id": "C45",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "spoiler": "major",
+      "text": "Tommy buys the Print Works, turns it into a counterfeiting operation by stealing printing plates from a courier ('Hit the Courier'), and plans to pay Sonny with fake money.",
+      "evidence": [
+        {
+          "source_id": "S69",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S60",
+          "status": "matched",
+          "passage": "Tommy buys the Print Works for $70,000; the foreman wants to print counterfeit money; Tommy uses it to make the fake money for Sonny.",
+          "accessed": "2026-11-24"
+        },
+        {
+          "source_id": "S61",
+          "status": "matched",
+          "passage": "Earnest suggests printing money; Tommy steals the courier's counterfeit plates and takes them to the Print Works.",
+          "accessed": "2026-11-24"
+        },
+        {
+          "source_id": "S11",
+          "status": "matched",
+          "passage": "Sonny comes to collect; Lance reveals Tommy's fake-money plan.",
+          "accessed": "2026-11-24"
+        }
+      ],
+      "source_ids": [
+        "S11",
+        "S60",
+        "S61",
+        "S69"
+      ]
+    },
+    {
+      "id": "C46",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "spoiler": "major",
+      "text": "In optional side missions, developer Avery Carrington has Tommy kill a rival developer who won't sell him land ('Four Iron'), bomb a competing construction site ('Demolition Man') and start a gang war at a funeral ('Two Bit Hit').",
+      "notes": "These missions are optional; say so on screen or in narration.",
+      "evidence": [
+        {
+          "source_id": "S69",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S62",
+          "status": "matched",
+          "passage": "A rival property developer refuses to sell Avery land; Avery asks Tommy to 'persuade' him; Tommy kills him at the golf course.",
+          "accessed": "2026-11-24"
+        },
+        {
+          "source_id": "S63",
+          "status": "matched",
+          "passage": "Avery wants a rival construction site down the street destroyed; script: 'save the rejuvenation of an important area of the city'.",
+          "accessed": "2026-11-24"
+        },
+        {
+          "source_id": "S48",
+          "status": "matched",
+          "passage": "Tommy attacks a Haitian funeral dressed as a Cuban to start a gang war.",
+          "accessed": "2026-11-24"
+        },
+        {
+          "source_id": "S64",
+          "status": "matched",
+          "passage": "Avery's missions are not necessary for the story and can be completed after the final mission.",
+          "accessed": "2026-11-24"
+        }
+      ],
+      "source_ids": [
+        "S48",
+        "S62",
+        "S63",
+        "S64",
+        "S69"
+      ]
+    },
+    {
+      "id": "C47",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "spoiler": "major",
+      "text": "Vic turns down Lance's offer of cocaine, saying he wants to stay away from drugs, and repeatedly says he wants out of the drug game but has no choice.",
+      "evidence": [
+        {
+          "source_id": "S04",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S12",
+          "status": "matched",
+          "passage": "Lance offers twenty kilos of cocaine; Victor denies interest and says he wants to stay away from drugs.",
+          "accessed": "2026-11-24"
+        },
+        {
+          "source_id": "S66",
+          "status": "matched",
+          "passage": "He claims he wants out of the drug game but has no choice; he shows regret.",
+          "accessed": "2026-11-24"
+        }
+      ],
+      "source_ids": [
+        "S04",
+        "S12",
+        "S66"
+      ]
+    },
+    {
+      "id": "C48",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "spoiler": "major",
+      "text": "Tommy rises to become Vice City's major criminal power.",
+      "evidence": [
+        {
+          "source_id": "S02",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S68",
+          "status": "matched",
+          "passage": "The game concerns Tommy Vercetti 'as he rises to become Vice City's major criminal power'.",
+          "accessed": "2026-11-24"
+        }
+      ],
+      "source_ids": [
+        "S02",
+        "S68"
+      ]
+    },
+    {
+      "id": "C49",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "spoiler": "major",
+      "text": "In 1984 Diaz blackmails Gonzalez for information on Cortez's drug shipments, as part of his plan to become the city's drug baron.",
+      "evidence": [
+        {
+          "source_id": "S04",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S67",
+          "status": "matched",
+          "passage": "Diaz blackmails Gonzalez for secrets about Cortez's drug shipments, planning to become the city's drug baron; spares his life in return.",
+          "accessed": "2026-11-24"
+        }
+      ],
+      "source_ids": [
+        "S04",
+        "S67"
+      ]
+    },
+    {
+      "id": "C50",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "spoiler": "major",
+      "text": "Louise Cassidy-Williams is Vic's love interest in Vice City Stories.",
+      "evidence": [
+        {
+          "source_id": "S04",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S73",
+          "status": "matched",
+          "passage": "Louise is Vic's love interest and a business associate.",
+          "accessed": "2026-11-24"
+        },
+        {
+          "source_id": "S74",
+          "status": "matched",
+          "passage": "Vic founds the Vance Crime Family with Lance and his girlfriend, Louise.",
+          "accessed": "2026-11-24"
+        },
+        {
+          "source_id": "S75",
+          "status": "matched",
+          "passage": "Louise is the tritagonist and Victor Vance's love interest.",
+          "accessed": "2026-11-24"
+        }
+      ],
+      "source_ids": [
+        "S04",
+        "S73",
+        "S74",
+        "S75"
+      ]
+    },
+    {
+      "id": "C51",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs",
+        "gtavc"
+      ],
+      "spoiler": "none",
+      "text": "Vice City Stories and Vice City belong to the same 3D-era continuity.",
+      "notes": "The universe names are reported by fan wikis as Rockstar North's terms; the script avoids quoting them as official.",
+      "evidence": [
+        {
+          "source_id": "S04",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S01",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S70",
+          "status": "matched",
+          "passage": "The series is split into separate parallel universes, named 2D, 3D and HD; city names are reused in each.",
+          "accessed": "2026-11-24"
+        },
+        {
+          "source_id": "S72",
+          "status": "matched",
+          "passage": "3D Universe games include Vice City (1986) and Vice City Stories (1984); HD and 3D are separate continuities.",
+          "accessed": "2026-11-24"
+        }
+      ],
+      "source_ids": [
+        "S01",
+        "S04",
+        "S70",
+        "S72"
+      ]
+    },
+    {
+      "id": "C52",
+      "status": "confirmed_canon",
+      "continuity": "HD",
+      "games": [
+        "gta6"
+      ],
+      "spoiler": "none",
+      "text": "GTA VI's modern Vice City belongs to a separate continuity from the 3D-era games.",
+      "evidence": [
+        {
+          "source_id": "S54",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S71",
+          "status": "matched",
+          "passage": "GTA VI's Vice City is not the same continuity as the 2002 game's, which belongs to the 3D Universe.",
+          "accessed": "2026-11-24"
+        },
+        {
+          "source_id": "S72",
+          "status": "matched",
+          "passage": "The HD and 3D universe games are separate continuities; GTA VI is in the HD universe.",
+          "accessed": "2026-11-24"
+        }
+      ],
+      "source_ids": [
+        "S54",
+        "S71",
+        "S72"
+      ]
+    }
+  ],
+  "open_questions": [
+    "The owner can't capture gameplay. Human check option: watch the cutscenes in a published playthrough on YouTube (viewing only, nothing downloaded) and note timestamps for S03 (C24), S05 (C32/C38), S35 (C34), S36 (C35/C36) and the Forbes missions (C40).",
+    "Bryan Forbes's agency: DEA (most wikis), VCPD detective (VCS Fandom page) or FBI (official-site news item, reportedly). Needs the in-game line (C40).",
+    "C13: is there in-game support for the Mendez brothers posing as philanthropists, beyond the \"Mendez Foundation\" building name?",
+    "Possible extra thread: a Vice City hitman reportedly works for an unexplained 'Mr. Black' (gta.wiki 'Ricardo Diaz's Hitmen'). Research before using it.",
+    "Rights: decide on gameplay footage. Rockstar's posting policy covers occasional non-commercial use only."
+  ],
+  "thesis": "Vice City was not corrupted by Tommy Vercetti. He inherited an existing system of corruption and criminal power."
+}

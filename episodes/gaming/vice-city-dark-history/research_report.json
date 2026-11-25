@@ -84,12 +84,15 @@
     "C46": "matched",
     "C47": "matched",
     "C48": "matched",
-    "C49": "matched"
+    "C49": "matched",
+    "C50": "corroborated",
+    "C51": "corroborated",
+    "C52": "matched"
   },
   "readiness_counts": {
     "verified": 0,
-    "corroborated": 11,
-    "matched": 31,
+    "corroborated": 13,
+    "matched": 32,
     "unsupported": 6,
     "disputed": 1
   },
@@ -132,9 +135,9 @@
     }
   ],
   "stats": {
-    "sources": 69,
-    "claims": 49,
-    "confirmed_canon": 37,
+    "sources": 75,
+    "claims": 52,
+    "confirmed_canon": 40,
     "interpretation": 6,
     "fan_theory": 1,
     "speculation": 1,

@@ -35,7 +35,8 @@ from .config import word_budget
 from .research import shingles
 
 GENERATED_KINDS = ("illustration", "map", "timeline", "evidence_board")
-VISUAL_KINDS = GENERATED_KINDS + ("user_asset", "chapter_card")
+LOCAL_KINDS = ("chapter_card", "text_card", "reuse")   # made locally or reused: never paid
+VISUAL_KINDS = GENERATED_KINDS + ("user_asset",) + LOCAL_KINDS
 HEDGES = ("theory", "theories", "theorize", "speculat", "might", "may ", "may,", "perhaps", "possibly",
           "suggest", "rumor", "rumour", "some fans", "fans believe", "unconfirmed", "if true",
           "it's possible", "it is possible", "could have", "one reading", "interpret")

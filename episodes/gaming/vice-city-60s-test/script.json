@@ -1,0 +1,248 @@
+{
+  "title": "The Dark History of Vice City Before GTA 6 - 60-second test",
+  "mode": "gaming-lore",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "narration": "Two years before Tommy Vercetti took over Vice City, another man was trying to escape it.",
+      "image_prompt": "",
+      "chapter": "ch01",
+      "chapter_title": "The Man Who Tried to Leave",
+      "claim_ids": [
+        "C08",
+        "C32",
+        "C22"
+      ],
+      "visuals": [
+        {
+          "id": "img_waterfront",
+          "kind": "illustration",
+          "prompt": "Calm, atmospheric, non-graphic. Wide establishing view of a fictional 1980s subtropical coastal city at dusk: pastel art-deco hotels along a beachfront boulevard, palm silhouettes, the first neon signs flickering on in pink and teal, a single speedboat wake heading out across the calm bay toward open sea. Signs are abstract glowing shapes with no letters.",
+          "motion": "zoom_in"
+        }
+      ]
+    },
+    {
+      "scene_number": 2,
+      "narration": "His name was Victor Vance.",
+      "image_prompt": "",
+      "chapter": "ch01",
+      "chapter_title": "The Man Who Tried to Leave",
+      "claim_ids": [
+        "C10"
+      ],
+      "visuals": [
+        {
+          "id": "v002",
+          "kind": "text_card",
+          "style": "stamp",
+          "heading": "VICTOR VANCE",
+          "lines": [
+            "VICE CITY, 1984"
+          ],
+          "rows": [],
+          "motion": "zoom_in"
+        }
+      ]
+    },
+    {
+      "scene_number": 3,
+      "narration": "A soldier turned drug dealer, Vic had survived a corrupt sergeant, a war with a powerful cartel, and the loss of the woman he loved.",
+      "image_prompt": "",
+      "chapter": "ch01",
+      "chapter_title": "The Man Who Tried to Leave",
+      "claim_ids": [
+        "C10",
+        "C11",
+        "C15",
+        "C16",
+        "C50"
+      ],
+      "visuals": [
+        {
+          "id": "img_corporal_base",
+          "kind": "illustration",
+          "prompt": "Somber, non-graphic. The Corporal from the reference sheet, in his olive army field jacket, standing alone at dawn outside the chain-link fence of a military airbase, hangars and palm trees behind him, looking back over his shoulder.",
+          "motion": "pan_right"
+        },
+        {
+          "id": "img_corporal_hospital",
+          "kind": "illustration",
+          "prompt": "Somber, non-graphic. The Corporal from the reference sheet, in civilian clothes, sitting alone on a plastic chair in an empty hospital corridor at night, elbows on his knees, rain streaking the window beside him. Quiet grief.",
+          "motion": "zoom_in"
+        }
+      ]
+    },
+    {
+      "scene_number": 4,
+      "narration": "By the end of 1984, he was ready to leave it all behind.",
+      "image_prompt": "",
+      "chapter": "ch01",
+      "chapter_title": "The Man Who Tried to Leave",
+      "claim_ids": [
+        "C32",
+        "C47"
+      ],
+      "visuals": [
+        {
+          "id": "v005",
+          "kind": "reuse",
+          "of": "img_waterfront",
+          "motion": "zoom_to:0.55,0.70,0.45"
+        }
+      ]
+    },
+    {
+      "scene_number": 5,
+      "narration": "Two years later, he was back, at a drug deal that would end his life and begin Tommy Vercetti's rise to power.",
+      "image_prompt": "",
+      "chapter": "ch01",
+      "chapter_title": "The Man Who Tried to Leave",
+      "claim_ids": [
+        "C32",
+        "C20",
+        "C48"
+      ],
+      "visuals": [
+        {
+          "id": "v006",
+          "kind": "text_card",
+          "style": "stamp",
+          "heading": "1986",
+          "lines": [
+            "TWO YEARS LATER"
+          ],
+          "rows": [],
+          "motion": "zoom_out"
+        },
+        {
+          "id": "img_corporal_dock",
+          "kind": "illustration",
+          "prompt": "Tense, non-graphic. The Corporal from the reference sheet, now in his pale blue civilian shirt, two years older, waiting at a folding table on a dark harbor pier at night, a closed briefcase in front of him, harbor lights and a moored freighter behind.",
+          "motion": "zoom_in"
+        }
+      ]
+    },
+    {
+      "scene_number": 6,
+      "narration": "Vice City tells the story of Tommy building a criminal empire.",
+      "image_prompt": "",
+      "chapter": "ch01",
+      "chapter_title": "The Man Who Tried to Leave",
+      "claim_ids": [
+        "C48"
+      ],
+      "visuals": [
+        {
+          "id": "img_clockwork",
+          "kind": "illustration",
+          "prompt": "Somber, investigative, non-graphic. Surreal editorial illustration: an enormous brass clockwork mechanism whose gears are built from miniature city blocks, palm trees, hotel towers and neon tubes, glowing softly at dusk. At its center sits a single empty leather executive chair under a spotlight. Wide composition, deep perspective.",
+          "motion": "zoom_out"
+        }
+      ]
+    },
+    {
+      "scene_number": 7,
+      "narration": "But the empire was already there.",
+      "image_prompt": "",
+      "chapter": "ch01",
+      "chapter_title": "The Man Who Tried to Leave",
+      "claim_ids": [
+        "C22",
+        "C43"
+      ],
+      "visuals": [
+        {
+          "id": "v009",
+          "kind": "reuse",
+          "of": "img_clockwork",
+          "motion": "zoom_to:0.5,0.55,0.5"
+        }
+      ]
+    },
+    {
+      "scene_number": 8,
+      "narration": "Behind the neon and the oceanfront mansions, a corrupt sergeant, rival drug lords and an undercover agent working both sides had been shaping the city since at least 1984.",
+      "image_prompt": "",
+      "chapter": "ch01",
+      "chapter_title": "The Man Who Tried to Leave",
+      "claim_ids": [
+        "C11",
+        "C13",
+        "C14",
+        "C39",
+        "C49"
+      ],
+      "visuals": [
+        {
+          "id": "v_rows1984",
+          "kind": "text_card",
+          "style": "rows",
+          "heading": "VICE CITY, 1984",
+          "lines": [],
+          "rows": [
+            [
+              "THE SERGEANT",
+              "running drugs for a cartel"
+            ],
+            [
+              "THE CARTEL",
+              "the Mendez brothers"
+            ],
+            [
+              "THE RIVAL",
+              "drug baron Ricardo Diaz"
+            ],
+            [
+              "THE AGENT",
+              "selling deal information"
+            ]
+          ],
+          "motion": "zoom_in"
+        }
+      ]
+    },
+    {
+      "scene_number": 9,
+      "narration": "Tommy didn't invent the system.",
+      "image_prompt": "",
+      "chapter": "ch01",
+      "chapter_title": "The Man Who Tried to Leave",
+      "claim_ids": [
+        "C43"
+      ],
+      "visuals": [
+        {
+          "id": "v011",
+          "kind": "reuse",
+          "of": "img_clockwork",
+          "motion": "zoom_to:0.5,0.6,0.9"
+        }
+      ]
+    },
+    {
+      "scene_number": 10,
+      "narration": "He inherited it.",
+      "image_prompt": "",
+      "chapter": "ch01",
+      "chapter_title": "The Man Who Tried to Leave",
+      "claim_ids": [
+        "C43"
+      ],
+      "visuals": [
+        {
+          "id": "v012",
+          "kind": "text_card",
+          "style": "title",
+          "heading": "THE DARK HISTORY OF VICE CITY",
+          "lines": [
+            "Before GTA 6"
+          ],
+          "rows": [],
+          "motion": "zoom_in",
+          "note": "Illustrations are original artwork, not game footage."
+        }
+      ]
+    }
+  ]
+}

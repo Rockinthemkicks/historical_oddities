@@ -68,9 +68,24 @@ def motion_for(index, mode):
         return "none"
     if mode == "kenburns":
         return MOTIONS[index % len(MOTIONS)]
-    if mode in MOTIONS:
+    if mode in MOTIONS or _parse_zoom_to(mode):
         return mode
     raise ValueError(f"Unknown motion {mode!r}; use none, kenburns, or one of {MOTIONS}")
+
+
+def _parse_zoom_to(mode):
+    """'zoom_to:fx,fy[,z]': a push-in that ends framed on a point (fx, fy in 0..1) at zoom 1+z
+    (default 0.35). It reuses one image as a closer, reframed shot without a new image."""
+    if not isinstance(mode, str) or not mode.startswith("zoom_to:"):
+        return None
+    try:
+        parts = [float(x) for x in mode.split(":", 1)[1].split(",")]
+    except ValueError:
+        return None
+    if len(parts) not in (2, 3) or not all(0 <= x <= 1 for x in parts[:2]):
+        return None
+    z = parts[2] if len(parts) == 3 else 0.35
+    return (parts[0], parts[1], z) if 0 < z <= 1.5 else None
 
 
 def _box(size, image_aspect):
@@ -97,6 +112,10 @@ def _segment_filter(label_in, label_out, box_w, box_h, frames, fps, motion):
         z, x, y = f"{PAN_ZOOM}", f"(iw-iw/zoom)*{ease}", "(ih-ih/zoom)/2"
     elif motion == "pan_left":
         z, x, y = f"{PAN_ZOOM}", f"(iw-iw/zoom)*(1-{ease})", "(ih-ih/zoom)/2"
+    elif _parse_zoom_to(motion):
+        fx, fy, zz = _parse_zoom_to(motion)
+        z = f"1+{zz}*{ease}"
+        x, y = f"(iw-iw/zoom)*{fx}", f"(ih-ih/zoom)*{fy}"
     else:
         raise ValueError(motion)
     return (f"[{label_in}]scale={pw}:{ph}:force_original_aspect_ratio=increase,crop={pw}:{ph},setsar=1,"

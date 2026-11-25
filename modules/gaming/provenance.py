@@ -99,9 +99,13 @@ def check(prod_dir, manifest, used_ids=None, for_publication=False):
             if not (a.get(field) or "").strip():
                 errors.append(f"{aid}: {field} is required")
         path = os.path.join(prod_dir, a.get("path", ""))
+        # Pipeline-made files (cards, typography, generated images, dry-run placeholders) are rebuilt
+        # or re-fetched from cache on every run; only supplied files must already exist.
+        regenerated = a.get("kind") in ("chapter_card", "generated_image", "synthetic_test")
         if not os.path.exists(path):
-            errors.append(f"{aid}: file not found at {a.get('path')}")
-        elif a.get("sha256") and _sha(path) != a["sha256"]:
+            if not regenerated:
+                errors.append(f"{aid}: file not found at {a.get('path')}")
+        elif a.get("sha256") and _sha(path) != a["sha256"] and not regenerated:
             warnings.append(f"{aid}: file changed since it was registered; re-check its rights")
         if a.get("kind") == "synthetic_test" and for_publication:
             errors.append(f"{aid}: synthetic test asset can't be published")

@@ -1,8 +1,10 @@
 {
   "outline_check": {
-    "errors": [],
+    "errors": [
+      "chapter targets add up to 1410 words; the duration needs 1560-2400"
+    ],
     "warnings": [],
-    "passed": true
+    "passed": false
   },
   "chapter_checks": [
     {
@@ -10,70 +12,84 @@
       "errors": [],
       "warnings": [],
       "passed": true,
-      "words": 166
+      "words": 135
     },
     {
       "chapter": "ch02",
       "errors": [],
       "warnings": [],
       "passed": true,
-      "words": 195
+      "words": 62
     },
     {
       "chapter": "ch03",
       "errors": [],
-      "warnings": [],
+      "warnings": [
+        "ch03: 119 words vs target 150"
+      ],
       "passed": true,
-      "words": 196
+      "words": 119
     },
     {
       "chapter": "ch04",
       "errors": [],
-      "warnings": [],
+      "warnings": [
+        "ch04: 99 words vs target 130"
+      ],
       "passed": true,
-      "words": 173
+      "words": 99
     },
     {
       "chapter": "ch05",
       "errors": [],
       "warnings": [],
       "passed": true,
-      "words": 245
+      "words": 173
     },
     {
       "chapter": "ch06",
       "errors": [],
-      "warnings": [],
+      "warnings": [
+        "ch06: 117 words vs target 150"
+      ],
       "passed": true,
-      "words": 179
+      "words": 117
     },
     {
       "chapter": "ch07",
       "errors": [],
-      "warnings": [],
+      "warnings": [
+        "ch07: 79 words vs target 110"
+      ],
       "passed": true,
-      "words": 156
+      "words": 79
     },
     {
       "chapter": "ch08",
       "errors": [],
-      "warnings": [],
+      "warnings": [
+        "ch08: 197 words vs target 250"
+      ],
       "passed": true,
-      "words": 327
+      "words": 197
     },
     {
       "chapter": "ch09",
       "errors": [],
-      "warnings": [],
+      "warnings": [
+        "ch09: 89 words vs target 120"
+      ],
       "passed": true,
-      "words": 162
+      "words": 89
     },
     {
       "chapter": "ch10",
       "errors": [],
-      "warnings": [],
+      "warnings": [
+        "ch10: 78 words vs target 110"
+      ],
       "passed": true,
-      "words": 128
+      "words": 78
     }
   ],
   "dependencies": [
@@ -81,15 +97,31 @@
       "chapter": "ch01",
       "unverified": [
         {
+          "claim": "C08",
+          "standing": "matched"
+        },
+        {
+          "claim": "C10",
+          "standing": "matched"
+        },
+        {
+          "claim": "C11",
+          "standing": "matched"
+        },
+        {
+          "claim": "C13",
+          "standing": "matched"
+        },
+        {
+          "claim": "C14",
+          "standing": "matched"
+        },
+        {
+          "claim": "C15",
+          "standing": "matched"
+        },
+        {
           "claim": "C16",
-          "standing": "matched"
-        },
-        {
-          "claim": "C18",
-          "standing": "matched"
-        },
-        {
-          "claim": "C19",
           "standing": "matched"
         },
         {
@@ -97,19 +129,19 @@
           "standing": "matched"
         },
         {
+          "claim": "C22",
+          "standing": "matched"
+        },
+        {
           "claim": "C32",
           "standing": "matched"
         },
         {
-          "claim": "C42",
+          "claim": "C39",
           "standing": "corroborated"
         },
         {
           "claim": "C43",
-          "standing": "matched"
-        },
-        {
-          "claim": "C46",
           "standing": "matched"
         },
         {
@@ -119,6 +151,14 @@
         {
           "claim": "C48",
           "standing": "matched"
+        },
+        {
+          "claim": "C49",
+          "standing": "matched"
+        },
+        {
+          "claim": "C50",
+          "standing": "corroborated"
         }
       ],
       "omit": []
@@ -127,35 +167,19 @@
       "chapter": "ch02",
       "unverified": [
         {
-          "claim": "C01",
-          "standing": "corroborated"
-        },
-        {
-          "claim": "C02",
-          "standing": "corroborated"
-        },
-        {
-          "claim": "C03",
-          "standing": "corroborated"
-        },
-        {
-          "claim": "C04",
-          "standing": "corroborated"
-        },
-        {
           "claim": "C05",
           "standing": "corroborated"
         },
         {
-          "claim": "C06",
-          "standing": "corroborated"
-        },
-        {
-          "claim": "C07",
-          "standing": "corroborated"
-        },
-        {
           "claim": "C08",
+          "standing": "matched"
+        },
+        {
+          "claim": "C51",
+          "standing": "corroborated"
+        },
+        {
+          "claim": "C52",
           "standing": "matched"
         }
       ],
@@ -164,6 +188,10 @@
     {
       "chapter": "ch03",
       "unverified": [
+        {
+          "claim": "C08",
+          "standing": "matched"
+        },
         {
           "claim": "C10",
           "standing": "matched"
@@ -187,10 +215,6 @@
         {
           "claim": "C47",
           "standing": "matched"
-        },
-        {
-          "claim": "C48",
-          "standing": "matched"
         }
       ],
       "omit": []
@@ -198,6 +222,10 @@
     {
       "chapter": "ch04",
       "unverified": [
+        {
+          "claim": "C12",
+          "standing": "matched"
+        },
         {
           "claim": "C39",
           "standing": "corroborated"
@@ -237,12 +265,20 @@
           "standing": "matched"
         },
         {
+          "claim": "C34",
+          "standing": "corroborated"
+        },
+        {
           "claim": "C38",
           "standing": "matched"
         },
         {
           "claim": "C49",
           "standing": "matched"
+        },
+        {
+          "claim": "C50",
+          "standing": "corroborated"
         }
       ],
       "omit": []
@@ -250,10 +286,6 @@
     {
       "chapter": "ch06",
       "unverified": [
-        {
-          "claim": "C11",
-          "standing": "matched"
-        },
         {
           "claim": "C19",
           "standing": "matched"
@@ -319,6 +351,10 @@
           "standing": "matched"
         },
         {
+          "claim": "C43",
+          "standing": "matched"
+        },
+        {
           "claim": "C44",
           "standing": "corroborated"
         },
@@ -328,6 +364,10 @@
         },
         {
           "claim": "C46",
+          "standing": "matched"
+        },
+        {
+          "claim": "C48",
           "standing": "matched"
         }
       ],
@@ -353,7 +393,7 @@
           "standing": "matched"
         },
         {
-          "claim": "C37",
+          "claim": "C45",
           "standing": "matched"
         }
       ],
@@ -363,8 +403,12 @@
       "chapter": "ch10",
       "unverified": [
         {
-          "claim": "C05",
-          "standing": "corroborated"
+          "claim": "C08",
+          "standing": "matched"
+        },
+        {
+          "claim": "C13",
+          "standing": "matched"
         },
         {
           "claim": "C20",
@@ -384,10 +428,6 @@
         },
         {
           "claim": "C43",
-          "standing": "matched"
-        },
-        {
-          "claim": "C46",
           "standing": "matched"
         },
         {

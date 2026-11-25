@@ -4,59 +4,62 @@
   "chapters": [
     {
       "id": "ch01",
-      "title": "The Man at the Docks",
-      "purpose": "Hook: the dealer who wanted out; thesis.",
-      "target_words": 170,
+      "title": "The Man Who Tried to Leave",
+      "purpose": "Hook: Vic tried to escape; Tommy inherited the system.",
+      "target_words": 120,
       "claim_ids": [
+        "C08",
+        "C10",
+        "C11",
+        "C13",
+        "C14",
+        "C15",
         "C16",
-        "C18",
-        "C19",
         "C20",
+        "C22",
         "C32",
-        "C42",
+        "C39",
         "C43",
-        "C46",
         "C47",
-        "C48"
+        "C48",
+        "C49",
+        "C50"
       ]
     },
     {
       "id": "ch02",
-      "title": "Before GTA 6, Another Vice City",
-      "purpose": "Continuity: this is the 3D-era city, not GTA VI's backstory.",
-      "target_words": 190,
+      "title": "Which Vice City?",
+      "purpose": "Continuity in about 20-30 seconds.",
+      "target_words": 60,
       "claim_ids": [
-        "C01",
-        "C02",
-        "C03",
-        "C04",
         "C05",
-        "C06",
-        "C07",
-        "C08"
+        "C08",
+        "C51",
+        "C52"
       ]
     },
     {
       "id": "ch03",
       "title": "The Sergeant",
-      "purpose": "Institution 1: an Army sergeant inside the cartel trade.",
-      "target_words": 210,
+      "purpose": "An Army sergeant inside the cartel trade.",
+      "target_words": 150,
       "claim_ids": [
+        "C08",
         "C10",
         "C11",
         "C12",
         "C13",
         "C31",
-        "C47",
-        "C48"
+        "C47"
       ]
     },
     {
       "id": "ch04",
       "title": "The Agent",
-      "purpose": "Institution 2: an undercover agent selling information.",
-      "target_words": 180,
+      "purpose": "An undercover agent selling information; individuals, not institutions.",
+      "target_words": 130,
       "claim_ids": [
+        "C12",
         "C39",
         "C41",
         "C42"
@@ -65,25 +68,26 @@
     {
       "id": "ch05",
       "title": "The Cartel's Tower",
-      "purpose": "The Mendez war, Diaz's maneuvering, and 'Last Stand'.",
-      "target_words": 250,
+      "purpose": "The Mendez war, Diaz's maneuvering, Last Stand.",
+      "target_words": 210,
       "claim_ids": [
         "C13",
         "C14",
         "C15",
         "C16",
         "C32",
+        "C34",
         "C38",
-        "C49"
+        "C49",
+        "C50"
       ]
     },
     {
       "id": "ch06",
       "title": "The Exchange",
       "purpose": "1986: the colonel, the leak, the ambush.",
-      "target_words": 160,
+      "target_words": 150,
       "claim_ids": [
-        "C11",
         "C19",
         "C20",
         "C32",
@@ -95,8 +99,8 @@
     {
       "id": "ch07",
       "title": "The Heir",
-      "purpose": "Tommy inherits Diaz's empire.",
-      "target_words": 160,
+      "purpose": "Tommy takes over Diaz's empire.",
+      "target_words": 110,
       "claim_ids": [
         "C21",
         "C22",
@@ -108,42 +112,44 @@
     {
       "id": "ch08",
       "title": "The Business of Vice",
-      "purpose": "Economic corruption: Avery, the Print Works, Congressman Shrub.",
-      "target_words": 330,
+      "purpose": "Economic corruption in 1986.",
+      "target_words": 250,
       "claim_ids": [
         "C35",
         "C36",
+        "C43",
         "C44",
         "C45",
-        "C46"
+        "C46",
+        "C48"
       ]
     },
     {
       "id": "ch09",
       "title": "This Is Business",
-      "purpose": "The finale: what is said vs implied.",
-      "target_words": 170,
+      "purpose": "The finale: what is said, and what is only implied.",
+      "target_words": 120,
       "claim_ids": [
         "C18",
         "C23",
         "C24",
         "C25",
-        "C37"
+        "C45"
       ]
     },
     {
       "id": "ch10",
       "title": "Built on Crime",
-      "purpose": "Conclusion: Vic and Tommy, the thesis restated.",
-      "target_words": 130,
+      "purpose": "Conclusion: the exit and the keys.",
+      "target_words": 110,
       "claim_ids": [
-        "C05",
+        "C08",
+        "C13",
         "C20",
         "C32",
         "C33",
         "C42",
         "C43",
-        "C46",
         "C47",
         "C48"
       ]

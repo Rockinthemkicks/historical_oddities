@@ -9,171 +9,200 @@ from modules.gaming.script_engine import validate_chapter, outline_dependencies,
 HERE = os.path.dirname(os.path.abspath(__file__))
 PILOT = os.path.dirname(HERE)
 
-def ill(p): return {"kind": "illustration", "prompt": p}
+def ill(p, id=None, motion=None):
+    v = {"kind": "illustration", "prompt": p}
+    if id: v["id"] = id
+    if motion: v["motion"] = motion
+    return v
+
+def reuse(of, motion): return {"kind": "reuse", "of": of, "motion": motion}
+def card(style, heading="", lines=(), rows=(), note=None, motion="zoom_in"):
+    v = {"kind": "text_card", "style": style, "heading": heading, "lines": list(lines), "rows": [list(r) for r in rows],
+         "motion": motion}
+    if note: v["note"] = note
+    return v
+
 CARD = {"kind": "chapter_card"}
 
+# Recurring original characters (reference sheets). Prompts never name game characters.
+REFERENCE_PROMPT = (
+    "Character reference sheet on a plain warm-grey background for an original character, 'the Corporal': "
+    "a man in his late twenties with a tired, decent face, short cropped dark hair and light stubble. "
+    "Three full-body views side by side (front, three-quarter, profile) wearing a plain olive army field jacket over a white T-shirt, "
+    "plus a fourth view of the same man in civilian clothes: a pale blue short-sleeved shirt and dark trousers. "
+    "Two small head studies (worried, resolved). Consistent proportions, clean even lighting, no text labels.")
+
 CHAPTERS = [
- ("ch01", "The Man at the Docks", "Hook: the dealer who wanted out; thesis.", 170, [
-  ("Vice City, 1986. A boat cuts across a bay lined with pastel hotels and new money. On board is a man just out of fifteen years in prison, "
-   "sent south by his old crime family to oversee a drug deal.", ["C18", "C19"],
-   [CARD, ill("dusk over a pastel art-deco waterfront, a lone speedboat wake, neon signs flickering on")]),
-  ("Waiting at the exchange is a dealer named Victor Vance. Two years earlier, Vic had tried to walk away from all of it. "
-   "He told his brother he wanted to stay away from drugs. After a war that cost him nearly everything, the brothers decided to leave town and lay low.",
-   ["C47", "C16", "C32"], [ill("a tired young man in a plain shirt at a dock table, a closed briefcase in front of him, harbor lights behind")]),
-  ("Now he's back at a deal table, and the deal is ambushed. Vic and two of the newcomer's men are killed. The money and the cocaine are gone. Vic's brother Lance escapes.",
-   ["C20"], [ill("an empty dock at night, an open briefcase on the boards, a helicopter's lights pulling away over the water")]),
-  ("The newcomer is Tommy Vercetti, and the usual story says Vice City's crime begins with him. It doesn't. "
-   "An Army sergeant, an undercover agent, a cartel and a property developer were already running the machine. Tommy walked into it, and took it over.",
-   ["C48", "C42", "C46", "C43"], [ill("a vast clockwork mechanism built from city blocks, palm trees and neon, one empty seat at its center")]),
+ ("ch01", "The Man Who Tried to Leave", "Hook: Vic tried to escape; Tommy inherited the system.", 120, [
+  ("Two years before Tommy Vercetti took over Vice City, another man was trying to escape it.", ["C08", "C32", "C22"],
+   [ill("Calm, atmospheric, non-graphic. Wide establishing view of a fictional 1980s subtropical coastal city at dusk: pastel art-deco hotels "
+        "along a beachfront boulevard, palm silhouettes, the first neon signs flickering on in pink and teal, a single speedboat wake "
+        "heading out across the calm bay toward open sea. Signs are abstract glowing shapes with no letters.", id="img_waterfront", motion="zoom_in")]),
+  ("His name was Victor Vance.", ["C10"],
+   [card("stamp", "VICTOR VANCE", ["VICE CITY, 1984"])]),
+  ("A soldier turned drug dealer, Vic had survived a corrupt sergeant, a war with a powerful cartel, and the loss of the woman he loved.",
+   ["C10", "C11", "C15", "C16", "C50"],
+   [ill("Somber, non-graphic. The Corporal from the reference sheet, in his olive army field jacket, standing alone at dawn outside the "
+        "chain-link fence of a military airbase, hangars and palm trees behind him, looking back over his shoulder.", id="img_corporal_base", motion="pan_right"),
+    ill("Somber, non-graphic. The Corporal from the reference sheet, in civilian clothes, sitting alone on a plastic chair in an empty "
+        "hospital corridor at night, elbows on his knees, rain streaking the window beside him. Quiet grief.", id="img_corporal_hospital", motion="zoom_in")]),
+  ("By the end of 1984, he was ready to leave it all behind.", ["C32", "C47"],
+   [reuse("img_waterfront", "zoom_to:0.55,0.70,0.45")]),
+  ("Two years later, he was back, at a drug deal that would end his life and begin Tommy Vercetti's rise to power.",
+   ["C32", "C20", "C48"],
+   [card("stamp", "1986", ["TWO YEARS LATER"], motion="zoom_out"),
+    ill("Tense, non-graphic. The Corporal from the reference sheet, now in his pale blue civilian shirt, two years older, waiting at a "
+        "folding table on a dark harbor pier at night, a closed briefcase in front of him, harbor lights and a moored freighter behind.",
+        id="img_corporal_dock", motion="zoom_in")]),
+  ("Vice City tells the story of Tommy building a criminal empire.", ["C48"],
+   [ill("Somber, investigative, non-graphic. Surreal editorial illustration: an enormous brass clockwork mechanism whose gears are built "
+        "from miniature city blocks, palm trees, hotel towers and neon tubes, glowing softly at dusk. At its center sits a single empty "
+        "leather executive chair under a spotlight. Wide composition, deep perspective.", id="img_clockwork", motion="zoom_out")]),
+  ("But the empire was already there.", ["C22", "C43"],
+   [reuse("img_clockwork", "zoom_to:0.5,0.55,0.5")]),
+  ("Behind the neon and the oceanfront mansions, a corrupt sergeant, rival drug lords and an undercover agent working both sides "
+   "had been shaping the city since at least 1984.", ["C11", "C13", "C14", "C39", "C49"],
+   [card("rows", "VICE CITY, 1984", rows=[["THE SERGEANT", "running drugs for a cartel"], ["THE CARTEL", "the Mendez brothers"],
+                                         ["THE RIVAL", "drug baron Ricardo Diaz"], ["THE AGENT", "selling deal information"]])]),
+  ("Tommy didn't invent the system.", ["C43"], [reuse("img_clockwork", "zoom_to:0.5,0.6,0.9")]),
+  ("He inherited it.", ["C43"],
+   [card("title", "THE DARK HISTORY OF VICE CITY", ["Before GTA 6"], motion="zoom_in",
+         note="Illustrations are original artwork, not game footage.")]),
  ]),
- ("ch02", "Before GTA 6, Another Vice City", "Continuity: this is the 3D-era city, not GTA VI's backstory.", 190, [
-  ("First, which Vice City is this? Grand Theft Auto VI came out on November 19, 2026. It's set in the state of Leonida, "
-   "and Rockstar describes its Vice City as the darkest side of the sunniest place in America.", ["C01", "C05", "C06"],
-   [{"kind": "timeline", "prompt": "Vice City across the series: 1997, 2002, 2006, 2026"}]),
-  ("That launch was enormous. Take-Two says the game made 3.79 billion dollars in day-one retail sales, its own figure, "
-   "while the analytics firm Sensor Tower estimated about 1.84 billion by release day. Either way, millions of people are now walking Vice City's streets.",
-   ["C02"], [{"kind": "timeline", "prompt": "Two bars: company-reported day-one figure vs third-party estimate, labelled by source"}]),
-  ("This video is not about that city's backstory. The name goes back to the first Grand Theft Auto in 1997, a top-down game "
-   "in its own separate continuity, where Vice City was one of three cities and a stand-in for Miami.", ["C03", "C04"],
-   [ill("a hand-drawn top-down street map of a coastal city on a drafting table, coffee ring, pencil")]),
-  ("Our story belongs to the 3D era: Vice City Stories, set in 1984, and Vice City, set two years later in 1986. "
-   "Different games, different continuities, the same name on the map. We'll keep them apart.", ["C08", "C03"],
-   [{"kind": "timeline", "prompt": "Three continuities side by side: 2D (1997), 3D (1984-1986), HD (GTA VI)"}]),
-  ("GTA VI has its own Vice City and its own leads, Jason and Lucia. Nothing in this video is that game's official history, and none of it spoils that story.",
-   ["C07", "C05"], [ill("a modern neon skyline at night reflected in wet asphalt, deliberately different in era from the 1980s scenes")]),
+ ("ch02", "Which Vice City?", "Continuity in about 20-30 seconds.", 60, [
+  ("First, which Vice City is this?", ["C51", "C52"],
+   [card("rows", "THREE VICE CITIES", rows=[["1997", "Grand Theft Auto  ·  2D"], ["1984-86", "Vice City Stories  ·  Vice City  ·  3D"],
+                                            ["2026", "GTA VI  ·  HD"]],
+         motion="none")]),
+  ("Vice City Stories, set in 1984, and Vice City, set in 1986, share one continuity: the series' 3D era.", ["C08", "C51"],
+   [reuse("v_continuity", "zoom_to:0.3,0.5,0.25")]),
+  ("Grand Theft Auto VI's modern Vice City, in the fictional state of Leonida, belongs to a separate continuity.", ["C05", "C52"],
+   [ill("Calm, non-graphic. A modern subtropical city skyline at night reflected in wet asphalt, glass towers and LED billboards with "
+        "no readable text, clearly present-day, a strong contrast with 1980s pastel architecture.", id="img_modern", motion="pan_left")]),
+  ("This is the story of the older city. It isn't GTA VI's backstory, and it won't spoil GTA VI.", ["C51", "C52"],
+   [reuse("img_waterfront", "pan_right")]),
  ]),
- ("ch03", "The Sergeant", "Institution 1: an Army sergeant inside the cartel trade.", 210, [
-  ("In 1984, Victor Vance is an Army corporal at Fort Baxter, the base on the edge of the city. He needs money for his brother Pete's asthma medication, "
-   "and that need is the lever his sergeant pulls.", ["C10", "C31"],
-   [CARD, ill("a military airbase at dawn behind a chain-link fence, palm trees, a young corporal walking alone")]),
-  ("Sergeant Jerry Martinez runs a secret drug business and uses Vic to do his jobs. When Vic stops being useful, Martinez sets him up. "
-   "Drugs are found, there's a sex worker in Vic's car, and Vic is thrown out of the Army with a dishonorable discharge.", ["C11"],
-   [ill("a sergeant's silhouette in a doorway, a duffel bag of contraband on a barracks floor, harsh overhead light")]),
-  ("Here is the detail that matters. After Vic and Lance take a shipment of cocaine from Martinez, they find out whose it really was. "
-   "It belonged to the Mendez brothers, the most powerful drug family in the city. Martinez wasn't a lone dealer in uniform. "
-   "An Army sergeant was working as a courier for a cartel.", ["C12", "C13"],
-   [{"kind": "evidence_board", "prompt": "Sergeant -> shipment -> cartel tower, red string"}]),
-  ("And Vic? Again and again he says he wants out of the drug game but has no choice. When Lance offers him twenty kilos of cocaine to get started, he turns it down. "
-   "Hold on to that. This is the story of a man who wanted out of the system, and another who wanted to own it.", ["C47", "C48"],
-   [ill("two brothers in a cramped apartment, one holding out a heavy package, the other turning away toward a window")]),
+ ("ch03", "The Sergeant", "An Army sergeant inside the cartel trade.", 150, [
+  ("In 1984, Victor Vance is an Army corporal at Fort Baxter, on the edge of Vice City.", ["C08", "C10"], [CARD, reuse("img_corporal_base", "zoom_in")]),
+  ("He needs money for his brother Pete's asthma medication.", ["C31"],
+   [ill("Somber, non-graphic. A small inhaler and a stack of unpaid pharmacy bills on a kitchen table in a cramped apartment, late afternoon light.")]),
+  ("His sergeant, Jerry Martinez, runs a secret drug business, and Vic is drawn in as a reluctant middleman.", ["C11"],
+   [ill("Tense, non-graphic. A sergeant's silhouette in a barracks doorway, a duffel bag on the floor, the Corporal from the reference sheet watching warily.")]),
+  ("Then Martinez frames him. Drugs are found, there's a sex worker in Vic's car, and Vic is dishonorably discharged.", ["C11"],
+   [card("stamp", "DISHONORABLE DISCHARGE", ["FORT BAXTER, 1984"])]),
+  ("Vic later learns whose cocaine Martinez had been moving: the Mendez brothers', the most powerful drug family in the city.", ["C12", "C13"],
+   [card("rows", "THE SUPPLY LINE", rows=[["THE SERGEANT", "moves the shipment"], ["THE CARTEL", "owns it"]])]),
+  ("An Army sergeant, working as a courier for a cartel.", ["C12"], [reuse("img_corporal_base", "pan_left")]),
+  ("Vic, meanwhile, keeps saying he wants out of the drug game. When Lance offers him twenty kilos of cocaine to get started, he turns it down.",
+   ["C47"], [ill("Somber, non-graphic. Two brothers in a cramped apartment; one holds out a heavy taped package, the other, the Corporal from the reference sheet, turns away toward the window.")]),
  ]),
- ("ch04", "The Agent", "Institution 2: an undercover agent selling information.", 180, [
-  ("Vic's next contact is Bryan Forbes, an undercover agent who sells the Vance brothers information about drug deals. "
-   "The sources we could check disagree about which agency he works for, so we won't name one.", ["C39"],
-   [CARD, ill("a man in sunglasses and a cheap suit in a diner booth sliding a folded note across the table")]),
-  ("His ID becomes a weapon. In a mission called The Mugshot Longshot, Lance pastes the sergeant's photo onto Forbes's ID, "
-   "to convince the Mendez brothers that Martinez himself is working for the law.", ["C41"],
-   [ill("close-up of a laminated ID card on a desk, a photo being replaced with scissors and glue, no readable text")]),
-  ("Think about what that trick depends on. It only works in a city where everyone assumes the law is just another buyer at the table. "
-   "In our reading, the badge isn't a threat to the drug trade here. It's a currency inside it.", ["C41", "C42"],
-   [ill("a badge-shaped poker chip on a green felt table among stacks of cash, cigar smoke, hands at the edges of the frame")]),
-  ("By 1984, then, a sergeant is moving cartel cocaine and an undercover agent is selling information to dealers. "
-   "That doesn't prove the whole Army or the whole police force was corrupt, and the games never claim it. "
-   "What they show is narrower and maybe more unsettling: the individuals trusted to stand between the city and its drug trade were already inside it.",
-   ["C42"], [{"kind": "evidence_board", "prompt": "Two figures with official roles linked to the drug trade; caption 'individuals, not institutions'"}]),
+ ("ch04", "The Agent", "An undercover agent selling information; individuals, not institutions.", 130, [
+  ("Then there's Bryan Forbes, an undercover agent who sells the Vance brothers information about drug deals.", ["C39"],
+   [CARD, ill("Tense, non-graphic. A man in sunglasses and a cheap suit in a diner booth sliding a folded note across the table.")]),
+  ("Forbes's own ID becomes part of the scheme. In The Mugshot Longshot, Lance pastes Martinez's photo onto it, "
+   "to convince the Mendez brothers that their sergeant is working for the law.", ["C41"],
+   [ill("Investigative, non-graphic. Close-up of a laminated ID card on a desk, a photo being replaced with scissors and glue, no readable text.")]),
+  ("An agent selling tips to dealers. A sergeant running cocaine for a cartel.", ["C39", "C12"],
+   [card("rows", "1984", rows=[["THE AGENT", "sells deal information"], ["THE SERGEANT", "moves cartel cocaine"]])]),
+  ("Neither proves the whole Army or the whole police force was corrupt, and the games never say so.", ["C42"], [reuse("v_agentcard", "zoom_out")]),
+  ("But in these cases, the men trusted to stand between Vice City and its drug trade were already part of it.", ["C42"],
+   [reuse("img_clockwork", "pan_right")]),
  ]),
- ("ch05", "The Cartel's Tower", "The Mendez war, Diaz's maneuvering, and 'Last Stand'.", 250, [
-  ("The Mendez brothers, Armando and Diego, rule the 1984 drug trade from a downtown tower known as the Mendez Foundation building. "
-   "A foundation's name on a cartel headquarters is a small detail. Our reading: it fits a city where crime liked to look respectable.",
-   ["C13"], [CARD, ill("a gleaming downtown skyscraper at night with a blank brass plaque at its entrance, limousines at the curb")]),
-  ("They use the Vance brothers for a few jobs, then betray them, and Vic goes to war. It costs him dearly. "
-   "Louise, one of the people closest to him, dies after the Mendez brothers kidnap her, and Armando is killed at the Mendez mansion.",
-   ["C15", "C16"], [ill("an empty hospital corridor at night, a single chair, rain on the window")]),
-  ("Vic's last ally is a rival drug baron, Ricardo Diaz, who gives him work against the Mendez operation. "
-   "Diaz is already maneuvering. That same year he blackmails Gonzalez, the right-hand man of a retired colonel named Cortez, "
-   "for information on the colonel's drug shipments, as part of his plan to become the city's drug baron.", ["C14", "C49"],
-   [{"kind": "evidence_board", "prompt": "Diaz -> Gonzalez (blackmail) -> Colonel's shipments"}]),
-  ("The final mission, Last Stand, is a job for Diaz. Vic attacks the Mendez building from the air and kills Diego Mendez and Sergeant Martinez on the roof. "
-   "Then he and Lance decide to leave town and lay low. Vic had escaped. For now.", ["C38", "C32"],
-   [ill("a skyscraper rooftop at sunrise after a storm, a helicopter silhouette departing, scattered papers in the wind")]),
-  ("Step back and look at who gave the order. Vic did the fighting, but Last Stand was Diaz's job, aimed at Diaz's biggest rivals. "
-   "Our inference is that Diaz is the one who stands to gain most from that rooftop. The games don't show how he spends the next two years, so we won't fill that gap.",
-   ["C14", "C38"], [{"kind": "evidence_board", "prompt": "Rooftop photo pinned at center; strings to 'who fought' and 'who ordered'"}]),
+ ("ch05", "The Cartel's Tower", "The Mendez war, Diaz's maneuvering, Last Stand.", 210, [
+  ("The Mendez brothers, Armando and Diego, run the 1984 drug trade from a downtown tower also known as the Mendez Foundation building.", ["C13"],
+   [CARD, ill("Cold, ominous, non-graphic. Night view of an imposing 1980s downtown skyscraper with a smoked-glass facade and a lit marble lobby; "
+              "a blank polished brass plaque beside the revolving door; two black limousines idle at the curb.", id="img_tower")]),
+  ("A charitable-sounding name on a cartel's headquarters. A small detail, and a telling one.", ["C13"], [reuse("img_tower", "zoom_to:0.45,0.8,0.6")]),
+  ("The brothers use the Vances for a few jobs, then betray them, and Vic goes to war with the cartel.", ["C15"],
+   [ill("Tense, non-graphic. A rain-soaked street at night outside a cartel nightclub, the Corporal from the reference sheet stepping out of a car, neon reflections.")]),
+  ("It costs him dearly. Louise, the woman he loves, dies after the Mendez brothers kidnap her, and Armando is killed at the Mendez mansion.",
+   ["C16", "C50"], [reuse("img_corporal_hospital", "zoom_out")]),
+  ("Vic's last backer is a rival drug baron, Ricardo Diaz, who gives him work against the Mendez operation.", ["C14"],
+   [ill("Tense, non-graphic. A flamboyant drug baron's office: gold fixtures, a wall of security monitors, a man's silhouette behind a desk, cigar smoke.")]),
+  ("Diaz is already maneuvering. That same year he blackmails Gonzalez, the right-hand man of a retired colonel, for information on the colonel's drug shipments, "
+   "as part of his plan to become the city's drug baron.", ["C49", "C34"],
+   [card("rows", "DIAZ, 1984", rows=[["BLACKMAILS", "the colonel's right-hand man"], ["WANTS", "the shipment routes"], ["GOAL", "the city's drug trade"]])]),
+  ("The final mission, Last Stand, is a job for Diaz. Vic attacks the Mendez building from the air and kills Diego Mendez and Martinez on the roof.",
+   ["C38", "C14"], [ill("Somber, non-graphic. A skyscraper rooftop at sunrise after a storm, a military helicopter silhouette pulling away, scattered papers in the wind.")]),
+  ("Then Vic and Lance decide to leave town and lay low.", ["C32"], [reuse("img_waterfront", "zoom_to:0.55,0.7,0.6")]),
  ]),
- ("ch06", "The Exchange", "1986: the colonel, the leak, the ambush.", 160, [
-  ("Two years later, Vic is back at a deal table, and the games never show how he got back in. "
-   "According to Tommy's lawyer, Ken Rosenberg, the retired colonel Juan Garcia Cortez helped set the exchange up. "
-   "Two years after a sergeant ran cocaine through Fort Baxter, a retired colonel is helping arrange a cocaine deal. Military rank, again, sitting inside the trade.", ["C32", "C33", "C11"],
-   [CARD, ill("a luxury yacht moored at a marina at golden hour, an older man in a white dress uniform jacket on deck, seen from far away")]),
-  ("Sonny Forelli sent Tommy to profit from the city's growing drug trade. We've seen how that ended: an ambush, two dead Forelli men, a dead dealer, and the money gone.",
-   ["C19", "C20"], [ill("a newspaper on a café table, coffee steaming, the headline area left blank, palm shadows")]),
-  ("Cortez later tells Tommy who talked: his own right-hand man, Gonzalez, gave away information about the deal. "
-   "Tommy kills him in a mission called Treacherous Swine. Notice the shape of that betrayal. The leak didn't come from the street. "
-   "It came from inside a colonel's own circle.", ["C34", "C33"],
-   [ill("a penthouse balcony at night, curtains blowing, a figure running for the stairs")]),
-  ("Who received that information, the game never says outright. It's implied to be Diaz, and the 1984 blackmail suggests the line ran through Gonzalez long before Tommy arrived. "
-   "That connection is our inference, not something the games state.", ["C34", "C49"],
-   [{"kind": "evidence_board", "prompt": "1984 blackmail and 1986 leak, dotted line marked 'implied'"}]),
+ ("ch06", "The Exchange", "1986: the colonel, the leak, the ambush.", 150, [
+  ("Two years later, Vic is back at a deal table. The games never show how he returned.", ["C32"], [CARD, reuse("img_corporal_dock", "zoom_out")]),
+  ("According to Tommy's lawyer, Ken Rosenberg, the deal was set up with help from a retired colonel, Juan Garcia Cortez.", ["C33"],
+   [ill("Calm, non-graphic. A luxury yacht moored at a marina at golden hour, an older man in a white jacket on deck seen from far away.", id="img_yacht")]),
+  ("Sonny Forelli has sent Tommy south to profit from the city's growing drug trade.", ["C19"],
+   [ill("Somber, non-graphic. A dimly lit northern restaurant back room, a heavy man's silhouette at a table pushing a plane ticket forward.")]),
+  ("The deal is ambushed. Vic and two Forelli men are killed, the money and the cocaine are taken, and Lance escapes.", ["C20"],
+   [ill("Somber, non-graphic. An empty dock at night, an open briefcase on the boards, a helicopter's lights pulling away over the water.")]),
+  ("Cortez later tells Tommy who talked: his own right-hand man, Gonzalez, gave away information about the deal. Tommy kills him in Treacherous Swine.",
+   ["C34"], [reuse("img_yacht", "zoom_in")]),
+  ("The game never says who Gonzalez talked to. But two years earlier, Diaz had blackmailed him for information on Cortez's shipments.",
+   ["C34", "C49"], [card("rows", "THE LEAK", rows=[["1984", "Diaz blackmails Gonzalez"], ["1986", "Gonzalez leaks the deal"], ["RECIPIENT", "never named"]])]),
  ]),
- ("ch07", "The Heir", "Tommy inherits Diaz's empire.", 160, [
-  ("Tommy goes to work for Diaz. It's Lance, working alongside him, who learns that Diaz's gang carried out the ambush. "
-   "The two of them storm Diaz's mansion on Starfish Island, kill him, and Tommy moves in and takes over the operation.", ["C21", "C22"],
-   [CARD, ill("a grand island mansion at night, marble staircase, shattered chandelier light across the floor")]),
-  ("This is usually told as Tommy's rise, and he does rise, to become the city's major criminal power. "
-   "But look at what he actually acquires: a mansion, a drug empire and a set of relationships that Diaz had already built.", ["C48", "C43"],
-   [ill("a man in a ivory linen suit standing alone in a huge mansion office, his back to us, looking out over a bay")]),
-  ("From the mansion, Tommy spreads into businesses across the city. Lance stays at his side, but the story shows Lance starting to feel underappreciated, "
-   "pushed to the edge of a rise he helped start. That resentment will matter at the end.", ["C22", "C25"],
-   [{"kind": "map", "prompt": "Stylised original city map: business icons lighting up one by one around the mansion"}]),
-  ("Our interpretation: Tommy didn't corrupt Vice City. He inherited its corruption, sat down at its center, and ran it harder. "
-   "And the most revealing part of that system wasn't the drug trade at all.", ["C43"],
-   [{"kind": "map", "prompt": "Stylised original map of the city: Starfish Island mansion lit, routes radiating outward"}]),
+ ("ch07", "The Heir", "Tommy takes over Diaz's empire.", 110, [
+  ("Tommy goes to work for Diaz. Lance, working alongside him, learns that Diaz's gang carried out the ambush.", ["C21"],
+   [CARD, reuse("v_diazoffice", "zoom_in")]),
+  ("Together they storm Diaz's mansion on Starfish Island and kill him, and Tommy takes the mansion and Diaz's empire.", ["C22"],
+   [ill("Somber, non-graphic. A grand island mansion at night, marble staircase, shattered chandelier light across an empty floor.", id="img_mansion")]),
+  ("From there, Tommy rises to become Vice City's major criminal power.", ["C48"],
+   [ill("Somber, non-graphic. A broad-shouldered man in an ivory linen suit standing alone in a huge mansion office, his back to us, looking out over a bay at dawn.", id="img_newcomer")]),
+  ("But the mansion and the drug empire he builds on belonged to Diaz first.", ["C22", "C43"], [reuse("img_mansion", "pan_left")]),
+  ("Lance stays at his side, but he starts to feel underappreciated in a rise he helped begin.", ["C25"],
+   [ill("Somber, non-graphic. A man in a white suit and aviator sunglasses leaning alone on a balcony rail at a party, the crowd blurred behind him.")]),
  ]),
- ("ch08", "The Business of Vice", "Economic corruption: Avery, the Print Works, Congressman Shrub.", 330, [
-  ("It was property. Avery Carrington is a Texan real-estate developer, and his missions are optional side stories you can skip. "
-   "They're also the clearest picture of how business works in this city.", ["C46"],
-   [CARD, ill("an architect's scale model of a waterfront district under a desk lamp, a gold pen and a land deed beside it, no readable text")]),
-  ("In the first, a rival developer won't sell Avery some land, so Avery sends Tommy to persuade him at a golf course. The developer ends up dead. "
-   "In the second, a competing construction site down the street is in Avery's way, so Tommy blows it up, and they talk about it as saving the rejuvenation of the area.",
-   ["C46"], [ill("a half-built tower wrapped in scaffolding at dusk, a small toy-like helicopter hovering near an upper floor")]),
-  ("In the third, Avery spells out his strategy. A gang war, he says, brings property prices down. "
-   "Tommy dresses as a member of one gang and attacks a funeral held by another, so the two go to war.", ["C35", "C36"],
-   [ill("a funeral parlor exterior in the rain, black umbrellas, a lone figure in borrowed colors watching from across the street")]),
-  ("The motive comes from Avery's own mouth. What we take from it is our interpretation: in Avery's Vice City, violence is a tool for moving real-estate prices.",
-   ["C36"], [{"kind": "timeline", "prompt": "Gang war -> panic -> prices fall -> developer buys; labelled 'Avery's stated plan'"}]),
-  ("These missions run beside the main story, and you can finish them even after the final mission. The player can skip them. "
-   "The city's property war, though, is there either way.", ["C46"],
-   [ill("a sunlit sales office with glossy brochures of condos, a broken window taped over behind the desk")]),
-  ("Tommy learns fast. He buys a print shop, the Print Works, and it's the foreman who suggests that printing money is the profitable thing to do. "
-   "Tommy turns it into a counterfeiting operation by stealing a courier's printing plates. "
-   "He buys a film studio, and when Congressman Alex Shrub moves to ban pornography to win puritan votes, Tommy gets incriminating photos of the congressman to stop him.",
-   ["C45", "C44"], [ill("sheets of freshly printed banknotes drying on lines in a dim print shop, no readable text or faces on the notes")]),
-  ("Notice how Shrub is handled. He isn't bribed and he isn't threatened with a gun. He's managed with leverage, the way a business manages a problem. "
-   "That's our reading of the mission, and it's the same logic Avery used with land.", ["C44", "C36"],
-   [ill("an envelope of photographs on a polished desk under a green banker's lamp, a congressional-style lapel pin beside it, no faces visible")]),
-  ("A developer using murder to win land. A businessman printing his own money. A congressman kept in line with photographs. "
-   "By 1986, Tommy isn't outside the system. He's fluent in it.", ["C46", "C45", "C44"],
-   [{"kind": "evidence_board", "prompt": "Developer, print shop, congressman, all pinned around one empty center"}]),
+ ("ch08", "The Business of Vice", "Economic corruption in 1986.", 250, [
+  ("Drugs weren't the only business in Tommy's Vice City.", ["C46", "C45"], [CARD, reuse("img_clockwork", "pan_left")]),
+  ("Avery Carrington is a real-estate developer who gives Tommy work in a set of optional side missions.", ["C46"],
+   [ill("Calm, non-graphic. An architect's scale model of a waterfront district under a desk lamp, a gold pen and a land deed beside it, no readable text.", id="img_model")]),
+  ("In Four Iron, a rival developer won't sell Avery some land, and Tommy kills him on a golf course.", ["C46"],
+   [ill("Tense, non-graphic. An empty golf course at dawn, a single golf cart abandoned on the fairway, a dropped club in the grass.")]),
+  ("In Demolition Man, a competing construction site is in Avery's way, and Tommy blows it up.", ["C46"],
+   [ill("Tense, non-graphic. A half-built tower wrapped in scaffolding at dusk, a small remote-control helicopter hovering near an upper floor.")]),
+  ("In Two Bit Hit, Avery explains that a gang war will drive property prices down.", ["C36"],
+   [card("rows", "AVERY'S PLAN", rows=[["STEP 1", "start a gang war"], ["STEP 2", "prices fall"], ["STEP 3", "buy cheap"]])]),
+  ("Tommy dresses as a Cuban gang member and attacks a Haitian funeral, so the two gangs go to war.", ["C35"],
+   [ill("Somber, non-graphic. A funeral parlor exterior in the rain, black umbrellas, a lone figure in borrowed colors watching from across the street.")]),
+  ("In Avery's plan, violence is simply a way to move the market.", ["C36"], [reuse("img_model", "zoom_to:0.5,0.5,0.5")]),
+  ("Tommy's own businesses run on similar logic. At the Print Works, the foreman suggests printing money, "
+   "and Tommy steals a courier's printing plates to start counterfeiting.", ["C45"],
+   [ill("Investigative, non-graphic. Sheets of freshly printed banknotes drying on lines in a dim print shop, no readable text or faces on the notes.", id="img_printworks")]),
+  ("And when Congressman Alex Shrub moves to ban pornography to win puritan votes, Tommy, who now owns a film studio, "
+   "gets incriminating photos of the congressman to stop him.", ["C44"],
+   [ill("Investigative, non-graphic. An envelope of photographs on a polished desk under a green banker's lamp, a lapel pin beside it, no faces visible.")]),
+  ("A developer who uses murder to win land. A business that prints its own money. A congressman kept in line with photographs.",
+   ["C46", "C45", "C44"], [reuse("img_printworks", "pan_right")]),
+  ("By 1986, Tommy isn't outside Vice City's system. He's fluent in it.", ["C48", "C43"], [reuse("img_newcomer", "zoom_in")]),
  ]),
- ("ch09", "This Is Business", "The finale: what is said vs implied.", 170, [
-  ("The fake money has one destination. Sonny Forelli comes south to collect what he considers his. "
-   "In the final confrontation, Sonny calls Tommy the Harwood Butcher and says the fifteen years Tommy spent in prison were Sonny's to spend.",
-   ["C23", "C18", "C24"], [CARD, ill("a mansion foyer at night, men in dark coats on a staircase, one older man in front, faces in shadow")]),
-  ("Sonny talks about Tommy's fifteen years in prison like an investment, and he has come south to cash it in.",
-   ["C18", "C24"], [{"kind": "timeline", "prompt": "Fifteen years in prison, release, sent south in 1986"}]),
-  ("Tommy says he was sent to kill one man, and they knew he was coming. Sonny doesn't confess. He deflects. "
-   "The game implies a setup. It never states one.", ["C24"],
-   [ill("two silhouettes facing each other across a long marble floor, a single beam of light between them")]),
-  ("This matters because many fan accounts state the setup as fact: Sonny framed Tommy and let him serve his fifteen years. "
-   "The game itself is more careful. It gives you Sonny's evasion and lets you draw your own conclusion.", ["C37", "C24"],
-   [{"kind": "evidence_board", "prompt": "Two columns: 'What the dialogue says' vs 'What fan accounts claim'"}]),
-  ("Lance has already switched sides. He tells Sonny about the fake money, and Tommy kills them both. "
-   "Lance had felt underappreciated in Tommy's rise, and his explanation for the betrayal is simple: this is business.", ["C23", "C25"],
-   [ill("a rooftop at night above the city lights, a broken pair of aviator sunglasses on the ledge")]),
+ ("ch09", "This Is Business", "The finale: what is said, and what is only implied.", 120, [
+  ("The counterfeit money has one destination: Sonny Forelli, who comes south to collect.", ["C23", "C45"],
+   [CARD, ill("Tense, non-graphic. A mansion foyer at night, men in dark coats on a staircase, one older man in front, faces in shadow.", id="img_foyer")]),
+  ("In the final confrontation, Sonny calls Tommy the Harwood Butcher and says Tommy's fifteen years in prison were his to spend.", ["C18", "C24"],
+   [reuse("img_foyer", "zoom_in")]),
+  ("Tommy says he was sent to kill one man, and they knew he was coming. Sonny deflects. He never admits a setup, and the game never confirms one.",
+   ["C24"], [ill("Tense, non-graphic. Two silhouettes facing each other across a long marble floor, a single beam of light between them.")]),
+  ("Lance has already switched sides. He tells Sonny about the fake money, and Tommy kills them both.", ["C23"],
+   [ill("Somber, non-graphic. A rooftop at night above the city lights, a broken pair of aviator sunglasses on the ledge.")]),
+  ("Lance's explanation for the betrayal is short: this is business.", ["C23", "C25"], [card("stamp", "\u201cTHIS IS BUSINESS.\u201d", [""])]),
  ]),
- ("ch10", "Built on Crime", "Conclusion: Vic and Tommy, the thesis restated.", 130, [
-  ("Two men, two years apart. Vic Vance kept saying he wanted out, and the city brought him back to a deal table where he died. "
-   "Tommy Vercetti wanted the top, and he got it.", ["C47", "C32", "C20", "C48"],
-   [CARD, ill("split composition: a dock at night on the left, a mansion balcony at dawn on the right, the same bay between them")]),
-  ("The difference between them isn't that one was good. Vic dealt drugs and fought a war. "
-   "The difference is that Vic kept looking for the exit, and Tommy went looking for the keys.", ["C47", "C48"],
-   [ill("a man's hand dropping a ring of keys onto a mahogany desk, a second hand reaching for a door handle, both in shadow")]),
-  ("But the sergeant, the agent, the cartel, the colonel and the developer were all there first. "
-   "Our argument is simple. Tommy Vercetti didn't corrupt Vice City. He inherited a city that was already built on crime. "
-   "When the series returns to Vice City in GTA VI, it does so in a different continuity, with a different history still to be told.",
-   ["C42", "C33", "C46", "C43", "C05"], [ill("the neon coastal skyline at dusk from the opening, now seen from the mansion's balcony, a cracked badge on the railing")]),
+ ("ch10", "Built on Crime", "Conclusion: the exit and the keys.", 110, [
+  ("Two men, two years apart.", ["C08"], [CARD, ill("Somber, non-graphic. Split composition: a dark harbor pier at night on the left, a mansion balcony at dawn on the right, the same bay between them.", id="img_split")]),
+  ("Vic Vance said he wanted out, and the city brought him back to a deal table where he died.", ["C47", "C32", "C20"], [reuse("img_corporal_dock", "zoom_out")]),
+  ("Tommy Vercetti wanted the top, and he got it.", ["C48"], [reuse("img_newcomer", "zoom_out")]),
+  ("The difference is that Vic kept looking for the exit, and Tommy went looking for the keys.", ["C47", "C48"],
+   [ill("Somber, non-graphic. A man's hand dropping a ring of keys onto a mahogany desk, a second hand reaching for a door handle, both in shadow.")]),
+  ("The sergeant, the agent, the cartel and the colonel were all there before Tommy arrived.", ["C42", "C13", "C33"], [reuse("v_rows1984", "zoom_in")]),
+  ("The evidence points one way. Tommy didn't corrupt Vice City. He inherited it.", ["C43"],
+   [ill("Somber, dramatic, non-graphic. An old, generic badge with no insignia or lettering lies cracked on a wet seawall railing in the foreground; "
+        "behind it, out of focus, the neon-lit 1980s coastal skyline at dusk in magenta and teal.", id="img_badge")]),
  ]),
 ]
+
+# visual ids referenced by reuse that need explicit ids on their source
+NAMED = {("ch02", 0, 0): "v_continuity", ("ch04", 2, 0): "v_agentcard", ("ch05", 4, 0): "v_diazoffice", ("ch01", 7, 0): "v_rows1984"}
+for cid, _, _, _, segs in CHAPTERS:
+    for (key, vid) in NAMED.items():
+        if key[0] == cid:
+            segs[key[1]][2][key[2]]["id"] = vid
 
 
 def build():

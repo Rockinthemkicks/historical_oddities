@@ -186,7 +186,7 @@ A("- 'Illustrative reconstruction' tags on screen, plus a line in the descriptio
 A("- Sources list in the description (`sources.json`).")
 A("")
 A("**Stopping here** for script and visual-direction approval. Final narration, full image generation and rendering stay off until the owner explicitly authorizes them and the $15 ceiling.")
-open(os.path.join(PILOT, "DRAFT_PACKAGE.md"), "w").write("\n".join(L) + "\n")
+# DRAFT_PACKAGE.md is the frozen review-4 record; review 5 uses REVIEW5_TEST.md (build_review5.py).
 
 # ---------- source map ----------
 M = ["# Source-to-script map", "",

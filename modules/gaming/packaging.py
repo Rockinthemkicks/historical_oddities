@@ -30,6 +30,54 @@ def chapter_card(number, title, out_path, size=(1920, 1080)):
     return out_path
 
 
+def text_card(spec, out_path, size=(1920, 1080)):
+    """Documentary typography made locally (no paid call). spec:
+      {"style": "title"|"stamp"|"rows", "heading": str, "lines": [str], "rows": [[label, text], ...],
+       "note": small grey footnote (e.g. an illustration disclosure)}"""
+    w, h = size
+    img = Image.new("RGB", size, (12, 13, 18))
+    draw = ImageDraw.Draw(img)
+    gold, white, grey = (214, 170, 80), (238, 236, 230), (140, 140, 150)
+    style = spec.get("style", "title")
+    if style == "stamp":
+        font = _load_font(int(h * 0.16))
+        text = spec.get("heading", "")
+        tw = draw.textlength(text, font=font)
+        draw.text(((w - tw) / 2, h * 0.38), text, font=font, fill=white)
+        sub = _load_font(int(h * 0.04))
+        for i, line in enumerate(spec.get("lines", [])[:2]):
+            lw = draw.textlength(line, font=sub)
+            draw.text(((w - lw) / 2, h * (0.60 + 0.06 * i)), line, font=sub, fill=gold)
+    elif style == "rows":
+        head = _load_font(int(h * 0.05))
+        draw.text((w * 0.08, h * 0.16), spec.get("heading", ""), font=head, fill=gold)
+        lab, txt = _load_font(int(h * 0.06)), _load_font(int(h * 0.045))
+        rows = spec.get("rows", [])[:5]
+        col = w * 0.08 + max([draw.textlength(r[0], font=lab) for r in rows] or [0]) + w * 0.03
+        y = h * 0.30
+        for label, text in rows:
+            draw.text((w * 0.08, y), label, font=lab, fill=white)
+            draw.rectangle([col, y + h * 0.012, col + w * 0.004, y + h * 0.065], fill=gold)
+            draw.text((col + w * 0.025, y + h * 0.012), text, font=txt, fill=(205, 205, 210))
+            y += h * 0.12
+    else:
+        big = _load_font(int(h * 0.085))
+        y = h * 0.40 - 0.05 * h * len(spec.get("lines", []))
+        for line in textwrap.wrap(spec.get("heading", ""), 22)[:2]:
+            draw.text((w * 0.08, y), line, font=big, fill=white)
+            y += h * 0.10
+        draw.rectangle([w * 0.08, y + h * 0.02, w * 0.30, y + h * 0.026], fill=gold)
+        sub = _load_font(int(h * 0.045))
+        for line in spec.get("lines", [])[:3]:
+            y += h * 0.07
+            draw.text((w * 0.08, y), line, font=sub, fill=(205, 205, 210))
+    if spec.get("note"):
+        draw.text((w * 0.08, h * 0.06), spec["note"], font=_load_font(int(h * 0.026)), fill=grey)
+    os.makedirs(os.path.dirname(out_path) or ".", exist_ok=True)
+    img.save(out_path)
+    return out_path
+
+
 def fmt_ts(seconds):
     s = int(seconds)
     hh, mm, ss = s // 3600, (s % 3600) // 60, s % 60

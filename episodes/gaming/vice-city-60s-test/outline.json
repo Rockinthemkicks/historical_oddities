@@ -1,0 +1,28 @@
+{
+  "chapters": [
+    {
+      "id": "ch01",
+      "title": "The Man Who Tried to Leave",
+      "purpose": "Hook: Vic tried to escape; Tommy inherited the system.",
+      "target_words": 120,
+      "claim_ids": [
+        "C08",
+        "C10",
+        "C11",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C20",
+        "C22",
+        "C32",
+        "C39",
+        "C43",
+        "C47",
+        "C48",
+        "C49",
+        "C50"
+      ]
+    }
+  ]
+}
