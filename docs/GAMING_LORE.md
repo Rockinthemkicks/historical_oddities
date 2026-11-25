@@ -1,7 +1,7 @@
 # Gaming-lore mode
 
 Long-form (20–60 min) fictional investigative documentaries about game worlds, built on
-the same pipeline as Historical Oddities. Historical mode is unchanged and stays the default.
+the same pipeline as Historical Oddities. The gaming-lore channel is branded **Unplayed History** (`config/brand.json`). Historical mode is unchanged and stays the default.
 
 ```
 python3 main.py --mode gaming-lore --production <folder>/production.json <command> [--dry-run] [--estimate-only]

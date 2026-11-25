@@ -10,7 +10,7 @@ T=episodes/gaming/vice-city-60s-test
 P="python3 main.py --mode gaming-lore --production $T/production.json"
 CAPS="--max-run-cost 2 --episode-budget 2"
 
-[ -f .env ] || { echo "No .env here. Run this from your historical_oddities folder (the one with your keys)."; exit 1; }
+[ -f .env ] || { echo "No .env here. Run this from your project folder (unplayedhistory, formerly historical_oddities: the one with your keys)."; exit 1; }
 command -v ffmpeg >/dev/null || { echo "ffmpeg is missing (brew install ffmpeg)."; exit 1; }
 python3 -c "import PIL, requests" 2>/dev/null || python3 -m pip install -q -r requirements.txt
 

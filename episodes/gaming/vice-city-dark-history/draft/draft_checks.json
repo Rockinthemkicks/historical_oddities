@@ -1,10 +1,8 @@
 {
   "outline_check": {
-    "errors": [
-      "chapter targets add up to 1410 words; the duration needs 1560-2400"
-    ],
+    "errors": [],
     "warnings": [],
-    "passed": false
+    "passed": true
   },
   "chapter_checks": [
     {

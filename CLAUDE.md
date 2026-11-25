@@ -1,6 +1,7 @@
-# Historical Oddities — notes for Claude
+# Unplayed History — notes for Claude
 
 Automated pipeline for illustrated, narrated educational videos (YouTube long-form + Shorts/Reels).
+Repo: `Rockinthemkicks/unplayedhistory` (renamed from `historical_oddities` on 2026-11-25).
 Full requirements: `docs/PROJECT_BRIEF.md`. Current state and risks: `docs/AUDIT.md`.
 
 ## Ground rules
@@ -36,6 +37,13 @@ Full requirements: `docs/PROJECT_BRIEF.md`. Current state and risks: `docs/AUDIT
   download footage, music or art; the owner supplies it with rights in assets/provenance.json. Image
   prompts must not name protected characters, brands or logos (franchise protected_terms). Keep
   continuities (e.g. GTA 2D/3D/HD) separate, and verify release info instead of hardcoding it.
+
+- Brand (owner decision, 2026-11-25): **Unplayed History** is the official brand for the project and the
+  gaming-lore channel. Logo, colors and tagline live in `config/brand.json` (read by `modules/gaming/brand.py`);
+  they restyle only what the pipeline draws itself (cards, thumbnails, description), never generated
+  illustrations. "Historical Oddities" remains the name of the on-hold historical mode/channel.
+  Deliberately unchanged: the spend-ledger path `~/.historical_oddities/` and `HO_SPEND_LEDGER` (renaming
+  would reset spending history and limits), module names, and Actions cache paths.
 
 ## Commands
 - Tests: `pip install -r requirements.txt -r requirements-dev.txt && pytest -q` (needs ffmpeg)

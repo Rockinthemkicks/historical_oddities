@@ -793,6 +793,245 @@
       "verified": false,
       "read_by_assistant": "2026-11-24",
       "notes": "Read as a search-result excerpt."
+    },
+    {
+      "id": "S76",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "Grand Theft Wiki - 'To Victor, the Spoils'",
+      "url": "https://www.grandtheftwiki.com/To_Victor,_the_Spoils",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "Read as a search-result excerpt (review 7 expansion pass)."
+    },
+    {
+      "id": "S77",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTABase - 'To Victor, The Spoils'",
+      "url": "https://gtabase.com/gta-vice-city-stories/missions/to-victor-the-spoils",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "Read as a search-result excerpt (review 7 expansion pass)."
+    },
+    {
+      "id": "S78",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "Grand Theft Wiki - Empire Building (VCS)",
+      "url": "https://www.grandtheftwiki.com/Empire_Building",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "Read as a search-result excerpt (review 7 expansion pass)."
+    },
+    {
+      "id": "S79",
+      "type": "secondary",
+      "family": "press",
+      "title": "GamesRadar+ - Vice City Stories review",
+      "url": "https://gamesradar.com/grand-theft-auto-vice-city-stories-review/2",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "Read as a search-result excerpt (review 7 expansion pass)."
+    },
+    {
+      "id": "S80",
+      "type": "secondary",
+      "family": "encyclopedia",
+      "title": "Wikipedia - Tommy Vercetti",
+      "url": "https://en.wikipedia.org/wiki/Tommy_Vercetti",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "Read as a search-result excerpt (review 7 expansion pass)."
+    },
+    {
+      "id": "S81",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "Grand Theft Wiki - Introduction (GTA VC)",
+      "url": "https://grandtheftwiki.com/Introduction_(GTA_VC)",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "Read as a search-result excerpt (review 7 expansion pass)."
+    },
+    {
+      "id": "S82",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTA Wiki (gta.wiki) - 'The Job' (transcript)",
+      "url": "https://gta.wiki/w/The_Job",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "Read as a search-result excerpt (review 7 expansion pass)."
+    },
+    {
+      "id": "S83",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "Grand Theft Wiki - 'The Job'/Script",
+      "url": "https://www.grandtheftwiki.com/The_Job/Script",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "Read as a search-result excerpt (review 7 expansion pass)."
+    },
+    {
+      "id": "S84",
+      "type": "secondary",
+      "family": "community",
+      "title": "IMDb - Ken Rosenberg quotes (GTA: Vice City)",
+      "url": "https://imdb.com/title/tt0314123/characters/nm0001209",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "Read as a search-result excerpt (review 7 expansion pass)."
+    },
+    {
+      "id": "S85",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "Grand Theft Wiki - El Banco Corrupto Grande",
+      "url": "https://www.grandtheftwiki.com/El_Banco_Corrupto_Grande",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "Read as a search-result excerpt (review 7 expansion pass)."
+    },
+    {
+      "id": "S86",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTA Wiki (Fandom) - 'The Job'",
+      "url": "https://gta.fandom.com/wiki/The_Job",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "Read as a search-result excerpt (review 7 expansion pass)."
+    },
+    {
+      "id": "S87",
+      "type": "secondary",
+      "family": "press",
+      "title": "Sportskeeda - A brief history of heists in the GTA series",
+      "url": "https://www.sportskeeda.com/gta/a-brief-history-heists-gta-series",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "Read as a search-result excerpt (review 7 expansion pass)."
+    },
+    {
+      "id": "S88",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTABase - Donald Love (GTA Vice City)",
+      "url": "https://www.gtabase.com/gta-vice-city/characters/donald-love",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "Read as a search-result excerpt (review 7 expansion pass)."
+    },
+    {
+      "id": "S89",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTA Wiki (gta.wiki) - Donald Love",
+      "url": "https://gta.wiki/w/Donald_Love",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "Read as a search-result excerpt (review 7 expansion pass)."
+    },
+    {
+      "id": "S90",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "WikiGTA - Donald Love",
+      "url": "https://en.m.wikigta.org/wiki/Donald_Love",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "Read as a search-result excerpt (review 7 expansion pass)."
+    },
+    {
+      "id": "S91",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTABase - Donald Love (GTA 3)",
+      "url": "https://www.gtabase.com/gta-3/characters/donald-love",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "Read as a search-result excerpt (review 7 expansion pass)."
+    },
+    {
+      "id": "S92",
+      "type": "secondary",
+      "family": "press",
+      "title": "Giant Bomb - Donald Love",
+      "url": "https://giantbomb.com/wiki/Characters/Donald_Love",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "Read as a search-result excerpt (review 7 expansion pass)."
+    },
+    {
+      "id": "S93",
+      "type": "secondary",
+      "family": "press",
+      "title": "WhatCulture - 10 most compelling backstories of GTA characters",
+      "url": "https://whatculture.com/gaming/10-most-compelling-backstories-of-gta-characters?page=4",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "Read as a search-result excerpt (review 7 expansion pass)."
+    },
+    {
+      "id": "S94",
+      "type": "primary_game",
+      "family": "game",
+      "title": "GTA: Vice City Stories - Marty Jay Williams missions and 'To Victor, the Spoils'",
+      "locator": "Vice City Stories: Marty's missions, then 'To Victor, the Spoils' (Louise)",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "notes": "Not checked in-game."
+    },
+    {
+      "id": "S95",
+      "type": "primary_game",
+      "family": "game",
+      "title": "GTA: Vice City - opening and 'The Job' (Malibu Club)",
+      "locator": "Vice City: opening cutscene (airport, Rosenberg); Malibu Club mission 'The Job'",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "notes": "Not checked in-game."
+    },
+    {
+      "id": "S96",
+      "type": "primary_game",
+      "family": "game",
+      "title": "GTA III - Donald Love's missions",
+      "locator": "Grand Theft Auto III (2001): Donald Love missions",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "notes": "Not checked in-game."
+    },
+    {
+      "id": "S97",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTA Wiki (gta.wiki) - 'In The Beginning...' walkthrough",
+      "url": "https://gta.wiki/w/In_The_Beginning.../Walkthrough",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "Read as a search-result excerpt (two revisions)."
     }
   ],
   "claims": [
@@ -2554,6 +2793,378 @@
         "S54",
         "S71",
         "S72"
+      ]
+    },
+    {
+      "id": "C53",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "spoiler": "major",
+      "text": "Vic works for Marty Jay Williams, leader of the Trailer Park Mafia; after Marty is killed, Vic takes over his businesses on Louise's suggestion and the gang becomes the Vance Crime Family.",
+      "evidence": [
+        {
+          "source_id": "S94",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S10",
+          "status": "matched",
+          "passage": "Vic works for Marty Jay Williams, leader of the Trailer Park Mafia; with Marty dead, Vic takes over his gang and renames it the Vance Crime Family.",
+          "accessed": "2026-11-25"
+        },
+        {
+          "source_id": "S65",
+          "status": "matched",
+          "passage": "With Marty dead and Louise's support, Victor takes over Marty's and his gang's businesses.",
+          "accessed": "2026-11-25"
+        },
+        {
+          "source_id": "S76",
+          "status": "matched",
+          "passage": "Louise suggests Victor take over Marty's businesses; the Trailer Park Mafia's businesses become Victor's.",
+          "accessed": "2026-11-25"
+        },
+        {
+          "source_id": "S77",
+          "status": "matched",
+          "passage": "Following Louise's advice, Victor takes over Marty's loan sharking business and recruits gang members.",
+          "accessed": "2026-11-25"
+        }
+      ],
+      "source_ids": [
+        "S10",
+        "S65",
+        "S76",
+        "S77",
+        "S94"
+      ],
+      "notes": "Script avoids the domestic-abuse detail around Marty; it isn't needed for the thesis. Wikis disagree on which mission Marty dies in, so no mission is named for his death."
+    },
+    {
+      "id": "C54",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "spoiler": "major",
+      "text": "The Vance empire's businesses are protection rackets, loan sharking, prostitution, drugs, smuggling and robbery.",
+      "evidence": [
+        {
+          "source_id": "S94",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S78",
+          "status": "matched",
+          "passage": "Six business types: Protection Racket, Loan Shark, Prostitution, Drugs, Smuggling, Robbery.",
+          "accessed": "2026-11-25"
+        },
+        {
+          "source_id": "S79",
+          "status": "matched",
+          "passage": "Review: six racket types (protection, drugs, prostitution, etc.) with missions for each.",
+          "accessed": "2026-11-25"
+        }
+      ],
+      "source_ids": [
+        "S78",
+        "S79",
+        "S94"
+      ]
+    },
+    {
+      "id": "C55",
+      "status": "interpretation",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "spoiler": "major",
+      "text": "Even Vic, who says he wants out, ends 1984 running a criminal empire: the story is built around him reluctantly building one.",
+      "evidence": [
+        {
+          "source_id": "S10",
+          "status": "matched",
+          "passage": "The story centres on Vic's attempts to build up a criminal empire alongside his brother.",
+          "accessed": "2026-11-25"
+        },
+        {
+          "source_id": "S26",
+          "status": "matched",
+          "passage": "The game is about Vic getting revenge on Martinez and (reluctantly) building a criminal empire with Lance.",
+          "accessed": "2026-11-25"
+        }
+      ],
+      "source_ids": [
+        "S10",
+        "S26"
+      ]
+    },
+    {
+      "id": "C56",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "spoiler": "major",
+      "text": "Ken Rosenberg, the Forelli family's lawyer, meets Tommy at the airport and drives him to the deal.",
+      "evidence": [
+        {
+          "source_id": "S95",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S80",
+          "status": "matched",
+          "passage": "Tommy and his bodyguards meet the Forellis' crooked lawyer Ken Rosenberg, who drives them to the deal's location.",
+          "accessed": "2026-11-25"
+        },
+        {
+          "source_id": "S81",
+          "status": "matched",
+          "passage": "Tommy, Harry and Lee find Forelli Family lawyer Ken Rosenberg waiting at the airport.",
+          "accessed": "2026-11-25"
+        }
+      ],
+      "source_ids": [
+        "S80",
+        "S81",
+        "S95"
+      ]
+    },
+    {
+      "id": "C57",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "spoiler": "major",
+      "text": "Introducing his heist crew in 'The Job', Tommy says of Ken Rosenberg: 'Ken here, he washes the money for us.'",
+      "evidence": [
+        {
+          "source_id": "S95",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S82",
+          "status": "matched",
+          "passage": "Transcript: Tommy: 'Ken here, he washes the money for us, and he keeps the drinks on ice!'",
+          "accessed": "2026-11-25"
+        },
+        {
+          "source_id": "S83",
+          "status": "matched",
+          "passage": "Script: Tommy: 'Ken here, he washes the money for us and he keeps the drinks on ice.'",
+          "accessed": "2026-11-25"
+        },
+        {
+          "source_id": "S84",
+          "status": "matched",
+          "passage": "Quote list: 'Ken here, he washes the money for us.'",
+          "accessed": "2026-11-25"
+        }
+      ],
+      "source_ids": [
+        "S82",
+        "S83",
+        "S84",
+        "S95"
+      ],
+      "notes": "Said as a joke to the crew; the script presents it that way."
+    },
+    {
+      "id": "C58",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "spoiler": "major",
+      "text": "In 'The Job', planned from his Malibu Club, Tommy's crew robs El Banco Corrupto Grande, a name that is Spanish for 'the big corrupt bank'.",
+      "evidence": [
+        {
+          "source_id": "S95",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S85",
+          "status": "matched",
+          "passage": "The name is Spanish for 'The Big Corrupt Bank'; the bank appears in The Job.",
+          "accessed": "2026-11-25"
+        },
+        {
+          "source_id": "S86",
+          "status": "matched",
+          "passage": "After buying the Malibu Club, Tommy assembles a team for a heist at a bank in Little Havana.",
+          "accessed": "2026-11-25"
+        },
+        {
+          "source_id": "S87",
+          "status": "matched",
+          "passage": "Once Tommy acquires the Malibu Club, he moves to rob El Banco Corrupto Grande, with Ken Rosenberg helping assemble the crew.",
+          "accessed": "2026-11-25"
+        }
+      ],
+      "source_ids": [
+        "S85",
+        "S86",
+        "S87",
+        "S95"
+      ]
+    },
+    {
+      "id": "C59",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "spoiler": "major",
+      "text": "Avery's protégé Donald Love follows him with a notepad and writes down the gang-war tactic during 'Two Bit Hit'.",
+      "evidence": [
+        {
+          "source_id": "S36",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S88",
+          "status": "matched",
+          "passage": "Donald is Avery's protégé, following him with pen and paper, learning real estate.",
+          "accessed": "2026-11-25"
+        },
+        {
+          "source_id": "S89",
+          "status": "matched",
+          "passage": "Love becomes Avery's protégé, often following him with a notepad and pen.",
+          "accessed": "2026-11-25"
+        },
+        {
+          "source_id": "S90",
+          "status": "matched",
+          "passage": "He writes down Avery's tactic of creating a gang war to decrease real estate prices in Two Bit Hit.",
+          "accessed": "2026-11-25"
+        }
+      ],
+      "source_ids": [
+        "S36",
+        "S88",
+        "S89",
+        "S90"
+      ]
+    },
+    {
+      "id": "C60",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gta3"
+      ],
+      "spoiler": "major",
+      "text": "In Grand Theft Auto III (2001), Donald Love is a real-estate developer and the owner of Love Media.",
+      "evidence": [
+        {
+          "source_id": "S96",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S91",
+          "status": "matched",
+          "passage": "Donald is the owner of Love Media and a real estate developer (GTA 3).",
+          "accessed": "2026-11-25"
+        },
+        {
+          "source_id": "S93",
+          "status": "matched",
+          "passage": "In GTA III, Donald Love is the owner and operator of Love Media.",
+          "accessed": "2026-11-25"
+        }
+      ],
+      "source_ids": [
+        "S91",
+        "S93",
+        "S96"
+      ]
+    },
+    {
+      "id": "C61",
+      "status": "interpretation",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "spoiler": "major",
+      "text": "The bank's name is the game's own satire: even Vice City's bank is labelled corrupt.",
+      "evidence": [
+        {
+          "source_id": "S85",
+          "status": "matched",
+          "passage": "The name, 'The Big Corrupt Bank', suggests the bank is illegitimate.",
+          "accessed": "2026-11-25"
+        }
+      ],
+      "source_ids": [
+        "S85"
+      ]
+    },
+    {
+      "id": "C62",
+      "status": "interpretation",
+      "continuity": "3D",
+      "games": [
+        "gtavc",
+        "gta3"
+      ],
+      "spoiler": "major",
+      "text": "Avery's methods outlive Vice City: his protégé carries the criminal real-estate playbook into GTA III.",
+      "evidence": [
+        {
+          "source_id": "S92",
+          "status": "matched",
+          "passage": "In Vice City it appears Donald Love has learned a lot from his mentor Avery.",
+          "accessed": "2026-11-25"
+        },
+        {
+          "source_id": "S90",
+          "status": "matched",
+          "passage": "He uses criminal tactics, taught by Avery Carrington, to increase his profits.",
+          "accessed": "2026-11-25"
+        }
+      ],
+      "source_ids": [
+        "S90",
+        "S92"
+      ]
+    },
+    {
+      "id": "C63",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "spoiler": "minor",
+      "text": "In the opening, Sonny Forelli compares Vice City to 24-carat gold because of the money being made there, which is why he sends Tommy south.",
+      "evidence": [
+        {
+          "source_id": "S02",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S97",
+          "status": "matched",
+          "accessed": "2026-11-25",
+          "passage": "Sonny suggests sending Tommy to Vice City, which he compares to 24-carat gold for the money one can earn there; various groups are making lots of money there."
+        }
+      ],
+      "source_ids": [
+        "S02",
+        "S97"
       ]
     }
   ],

@@ -5,11 +5,11 @@ Thesis: Vice City was not corrupted by Tommy Vercetti. He inherited an existing 
 ## Readiness
 
 - Structural validation: PASSED (0 error(s), 5 warning(s))
-- Factual verification: NOT COMPLETE (verified 0, corroborated 13, single-family 32, unsupported 6, disputed 1; 9 claim(s) need attention)
+- Factual verification: NOT COMPLETE (verified 0, corroborated 21, single-family 35, unsupported 6, disputed 1; 9 claim(s) need attention)
 - Editorial approval: NOT GIVEN
 - Production approval: NOT GIVEN
 
-Stats: {'sources': 75, 'claims': 52, 'confirmed_canon': 40, 'interpretation': 6, 'fan_theory': 1, 'speculation': 1, 'real_world_fact': 4}
+Stats: {'sources': 97, 'claims': 63, 'confirmed_canon': 48, 'interpretation': 9, 'fan_theory': 1, 'speculation': 1, 'real_world_fact': 4}
 
 ## Real-world facts
 
@@ -118,6 +118,24 @@ Stats: {'sources': 75, 'claims': 52, 'confirmed_canon': 40, 'interpretation': 6,
   Note: The universe names are reported by fan wikis as Rockstar North's terms; the script avoids quoting them as official.
 - **C52** [HD, spoiler: none, standing: MATCHED] GTA VI's modern Vice City belongs to a separate continuity from the 3D-era games.  
   Evidence: S54 [official] discovered; S71 [press] matched: GTA VI's Vice City is not the same continuity as the 2002 game's, which belongs to the 3D Universe.; S72 [press] matched: The HD and 3D universe games are separate continuities; GTA VI is in the HD universe.
+- **C53** [3D, spoiler: major, standing: CORROBORATED] Vic works for Marty Jay Williams, leader of the Trailer Park Mafia; after Marty is killed, Vic takes over his businesses on Louise's suggestion and the gang becomes the Vance Crime Family.  
+  Evidence: S94 [game] discovered; S10 [encyclopedia] matched: Vic works for Marty Jay Williams, leader of the Trailer Park Mafia; with Marty dead, Vic takes over his gang and renames it the Vance Crime Family.; S65 [fan_wiki] matched: With Marty dead and Louise's support, Victor takes over Marty's and his gang's businesses.; S76 [fan_wiki] matched: Louise suggests Victor take over Marty's businesses; the Trailer Park Mafia's businesses become Victor's.; S77 [fan_wiki] matched: Following Louise's advice, Victor takes over Marty's loan sharking business and recruits gang members.  
+  Note: Script avoids the domestic-abuse detail around Marty; it isn't needed for the thesis. Wikis disagree on which mission Marty dies in, so no mission is named for his death.
+- **C54** [3D, spoiler: major, standing: CORROBORATED] The Vance empire's businesses are protection rackets, loan sharking, prostitution, drugs, smuggling and robbery.  
+  Evidence: S94 [game] discovered; S78 [fan_wiki] matched: Six business types: Protection Racket, Loan Shark, Prostitution, Drugs, Smuggling, Robbery.; S79 [press] matched: Review: six racket types (protection, drugs, prostitution, etc.) with missions for each.
+- **C56** [3D, spoiler: major, standing: CORROBORATED] Ken Rosenberg, the Forelli family's lawyer, meets Tommy at the airport and drives him to the deal.  
+  Evidence: S95 [game] discovered; S80 [encyclopedia] matched: Tommy and his bodyguards meet the Forellis' crooked lawyer Ken Rosenberg, who drives them to the deal's location.; S81 [fan_wiki] matched: Tommy, Harry and Lee find Forelli Family lawyer Ken Rosenberg waiting at the airport.
+- **C57** [3D, spoiler: major, standing: CORROBORATED] Introducing his heist crew in 'The Job', Tommy says of Ken Rosenberg: 'Ken here, he washes the money for us.'  
+  Evidence: S95 [game] discovered; S82 [fan_wiki] matched: Transcript: Tommy: 'Ken here, he washes the money for us, and he keeps the drinks on ice!'; S83 [fan_wiki] matched: Script: Tommy: 'Ken here, he washes the money for us and he keeps the drinks on ice.'; S84 [community] matched: Quote list: 'Ken here, he washes the money for us.'  
+  Note: Said as a joke to the crew; the script presents it that way.
+- **C58** [3D, spoiler: major, standing: CORROBORATED] In 'The Job', planned from his Malibu Club, Tommy's crew robs El Banco Corrupto Grande, a name that is Spanish for 'the big corrupt bank'.  
+  Evidence: S95 [game] discovered; S85 [fan_wiki] matched: The name is Spanish for 'The Big Corrupt Bank'; the bank appears in The Job.; S86 [fan_wiki] matched: After buying the Malibu Club, Tommy assembles a team for a heist at a bank in Little Havana.; S87 [press] matched: Once Tommy acquires the Malibu Club, he moves to rob El Banco Corrupto Grande, with Ken Rosenberg helping assemble the crew.
+- **C59** [3D, spoiler: major, standing: MATCHED] Avery's protégé Donald Love follows him with a notepad and writes down the gang-war tactic during 'Two Bit Hit'.  
+  Evidence: S36 [game] discovered; S88 [fan_wiki] matched: Donald is Avery's protégé, following him with pen and paper, learning real estate.; S89 [fan_wiki] matched: Love becomes Avery's protégé, often following him with a notepad and pen.; S90 [fan_wiki] matched: He writes down Avery's tactic of creating a gang war to decrease real estate prices in Two Bit Hit.
+- **C60** [3D, spoiler: major, standing: CORROBORATED] In Grand Theft Auto III (2001), Donald Love is a real-estate developer and the owner of Love Media.  
+  Evidence: S96 [game] discovered; S91 [fan_wiki] matched: Donald is the owner of Love Media and a real estate developer (GTA 3).; S93 [press] matched: In GTA III, Donald Love is the owner and operator of Love Media.
+- **C63** [3D, spoiler: minor, standing: MATCHED] In the opening, Sonny Forelli compares Vice City to 24-carat gold because of the money being made there, which is why he sends Tommy south.  
+  Evidence: S02 [game] discovered; S97 [fan_wiki] matched: Sonny suggests sending Tommy to Vice City, which he compares to 24-carat gold for the money one can earn there; various groups are making lots of money there.
 
 ## Interpretation
 
@@ -136,6 +154,12 @@ Stats: {'sources': 75, 'claims': 52, 'confirmed_canon': 40, 'interpretation': 6,
 - **C43** [3D, spoiler: major, standing: MATCHED] Tommy does not create Vice City's criminal order: he takes over an empire Diaz had already built, by killing Diaz and moving into his mansion.  
   Evidence: S11 [fan_wiki] matched: Tommy and Lance kill Diaz at his mansion; Tommy expands into many businesses.; S24 [fan_wiki] discovered  
   Note: Thesis claim. Depends on C17 (Diaz's rise 1984-86), which is still unsupported.
+- **C55** [3D, spoiler: major, standing: CORROBORATED] Even Vic, who says he wants out, ends 1984 running a criminal empire: the story is built around him reluctantly building one.  
+  Evidence: S10 [encyclopedia] matched: The story centres on Vic's attempts to build up a criminal empire alongside his brother.; S26 [community] matched: The game is about Vic getting revenge on Martinez and (reluctantly) building a criminal empire with Lance.
+- **C61** [3D, spoiler: major, standing: MATCHED] The bank's name is the game's own satire: even Vice City's bank is labelled corrupt.  
+  Evidence: S85 [fan_wiki] matched: The name, 'The Big Corrupt Bank', suggests the bank is illegitimate.
+- **C62** [3D, spoiler: major, standing: CORROBORATED] Avery's methods outlive Vice City: his protégé carries the criminal real-estate playbook into GTA III.  
+  Evidence: S92 [press] matched: In Vice City it appears Donald Love has learned a lot from his mentor Avery.; S90 [fan_wiki] matched: He uses criminal tactics, taught by Avery Carrington, to increase his profits.
 
 ## Fan theory
 
@@ -299,6 +323,50 @@ Stats: {'sources': 75, 'claims': 52, 'confirmed_canon': 40, 'interpretation': 6,
   Note: Read as a search-result excerpt.
 - **S75** (secondary, press) Sportskeeda - Top 5 characters in GTA Vice City Stories: https://sportskeeda.com/gta/top-5-characters-gta-vice-city-stories-ranked (READ BY ASSISTANT, not human-verified)  
   Note: Read as a search-result excerpt.
+- **S76** (secondary, fan_wiki) Grand Theft Wiki - 'To Victor, the Spoils': https://www.grandtheftwiki.com/To_Victor,_the_Spoils (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt (review 7 expansion pass).
+- **S77** (secondary, fan_wiki) GTABase - 'To Victor, The Spoils': https://gtabase.com/gta-vice-city-stories/missions/to-victor-the-spoils (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt (review 7 expansion pass).
+- **S78** (secondary, fan_wiki) Grand Theft Wiki - Empire Building (VCS): https://www.grandtheftwiki.com/Empire_Building (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt (review 7 expansion pass).
+- **S79** (secondary, press) GamesRadar+ - Vice City Stories review: https://gamesradar.com/grand-theft-auto-vice-city-stories-review/2 (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt (review 7 expansion pass).
+- **S80** (secondary, encyclopedia) Wikipedia - Tommy Vercetti: https://en.wikipedia.org/wiki/Tommy_Vercetti (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt (review 7 expansion pass).
+- **S81** (secondary, fan_wiki) Grand Theft Wiki - Introduction (GTA VC): https://grandtheftwiki.com/Introduction_(GTA_VC) (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt (review 7 expansion pass).
+- **S82** (secondary, fan_wiki) GTA Wiki (gta.wiki) - 'The Job' (transcript): https://gta.wiki/w/The_Job (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt (review 7 expansion pass).
+- **S83** (secondary, fan_wiki) Grand Theft Wiki - 'The Job'/Script: https://www.grandtheftwiki.com/The_Job/Script (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt (review 7 expansion pass).
+- **S84** (secondary, community) IMDb - Ken Rosenberg quotes (GTA: Vice City): https://imdb.com/title/tt0314123/characters/nm0001209 (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt (review 7 expansion pass).
+- **S85** (secondary, fan_wiki) Grand Theft Wiki - El Banco Corrupto Grande: https://www.grandtheftwiki.com/El_Banco_Corrupto_Grande (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt (review 7 expansion pass).
+- **S86** (secondary, fan_wiki) GTA Wiki (Fandom) - 'The Job': https://gta.fandom.com/wiki/The_Job (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt (review 7 expansion pass).
+- **S87** (secondary, press) Sportskeeda - A brief history of heists in the GTA series: https://www.sportskeeda.com/gta/a-brief-history-heists-gta-series (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt (review 7 expansion pass).
+- **S88** (secondary, fan_wiki) GTABase - Donald Love (GTA Vice City): https://www.gtabase.com/gta-vice-city/characters/donald-love (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt (review 7 expansion pass).
+- **S89** (secondary, fan_wiki) GTA Wiki (gta.wiki) - Donald Love: https://gta.wiki/w/Donald_Love (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt (review 7 expansion pass).
+- **S90** (secondary, fan_wiki) WikiGTA - Donald Love: https://en.m.wikigta.org/wiki/Donald_Love (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt (review 7 expansion pass).
+- **S91** (secondary, fan_wiki) GTABase - Donald Love (GTA 3): https://www.gtabase.com/gta-3/characters/donald-love (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt (review 7 expansion pass).
+- **S92** (secondary, press) Giant Bomb - Donald Love: https://giantbomb.com/wiki/Characters/Donald_Love (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt (review 7 expansion pass).
+- **S93** (secondary, press) WhatCulture - 10 most compelling backstories of GTA characters: https://whatculture.com/gaming/10-most-compelling-backstories-of-gta-characters?page=4 (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt (review 7 expansion pass).
+- **S94** (primary_game, game) GTA: Vice City Stories - Marty Jay Williams missions and 'To Victor, the Spoils': Vice City Stories: Marty's missions, then 'To Victor, the Spoils' (Louise) (UNVERIFIED)  
+  Note: Not checked in-game.
+- **S95** (primary_game, game) GTA: Vice City - opening and 'The Job' (Malibu Club): Vice City: opening cutscene (airport, Rosenberg); Malibu Club mission 'The Job' (UNVERIFIED)  
+  Note: Not checked in-game.
+- **S96** (primary_game, game) GTA III - Donald Love's missions: Grand Theft Auto III (2001): Donald Love missions (UNVERIFIED)  
+  Note: Not checked in-game.
+- **S97** (secondary, fan_wiki) GTA Wiki (gta.wiki) - 'In The Beginning...' walkthrough: https://gta.wiki/w/In_The_Beginning.../Walkthrough (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt (two revisions).
 
 ## Claims needing attention before scripting
 

@@ -6,7 +6,9 @@ from PIL import Image, ImageDraw, ImageFilter
 sys.path.insert(0, os.getcwd())
 from modules.caption_images import _load_font
 
-PINK, TEAL, CREAM = (255, 46, 136), (0, 214, 214), (255, 244, 230)
+from modules.gaming.brand import load_brand, paste_logo
+BRAND = load_brand()
+PINK, TEAL, CREAM = BRAND["colors"]["accent_2"], BRAND["colors"]["highlight"], (255, 244, 230)
 
 
 def make(bg_path, out_path, lines=("BUILT", "ON CRIME"), side="left", tag="VICE CITY LORE  ·  1984-1986",
@@ -42,6 +44,7 @@ def make(bg_path, out_path, lines=("BUILT", "ON CRIME"), side="left", tag="VICE 
         y += int(big.size * 1.12)
     bx = x_for(300)
     d.rectangle([bx, y + 18, bx + 300, y + 30], fill=TEAL)
+    paste_logo(img, BRAND, height_frac=0.09, corner="bottom_right" if side == "left" else "bottom_left")
     img.save(out_path)
     return out_path
 

@@ -76,7 +76,7 @@ def test_pilot_production_loads_with_landscape_defaults():
     assert prod["_settings"]["format"] == "landscape"
     assert prod["_settings"]["motion"] == "kenburns"
     b = word_budget(prod["target_minutes"])
-    assert b["target_words"] == 1960 and b["min_words"] == 1560 and b["max_words"] == 2400
+    assert b["target_words"] == 1540 and b["min_words"] == 1300 and b["max_words"] == 1800
 
 
 def test_production_rejects_game_outside_continuity(tmp_path):
@@ -144,7 +144,7 @@ def test_pilot_dossier_is_structurally_valid_but_not_factually_verified():
     assert fan and all(c["id"] == "C26" for c in fan)
     hd = [c for c in d["claims"] if c.get("continuity") == "HD"]
     assert hd and all(c["spoiler"] == "none" for c in hd)  # GTA VI stays setting-level
-    assert 12 <= p["target_minutes"][0] and p["target_minutes"][1] <= 16
+    assert p["target_minutes"] == [10, 12]          # review 6: 10-12 minutes, no filler
 
 
 def _ev_dossier(evidence, families):
@@ -501,3 +501,31 @@ def test_scene_pause_after_is_carried_into_script():
         {"narration": "Two.", "claim_ids": [], "visuals": [{"kind": "chapter_card"}]}]}]
     sc = assemble_script(prod, outline, chapters)["scenes"]
     assert sc[0]["pause_after"] == 1.3 and "pause_after" not in sc[1]
+
+
+# ---------- brand (Unplayed History) ----------
+
+def test_brand_defaults_keep_the_original_look(tmp_path):
+    from modules.gaming.brand import load_brand
+    b = load_brand(str(tmp_path / "missing.json"))
+    assert b["name"] == "Unplayed History" and b["logo"] is None
+    assert b["colors"]["accent"] == (214, 170, 80)
+
+
+def test_brand_colors_and_logo_apply_to_cards(tmp_path, monkeypatch):
+    from PIL import Image
+    from modules.gaming.brand import load_brand
+    from modules.gaming.packaging import text_card
+    logo = tmp_path / "logo.png"
+    Image.new("RGBA", (200, 100), (255, 0, 0, 255)).save(logo)
+    cfg = tmp_path / "brand.json"
+    cfg.write_text(json.dumps({"name": "Unplayed History", "tagline": "t", "logo": str(logo),
+                               "colors": {"accent": "#00FF00", "background": "#000"}}))
+    monkeypatch.setenv("UH_BRAND_FILE", str(cfg))
+    b = load_brand()
+    assert b["colors"]["accent"] == (0, 255, 0) and b["colors"]["background"] == (0, 0, 0) and b["logo"]
+    out = text_card({"style": "title", "heading": "X"}, str(tmp_path / "t.png"))
+    im = Image.open(out).convert("RGB")
+    m = int(im.width * 0.04)
+    r, g, b_ = im.getpixel((im.width - m - 5, m + 5))
+    assert r > 200 and g < 30 and b_ < 30  # logo (90% opacity), top right

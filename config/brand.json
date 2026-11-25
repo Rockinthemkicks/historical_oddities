@@ -1,0 +1,13 @@
+{
+  "name": "Unplayed History",
+  "tagline": null,
+  "logo": null,
+  "colors": {
+    "accent": null,
+    "accent_2": null,
+    "highlight": null,
+    "text": null,
+    "background": null
+  },
+  "notes": "Brand (owner decision, 2026-11-25). Logo, colors and tagline are pending from the owner; while a value is null the pipeline keeps its current defaults. 'logo' is a path relative to the repo (e.g. assets/brand/logo.png, transparent PNG). Colors are hex strings like \"#FF2E88\". Changing these restyles only locally drawn cards, thumbnails and text; generated illustrations are never regenerated for branding."
+}

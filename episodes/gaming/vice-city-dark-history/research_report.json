@@ -87,12 +87,23 @@
     "C49": "matched",
     "C50": "corroborated",
     "C51": "corroborated",
-    "C52": "matched"
+    "C52": "matched",
+    "C53": "corroborated",
+    "C54": "corroborated",
+    "C55": "corroborated",
+    "C56": "corroborated",
+    "C57": "corroborated",
+    "C58": "corroborated",
+    "C59": "matched",
+    "C60": "corroborated",
+    "C61": "matched",
+    "C62": "corroborated",
+    "C63": "matched"
   },
   "readiness_counts": {
     "verified": 0,
-    "corroborated": 13,
-    "matched": 32,
+    "corroborated": 21,
+    "matched": 35,
     "unsupported": 6,
     "disputed": 1
   },
@@ -135,10 +146,10 @@
     }
   ],
   "stats": {
-    "sources": 75,
-    "claims": 52,
-    "confirmed_canon": 40,
-    "interpretation": 6,
+    "sources": 97,
+    "claims": 63,
+    "confirmed_canon": 48,
+    "interpretation": 9,
     "fan_theory": 1,
     "speculation": 1,
     "real_world_fact": 4

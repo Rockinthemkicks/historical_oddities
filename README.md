@@ -1,4 +1,7 @@
-# Video Pipeline: topic → finished captioned MP4
+# Unplayed History: video pipeline (topic → finished captioned MP4)
+
+The production pipeline behind **Unplayed History** (gaming-lore documentaries). It also keeps the original
+Historical Oddities mode. Repo renamed from `historical_oddities` on 2026-11-25; old GitHub links redirect.
 
 Turns a topic into a numbered-scene script, narration audio (ElevenLabs), scene
 images (OpenAI), and a finished captioned MP4 (vertical 9:16, landscape 16:9,

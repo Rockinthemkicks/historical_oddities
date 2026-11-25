@@ -18,9 +18,11 @@ def chapter_card(number, title, out_path, size=(1920, 1080)):
     img = Image.new("RGB", size, (14, 14, 18))
     draw = ImageDraw.Draw(img)
     w, h = size
-    draw.rectangle([int(w * 0.08), int(h * 0.62), int(w * 0.92), int(h * 0.625)], fill=(200, 160, 70))
+    from .brand import load_brand
+    _accent = load_brand()["colors"]["accent"]
+    draw.rectangle([int(w * 0.08), int(h * 0.62), int(w * 0.92), int(h * 0.625)], fill=_accent)
     small, big = _load_font(int(h * 0.045)), _load_font(int(h * 0.085))
-    draw.text((int(w * 0.08), int(h * 0.36)), f"CHAPTER {number}", font=small, fill=(200, 160, 70))
+    draw.text((int(w * 0.08), int(h * 0.36)), f"CHAPTER {number}", font=small, fill=_accent)
     y = int(h * 0.43)
     for line in textwrap.wrap(title, 34)[:2]:
         draw.text((int(w * 0.08), y), line, font=big, fill=(240, 240, 240))
@@ -30,13 +32,13 @@ def chapter_card(number, title, out_path, size=(1920, 1080)):
     return out_path
 
 
-def _card_background(bg_path, size):
+def _card_background(bg_path, size, plain=(12, 13, 18)):
     """Plain near-black, or a blurred and darkened version of an illustration (so typography
     sits inside the film's world instead of on a slide)."""
     from PIL import ImageEnhance, ImageFilter
     w, h = size
     if not bg_path or not os.path.exists(bg_path):
-        return Image.new("RGB", size, (12, 13, 18))
+        return Image.new("RGB", size, tuple(plain))
     bg = Image.open(bg_path).convert("RGB")
     sc = max(w / bg.width, h / bg.height)
     bg = bg.resize((int(bg.width * sc) + 1, int(bg.height * sc) + 1))
@@ -59,9 +61,11 @@ def text_card(spec, out_path, size=(1920, 1080)):
       {"style": "title"|"stamp"|"rows", "heading": str, "lines": [str], "rows": [[label, text], ...],
        "note": small grey footnote (e.g. an illustration disclosure)}"""
     w, h = size
-    img = _card_background(spec.get("_bg_path"), size)
+    from .brand import load_brand, paste_logo
+    brand = load_brand()
+    img = _card_background(spec.get("_bg_path"), size, brand["colors"]["background"])
     draw = ImageDraw.Draw(img)
-    gold, white, grey = (214, 170, 80), (238, 236, 230), (170, 170, 180)
+    gold, white, grey = brand["colors"]["accent"], brand["colors"]["text"], (170, 170, 180)
     style = spec.get("style", "title")
     if style == "stamp":
         font = _load_font(int(h * 0.16))
@@ -96,6 +100,9 @@ def text_card(spec, out_path, size=(1920, 1080)):
         for line in spec.get("lines", [])[:3]:
             y += h * 0.07
             draw.text((w * 0.08, y), line, font=sub, fill=(205, 205, 210))
+    if style == "title":
+        paste_logo(img, brand)
+        draw = ImageDraw.Draw(img)
     if spec.get("note"):
         draw.text((w * 0.08, h * 0.06), spec["note"], font=_load_font(int(h * 0.026)), fill=grey)
     os.makedirs(os.path.dirname(out_path) or ".", exist_ok=True)
@@ -189,6 +196,8 @@ def build_package(production, script, dossier, markers, manifest, out_dir):
                 used_sources.append(sid)
 
     chapters_txt = "\n".join(f"{fmt_ts(m['start'])} {m['title']}" for m in markers)
+    from .brand import load_brand
+    brand = load_brand()
     lines = [production["title"], ""]
     if production.get("description"):
         lines += [production["description"], ""]
@@ -212,10 +221,12 @@ def build_package(production, script, dossier, markers, manifest, out_dir):
         lines.append("")
     lines += [
         "About this video: an independent fan documentary analysing a fictional game world. Narration "
-        "is an AI voice and illustrations are AI-generated original artwork, written and fact-checked "
-        "against the games and the sources above.",
+        "is an AI voice and illustrations are AI-generated original artwork, not game footage. Facts are "
+        "researched against the sources listed above; interpretations are presented as interpretations.",
         f"Not affiliated with or endorsed by the makers of {franchise['name']}. "
         f"All game names and trademarks belong to their owners.",
+        "",
+        brand["name"] + (f": {brand['tagline']}" if brand.get("tagline") else ""),
     ]
     description = "\n".join(lines) + "\n"
     with open(os.path.join(out_dir, "description.txt"), "w") as f:
