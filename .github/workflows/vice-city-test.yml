@@ -61,6 +61,17 @@ jobs:
           key: spend-ledger-${{ github.run_id }}
           restore-keys: spend-ledger-
 
+      # Keep paid outputs (narration clips, images and their hash manifests) between runs, so a re-run
+      # after a failure reuses what was already paid for. Files are only reused when their inputs match.
+      - name: Restore paid media
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            ${{ env.T }}/out/audio
+            ${{ env.T }}/out/images
+          key: paid-media-${{ github.run_id }}
+          restore-keys: paid-media-
+
       - name: Build test and estimate (free)
         run: |
           python3 episodes/gaming/vice-city-dark-history/draft/make_test.py
@@ -89,6 +100,15 @@ jobs:
         with:
           path: ~/.historical_oddities
           key: spend-ledger-${{ github.run_id }}
+
+      - name: Save paid media
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            ${{ env.T }}/out/audio
+            ${{ env.T }}/out/images
+          key: paid-media-${{ github.run_id }}
 
       - name: Cost summary
         if: always()
