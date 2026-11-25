@@ -1,0 +1,190 @@
+name: Produce full episode - Vice City pilot (paid, $15 pilot ceiling)
+
+# Manual button: Actions tab -> "Produce full episode" -> Run workflow. Pick the narration speed and type RUN.
+# Only people with write access to the repo can start it. It spends real money (OpenAI images, ElevenLabs
+# narration). Hard limits, fixed here on purpose with no input that raises them:
+#   - $15.00 cumulative for this pilot episode INCLUDING the 60-second test, retries and failed requests
+#     (episodes/gaming/vice-city-dark-history/pilot_budget.py works out what is left; it refuses to start
+#     if the spend ledgers weren't restored);
+#   - $8.00 per run;
+#   - the pipeline's overall $250 limit across everything.
+# It never publishes, never merges anything and never starts another episode.
+
+on:
+  workflow_dispatch:
+    inputs:
+      narration_speed:
+        description: "Narration speed (pick after comparing the 60-second test at 0.8 and 0.9)"
+        required: true
+        type: choice
+        options: ["choose", "0.9", "0.8"]
+        default: "choose"
+      confirm:
+        description: "Type RUN to approve full production (estimate ~$4, pilot ceiling $15 incl. tests)"
+        required: true
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: paid-runs
+  cancel-in-progress: false
+
+jobs:
+  produce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+      ELEVENLABS_VOICE_ID: ${{ secrets.ELEVENLABS_VOICE_ID }}
+      E: episodes/gaming/vice-city-dark-history
+      T: episodes/gaming/vice-city-60s-test
+      SPEED: ${{ github.event.inputs.narration_speed }}
+    steps:
+      - name: Check approval, speed and keys
+        env:
+          CONFIRM: ${{ github.event.inputs.confirm }}
+        run: |
+          if [ "$CONFIRM" != "RUN" ]; then
+            echo "::error::Not approved: type RUN in the confirm box. Nothing was spent."; exit 1
+          fi
+          if [ "$SPEED" != "0.9" ] && [ "$SPEED" != "0.8" ]; then
+            echo "::error::Pick a narration speed (0.9 or 0.8). Nothing was spent."; exit 1
+          fi
+          for k in OPENAI_API_KEY ELEVENLABS_API_KEY ELEVENLABS_VOICE_ID; do
+            if [ -z "${!k}" ]; then echo "::error::Missing repository secret $k. Nothing was spent."; exit 1; fi
+          done
+
+      - uses: actions/checkout@v4
+        with:
+          ref: gaming-lore-pilot
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu-core
+      - run: pip install -r requirements.txt
+
+      # Shared with the 60-second test button: identical paths and key prefix, so both buttons read and
+      # extend the same overall ledger and the test's episode ledger (test spend counts toward the $15).
+      - name: Restore spend ledgers (overall + test)
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            ~/.historical_oddities
+            episodes/gaming/vice-city-60s-test/costs.jsonl
+          key: spend-ledger-v2-${{ github.run_id }}
+          restore-keys: |
+            spend-ledger-v2-
+
+      - name: Restore this episode's ledger
+        uses: actions/cache/restore@v4
+        with:
+          path: episodes/gaming/vice-city-dark-history/costs.jsonl
+          key: pilot-ledger-${{ github.run_id }}
+          restore-keys: pilot-ledger-
+
+      # The test's paid images and narration: the reference sheet and the five approved illustrations are
+      # reused when their inputs are identical (matched by input hash, never by file name).
+      - name: Restore the 60-second test's paid media
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            episodes/gaming/vice-city-60s-test/out/audio
+            episodes/gaming/vice-city-60s-test/out/images
+          key: paid-media-${{ github.run_id }}
+          restore-keys: paid-media-
+
+      - name: Restore this episode's paid media
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            episodes/gaming/vice-city-dark-history/out/audio
+            episodes/gaming/vice-city-dark-history/out/images
+          key: pilot-media-${{ github.run_id }}
+          restore-keys: pilot-media-
+
+      - name: Pilot budget ($15 incl. tests; fails closed without ledgers)
+        run: python3 $E/pilot_budget.py --github-env "$GITHUB_ENV"
+
+      - name: Prepare, check approvals, reuse test media, estimate (free)
+        run: |
+          python3 -c "import json;p='$E/production.json';d=json.load(open(p));d.setdefault('overrides',{})['narration_speed']=float('$SPEED');json.dump(d,open(p,'w'),indent=2,ensure_ascii=False)"
+          python3 $E/draft/prepare_pilot.py
+          P="python3 main.py --mode gaming-lore --production $E/production.json"
+          $P status
+          $P storyboard
+          $P seed --from $T
+          $P estimate --max-run-cost 8 --episode-budget "$EPISODE_BUDGET"
+
+      # research, outline and script approvals are committed (approvals.json) and pinned to the exact files
+      # the owner approved; if any of them changed, `produce` refuses. Typing RUN approves the visual plan
+      # and the budget for this run.
+      - name: Approve storyboard and budget (owner typed RUN)
+        run: |
+          P="python3 main.py --mode gaming-lore --production $E/production.json"
+          for s in storyboard budget; do
+            $P approve "$s" --note "Full episode; RUN confirmed by ${{ github.actor }} in Actions run ${{ github.run_id }}; speed $SPEED; pilot ceiling \$15 incl. tests"
+          done
+
+      - name: Produce (paid)
+        run: python3 main.py --mode gaming-lore --production $E/production.json produce --max-run-cost 8 --episode-budget "$EPISODE_BUDGET"
+
+      - name: Thumbnails and draft YouTube package (free)
+        if: success()
+        run: |
+          python3 $E/draft/make_final_thumbnails.py $E $E/out/thumbnails
+          python3 $E/draft/publish_draft.py $E/production.json
+
+      - name: Save spend ledgers (overall + test)
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            ~/.historical_oddities
+            episodes/gaming/vice-city-60s-test/costs.jsonl
+          key: spend-ledger-v2-${{ github.run_id }}
+
+      - name: Save this episode's ledger
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: episodes/gaming/vice-city-dark-history/costs.jsonl
+          key: pilot-ledger-${{ github.run_id }}
+
+      - name: Save this episode's paid media
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            episodes/gaming/vice-city-dark-history/out/audio
+            episodes/gaming/vice-city-dark-history/out/images
+          key: pilot-media-${{ github.run_id }}
+
+      - name: Summary
+        if: always()
+        run: |
+          python3 $E/pilot_budget.py | tee -a "$GITHUB_STEP_SUMMARY" || true
+          if [ -f "$E/out/qc_report.json" ]; then
+            python3 -c "import json;r=json.load(open('$E/out/qc_report.json'));print(f\"Speed $SPEED. Spent this run: \${r['spent_this_run_usd']:.2f}; video {r['duration_seconds']/60:.2f} min; QC {'passed' if r['qc']['passed'] else 'FAILED'}\");print('loudness:', json.dumps(r.get('loudness')));print('pacing:', json.dumps(r.get('pacing')))" | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+          tail -n 40 ~/.historical_oddities/spend_ledger.jsonl 2>/dev/null > ledger_tail.jsonl || true
+
+      - name: Upload the episode
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vice-city-full-episode
+          retention-days: 30
+          if-no-files-found: warn
+          path: |
+            ${{ env.E }}/out/documentary.mp4
+            ${{ env.E }}/out/captions.srt
+            ${{ env.E }}/out/thumbnails/
+            ${{ env.E }}/out/publish_draft/
+            ${{ env.E }}/out/qc_report.json
+            ${{ env.E }}/out/chapters.json
+            ${{ env.E }}/estimate.json
+            ledger_tail.jsonl
