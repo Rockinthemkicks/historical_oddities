@@ -133,3 +133,19 @@ def build_caption_cues(scenes, max_words=3, max_chars=16, uppercase=True, max_li
                 })
 
     return cues
+
+
+def _srt_ts(t):
+    ms = int(round(max(t, 0) * 1000))
+    h, ms = divmod(ms, 3600000)
+    m, ms = divmod(ms, 60000)
+    sec, ms = divmod(ms, 1000)
+    return f"{h:02d}:{m:02d}:{sec:02d},{ms:03d}"
+
+
+def write_srt(cues, path):
+    """Writes caption cues ({"start", "end", "lines"}) as an .srt file for upload to YouTube."""
+    with open(path, "w", encoding="utf-8") as f:
+        for i, c in enumerate(cues, 1):
+            f.write(f"{i}\n{_srt_ts(c['start'])} --> {_srt_ts(c['end'])}\n" + "\n".join(c["lines"]) + "\n\n")
+    return path

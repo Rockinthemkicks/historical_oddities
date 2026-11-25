@@ -21,7 +21,7 @@
     12
   ],
   "spoiler_level": "full",
-  "description": "Before GTA 6, there was another Vice City. An investigation into the soldiers, agents, cartels, developers and politicians who built the 1980s city of Vice City Stories (1984) and Vice City (1986), in the older 3D continuity. Not GTA VI's backstory; no GTA VI story spoilers.",
+  "description": "Before GTA 6 returns to Vice City, this is the story of the original one. An investigation into the soldiers, agents, cartels, developers and politicians who built the 1980s city of Vice City Stories (1984) and Vice City (1986).\n\nContinuity note: these games belong to the older 3D-era continuity. GTA VI is set in a separate continuity, so nothing here is presented as GTA VI's backstory or canon. No GTA VI story spoilers.",
   "overrides": {
     "target_minutes_range": [
       10,
@@ -43,5 +43,7 @@
       "id": "thumbnail_bg",
       "prompt": "Somber, dramatic, non-graphic. Dramatic low-angle composition: an old, generic badge with no insignia or lettering lies cracked on a wet seawall railing in the foreground, sharp focus; behind it, out of focus, a neon-lit 1980s coastal skyline at dusk in magenta and teal, palm silhouettes. Strong rim light on the badge's crack. Large empty area of sky on the left for title text."
     }
-  ]
+  ],
+  "ambient_asset_id": "ambient_pad",
+  "sources_url": "https://github.com/Rockinthemkicks/unplayedhistory/blob/gaming-lore-pilot/episodes/gaming/vice-city-dark-history/SOURCES.md"
 }

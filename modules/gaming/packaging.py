@@ -68,8 +68,12 @@ def text_card(spec, out_path, size=(1920, 1080)):
     gold, white, grey = brand["colors"]["accent"], brand["colors"]["text"], (170, 170, 180)
     style = spec.get("style", "title")
     if style == "stamp":
-        font = _load_font(int(h * 0.16))
         text = spec.get("heading", "")
+        fs = int(h * 0.16)
+        font = _load_font(fs)
+        while draw.textlength(text, font=font) > w * 0.9 and fs > int(h * 0.05):
+            fs = int(fs * 0.92)  # long quotes shrink to fit the frame instead of running off it
+            font = _load_font(fs)
         tw = draw.textlength(text, font=font)
         draw.text(((w - tw) / 2, h * 0.38), text, font=font, fill=white)
         sub = _load_font(int(h * 0.04))
@@ -178,6 +182,43 @@ This is not legal advice.
 """
 
 
+DESCRIPTION_LIMIT = 5000      # YouTube's description limit (characters)
+DESCRIPTION_RESERVE = 900     # room kept for credits, disclosure and the brand footer
+
+
+def sources_markdown(production, script, dossier):
+    """Public claim-by-claim source list (for the description link when the list is too long)."""
+    claims = {c["id"]: c for c in dossier.get("claims", [])}
+    sources = {s["id"]: s for s in dossier.get("sources", [])}
+    out = [f"# Sources: {production['title']}", "",
+           "Every factual claim in the video, in order, with the sources it rests on. Lines marked "
+           "*interpretation* are the documentary's reading of the evidence, not facts stated by the games.", ""]
+    seen = []
+    for sc in script["scenes"]:
+        for cid in sc.get("claim_ids", []):
+            if cid in claims and cid not in seen:
+                seen.append(cid)
+    chapter = None
+    for sc in script["scenes"]:
+        if sc.get("chapter_title") != chapter:
+            chapter = sc.get("chapter_title")
+            out += [f"## {chapter}", ""]
+        for cid in sc.get("claim_ids", []):
+            if cid not in seen:
+                continue
+            seen.remove(cid)
+            c = claims[cid]
+            tag = " *(interpretation)*" if c.get("status") == "interpretation" else ""
+            out.append(f"- **{cid}**{tag}: {c['text']}")
+            for sid in c.get("source_ids", []):
+                if sid in sources:
+                    s = sources[sid]
+                    where = s.get("url") or s.get("locator", "")
+                    out.append(f"  - {s.get('title', sid)}" + (f": {where}" if where else ""))
+    out.append("")
+    return "\n".join(out)
+
+
 def build_package(production, script, dossier, markers, manifest, out_dir):
     """Writes description.txt, chapters.txt and sources.json. Returns the description text."""
     os.makedirs(out_dir, exist_ok=True)
@@ -205,12 +246,30 @@ def build_package(production, script, dossier, markers, manifest, out_dir):
     if note:
         lines += [note, ""]
     lines += ["Chapters", chapters_txt, ""]
+    def src_line(sid):
+        s = sources[sid]
+        return f"- {s.get('title', sid)}: {s.get('url') or s.get('locator', '')}"
+    source_lines = [src_line(sid) for sid in used_sources]
+    sources_url = production.get("sources_url")
+    if used_sources and sources_url:
+        # Full list on a public page; the description keeps the most primary sources that fit
+        # YouTube's limit (game > official > press > encyclopedia > wikis/community).
+        from .research import source_family
+        order = ["game", "official", "press", "encyclopedia", "fan_wiki", "community"]
+        ranked = sorted(used_sources, key=lambda sid: (order.index(source_family(sources[sid]))
+                                                        if source_family(sources[sid]) in order else 9,
+                                                        used_sources.index(sid)))
+        source_lines = [f"Every claim and its sources ({len(used_sources)} in all): {sources_url}", "",
+                        "Key sources"]
+        budget = DESCRIPTION_LIMIT - DESCRIPTION_RESERVE - len("\n".join(lines))
+        for sid in ranked:
+            line = src_line(sid)
+            if len("\n".join(source_lines)) + len(line) + 1 > budget:
+                break
+            source_lines.append(line)
     if used_sources:
         lines.append("Sources")
-        for sid in used_sources:
-            s = sources[sid]
-            where = s.get("url") or s.get("locator", "")
-            lines.append(f"- {s.get('title', sid)}: {where}")
+        lines += source_lines
         lines.append("")
     credits = [a for a in manifest.get("assets", [])
                if a.get("kind") in ("licensed_music", "licensed_sfx", "user_gameplay_video", "user_screenshot")]

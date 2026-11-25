@@ -552,7 +552,7 @@
           "id": "v030",
           "kind": "reuse",
           "of": "img_trailer",
-          "motion": "zoom_to:0.7,0.55,0.5"
+          "motion": "pan_left"
         }
       ]
     },
@@ -625,7 +625,7 @@
           "id": "v033",
           "kind": "reuse",
           "of": "img_clockwork",
-          "motion": "zoom_to:0.5,0.3,0.45"
+          "motion": "zoom_to:0.7,0.55,0.5"
         }
       ]
     },
@@ -669,7 +669,7 @@
           "id": "v037",
           "kind": "reuse",
           "of": "img_ch04_1",
-          "motion": "zoom_to:0.4,0.65,0.5"
+          "motion": "zoom_out"
         }
       ]
     },
@@ -817,7 +817,7 @@
           "id": "v046",
           "kind": "reuse",
           "of": "img_corporal_hospital",
-          "motion": "zoom_to:0.3,0.4,0.5"
+          "motion": "zoom_to:0.5,0.3,0.45"
         }
       ]
     },
@@ -894,7 +894,7 @@
           "id": "v050",
           "kind": "reuse",
           "of": "img_ch05_6",
-          "motion": "zoom_to:0.7,0.55,0.5"
+          "motion": "pan_right"
         }
       ]
     },
@@ -981,7 +981,7 @@
           "id": "v056",
           "kind": "reuse",
           "of": "img_backroom",
-          "motion": "zoom_to:0.5,0.3,0.45"
+          "motion": "zoom_to:0.3,0.4,0.5"
         }
       ]
     },
@@ -1097,7 +1097,7 @@
           "id": "v063",
           "kind": "reuse",
           "of": "img_yacht",
-          "motion": "zoom_to:0.4,0.65,0.5"
+          "motion": "pan_left"
         }
       ]
     },
@@ -1264,7 +1264,8 @@
         {
           "id": "img_model",
           "kind": "illustration",
-          "prompt": "Calm, non-graphic. An architect's scale model of a waterfront district under a desk lamp, a gold pen and a land deed beside it, no readable text."
+          "prompt": "Calm, non-graphic. An architect's scale model of a waterfront district under a desk lamp, a gold pen and a land deed beside it, no readable text.",
+          "motion": "pan_right"
         }
       ]
     },
@@ -1282,6 +1283,21 @@
           "id": "v074",
           "kind": "illustration",
           "prompt": "Tense, non-graphic. An empty golf course at dawn, a single golf cart abandoned on the fairway, a dropped club in the grass."
+        },
+        {
+          "id": "v075",
+          "kind": "text_card",
+          "style": "rows",
+          "heading": "AVERY'S JOBS",
+          "lines": [],
+          "rows": [
+            [
+              "FOUR IRON",
+              "a rival developer killed"
+            ]
+          ],
+          "motion": "none",
+          "bg_of": "img_model"
         }
       ]
     },
@@ -1296,9 +1312,28 @@
       ],
       "visuals": [
         {
-          "id": "v075",
+          "id": "v076",
           "kind": "illustration",
           "prompt": "Tense, non-graphic. A half-built tower wrapped in scaffolding at dusk, a small remote-control helicopter hovering near an upper floor."
+        },
+        {
+          "id": "v077",
+          "kind": "text_card",
+          "style": "rows",
+          "heading": "AVERY'S JOBS",
+          "lines": [],
+          "rows": [
+            [
+              "FOUR IRON",
+              "a rival developer killed"
+            ],
+            [
+              "DEMOLITION MAN",
+              "a rival site destroyed"
+            ]
+          ],
+          "motion": "none",
+          "bg_of": "img_model"
         }
       ]
     },
@@ -1313,7 +1348,59 @@
       ],
       "visuals": [
         {
-          "id": "v076",
+          "id": "v078",
+          "kind": "text_card",
+          "style": "rows",
+          "heading": "AVERY'S JOBS",
+          "lines": [],
+          "rows": [
+            [
+              "FOUR IRON",
+              "a rival developer killed"
+            ],
+            [
+              "DEMOLITION MAN",
+              "a rival site destroyed"
+            ],
+            [
+              "TWO BIT HIT",
+              "a gang war started"
+            ]
+          ],
+          "motion": "zoom_in",
+          "bg_of": "img_model"
+        }
+      ]
+    },
+    {
+      "scene_number": 60,
+      "narration": "Tommy dresses as a Cuban gang member and attacks a Haitian funeral, so the two gangs go to war.",
+      "image_prompt": "",
+      "chapter": "ch09",
+      "chapter_title": "The Business of Vice",
+      "claim_ids": [
+        "C35"
+      ],
+      "visuals": [
+        {
+          "id": "v079",
+          "kind": "illustration",
+          "prompt": "Somber, non-graphic. A funeral parlor exterior in the rain, black umbrellas, a lone figure in borrowed colors watching from across the street."
+        }
+      ]
+    },
+    {
+      "scene_number": 61,
+      "narration": "In Avery's plan, violence is simply a way to move the market.",
+      "image_prompt": "",
+      "chapter": "ch09",
+      "chapter_title": "The Business of Vice",
+      "claim_ids": [
+        "C36"
+      ],
+      "visuals": [
+        {
+          "id": "v080",
           "kind": "text_card",
           "style": "rows",
           "heading": "AVERY'S PLAN",
@@ -1332,42 +1419,9 @@
               "buy cheap"
             ]
           ],
-          "motion": "zoom_in"
-        }
-      ]
-    },
-    {
-      "scene_number": 60,
-      "narration": "Tommy dresses as a Cuban gang member and attacks a Haitian funeral, so the two gangs go to war.",
-      "image_prompt": "",
-      "chapter": "ch09",
-      "chapter_title": "The Business of Vice",
-      "claim_ids": [
-        "C35"
-      ],
-      "visuals": [
-        {
-          "id": "v077",
-          "kind": "illustration",
-          "prompt": "Somber, non-graphic. A funeral parlor exterior in the rain, black umbrellas, a lone figure in borrowed colors watching from across the street."
-        }
-      ]
-    },
-    {
-      "scene_number": 61,
-      "narration": "In Avery's plan, violence is simply a way to move the market.",
-      "image_prompt": "",
-      "chapter": "ch09",
-      "chapter_title": "The Business of Vice",
-      "claim_ids": [
-        "C36"
-      ],
-      "visuals": [
-        {
-          "id": "v078",
-          "kind": "reuse",
-          "of": "img_model",
-          "motion": "zoom_to:0.5,0.5,0.5"
+          "motion": "none",
+          "reveal": true,
+          "bg_of": "img_model"
         }
       ]
     },
@@ -1385,12 +1439,6 @@
           "id": "img_protege",
           "kind": "illustration",
           "prompt": "Calm, non-graphic. A young man in an oversized suit scribbling in a small notepad behind an older developer's shoulder, an architect's model on the desk between them."
-        },
-        {
-          "id": "v080",
-          "kind": "reuse",
-          "of": "img_protege",
-          "motion": "zoom_to:0.3,0.4,0.5"
         }
       ]
     },
@@ -1406,16 +1454,29 @@
       ],
       "visuals": [
         {
-          "id": "v081",
-          "kind": "reuse",
-          "of": "img_protege",
-          "motion": "zoom_in"
-        },
-        {
           "id": "v082",
           "kind": "reuse",
           "of": "img_protege",
-          "motion": "zoom_to:0.7,0.55,0.5"
+          "motion": "pan_left"
+        },
+        {
+          "id": "v083",
+          "kind": "text_card",
+          "style": "rows",
+          "heading": "THE APPRENTICE",
+          "lines": [],
+          "rows": [
+            [
+              "VICE CITY",
+              "takes notes for Avery"
+            ],
+            [
+              "GTA III",
+              "developer, owns a media company"
+            ]
+          ],
+          "motion": "none",
+          "bg_of": "img_protege"
         }
       ]
     },
@@ -1435,10 +1496,10 @@
           "prompt": "Investigative, non-graphic. Sheets of freshly printed banknotes drying on lines in a dim print shop, no readable text or faces on the notes."
         },
         {
-          "id": "v084",
+          "id": "v085",
           "kind": "reuse",
           "of": "img_printworks",
-          "motion": "zoom_to:0.5,0.3,0.45"
+          "motion": "pan_left"
         }
       ]
     },
@@ -1458,10 +1519,10 @@
           "prompt": "Tense, non-graphic. A grand 1980s bank facade in a Cuban neighborhood at night, marble columns, a blank sign above the doors, an empty getaway van at the curb."
         },
         {
-          "id": "v086",
+          "id": "v087",
           "kind": "reuse",
           "of": "img_bank",
-          "motion": "zoom_to:0.4,0.65,0.5"
+          "motion": "pan_right"
         }
       ]
     },
@@ -1476,7 +1537,7 @@
       ],
       "visuals": [
         {
-          "id": "v087",
+          "id": "v088",
           "kind": "text_card",
           "style": "stamp",
           "heading": "“HE WASHES THE MONEY FOR US.”",
@@ -1499,10 +1560,16 @@
       ],
       "visuals": [
         {
-          "id": "v088",
-          "kind": "reuse",
-          "of": "img_bank",
-          "motion": "zoom_to:0.5,0.25,0.5"
+          "id": "v089",
+          "kind": "text_card",
+          "style": "title",
+          "heading": "EL BANCO CORRUPTO GRANDE",
+          "lines": [
+            "“the big corrupt bank”"
+          ],
+          "rows": [],
+          "motion": "none",
+          "bg_of": "img_bank"
         }
       ]
     },
@@ -1522,7 +1589,7 @@
           "prompt": "Investigative, non-graphic. An envelope of photographs on a polished desk under a green banker's lamp, a lapel pin beside it, no faces visible."
         },
         {
-          "id": "v090",
+          "id": "v091",
           "kind": "reuse",
           "of": "img_ch08_13",
           "motion": "zoom_to:0.3,0.4,0.5"
@@ -1542,16 +1609,31 @@
       ],
       "visuals": [
         {
-          "id": "v091",
-          "kind": "reuse",
-          "of": "img_printworks",
-          "motion": "pan_right"
-        },
-        {
           "id": "v092",
-          "kind": "reuse",
-          "of": "img_printworks",
-          "motion": "zoom_to:0.7,0.55,0.5"
+          "kind": "text_card",
+          "style": "rows",
+          "heading": "THE SYSTEM, 1986",
+          "lines": [],
+          "rows": [
+            [
+              "THE DEVELOPER",
+              "murder wins the land",
+              "developer"
+            ],
+            [
+              "THE BUSINESS",
+              "prints its own money",
+              "business"
+            ],
+            [
+              "THE CONGRESSMAN",
+              "kept in line with photographs",
+              "congressman"
+            ]
+          ],
+          "motion": "none",
+          "reveal": true,
+          "bg_of": "img_printworks"
         }
       ]
     },
@@ -1617,7 +1699,7 @@
     },
     {
       "scene_number": 73,
-      "narration": "Tommy says he was sent to kill one man, and they knew he was coming. Sonny's answer: those fifteen years in prison were his to spend.",
+      "narration": "Tommy says he was sent to kill one man, and they knew he was coming.",
       "image_prompt": "",
       "chapter": "ch10",
       "chapter_title": "This Is Business",
@@ -1629,37 +1711,12 @@
           "id": "img_faceoff",
           "kind": "illustration",
           "prompt": "Tense, non-graphic. Two silhouettes facing each other across a long marble floor, a single beam of light between them."
-        },
-        {
-          "id": "v098",
-          "kind": "reuse",
-          "of": "img_faceoff",
-          "motion": "zoom_to:0.5,0.3,0.45"
         }
       ]
     },
     {
       "scene_number": 74,
-      "narration": "It lands as a confession.",
-      "image_prompt": "",
-      "chapter": "ch10",
-      "chapter_title": "This Is Business",
-      "claim_ids": [
-        "C64"
-      ],
-      "visuals": [
-        {
-          "id": "v099",
-          "kind": "reuse",
-          "of": "img_faceoff",
-          "motion": "zoom_to:0.5,0.5,0.6"
-        }
-      ],
-      "pause_after": 1.0
-    },
-    {
-      "scene_number": 75,
-      "narration": "Lance has already switched sides. He tells Sonny about the fake money, and Tommy kills them both.",
+      "narration": "Lance has already switched sides. He tells Sonny about the fake money.",
       "image_prompt": "",
       "chapter": "ch10",
       "chapter_title": "This Is Business",
@@ -1668,14 +1725,15 @@
       ],
       "visuals": [
         {
-          "id": "v100",
-          "kind": "illustration",
-          "prompt": "Somber, non-graphic. A rooftop at night above the city lights, a broken pair of aviator sunglasses on the ledge."
+          "id": "v098",
+          "kind": "reuse",
+          "of": "img_foyer",
+          "motion": "pan_right"
         }
       ]
     },
     {
-      "scene_number": 76,
+      "scene_number": 75,
       "narration": "Lance's explanation for the betrayal is short: this is business.",
       "image_prompt": "",
       "chapter": "ch10",
@@ -1686,7 +1744,7 @@
       ],
       "visuals": [
         {
-          "id": "v101",
+          "id": "v099",
           "kind": "text_card",
           "style": "stamp",
           "heading": "“THIS IS BUSINESS.”",
@@ -1699,7 +1757,68 @@
       ]
     },
     {
+      "scene_number": 76,
+      "narration": "Tommy kills Lance. Then, face to face, he tells Sonny those fifteen years were taken from him. Sonny's answer: they were his to spend.",
+      "image_prompt": "",
+      "chapter": "ch10",
+      "chapter_title": "This Is Business",
+      "claim_ids": [
+        "C23",
+        "C24"
+      ],
+      "visuals": [
+        {
+          "id": "v100",
+          "kind": "illustration",
+          "prompt": "Somber, non-graphic. A rooftop at night above the city lights, a broken pair of aviator sunglasses on the ledge."
+        },
+        {
+          "id": "v101",
+          "kind": "reuse",
+          "of": "img_faceoff",
+          "motion": "zoom_to:0.5,0.5,0.4"
+        }
+      ]
+    },
+    {
       "scene_number": 77,
+      "narration": "It lands as a confession.",
+      "image_prompt": "",
+      "chapter": "ch10",
+      "chapter_title": "This Is Business",
+      "claim_ids": [
+        "C64"
+      ],
+      "visuals": [
+        {
+          "id": "v102",
+          "kind": "reuse",
+          "of": "img_faceoff",
+          "motion": "zoom_to:0.5,0.5,0.6"
+        }
+      ],
+      "pause_after": 1.0
+    },
+    {
+      "scene_number": 78,
+      "narration": "Then Tommy kills him too.",
+      "image_prompt": "",
+      "chapter": "ch10",
+      "chapter_title": "This Is Business",
+      "claim_ids": [
+        "C23"
+      ],
+      "visuals": [
+        {
+          "id": "v103",
+          "kind": "reuse",
+          "of": "img_foyer",
+          "motion": "zoom_out"
+        }
+      ]
+    },
+    {
+      "scene_number": 79,
       "narration": "Two men, two years apart.",
       "image_prompt": "",
       "chapter": "ch11",
@@ -1709,7 +1828,7 @@
       ],
       "visuals": [
         {
-          "id": "v102",
+          "id": "v104",
           "kind": "chapter_card"
         },
         {
@@ -1720,7 +1839,7 @@
       ]
     },
     {
-      "scene_number": 78,
+      "scene_number": 80,
       "narration": "Vic Vance said he wanted out, and the city brought him back to a deal table where he died.",
       "image_prompt": "",
       "chapter": "ch11",
@@ -1732,7 +1851,7 @@
       ],
       "visuals": [
         {
-          "id": "v104",
+          "id": "v106",
           "kind": "reuse",
           "of": "img_corporal_dock",
           "motion": "zoom_out"
@@ -1740,7 +1859,7 @@
       ]
     },
     {
-      "scene_number": 79,
+      "scene_number": 81,
       "narration": "Tommy Vercetti wanted the top, and he got it.",
       "image_prompt": "",
       "chapter": "ch11",
@@ -1750,7 +1869,7 @@
       ],
       "visuals": [
         {
-          "id": "v105",
+          "id": "v107",
           "kind": "reuse",
           "of": "img_newcomer",
           "motion": "zoom_out"
@@ -1758,7 +1877,7 @@
       ]
     },
     {
-      "scene_number": 80,
+      "scene_number": 82,
       "narration": "The difference is that Vic kept looking for the exit, and Tommy went looking for the keys.",
       "image_prompt": "",
       "chapter": "ch11",
@@ -1769,14 +1888,14 @@
       ],
       "visuals": [
         {
-          "id": "v106",
+          "id": "v108",
           "kind": "illustration",
           "prompt": "Somber, non-graphic. A man's hand dropping a ring of keys onto a mahogany desk, a second hand reaching for a door handle, both in shadow."
         }
       ]
     },
     {
-      "scene_number": 81,
+      "scene_number": 83,
       "narration": "Vic built an empire because the city left him little else. Rosenberg washed Tommy's money. Avery's protégé carried the playbook to another city.",
       "image_prompt": "",
       "chapter": "ch11",
@@ -1788,21 +1907,21 @@
       ],
       "visuals": [
         {
-          "id": "v107",
+          "id": "v109",
           "kind": "reuse",
           "of": "img_clockwork",
           "motion": "zoom_out"
         },
         {
-          "id": "v108",
+          "id": "v110",
           "kind": "reuse",
           "of": "img_clockwork",
-          "motion": "zoom_to:0.4,0.65,0.5"
+          "motion": "zoom_to:0.7,0.55,0.5"
         }
       ]
     },
     {
-      "scene_number": 82,
+      "scene_number": 84,
       "narration": "The sergeant, the agent, the cartel and the colonel were all there before Tommy arrived.",
       "image_prompt": "",
       "chapter": "ch11",
@@ -1814,7 +1933,7 @@
       ],
       "visuals": [
         {
-          "id": "v109",
+          "id": "v111",
           "kind": "reuse",
           "of": "v_rows1984",
           "motion": "zoom_in"
@@ -1822,7 +1941,7 @@
       ]
     },
     {
-      "scene_number": 83,
+      "scene_number": 85,
       "narration": "The evidence points one way. Tommy didn't corrupt Vice City. He inherited it.",
       "image_prompt": "",
       "chapter": "ch11",
@@ -1837,12 +1956,12 @@
           "prompt": "Somber, dramatic, non-graphic. An old, generic badge with no insignia or lettering lies cracked on a wet seawall railing in the foreground; behind it, out of focus, the neon-lit 1980s coastal skyline at dusk in magenta and teal."
         },
         {
-          "id": "v111",
+          "id": "v113",
           "kind": "text_card",
           "style": "title",
           "heading": "UNPLAYED HISTORY",
           "lines": [
-            "Sources for every claim are in the description."
+            "Sources for every claim are linked in the description."
           ],
           "rows": [],
           "motion": "none",
@@ -1852,5 +1971,5 @@
       "pause_after": 4.0
     }
   ],
-  "status": "CANDIDATE FINAL (review 8) - production not approved"
+  "status": "APPROVED FINAL (production approval 2026-11-25; Chapter 9 visuals revised as requested)"
 }

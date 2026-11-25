@@ -183,12 +183,17 @@ CHAPTERS = [
    [CARD, ill("Tense, non-graphic. A mansion foyer at night, men in dark coats on a staircase, one older man in front, faces in shadow.", id="img_foyer")]),
   ("Sonny arrives joking about Tommy's old nickname: the Harwood Butcher.", ["C18", "C24"],
    [reuse("img_foyer", "zoom_in")]),
-  ("Tommy says he was sent to kill one man, and they knew he was coming. Sonny's answer: those fifteen years in prison were his to spend.",
+  # Corrected 2026-11-25 against two mission transcripts: Sonny's "fifteen years" line answers Tommy's later
+  # "you took fifteen years from me", after Lance's betrayal and death, not the "they knew I was coming" line.
+  ("Tommy says he was sent to kill one man, and they knew he was coming.",
    ["C24"], [ill("Tense, non-graphic. Two silhouettes facing each other across a long marble floor, a single beam of light between them.", id="img_faceoff")]),
-  ("It lands as a confession.", ["C64"], [reuse("img_faceoff", "zoom_to:0.5,0.5,0.6")], {"pause_after": 1.0}),
-  ("Lance has already switched sides. He tells Sonny about the fake money, and Tommy kills them both.", ["C23"],
-   [ill("Somber, non-graphic. A rooftop at night above the city lights, a broken pair of aviator sunglasses on the ledge.")]),
+  ("Lance has already switched sides. He tells Sonny about the fake money.", ["C23"], [reuse("img_foyer", "pan_right")]),
   ("Lance's explanation for the betrayal is short: this is business.", ["C23", "C25"], [card("stamp", "\u201cTHIS IS BUSINESS.\u201d", [""])]),
+  ("Tommy kills Lance. Then, face to face, he tells Sonny those fifteen years were taken from him. Sonny's answer: they were his to spend.",
+   ["C23", "C24"], [ill("Somber, non-graphic. A rooftop at night above the city lights, a broken pair of aviator sunglasses on the ledge."),
+                    reuse("img_faceoff", "zoom_to:0.5,0.5,0.4")]),
+  ("It lands as a confession.", ["C64"], [reuse("img_faceoff", "zoom_to:0.5,0.5,0.6")], {"pause_after": 1.0}),
+  ("Then Tommy kills him too.", ["C23"], [reuse("img_foyer", "zoom_out")]),
  ]),
  ("ch10", "Built on Crime", "Conclusion: the exit and the keys.", 110, [
   ("Two men, two years apart.", ["C08"], [CARD, ill("Somber, non-graphic. Split composition: a dark harbor pier at night on the left, a mansion balcony at dawn on the right, the same bay between them.", id="img_split")]),
@@ -200,7 +205,7 @@ CHAPTERS = [
   ("The evidence points one way. Tommy didn't corrupt Vice City. He inherited it.", ["C43"],
    [ill("Somber, dramatic, non-graphic. An old, generic badge with no insignia or lettering lies cracked on a wet seawall railing in the foreground; "
         "behind it, out of focus, the neon-lit 1980s coastal skyline at dusk in magenta and teal.", id="img_badge"),
-    dict(card("title", "UNPLAYED HISTORY", ["Sources for every claim are in the description."], motion="none"), bg_of="img_badge")],
+    dict(card("title", "UNPLAYED HISTORY", ["Sources for every claim are linked in the description."], motion="none"), bg_of="img_badge")],
    {"pause_after": 4.0}),
  ]),
 ]

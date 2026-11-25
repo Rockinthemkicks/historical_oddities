@@ -10,6 +10,7 @@ Commands, in order (see workflow.py for the approval stages):
   write                       stage 3: chapter-by-chapter script (paid text calls)
   storyboard                  stage 4: visual list, prompt/IP check, asset rights
   estimate                    stage 5: cost of narration + images (free)
+  seed --from <production>    free: reuse identical paid images/narration from another production
   produce                     stages 6-7: narration, images, render, QC (paid)
   package                     stage 8: description, chapters, sources
   approve <stage>             record owner approval of a stage's current files
@@ -22,6 +23,7 @@ command would cost and stops before any paid call.
 import argparse
 import json
 import os
+import shutil
 import sys
 
 from .. import images as images_mod
@@ -341,6 +343,22 @@ def _card_bg(script, card, files):
     return None
 
 
+def _chapter_transitions(script, specs, fade, end_fade):
+    """Dip to black into each chapter card (and out of the shot before it), plus a fade-out at the
+    very end. Off unless the mode sets chapter_transition_seconds / end_fade_seconds."""
+    def seg(x):
+        return dict(x) if isinstance(x, dict) else {"path": x}
+    scenes = script["scenes"]
+    for i, sc in enumerate(scenes):
+        vis = sc.get("visuals", [])
+        if fade and vis and vis[0].get("kind") == "chapter_card":
+            specs[i]["image_paths"][0] = {**seg(specs[i]["image_paths"][0]), "fade_in": fade}
+            if i > 0:
+                specs[i - 1]["image_paths"][-1] = {**seg(specs[i - 1]["image_paths"][-1]), "fade_out": fade}
+    if end_fade and specs:
+        specs[-1]["image_paths"][-1] = {**seg(specs[-1]["image_paths"][-1]), "fade_out": end_fade}
+
+
 def _norm(w):
     return "".join(ch for ch in w.lower() if ch.isalnum())
 
@@ -411,6 +429,35 @@ def cmd_estimate(prod, args):
         print("Over a limit: " + str(e).replace("Stopping:", "").strip())
         print("Raise --max-run-cost / --episode-budget yourself if you want to go ahead; "
               "the pipeline never raises them.")
+    return 0
+
+
+def cmd_seed(prod, args):
+    """Free: reuse already-paid images and narration clips from another production (e.g. the
+    production test) wherever their inputs are identical. Matching is by input hash, never by name."""
+    if not args.source:
+        raise SystemExit("seed needs --from <other production folder>")
+    src = args.source
+    script = _read(prod, "script.json")
+    s = prod["_settings"]
+    gen = [v for sc in script["scenes"] for v in sc.get("visuals", []) if v["kind"] in GENERATED_KINDS]
+    gen += _extra_visuals(prod)
+    pseudo = [{"scene_number": i + 1} for i in range(len(gen))]
+    prompts = {i + 1: v["prompt"] for i, v in enumerate(gen)}
+    img_dir = os.path.join(prod["_dir"], "out", "images")
+    plan = images_mod.plan_images(pseudo, img_dir, prompts, use_reference=True,
+                                  quality=s.get("image_quality", "medium"), style=_style(prod), **_reference(prod))
+    seeded = images_mod.seed_from(os.path.join(src, "out", "images"), img_dir, plan["hashes"])
+    src_cache, dst_cache = os.path.join(src, "out", "audio", "cache"), os.path.join(prod["_dir"], "out", "audio", "cache")
+    clips = 0
+    if os.path.isdir(src_cache):
+        os.makedirs(dst_cache, exist_ok=True)
+        for name in os.listdir(src_cache):
+            if name.endswith((".mp3", ".json")) and not os.path.exists(os.path.join(dst_cache, name)):
+                shutil.copyfile(os.path.join(src_cache, name), os.path.join(dst_cache, name))
+                clips += name.endswith(".mp3")
+    print(f"Seeded {len(seeded)} image(s) ({', '.join(seeded) or 'none'}) and {clips} narration clip(s) "
+          f"from {src}. Nothing was charged.")
     return 0
 
 
@@ -507,6 +554,8 @@ def cmd_produce(prod, args):
                 src = files.get(v["of"])
                 if src is None:
                     raise SystemExit(f"{v['id']}: reuses {v.get('of')!r}, which has no file")
+                if isinstance(src, dict) and "reveal" in src:
+                    src = src["reveal"][-1]  # reusing a revealed card shows it complete
                 files[v["id"]] = {"path": src["path"] if isinstance(src, dict) else src,
                                   "motion": v.get("motion")}
     provenance.save(prod["_dir"], manifest)
@@ -548,6 +597,7 @@ def cmd_produce(prod, args):
         specs.append({"image_paths": segs, "duration": dur})
         cap_scenes.append({"start": t, "words": n["words"], "duration": n["duration"], "text": sc["narration"]})
         t += dur
+    _chapter_transitions(script, specs, s.get("chapter_transition_seconds", 0), s.get("end_fade_seconds", 0))
     full_audio = os.path.join(out, "narration_full.mp3")
     concat_audio(audio_list, full_audio)
     cap_cfg = s.get("captions", {})
@@ -555,6 +605,8 @@ def cmd_produce(prod, args):
                               max_chars=cap_cfg.get("max_chars", 42), uppercase=cap_cfg.get("uppercase", False),
                               phrased=cap_cfg.get("phrased", True))
     caps = render_all_captions(cues, os.path.join(out, "captions"), font_size=cap_cfg.get("font_size", 44))
+    from ..captions import write_srt
+    write_srt(cues, os.path.join(out, "captions.srt"))
     ambient = None
     bed = s.get("ambient_asset_id") or prod.get("ambient_asset_id")
     if bed:
@@ -614,7 +666,7 @@ def cmd_approve(prod, args):
 
 COMMANDS = {"status": cmd_status, "check-research": cmd_check_research, "outline": cmd_outline,
             "write": cmd_write, "storyboard": cmd_storyboard, "estimate": cmd_estimate,
-            "produce": cmd_produce, "package": cmd_package, "approve": cmd_approve}
+            "produce": cmd_produce, "seed": cmd_seed, "package": cmd_package, "approve": cmd_approve}
 
 
 def main(argv):
@@ -628,6 +680,7 @@ def main(argv):
     p.add_argument("--note", help="For 'approve': optional note")
     p.add_argument("--dry-run", action="store_true",
                    help="Offline: fixtures, placeholder images, silent narration; never spends")
+    p.add_argument("--from", dest="source", help="For 'seed': the production folder to reuse paid media from")
     p.add_argument("--estimate-only", action="store_true", help="Show the cost, make no paid calls")
     p.add_argument("--max-run-cost", type=float, default=5.00)
     p.add_argument("--episode-budget", type=float, default=10.00)

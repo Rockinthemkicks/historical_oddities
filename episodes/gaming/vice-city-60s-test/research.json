@@ -1131,6 +1131,27 @@
       "verified": false,
       "read_by_assistant": "2026-11-25",
       "notes": "Weak: the same page's opening summary describes a different mission (a 'Forelli capo'), so treat as low-reliability corroboration."
+    },
+    {
+      "id": "S107",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTA Wiki (gta.wiki) - 'The Job' (transcript)",
+      "url": "https://gta.wiki/w/The_Job",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25"
+    },
+    {
+      "id": "S108",
+      "type": "secondary",
+      "family": "community",
+      "title": "IMDb - Grand Theft Auto: Vice City (2002) character quotes",
+      "url": "https://m.imdb.com/title/tt0314123/characters/nm0000501",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "User-submitted quotes; corroboration only."
     }
   ],
   "claims": [
@@ -1696,7 +1717,7 @@
         "S29"
       ],
       "spoiler": "none",
-      "notes": "Narrowed 2026-11-24: the cause of the sentence (the Harwood killings) is not sourced well enough and is no longer claimed.",
+      "notes": "Narrowed 2026-11-24: the cause of the sentence (the Harwood killings) is not sourced well enough and is no longer claimed. Transcript spot-check 2026-11-25 (production approval): wording matched in two independent transcripts. Not checked in the game itself.",
       "evidence": [
         {
           "source_id": "S01",
@@ -1715,6 +1736,12 @@
           "status": "matched",
           "passage": "Sonny calls Tommy 'the Harwood Butcher'; 'Those fifteen years were mine to spend!'",
           "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S29",
+          "status": "matched",
+          "passage": "Sonny: 'How many was it? Ten? No, eleven men. That's how you get to be called the Harwood Butcher!'",
+          "accessed": "2026-11-25"
         }
       ]
     },
@@ -1858,7 +1885,8 @@
       "source_ids": [
         "S03",
         "S11",
-        "S29"
+        "S29",
+        "S98"
       ],
       "spoiler": "major",
       "evidence": [
@@ -1877,12 +1905,19 @@
           "status": "matched",
           "passage": "Lance: 'This is Vice City. This is business.'",
           "accessed": "2026-11-23"
+        },
+        {
+          "source_id": "S98",
+          "status": "matched",
+          "passage": "Lance: 'I'm sorry, Tommy, this is Vice City. This is business.'",
+          "accessed": "2026-11-25"
         }
-      ]
+      ],
+      "notes": "Transcript spot-check 2026-11-25 (production approval): wording matched in two independent transcripts. Not checked in the game itself."
     },
     {
       "id": "C24",
-      "text": "In the finale, Tommy tells Sonny he was sent to kill one man and they knew he was coming; Sonny answers that Tommy's fifteen years in prison were his to spend.",
+      "text": "In the finale, Tommy tells Sonny he was sent to kill one man and they knew he was coming. Later, after Lance's betrayal and death, Tommy tells Sonny he took fifteen years from him; Sonny answers that those fifteen years were his to spend.",
       "status": "confirmed_canon",
       "continuity": "3D",
       "games": [
@@ -1892,10 +1927,11 @@
         "S03",
         "S29",
         "S98",
-        "S100"
+        "S100",
+        "S108"
       ],
       "spoiler": "major",
-      "notes": "Narrowed 2026-11-25 (review 8). The earlier wording 'Sonny never admits a setup' is withdrawn: Wikipedia says Sonny admits his role, and press and fan recaps read the scene the same way. Whether the line is an explicit admission is now carried by the interpretation C64, not stated as fact.",
+      "notes": "Narrowed 2026-11-25 (review 8). The earlier wording 'Sonny never admits a setup' is withdrawn: Wikipedia says Sonny admits his role, and press and fan recaps read the scene the same way. Whether the line is an explicit admission is now carried by the interpretation C64, not stated as fact. Corrected 2026-11-25: the review 8 passage for S29 joined two lines that are far apart in the scene. The GTA Wiki transcript (S98) gives the order: 'they knew I was coming' -> Sonny tells him to watch his tone -> Lance's betrayal -> Lance killed -> 'You took fifteen years from me' -> 'Those fifteen years were mine to spend!'. The narration now follows that order.",
       "evidence": [
         {
           "source_id": "S03",
@@ -1904,19 +1940,25 @@
         {
           "source_id": "S29",
           "status": "matched",
-          "passage": "Tommy: 'You sent me to kill one man... They knew I was coming, Sonny.' Sonny: 'Those fifteen years were mine to spend!'",
-          "accessed": "2026-11-25"
-        },
-        {
-          "source_id": "S100",
-          "status": "matched",
-          "passage": "Tommy: 'You took fifteen years from me, Sonny...' Sonny: 'You still don't get it, do you? I OWN you, Tommy. Those fifteen years were mine to spend!'",
+          "passage": "Tommy: 'You sent me to kill one man, ONE MAN. They knew I was coming, Sonny...' (separately, later) Sonny: 'Those fifteen years were mine to spend!'",
           "accessed": "2026-11-25"
         },
         {
           "source_id": "S98",
           "status": "matched",
-          "passage": "Transcript: Sonny greets Tommy, joking about the eleven men and the 'Harwood Butcher' name.",
+          "passage": "Order of the scene: 'You sent me to kill one man' ... Lance: 'This is Vice City. This is business.' ... Lance killed ... Tommy: Sonny took fifteen years from him ... Sonny: 'Those fifteen years were mine to spend!'",
+          "accessed": "2026-11-25"
+        },
+        {
+          "source_id": "S100",
+          "status": "matched",
+          "passage": "Tommy: 'You took fifteen years from me, Sonny...' Sonny: 'I OWN you, Tommy. Those fifteen years were mine to spend!'",
+          "accessed": "2026-11-25"
+        },
+        {
+          "source_id": "S108",
+          "status": "matched",
+          "passage": "Tommy: 'You took fifteen years from me, Sonny...' Sonny: 'Those fifteen years were mine to spend!'",
           "accessed": "2026-11-25"
         }
       ]
@@ -2349,9 +2391,15 @@
           "status": "matched",
           "passage": "Avery wants real estate prices in Vice City to go down, so he wants to start a gang war between the Cubans and the Haitians.",
           "accessed": "2026-11-25"
+        },
+        {
+          "source_id": "S105",
+          "status": "matched",
+          "passage": "Avery: 'nothing brings down real estate prices quicker than a good old-fashioned gang war'",
+          "accessed": "2026-11-25"
         }
       ],
-      "notes": "Narrowed 2026-11-24: the motive is Avery's own briefing line; the second half is our reading of that scene only, not a claim about the whole city. Review 8: Avery's exact briefing line now matched in a transcript; press corroboration (S106) is weak."
+      "notes": "Narrowed 2026-11-24: the motive is Avery's own briefing line; the second half is our reading of that scene only, not a claim about the whole city. Review 8: Avery's exact briefing line now matched in a transcript; press corroboration (S106) is weak. Transcript spot-check 2026-11-25 (production approval): wording matched in two independent transcripts. Not checked in the game itself."
     },
     {
       "id": "C37",
@@ -3108,15 +3156,29 @@
           "status": "matched",
           "passage": "Quote list: 'Ken here, he washes the money for us.'",
           "accessed": "2026-11-25"
+        },
+        {
+          "source_id": "S107",
+          "status": "matched",
+          "passage": "Tommy: 'Ken... Ken, that's right. Ken here, he washes the money for us, and he keeps the drinks on ice!'",
+          "accessed": "2026-11-25"
+        },
+        {
+          "source_id": "S108",
+          "status": "matched",
+          "passage": "Tommy: 'Ken here; he washes the money for us... and he keeps the drinks on ice!'",
+          "accessed": "2026-11-25"
         }
       ],
       "source_ids": [
         "S82",
         "S83",
         "S84",
-        "S95"
+        "S95",
+        "S107",
+        "S108"
       ],
-      "notes": "Said as a joke to the crew; the script presents it that way."
+      "notes": "Said as a joke to the crew; the script presents it that way. Transcript spot-check 2026-11-25 (production approval): wording matched in two independent transcripts. Not checked in the game itself."
     },
     {
       "id": "C58",
@@ -3312,6 +3374,12 @@
           "status": "matched",
           "passage": "The deal was arranged by Sonny to keep Tommy outside Liberty City and to let the Forellis expand into the south.",
           "accessed": "2026-11-25"
+        },
+        {
+          "source_id": "S101",
+          "status": "matched",
+          "passage": "Sonny: 'Vice City is twenty-four carat gold these days.'",
+          "accessed": "2026-11-25"
         }
       ],
       "source_ids": [
@@ -3319,7 +3387,8 @@
         "S80",
         "S97",
         "S101"
-      ]
+      ],
+      "notes": "Transcript spot-check 2026-11-25 (production approval): wording matched in two independent transcripts. Not checked in the game itself."
     },
     {
       "id": "C64",
@@ -3381,13 +3450,20 @@
           "status": "matched",
           "accessed": "2026-11-25",
           "passage": "After the victory, Vic briefly reminds Lance not to sell any more drugs and leaves Vice City with him by helicopter."
+        },
+        {
+          "source_id": "S40",
+          "status": "matched",
+          "passage": "Victor Vance: 'No! No, No, I am not interested, got it?'",
+          "accessed": "2026-11-25"
         }
       ],
       "source_ids": [
         "S05",
         "S40",
         "S104"
-      ]
+      ],
+      "notes": "Transcript spot-check 2026-11-25 (production approval): wording matched in two independent transcripts. Not checked in the game itself."
     }
   ],
   "open_questions": [

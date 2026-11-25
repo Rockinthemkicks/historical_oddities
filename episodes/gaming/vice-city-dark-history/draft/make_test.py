@@ -6,6 +6,7 @@ real pipeline: episodes/gaming/vice-city-60s-test/. Free and offline; it writes:
 Paid generation still needs the owner's approval of each stage and an explicit run cap."""
 import json, os, subprocess, sys
 sys.path.insert(0, os.getcwd())
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from build_draft import build, REFERENCE_PROMPT, PILOT
 from modules.gaming.script_engine import assemble_script
 from modules.gaming import provenance
@@ -19,9 +20,10 @@ test = {k: pilot[k] for k in ("mode", "franchise", "games", "continuity", "spoil
 test.update({
     "title": pilot["title"] + " - 60-second test",
     "target_minutes": [1, 2],
-    # Speed comparison (review 8): this run renders at 0.8. The 0.9 version is in run 45547596599's results.
-    # Narration is cached per speed, so switching back to 0.9 later costs nothing.
-    "overrides": {"target_minutes_range": [1, 60], "words_per_minute": 150, "narration_speed": 0.8},
+    # Speed comparison (review 8 / production approval): TEST_SPEED picks the speed (default 0.8). The
+    # test button renders 0.9 first (cached narration, free) and then 0.8. Narration is cached per speed.
+    "overrides": {"target_minutes_range": [1, 60], "words_per_minute": 150,
+                  "narration_speed": float(os.environ.get("TEST_SPEED", "0.8"))},
     "description": "Production test of the opening (review 5). Not for publication.",
     "reference_prompt": REFERENCE_PROMPT,
     "ambient_asset_id": "ambient_pad",
@@ -42,14 +44,8 @@ json.dump({"chapters": outline["chapters"][:1]}, open(os.path.join(TEST, "outlin
 # Original ambient pad: two detuned low sines + soft filtered noise with a slow swell (ours, no third-party audio).
 pad = os.path.join(TEST, "assets", "ambient_pad.mp3")
 if not os.path.exists(pad):
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error",
-        "-f", "lavfi", "-i", "sine=frequency=55:duration=120",
-        "-f", "lavfi", "-i", "sine=frequency=82.6:duration=120",
-        "-f", "lavfi", "-i", "anoisesrc=color=brown:amplitude=0.25:duration=120",
-        "-filter_complex",
-        "[0]volume=0.5[a];[1]volume=0.3[b];[2]lowpass=f=400,volume=0.4[c];"
-        "[a][b][c]amix=inputs=3:normalize=0,tremolo=f=0.12:d=0.3,lowpass=f=900,afade=t=in:d=3,afade=t=out:st=115:d=5[o]",
-        "-map", "[o]", "-ar", "44100", "-b:a", "128k", pad], check=True)
+    from ambient import make_pad
+    make_pad(pad, 120)
 m = provenance.load(TEST)
 provenance.register(TEST, m, "ambient_pad", pad, "licensed_music", "original pad generated locally with ffmpeg (draft/make_test.py)",
                     "owned", "ambient bed under narration", license_ref="own work: synthesized tones and noise, no samples")

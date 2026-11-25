@@ -1,0 +1,159 @@
+name: Vice City 60-second test (paid, test cap $2; renders 0.9 and 0.8)
+
+# Manual button: Actions tab -> "Vice City 60-second test" -> Run workflow, type RUN.
+# Only people with write access to the repo can start it. It spends real money (OpenAI images,
+# ElevenLabs narration), capped at $2.00 per run and $2.00 for the test episode. The caps are fixed
+# here on purpose; there is no input that raises them.
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: "Type RUN to approve the speed comparison (0.9 is free; 0.8 costs about $0.24 of the $0.95 left)"
+        required: true
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: paid-runs
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+      ELEVENLABS_VOICE_ID: ${{ secrets.ELEVENLABS_VOICE_ID }}
+      T: episodes/gaming/vice-city-60s-test
+      # The test's $2 cap: $1.03 was spent before the episode ledger was carried between runs
+      # (runs 45521790385, 45547596599 and the first failed run), so only $0.95 remains for this episode.
+      CAPS: --max-run-cost 2 --episode-budget 0.95
+    steps:
+      - name: Check approval and keys
+        env:
+          CONFIRM: ${{ github.event.inputs.confirm }}
+        run: |
+          if [ "$CONFIRM" != "RUN" ]; then
+            echo "::error::Not approved: type RUN in the confirm box. Nothing was spent."; exit 1
+          fi
+          for k in OPENAI_API_KEY ELEVENLABS_API_KEY ELEVENLABS_VOICE_ID; do
+            if [ -z "${!k}" ]; then echo "::error::Missing repository secret $k. Nothing was spent."; exit 1; fi
+          done
+
+      - uses: actions/checkout@v4
+        with:
+          ref: gaming-lore-pilot
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu-core zip
+      - run: pip install -r requirements.txt
+
+      # The spend ledger lives on the runner, which is wiped after every run; carry it between runs
+      # so episode limits keep counting earlier test spend.
+      - name: Restore spend ledger
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            ~/.historical_oddities
+            ${{ env.T }}/costs.jsonl
+          key: spend-ledger-v2-${{ github.run_id }}
+          restore-keys: |
+            spend-ledger-v2-
+            spend-ledger-
+
+      # Keep paid outputs (narration clips, images and their hash manifests) between runs, so a re-run
+      # after a failure reuses what was already paid for. Files are only reused when their inputs match.
+      - name: Restore paid media
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            ${{ env.T }}/out/audio
+            ${{ env.T }}/out/images
+          key: paid-media-${{ github.run_id }}
+          restore-keys: paid-media-
+
+      # Speed comparison (production approval, 2026-11-25): one run renders the test twice, first at 0.9
+      # (its narration is already paid for and cached: $0) and then at 0.8 (new narration, ~$0.24).
+      # Both videos are uploaded for side-by-side viewing. Images are cached and never paid for twice.
+      - name: Render at 0.9 (cached narration, free)
+        run: |
+          export TEST_SPEED=0.9
+          python3 episodes/gaming/vice-city-dark-history/draft/make_test.py
+          P="python3 main.py --mode gaming-lore --production $T/production.json"
+          $P storyboard
+          $P estimate $CAPS
+          for s in research outline script storyboard budget; do
+            $P approve "$s" --note "60-second test at 0.9; RUN confirmed by ${{ github.actor }} in Actions run ${{ github.run_id }}"
+          done
+          $P produce $CAPS
+          mkdir -p compare
+          cp $T/out/documentary.mp4 compare/test_speed_0.9.mp4
+          cp $T/out/qc_report.json compare/qc_speed_0.9.json
+
+      - name: Render at 0.8 (paid narration, within the test budget)
+        run: |
+          export TEST_SPEED=0.8
+          python3 episodes/gaming/vice-city-dark-history/draft/make_test.py
+          P="python3 main.py --mode gaming-lore --production $T/production.json"
+          $P storyboard
+          $P estimate $CAPS
+          for s in storyboard budget; do
+            $P approve "$s" --note "60-second test at 0.8; RUN confirmed by ${{ github.actor }} in Actions run ${{ github.run_id }}"
+          done
+          $P produce $CAPS
+          cp $T/out/documentary.mp4 compare/test_speed_0.8.mp4
+          cp $T/out/qc_report.json compare/qc_speed_0.8.json
+
+      - name: Thumbnail mockup
+        run: |
+          BG=$(python3 -c "import json;a={x['id']:x for x in json.load(open('$T/assets/provenance.json'))['assets']};print(a['thumbnail_bg']['path'])")
+          python3 episodes/gaming/vice-city-dark-history/draft/make_thumbnail.py "$T/$BG" "$T/out/thumbnail_mockup.png"
+
+      - name: Save spend ledger
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            ~/.historical_oddities
+            ${{ env.T }}/costs.jsonl
+          key: spend-ledger-v2-${{ github.run_id }}
+
+      - name: Save paid media
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            ${{ env.T }}/out/audio
+            ${{ env.T }}/out/images
+          key: paid-media-${{ github.run_id }}
+
+      - name: Cost and speed comparison
+        if: always()
+        run: |
+          for v in 0.9 0.8; do
+            f=compare/qc_speed_$v.json
+            [ -f "$f" ] || continue
+            python3 -c "import json;r=json.load(open('$f'));p=r.get('pacing') or {};l=r.get('loudness') or {};print(f\"Speed $v: {r['duration_seconds']:.1f} s, spent this run \${r['spent_this_run_usd']:.2f}, pacing {json.dumps(p)}, loudness {json.dumps(l)}\")" | tee -a "$GITHUB_STEP_SUMMARY"
+          done
+          tail -n 20 ~/.historical_oddities/spend_ledger.jsonl 2>/dev/null > ledger_tail.jsonl || true
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vice-city-60s-test-results
+          retention-days: 14
+          if-no-files-found: warn
+          path: |
+            compare/
+            ${{ env.T }}/out/thumbnail_mockup.png
+            ${{ env.T }}/out/images/
+            ${{ env.T }}/estimate.json
+            ${{ env.T }}/script.json
+            ledger_tail.jsonl

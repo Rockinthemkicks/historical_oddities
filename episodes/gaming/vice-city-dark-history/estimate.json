@@ -16,7 +16,7 @@
   "words": 1459,
   "minutes_at_wpm": 10.4,
   "limits": {
-    "run": 15.0,
+    "run": 5.0,
     "episode": 10.0,
     "overall": 250.0
   },

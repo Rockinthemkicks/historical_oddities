@@ -54,6 +54,9 @@ def as_segment(seg):
         out = {"path": path, "type": kind, "motion": seg.get("motion")}
         if seg.get("weight") is not None:
             out["weight"] = float(seg["weight"])
+        for k in ("fade_in", "fade_out"):
+            if seg.get(k):
+                out[k] = float(seg[k])
         return out
     kind = "video" if str(seg).lower().endswith(VIDEO_EXTS) else "image"
     return {"path": seg, "type": kind, "motion": None}
@@ -151,6 +154,19 @@ def _video_filter(label_in, label_out, box_w, box_h, frames, fps):
             f"crop={box_w}:{box_h},fps={fps},setsar=1,trim=end_frame={frames},setpts=PTS-STARTPTS[{label_out}]")
 
 
+def _fade_filter(seg, frames, fps):
+    """Optional dip to/from black at a segment's start/end (seconds in 'fade_in'/'fade_out'), used for
+    chapter transitions. Segments without them render exactly as before."""
+    dur = frames / fps
+    parts = []
+    if seg.get("fade_in"):
+        parts.append(f"fade=t=in:st=0:d={min(seg['fade_in'], dur / 2):.3f}")
+    if seg.get("fade_out"):
+        d = min(seg["fade_out"], dur / 2)
+        parts.append(f"fade=t=out:st={dur - d:.3f}:d={d:.3f}")
+    return ",".join(parts)
+
+
 def frame_plan(scene_durations, fps):
     """Whole-frame counts per scene that add up exactly to round(total*fps)."""
     frames, cum, prev = [], 0.0, 0
@@ -187,6 +203,9 @@ def render_scene_clip(segments, frames, out_path, size, fps, motion_index, motio
             inputs += ["-loop", "1", "-framerate", str(fps), "-i", seg["path"]]
             filters.append(_segment_filter(f"{i}:v", f"s{i}", box_w, box_h, seg_frames[i], fps,
                                            _segment_motion(seg, motion_index + i, motion_mode)))
+        fades = _fade_filter(seg, seg_frames[i], fps)
+        if fades:
+            filters[-1] = filters[-1][: -len(f"[s{i}]")] + "," + fades + f"[s{i}]"
     if n > 1:
         filters.append("".join(f"[s{i}]" for i in range(n)) + f"concat=n={n}:v=1:a=0[img]")
     else:
@@ -261,6 +280,8 @@ def _clip_key(segments, frames, size, fps, motion_index, motion_mode, captions, 
                     for i, x in enumerate(segments)],
         "images": [[as_segment(x)["type"], _sha_file(as_segment(x)["path"])] for x in segments],
         "weights": [as_segment(x).get("weight") for x in segments],
+        **({"fades": [[as_segment(x).get("fade_in"), as_segment(x).get("fade_out")] for x in segments]}
+           if any(as_segment(x).get("fade_in") or as_segment(x).get("fade_out") for x in segments) else {}),
         "captions": [[round(c["start"], 3), round(c["end"], 3), _sha_file(c["path"])]
                      for c in (captions or [])],
         "title": _sha_file(title_image["path"]) if title_image else None,

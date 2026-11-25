@@ -530,3 +530,182 @@ def test_brand_colors_and_logo_apply_to_cards(tmp_path, monkeypatch):
     m = int(im.width * 0.04)
     r, g, b_ = im.getpixel((im.width - m - 5, m + 5))
     assert r > 200 and g < 30 and b_ < 30  # logo (90% opacity), top right
+
+
+# ---- production approval (2026-11-25): full-episode safeguards, offline ----
+
+PILOT_DIR = os.path.join(ROOT, "episodes", "gaming", "vice-city-dark-history")
+
+
+def _pilot_budget():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("pilot_budget", os.path.join(PILOT_DIR, "pilot_budget.py"))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+def _ledger_line(path, call_id, project, est, status="pending", actual=None):
+    with open(path, "a") as f:
+        f.write(json.dumps({"call_id": call_id, "status": "pending", "project": project, "estimate_usd": est}) + "\n")
+        if status != "pending":
+            f.write(json.dumps({"call_id": call_id, "status": status, "actual_usd": actual}) + "\n")
+
+
+def test_pilot_budget_fails_closed_without_overall_ledger(tmp_path):
+    pb = _pilot_budget()
+    with pytest.raises(pb.LedgerProblem):
+        pb.compute(str(tmp_path / "missing.jsonl"), str(tmp_path / "t.jsonl"), str(tmp_path / "p.jsonl"))
+
+
+def test_pilot_budget_counts_test_spend_retries_and_failures(tmp_path):
+    pb = _pilot_budget()
+    g, t, p = tmp_path / "g.jsonl", tmp_path / "t.jsonl", tmp_path / "p.jsonl"
+    _ledger_line(g, "old", "vice-city-60s-test", 1.03, "done", 1.03)       # pre-ledger test runs
+    for path in (g, t):
+        _ledger_line(path, "speed08", "vice-city-60s-test", 0.24, "done", 0.24)
+        _ledger_line(path, "failed", "vice-city-60s-test", 0.05)           # never closed: counts
+        _ledger_line(path, "refused", "vice-city-60s-test", 0.05, "not_billed")
+    for path in (g, p):
+        _ledger_line(path, "img1", "vice-city-dark-history", 2.00, "done", 2.10)
+    r = pb.compute(str(g), str(t), str(p))
+    assert r["test_spent"] == pytest.approx(1.03 + 0.29)
+    assert r["pilot_spent"] == pytest.approx(2.10)
+    assert r["cumulative"] == pytest.approx(1.32 + 2.10)
+    assert r["episode_budget"] == pytest.approx(15 - 1.32)
+    assert r["remaining"] == pytest.approx(15 - 3.42)
+
+
+def test_pilot_budget_refuses_when_episode_ledger_was_lost(tmp_path):
+    pb = _pilot_budget()
+    g = tmp_path / "g.jsonl"
+    _ledger_line(g, "img1", "vice-city-dark-history", 3.0, "done", 3.0)
+    with pytest.raises(pb.LedgerProblem):
+        pb.compute(str(g), str(tmp_path / "t.jsonl"), str(tmp_path / "p.jsonl"))
+
+
+def test_pilot_episode_cap_stops_paid_calls_at_the_ceiling(tmp_path):
+    from modules.costs import BudgetExceeded, CostLedger
+    pb = _pilot_budget()
+    g, t = tmp_path / "g.jsonl", tmp_path / "t.jsonl"
+    _ledger_line(g, "old", "vice-city-60s-test", 1.27, "done", 1.27)
+    r = pb.compute(str(g), str(t), str(tmp_path / "pilot" / "costs.jsonl"))
+    ledger = CostLedger(str(tmp_path / "pilot"), run_cap=8, episode_cap=r["episode_budget"], global_path=str(g))
+    ledger.begin("openai-image", "x", 7.9)
+    _ledger_line(tmp_path / "pilot" / "costs.jsonl", "prior", "vice-city-dark-history", 5.8)  # 7.9 + 5.8 = 13.70 of 13.73
+    with pytest.raises(BudgetExceeded):
+        ledger.begin("openai-image", "y", 0.06)  # run cap 8 would allow it; the $15 ceiling does not
+
+
+def test_full_episode_workflow_keeps_safeguards():
+    text = open(os.path.join(ROOT, ".github", "workflows", "produce-full-episode.yml")).read()
+    assert '"$CONFIRM" != "RUN"' in text and "Nothing was spent" in text
+    assert 'options: ["choose", "0.9", "0.8"]' in text                 # speed must be chosen
+    assert "pilot_budget.py --github-env" in text                       # $15 incl. tests, fails closed
+    assert '--max-run-cost 8 --episode-budget "$EPISODE_BUDGET"' in text
+    assert "--episode-budget 15" not in text and "--total-budget" not in text
+    # shares the exact ledger cache with the test button, so test spend is counted
+    shared = "~/.historical_oddities\n            episodes/gaming/vice-city-60s-test/costs.jsonl"
+    assert shared in text and "key: spend-ledger-v2-${{ github.run_id }}" in text
+    for word in ("publish", "merge", "git push"):
+        assert f"run: {word}" not in text
+    assert "approve \"$s\"" in text and "for s in storyboard budget" in text   # research/outline/script stay pinned
+    assert "default=10.00" in open(os.path.join(ROOT, "modules", "gaming", "pipeline.py")).read()  # defaults unchanged
+
+
+def test_committed_pilot_approvals_pin_the_approved_files():
+    for st in ("research", "outline", "script"):
+        assert workflow.is_approved(PILOT_DIR, st), st
+
+
+def test_seed_reuses_only_hash_identical_verified_images(tmp_path):
+    from modules import images
+    src, dst = tmp_path / "src", tmp_path / "dst"
+    src.mkdir()
+    for label, h, data in [("scene01", "h1", b"a"), ("scene02", "h2", b"b"), ("scene03", "h3", b"c")]:
+        (src / f"{label}.png").write_bytes(data)
+    man = {"scene01": {"input_hash": "h1", "file_sha256": images._file_sha(str(src / "scene01.png"))},
+           "scene02": {"input_hash": "h2", "file_sha256": "tampered"},
+           "scene03": {"input_hash": "h3", "file_sha256": images._file_sha(str(src / "scene03.png"))}}
+    images._save_manifest(str(src), man)
+    seeded = images.seed_from(str(src), str(dst), {"reference": None, "scene07": "h1", "scene08": "h2", "scene09": "hX"})
+    assert seeded == ["scene07"]
+    assert (dst / "scene07.png").read_bytes() == b"a"
+    assert images._is_current(str(dst), images._load_manifest(str(dst)), "scene07", "h1")
+    assert images.seed_from(str(src), str(dst), {"scene07": "h1"}) == []   # already current
+
+
+def test_segment_fades_render_and_leave_old_clips_unchanged(tmp_path):
+    from modules import render
+    from PIL import Image
+    img = tmp_path / "a.png"
+    Image.new("RGB", (320, 180), (200, 50, 50)).save(img)
+    plain = render._clip_key([str(img)], 24, (320, 180), 24, 0, "none", None, None, 0.1, (16, 9), 20, "veryfast")
+    same = render._clip_key([{"path": str(img)}], 24, (320, 180), 24, 0, "none", None, None, 0.1, (16, 9), 20, "veryfast")
+    faded = render._clip_key([{"path": str(img), "fade_in": 0.3}], 24, (320, 180), 24, 0, "none", None, None, 0.1,
+                             (16, 9), 20, "veryfast")
+    assert plain == same != faded
+    out = tmp_path / "c.mp4"
+    render.render_scene_clip([{"path": str(img), "fade_in": 0.3, "fade_out": 0.3}], 24, str(out), (320, 180), 24, 0, "none")
+    frames = subprocess.run(["ffprobe", "-v", "error", "-count_frames", "-select_streams", "v:0", "-show_entries",
+                             "stream=nb_read_frames", "-of", "csv=p=0", str(out)], capture_output=True, text=True).stdout
+    assert frames.strip() == "24"
+    first = subprocess.run(["ffmpeg", "-v", "error", "-i", str(out), "-frames:v", "1", "-f", "rawvideo", "-pix_fmt",
+                            "gray", "-"], capture_output=True).stdout
+    assert max(first) < 30          # starts from black
+
+
+def test_chapter_transitions_dip_into_chapter_cards():
+    script = {"scenes": [{"visuals": [{"kind": "illustration"}]}, {"visuals": [{"kind": "chapter_card"}, {"kind": "reuse"}]}]}
+    specs = [{"image_paths": ["a.png"]}, {"image_paths": [{"path": "card.png", "motion": "none"}, "b.png"]}]
+    pipeline._chapter_transitions(script, specs, 0.35, 1.5)
+    assert specs[0]["image_paths"][0] == {"path": "a.png", "fade_out": 0.35}
+    assert specs[1]["image_paths"][0]["fade_in"] == 0.35
+    assert specs[1]["image_paths"][1] == {"path": "b.png", "fade_out": 1.5}
+    specs2 = [{"image_paths": ["a.png"]}]
+    pipeline._chapter_transitions({"scenes": [{"visuals": [{"kind": "illustration"}]}]}, specs2, 0, 0)
+    assert specs2 == [{"image_paths": ["a.png"]}]   # off by default
+
+
+def test_srt_export(tmp_path):
+    from modules.captions import write_srt
+    p = write_srt([{"start": 0, "end": 1.5, "lines": ["Hello"]}, {"start": 61.25, "end": 3725.0, "lines": ["a", "b"]}],
+                  str(tmp_path / "c.srt"))
+    assert open(p).read() == "1\n00:00:00,000 --> 00:00:01,500\nHello\n\n2\n00:01:01,250 --> 01:02:05,000\na\nb\n\n"
+
+
+def test_long_stamp_fits_the_frame(tmp_path):
+    from PIL import Image
+    from modules.gaming.packaging import text_card
+    out = text_card({"style": "stamp", "heading": "“HE WASHES THE MONEY FOR US.”", "lines": ["X"], "_bg_path": None},
+                    str(tmp_path / "s.png"))
+    img = Image.open(out).convert("L")
+    w, h = img.size
+    band = img.crop((0, int(h * 0.38), w, int(h * 0.5)))
+    edge = [band.getpixel((x, y)) for x in (0, 1, w - 2, w - 1) for y in range(0, band.size[1], 4)]
+    assert max(edge) < 60           # no text touching the frame edges
+
+
+def test_pilot_description_fits_youtube_and_states_continuity():
+    from modules.gaming.packaging import DESCRIPTION_LIMIT, build_package
+    prod = load_production(os.path.join(PILOT_DIR, "production.json"))
+    script = json.load(open(os.path.join(PILOT_DIR, "script.json")))
+    dossier = json.load(open(os.path.join(PILOT_DIR, "research.json")))
+    import tempfile
+    markers = [{"chapter": "ch01", "title": "A", "start": 0.0, "end": 10.0}]
+    with tempfile.TemporaryDirectory() as d:
+        desc = build_package(prod, script, dossier, markers, {"assets": []}, d)
+    assert len(desc) <= DESCRIPTION_LIMIT
+    assert "separate continuity" in desc and "nothing here is presented as GTA VI's backstory" in desc
+    assert prod["sources_url"] in desc
+    assert os.path.exists(os.path.join(PILOT_DIR, "SOURCES.md"))
+
+
+def test_pilot_finale_follows_transcript_order():
+    script = json.load(open(os.path.join(PILOT_DIR, "script.json")))
+    lines = [sc["narration"] for sc in script["scenes"] if sc["chapter_title"] == "This Is Business"]
+    i_knew = next(i for i, l in enumerate(lines) if "they knew he was coming" in l)
+    i_lance = next(i for i, l in enumerate(lines) if "this is business" in l)
+    i_spend = next(i for i, l in enumerate(lines) if "his to spend" in l)
+    assert i_knew < i_lance < i_spend
+    assert "his to spend" not in lines[i_knew]

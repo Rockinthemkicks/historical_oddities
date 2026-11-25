@@ -238,6 +238,32 @@ def _retire(out_dir, label):
         shutil.move(path, os.path.join(dest_dir, f"{label}_{i}.png"))
 
 
+def seed_from(src_dir, out_dir, hashes):
+    """Copies already-paid images from another production's images folder when their input hash
+    (prompt, style, model, size, quality, reference) is identical, whatever their label. Only files
+    whose bytes still match the source manifest are copied. Returns the labels seeded. Free."""
+    src = _load_manifest(src_dir)
+    by_hash = {}
+    for label, e in src.items():
+        path = os.path.join(src_dir, f"{label}.png")
+        if os.path.exists(path) and e.get("file_sha256") == _file_sha(path):
+            by_hash.setdefault(e.get("input_hash"), (label, e))
+    os.makedirs(out_dir, exist_ok=True)
+    manifest = _load_manifest(out_dir)
+    seeded = []
+    for label, want in hashes.items():
+        if not want or _is_current(out_dir, manifest, label, want) or want not in by_hash:
+            continue
+        src_label, entry = by_hash[want]
+        _retire(out_dir, label)
+        shutil.copyfile(os.path.join(src_dir, f"{src_label}.png"), os.path.join(out_dir, f"{label}.png"))
+        manifest[label] = dict(entry, seeded_from=f"{src_dir}:{src_label}")
+        seeded.append(label)
+    if seeded:
+        _save_manifest(out_dir, manifest)
+    return seeded
+
+
 def plan_images(scenes, out_dir, prompts=None, use_reference=True, reference_image=None,
                 model=DEFAULT_MODEL, size=DEFAULT_SIZE, quality=DEFAULT_QUALITY,
                 style="", reference_prompt=None):

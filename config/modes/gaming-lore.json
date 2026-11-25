@@ -14,6 +14,8 @@
   "ambient_gain_db": -8,
   "loudness": {"integrated_lufs": -14, "true_peak_dbtp": -1.5, "lra": 11},
   "chapter_cards": true,
+  "chapter_transition_seconds": 0.35,
+  "end_fade_seconds": 1.5,
   "script_model": "gpt-5.4",
   "image_quality": "medium"
 }

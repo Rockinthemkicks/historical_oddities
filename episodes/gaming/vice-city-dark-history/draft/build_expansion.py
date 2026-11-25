@@ -60,7 +60,9 @@ INSERT_CH10 = [
 
 SPEECH_WPS = 179 / 60          # measured in the revised 60-second test
 MAX_HOLD = 7.5                  # seconds on one shot before it should move on (house pacing rule)
-REFRAMES = ["zoom_to:0.3,0.4,0.5", "zoom_to:0.7,0.55,0.5", "zoom_to:0.5,0.3,0.45", "zoom_to:0.4,0.65,0.5"]
+# Production approval (2026-11-25): fewer repeated push-ins. Reframes alternate a push-in to a detail
+# with a slow lateral move or a pull-back, so consecutive shots don't all zoom.
+REFRAMES = ["zoom_to:0.3,0.4,0.5", "pan_left", "zoom_to:0.7,0.55,0.5", "zoom_out", "zoom_to:0.5,0.3,0.45", "pan_right"]
 
 
 def engagement_pass(chs):
@@ -84,6 +86,47 @@ def engagement_pass(chs):
             of = src["of"] if src.get("kind") == "reuse" else src["id"]
             visuals.append(reuse(of, REFRAMES[k % len(REFRAMES)]))
             k += 1
+
+
+def business_of_vice_visuals(chs):
+    """Production approval (2026-11-25) asked for Chapter 9's visual pacing: it was a run of illustrations
+    and push-ins. This swaps repeated zooms for an evidence board that builds mission by mission, a
+    then-and-now card, the bank's name as typography and a closing board revealed on the narrator's words.
+    Narration is unchanged; every visual is local (no paid images added)."""
+    segs = next(c for c in chs if c[1] == "The Business of Vice")[4]
+
+    def vis(start):
+        return segs[find(segs, start)][2]
+
+    def board(rows):
+        return dict(card("rows", "AVERY'S JOBS", rows=rows, motion="none"), bg_of="img_model")
+
+    jobs = [["FOUR IRON", "a rival developer killed"], ["DEMOLITION MAN", "a rival site destroyed"],
+            ["TWO BIT HIT", "a gang war started"]]
+    v = vis("Avery Carrington is a real-estate developer")
+    v[0]["motion"] = "pan_right"
+    vis("In Four Iron")[:] = [vis("In Four Iron")[0], board(jobs[:1])]
+    vis("In Demolition Man")[:] = [vis("In Demolition Man")[0], board(jobs[:2])]
+    plan = next(x for x in vis("In Two Bit Hit") if x.get("kind") == "text_card")
+    vis("In Two Bit Hit")[:] = [dict(board(jobs), motion="zoom_in")]
+    # the step-by-step plan now illustrates the line that describes the plan, revealed step by step
+    vis("In Avery's plan")[:] = [dict(plan, motion="none", reveal=True, bg_of="img_model")]
+    v = vis("Taking notes through all of this")
+    v[:] = [v[0]]
+    vis("Years later, in Grand Theft Auto III")[:] = [
+        reuse("img_protege", "pan_left"),
+        dict(card("rows", "THE APPRENTICE", rows=[["VICE CITY", "takes notes for Avery"],
+                                                   ["GTA III", "developer, owns a media company"]], motion="none"),
+             bg_of="img_protege")]
+    v = vis("Tommy's own businesses")
+    v[1:] = [reuse("img_printworks", "pan_left")]
+    vis("Even the bank wears")[:] = [
+        dict(card("title", "EL BANCO CORRUPTO GRANDE", ["“the big corrupt bank”"], motion="none"), bg_of="img_bank")]
+    vis("A developer who uses murder")[:] = [
+        dict(card("rows", "THE SYSTEM, 1986", rows=[["THE DEVELOPER", "murder wins the land", "developer"],
+                                                     ["THE BUSINESS", "prints its own money", "business"],
+                                                     ["THE CONGRESSMAN", "kept in line with photographs", "congressman"]],
+                  motion="none"), reveal=True, bg_of="img_printworks")]
 
 
 def find(segs, start):
@@ -111,6 +154,7 @@ def expanded_chapters():
     s10 = by["ch10"][4]
     s10[find(s10, "The sergeant, the agent"):find(s10, "The sergeant, the agent")] = INSERT_CH10
     engagement_pass(chs)
+    business_of_vice_visuals(chs)
     # renumber so chapter ids stay sequential (ch01..ch11)
     return [(f"ch{i + 1:02d}",) + tuple(c[1:]) for i, c in enumerate(chs)]
 

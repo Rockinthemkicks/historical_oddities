@@ -471,29 +471,41 @@
     },
     {
       "visual_id": "v075",
+      "scene": 57,
+      "chapter": "ch09",
+      "kind": "text_card"
+    },
+    {
+      "visual_id": "v076",
       "scene": 58,
       "chapter": "ch09",
       "kind": "illustration",
       "prompt": "Tense, non-graphic. A half-built tower wrapped in scaffolding at dusk, a small remote-control helicopter hovering near an upper floor."
     },
     {
-      "visual_id": "v076",
+      "visual_id": "v077",
+      "scene": 58,
+      "chapter": "ch09",
+      "kind": "text_card"
+    },
+    {
+      "visual_id": "v078",
       "scene": 59,
       "chapter": "ch09",
       "kind": "text_card"
     },
     {
-      "visual_id": "v077",
+      "visual_id": "v079",
       "scene": 60,
       "chapter": "ch09",
       "kind": "illustration",
       "prompt": "Somber, non-graphic. A funeral parlor exterior in the rain, black umbrellas, a lone figure in borrowed colors watching from across the street."
     },
     {
-      "visual_id": "v078",
+      "visual_id": "v080",
       "scene": 61,
       "chapter": "ch09",
-      "kind": "reuse"
+      "kind": "text_card"
     },
     {
       "visual_id": "img_protege",
@@ -503,22 +515,16 @@
       "prompt": "Calm, non-graphic. A young man in an oversized suit scribbling in a small notepad behind an older developer's shoulder, an architect's model on the desk between them."
     },
     {
-      "visual_id": "v080",
-      "scene": 62,
-      "chapter": "ch09",
-      "kind": "reuse"
-    },
-    {
-      "visual_id": "v081",
-      "scene": 63,
-      "chapter": "ch09",
-      "kind": "reuse"
-    },
-    {
       "visual_id": "v082",
       "scene": 63,
       "chapter": "ch09",
       "kind": "reuse"
+    },
+    {
+      "visual_id": "v083",
+      "scene": 63,
+      "chapter": "ch09",
+      "kind": "text_card"
     },
     {
       "visual_id": "img_printworks",
@@ -528,7 +534,7 @@
       "prompt": "Investigative, non-graphic. Sheets of freshly printed banknotes drying on lines in a dim print shop, no readable text or faces on the notes."
     },
     {
-      "visual_id": "v084",
+      "visual_id": "v085",
       "scene": 64,
       "chapter": "ch09",
       "kind": "reuse"
@@ -541,22 +547,22 @@
       "prompt": "Tense, non-graphic. A grand 1980s bank facade in a Cuban neighborhood at night, marble columns, a blank sign above the doors, an empty getaway van at the curb."
     },
     {
-      "visual_id": "v086",
+      "visual_id": "v087",
       "scene": 65,
       "chapter": "ch09",
       "kind": "reuse"
     },
     {
-      "visual_id": "v087",
+      "visual_id": "v088",
       "scene": 66,
       "chapter": "ch09",
       "kind": "text_card"
     },
     {
-      "visual_id": "v088",
+      "visual_id": "v089",
       "scene": 67,
       "chapter": "ch09",
-      "kind": "reuse"
+      "kind": "text_card"
     },
     {
       "visual_id": "img_ch08_13",
@@ -566,14 +572,8 @@
       "prompt": "Investigative, non-graphic. An envelope of photographs on a polished desk under a green banker's lamp, a lapel pin beside it, no faces visible."
     },
     {
-      "visual_id": "v090",
-      "scene": 68,
-      "chapter": "ch09",
-      "kind": "reuse"
-    },
-    {
       "visual_id": "v091",
-      "scene": 69,
+      "scene": 68,
       "chapter": "ch09",
       "kind": "reuse"
     },
@@ -581,7 +581,7 @@
       "visual_id": "v092",
       "scene": 69,
       "chapter": "ch09",
-      "kind": "reuse"
+      "kind": "text_card"
     },
     {
       "visual_id": "v093",
