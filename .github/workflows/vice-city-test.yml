@@ -1,4 +1,4 @@
-name: Vice City 60-second test (paid, test cap $2)
+name: Vice City 60-second test (paid, test cap $2; renders 0.9 and 0.8)
 
 # Manual button: Actions tab -> "Vice City 60-second test" -> Run workflow, type RUN.
 # Only people with write access to the repo can start it. It spends real money (OpenAI images,
@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       confirm:
-        description: "Type RUN to approve the test and spend up to $2.00"
+        description: "Type RUN to approve the speed comparison (0.9 is free; 0.8 costs about $0.24 of the $0.95 left)"
         required: true
         default: ""
 
@@ -78,22 +78,37 @@ jobs:
           key: paid-media-${{ github.run_id }}
           restore-keys: paid-media-
 
-      - name: Build test and estimate (free)
+      # Speed comparison (production approval, 2026-11-25): one run renders the test twice, first at 0.9
+      # (its narration is already paid for and cached: $0) and then at 0.8 (new narration, ~$0.24).
+      # Both videos are uploaded for side-by-side viewing. Images are cached and never paid for twice.
+      - name: Render at 0.9 (cached narration, free)
         run: |
+          export TEST_SPEED=0.9
           python3 episodes/gaming/vice-city-dark-history/draft/make_test.py
           P="python3 main.py --mode gaming-lore --production $T/production.json"
           $P storyboard
           $P estimate $CAPS
-
-      - name: Approve stages (owner typed RUN)
-        run: |
-          P="python3 main.py --mode gaming-lore --production $T/production.json"
           for s in research outline script storyboard budget; do
-            $P approve "$s" --note "60-second test; RUN confirmed by ${{ github.actor }} in Actions run ${{ github.run_id }}; \$2 cap"
+            $P approve "$s" --note "60-second test at 0.9; RUN confirmed by ${{ github.actor }} in Actions run ${{ github.run_id }}"
           done
+          $P produce $CAPS
+          mkdir -p compare
+          cp $T/out/documentary.mp4 compare/test_speed_0.9.mp4
+          cp $T/out/qc_report.json compare/qc_speed_0.9.json
 
-      - name: Produce (paid)
-        run: python3 main.py --mode gaming-lore --production $T/production.json produce $CAPS
+      - name: Render at 0.8 (paid narration, within the test budget)
+        run: |
+          export TEST_SPEED=0.8
+          python3 episodes/gaming/vice-city-dark-history/draft/make_test.py
+          P="python3 main.py --mode gaming-lore --production $T/production.json"
+          $P storyboard
+          $P estimate $CAPS
+          for s in storyboard budget; do
+            $P approve "$s" --note "60-second test at 0.8; RUN confirmed by ${{ github.actor }} in Actions run ${{ github.run_id }}"
+          done
+          $P produce $CAPS
+          cp $T/out/documentary.mp4 compare/test_speed_0.8.mp4
+          cp $T/out/qc_report.json compare/qc_speed_0.8.json
 
       - name: Thumbnail mockup
         run: |
@@ -118,13 +133,14 @@ jobs:
             ${{ env.T }}/out/images
           key: paid-media-${{ github.run_id }}
 
-      - name: Cost summary
+      - name: Cost and speed comparison
         if: always()
         run: |
-          if [ -f "$T/out/qc_report.json" ]; then
-            python3 -c "import json;r=json.load(open('$T/out/qc_report.json'));print(f\"Spent this run: \${r['spent_this_run_usd']:.2f}; video {r['duration_seconds']:.1f} s; QC {'passed' if r['qc']['passed'] else 'FAILED'}\")" | tee -a "$GITHUB_STEP_SUMMARY"
-            python3 -c "import json;r=json.load(open('$T/out/qc_report.json'));print('loudness:', json.dumps(r.get('loudness')));print('pacing:', json.dumps(r.get('pacing')))" | tee -a "$GITHUB_STEP_SUMMARY"
-          fi
+          for v in 0.9 0.8; do
+            f=compare/qc_speed_$v.json
+            [ -f "$f" ] || continue
+            python3 -c "import json;r=json.load(open('$f'));p=r.get('pacing') or {};l=r.get('loudness') or {};print(f\"Speed $v: {r['duration_seconds']:.1f} s, spent this run \${r['spent_this_run_usd']:.2f}, pacing {json.dumps(p)}, loudness {json.dumps(l)}\")" | tee -a "$GITHUB_STEP_SUMMARY"
+          done
           tail -n 20 ~/.historical_oddities/spend_ledger.jsonl 2>/dev/null > ledger_tail.jsonl || true
 
       - name: Upload results
@@ -135,10 +151,9 @@ jobs:
           retention-days: 14
           if-no-files-found: warn
           path: |
-            ${{ env.T }}/out/documentary.mp4
+            compare/
             ${{ env.T }}/out/thumbnail_mockup.png
             ${{ env.T }}/out/images/
-            ${{ env.T }}/out/qc_report.json
             ${{ env.T }}/estimate.json
             ${{ env.T }}/script.json
             ledger_tail.jsonl
