@@ -1,0 +1,47 @@
+{
+  "mode": "gaming-lore",
+  "title": "The Dark History of Vice City Before GTA 6",
+  "franchise": "gta",
+  "games": [
+    "gta1",
+    "gtavc",
+    "gtavcs",
+    "gtasa",
+    "gta6",
+    "gta3"
+  ],
+  "continuity": [
+    "2D",
+    "3D",
+    "HD"
+  ],
+  "documentary_format": "investigative documentary about the city",
+  "target_minutes": [
+    10,
+    12
+  ],
+  "spoiler_level": "full",
+  "description": "Before GTA 6, there was another Vice City. An investigation into the soldiers, agents, cartels, developers and politicians who built the 1980s city of Vice City Stories (1984) and Vice City (1986), in the older 3D continuity. Not GTA VI's backstory; no GTA VI story spoilers.",
+  "overrides": {
+    "target_minutes_range": [
+      10,
+      60
+    ]
+  },
+  "scope": "Deep dive on the 3D-universe (1980s) Vice City from Vice City Stories (1984) and Vice City (1986), framed for GTA VI audiences: the HD-universe Vice City appears only in the opening and closing, at setting level (spoiler 'none'). The 2D original is mentioned only as real-world history.",
+  "owner_decisions": {
+    "2026-11-23": "Scope: 80s Vice City with GTA VI framing (owner choice). Full spoilers for the 2002/2006 games; GTA VI kept to setting-level detail.",
+    "2026-11-23 (review 3)": "Reframed as an investigative documentary about the city (thesis: Tommy inherited an existing system). Target 12-16 minutes. GTA VI: no story spoilers. Script generation not approved yet.",
+    "2026-11-24": "Owner does not have the games: no owner-captured footage. Pilot is illustration-only unless that changes.",
+    "2026-11-24 (review 4)": "Concept approved for draft script development. Title 'The Dark History of Vice City Before GTA 6'; thumbnail: neon skyline with cracked badge, text 'BUILT ON CRIME'. Illustration-only. Pilot ceiling $15 proposed, pending owner authorization. Final script and paid production not approved.",
+    "2026-11-25 (review 6/7)": "Runtime target 10-12 minutes (ChatGPT review 6: expand through verified research, no filler). Narration at 0.9 speed measured about 158 wpm in the 60-second test. Expansion proposed in REVIEW7_PACKAGE.md; not yet approved."
+  },
+  "thesis": "Vice City was not corrupted by Tommy Vercetti. He inherited an existing system of corruption and criminal power.",
+  "reference_prompt": "Character reference sheet on a plain warm-grey background for an original character, 'the Corporal': a man in his late twenties with a tired, decent face, short cropped dark hair and light stubble. Three full-body views side by side (front, three-quarter, profile) wearing a plain olive army field jacket over a white T-shirt, plus a fourth view of the same man in civilian clothes: a pale blue short-sleeved shirt and dark trousers. Two small head studies (worried, resolved). Consistent proportions, clean even lighting, no text labels.",
+  "extra_visuals": [
+    {
+      "id": "thumbnail_bg",
+      "prompt": "Somber, dramatic, non-graphic. Dramatic low-angle composition: an old, generic badge with no insignia or lettering lies cracked on a wet seawall railing in the foreground, sharp focus; behind it, out of focus, a neon-lit 1980s coastal skyline at dusk in magenta and teal, palm silhouettes. Strong rim light on the badge's crack. Large empty area of sky on the left for title text."
+    }
+  ]
+}

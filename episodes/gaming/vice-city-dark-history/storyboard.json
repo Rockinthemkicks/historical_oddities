@@ -1,0 +1,710 @@
+{
+  "visuals": [
+    {
+      "visual_id": "img_waterfront",
+      "scene": 1,
+      "chapter": "ch01",
+      "kind": "illustration",
+      "prompt": "Calm, atmospheric, non-graphic. Wide establishing view of a fictional 1980s subtropical coastal city at dusk: pastel art-deco hotels along a beachfront boulevard, palm silhouettes, the first neon signs flickering on in pink and teal, a single speedboat wake heading out across the calm bay toward open sea. Signs are abstract glowing shapes with no letters."
+    },
+    {
+      "visual_id": "v002",
+      "scene": 2,
+      "chapter": "ch01",
+      "kind": "text_card"
+    },
+    {
+      "visual_id": "img_corporal_base",
+      "scene": 3,
+      "chapter": "ch01",
+      "kind": "illustration",
+      "prompt": "Somber, non-graphic. The Corporal from the reference sheet, in his olive army field jacket, standing alone at dawn outside the chain-link fence of a military airbase, hangars and palm trees behind him, looking back over his shoulder."
+    },
+    {
+      "visual_id": "img_corporal_hospital",
+      "scene": 3,
+      "chapter": "ch01",
+      "kind": "illustration",
+      "prompt": "Somber, non-graphic. The Corporal from the reference sheet, in civilian clothes, sitting alone on a plastic chair in an empty hospital corridor at night, elbows on his knees, rain streaking the window beside him. Quiet grief."
+    },
+    {
+      "visual_id": "v005",
+      "scene": 4,
+      "chapter": "ch01",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v006",
+      "scene": 5,
+      "chapter": "ch01",
+      "kind": "text_card"
+    },
+    {
+      "visual_id": "img_corporal_dock",
+      "scene": 5,
+      "chapter": "ch01",
+      "kind": "illustration",
+      "prompt": "Tense, non-graphic. The Corporal from the reference sheet, now in his pale blue civilian shirt, two years older, waiting at a folding table on a dark harbor pier at night, a closed briefcase in front of him, harbor lights and a moored freighter behind."
+    },
+    {
+      "visual_id": "img_clockwork",
+      "scene": 6,
+      "chapter": "ch01",
+      "kind": "illustration",
+      "prompt": "Somber, investigative, non-graphic. Surreal editorial illustration: an enormous brass clockwork mechanism whose gears are built from miniature city blocks, palm trees, hotel towers and neon tubes, glowing softly at dusk. At its center sits a single empty leather executive chair under a spotlight. Wide composition, deep perspective."
+    },
+    {
+      "visual_id": "v009",
+      "scene": 7,
+      "chapter": "ch01",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v_rows1984",
+      "scene": 8,
+      "chapter": "ch01",
+      "kind": "text_card"
+    },
+    {
+      "visual_id": "v011",
+      "scene": 9,
+      "chapter": "ch01",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v012",
+      "scene": 10,
+      "chapter": "ch01",
+      "kind": "text_card"
+    },
+    {
+      "visual_id": "v_continuity",
+      "scene": 11,
+      "chapter": "ch02",
+      "kind": "text_card"
+    },
+    {
+      "visual_id": "v014",
+      "scene": 12,
+      "chapter": "ch02",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "img_modern",
+      "scene": 13,
+      "chapter": "ch02",
+      "kind": "illustration",
+      "prompt": "Calm, non-graphic. A modern subtropical city skyline at night reflected in wet asphalt, glass towers and LED billboards with no readable text, clearly present-day, a strong contrast with 1980s pastel architecture."
+    },
+    {
+      "visual_id": "v016",
+      "scene": 14,
+      "chapter": "ch02",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v017",
+      "scene": 15,
+      "chapter": "ch03",
+      "kind": "chapter_card"
+    },
+    {
+      "visual_id": "v018",
+      "scene": 15,
+      "chapter": "ch03",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v019",
+      "scene": 16,
+      "chapter": "ch03",
+      "kind": "illustration",
+      "prompt": "Somber, non-graphic. A small inhaler and a stack of unpaid pharmacy bills on a kitchen table in a cramped apartment, late afternoon light."
+    },
+    {
+      "visual_id": "v020",
+      "scene": 17,
+      "chapter": "ch03",
+      "kind": "illustration",
+      "prompt": "Tense, non-graphic. A sergeant's silhouette in a barracks doorway, a duffel bag on the floor, the Corporal from the reference sheet watching warily."
+    },
+    {
+      "visual_id": "v021",
+      "scene": 18,
+      "chapter": "ch03",
+      "kind": "text_card"
+    },
+    {
+      "visual_id": "v022",
+      "scene": 19,
+      "chapter": "ch03",
+      "kind": "text_card"
+    },
+    {
+      "visual_id": "v023",
+      "scene": 20,
+      "chapter": "ch03",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "img_ch03_6",
+      "scene": 21,
+      "chapter": "ch03",
+      "kind": "illustration",
+      "prompt": "Somber, non-graphic. Two brothers in a cramped apartment; one holds out a heavy taped package, the other, the Corporal from the reference sheet, turns away toward the window."
+    },
+    {
+      "visual_id": "v025",
+      "scene": 21,
+      "chapter": "ch03",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v026",
+      "scene": 22,
+      "chapter": "ch04",
+      "kind": "chapter_card"
+    },
+    {
+      "visual_id": "v027",
+      "scene": 22,
+      "chapter": "ch04",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "img_trailer",
+      "scene": 23,
+      "chapter": "ch04",
+      "kind": "illustration",
+      "prompt": "Tense, non-graphic. A run-down trailer park at dusk, string lights, a battered pickup truck, a cheap office trailer with its door ajar."
+    },
+    {
+      "visual_id": "v029",
+      "scene": 24,
+      "chapter": "ch04",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v030",
+      "scene": 24,
+      "chapter": "ch04",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v031",
+      "scene": 25,
+      "chapter": "ch04",
+      "kind": "text_card"
+    },
+    {
+      "visual_id": "v032",
+      "scene": 26,
+      "chapter": "ch04",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v033",
+      "scene": 26,
+      "chapter": "ch04",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v034",
+      "scene": 27,
+      "chapter": "ch05",
+      "kind": "chapter_card"
+    },
+    {
+      "visual_id": "v035",
+      "scene": 27,
+      "chapter": "ch05",
+      "kind": "illustration",
+      "prompt": "Tense, non-graphic. A man in sunglasses and a cheap suit in a diner booth sliding a folded note across the table."
+    },
+    {
+      "visual_id": "img_ch04_1",
+      "scene": 28,
+      "chapter": "ch05",
+      "kind": "illustration",
+      "prompt": "Investigative, non-graphic. Close-up of a laminated ID card on a desk, a photo being replaced with scissors and glue, no readable text."
+    },
+    {
+      "visual_id": "v037",
+      "scene": 28,
+      "chapter": "ch05",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v_agentcard",
+      "scene": 29,
+      "chapter": "ch05",
+      "kind": "text_card"
+    },
+    {
+      "visual_id": "v039",
+      "scene": 30,
+      "chapter": "ch05",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v040",
+      "scene": 31,
+      "chapter": "ch05",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v041",
+      "scene": 32,
+      "chapter": "ch06",
+      "kind": "chapter_card"
+    },
+    {
+      "visual_id": "img_tower",
+      "scene": 32,
+      "chapter": "ch06",
+      "kind": "illustration",
+      "prompt": "Cold, ominous, non-graphic. Night view of an imposing 1980s downtown skyscraper with a smoked-glass facade and a lit marble lobby; a blank polished brass plaque beside the revolving door; two black limousines idle at the curb."
+    },
+    {
+      "visual_id": "v043",
+      "scene": 33,
+      "chapter": "ch06",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v044",
+      "scene": 34,
+      "chapter": "ch06",
+      "kind": "illustration",
+      "prompt": "Tense, non-graphic. A rain-soaked street at night outside a cartel nightclub, the Corporal from the reference sheet stepping out of a car, neon reflections."
+    },
+    {
+      "visual_id": "v045",
+      "scene": 35,
+      "chapter": "ch06",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v046",
+      "scene": 35,
+      "chapter": "ch06",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v_diazoffice",
+      "scene": 36,
+      "chapter": "ch06",
+      "kind": "illustration",
+      "prompt": "Tense, non-graphic. A flamboyant drug baron's office: gold fixtures, a wall of security monitors, a man's silhouette behind a desk, cigar smoke."
+    },
+    {
+      "visual_id": "v048",
+      "scene": 37,
+      "chapter": "ch06",
+      "kind": "text_card"
+    },
+    {
+      "visual_id": "img_ch05_6",
+      "scene": 38,
+      "chapter": "ch06",
+      "kind": "illustration",
+      "prompt": "Somber, non-graphic. A skyscraper rooftop at sunrise after a storm, a military helicopter silhouette pulling away, scattered papers in the wind."
+    },
+    {
+      "visual_id": "v050",
+      "scene": 38,
+      "chapter": "ch06",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v051",
+      "scene": 39,
+      "chapter": "ch06",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v052",
+      "scene": 40,
+      "chapter": "ch06",
+      "kind": "text_card"
+    },
+    {
+      "visual_id": "v053",
+      "scene": 41,
+      "chapter": "ch07",
+      "kind": "chapter_card"
+    },
+    {
+      "visual_id": "v054",
+      "scene": 41,
+      "chapter": "ch07",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "img_backroom",
+      "scene": 42,
+      "chapter": "ch07",
+      "kind": "illustration",
+      "prompt": "Somber, non-graphic. A dimly lit northern restaurant back room, a heavy man's silhouette at a table pushing a plane ticket forward."
+    },
+    {
+      "visual_id": "v056",
+      "scene": 42,
+      "chapter": "ch07",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v057",
+      "scene": 43,
+      "chapter": "ch07",
+      "kind": "text_card"
+    },
+    {
+      "visual_id": "img_lawyer",
+      "scene": 44,
+      "chapter": "ch07",
+      "kind": "illustration",
+      "prompt": "Calm, non-graphic. A nervous man in a rumpled 1980s suit waiting beside a boxy sedan outside an airport terminal at midday, palm trees, heat haze."
+    },
+    {
+      "visual_id": "v059",
+      "scene": 45,
+      "chapter": "ch07",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "img_yacht",
+      "scene": 46,
+      "chapter": "ch07",
+      "kind": "illustration",
+      "prompt": "Calm, non-graphic. A luxury yacht moored at a marina at golden hour, an older man in a white jacket on deck seen from far away."
+    },
+    {
+      "visual_id": "v061",
+      "scene": 47,
+      "chapter": "ch07",
+      "kind": "illustration",
+      "prompt": "Somber, non-graphic. An empty dock at night, an open briefcase on the boards, a helicopter's lights pulling away over the water."
+    },
+    {
+      "visual_id": "v062",
+      "scene": 48,
+      "chapter": "ch07",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v063",
+      "scene": 48,
+      "chapter": "ch07",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v064",
+      "scene": 49,
+      "chapter": "ch07",
+      "kind": "text_card"
+    },
+    {
+      "visual_id": "v065",
+      "scene": 50,
+      "chapter": "ch08",
+      "kind": "chapter_card"
+    },
+    {
+      "visual_id": "v066",
+      "scene": 50,
+      "chapter": "ch08",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "img_mansion",
+      "scene": 51,
+      "chapter": "ch08",
+      "kind": "illustration",
+      "prompt": "Somber, non-graphic. A grand island mansion at night, marble staircase, shattered chandelier light across an empty floor."
+    },
+    {
+      "visual_id": "img_newcomer",
+      "scene": 52,
+      "chapter": "ch08",
+      "kind": "illustration",
+      "prompt": "Somber, non-graphic. A broad-shouldered man in an ivory linen suit standing alone in a huge mansion office, his back to us, looking out over a bay at dawn."
+    },
+    {
+      "visual_id": "v069",
+      "scene": 53,
+      "chapter": "ch08",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v070",
+      "scene": 54,
+      "chapter": "ch08",
+      "kind": "illustration",
+      "prompt": "Somber, non-graphic. A man in a white suit and aviator sunglasses leaning alone on a balcony rail at a party, the crowd blurred behind him."
+    },
+    {
+      "visual_id": "v071",
+      "scene": 55,
+      "chapter": "ch09",
+      "kind": "chapter_card"
+    },
+    {
+      "visual_id": "v072",
+      "scene": 55,
+      "chapter": "ch09",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "img_model",
+      "scene": 56,
+      "chapter": "ch09",
+      "kind": "illustration",
+      "prompt": "Calm, non-graphic. An architect's scale model of a waterfront district under a desk lamp, a gold pen and a land deed beside it, no readable text."
+    },
+    {
+      "visual_id": "v074",
+      "scene": 57,
+      "chapter": "ch09",
+      "kind": "illustration",
+      "prompt": "Tense, non-graphic. An empty golf course at dawn, a single golf cart abandoned on the fairway, a dropped club in the grass."
+    },
+    {
+      "visual_id": "v075",
+      "scene": 58,
+      "chapter": "ch09",
+      "kind": "illustration",
+      "prompt": "Tense, non-graphic. A half-built tower wrapped in scaffolding at dusk, a small remote-control helicopter hovering near an upper floor."
+    },
+    {
+      "visual_id": "v076",
+      "scene": 59,
+      "chapter": "ch09",
+      "kind": "text_card"
+    },
+    {
+      "visual_id": "v077",
+      "scene": 60,
+      "chapter": "ch09",
+      "kind": "illustration",
+      "prompt": "Somber, non-graphic. A funeral parlor exterior in the rain, black umbrellas, a lone figure in borrowed colors watching from across the street."
+    },
+    {
+      "visual_id": "v078",
+      "scene": 61,
+      "chapter": "ch09",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "img_protege",
+      "scene": 62,
+      "chapter": "ch09",
+      "kind": "illustration",
+      "prompt": "Calm, non-graphic. A young man in an oversized suit scribbling in a small notepad behind an older developer's shoulder, an architect's model on the desk between them."
+    },
+    {
+      "visual_id": "v080",
+      "scene": 62,
+      "chapter": "ch09",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v081",
+      "scene": 63,
+      "chapter": "ch09",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v082",
+      "scene": 63,
+      "chapter": "ch09",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "img_printworks",
+      "scene": 64,
+      "chapter": "ch09",
+      "kind": "illustration",
+      "prompt": "Investigative, non-graphic. Sheets of freshly printed banknotes drying on lines in a dim print shop, no readable text or faces on the notes."
+    },
+    {
+      "visual_id": "v084",
+      "scene": 64,
+      "chapter": "ch09",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "img_bank",
+      "scene": 65,
+      "chapter": "ch09",
+      "kind": "illustration",
+      "prompt": "Tense, non-graphic. A grand 1980s bank facade in a Cuban neighborhood at night, marble columns, a blank sign above the doors, an empty getaway van at the curb."
+    },
+    {
+      "visual_id": "v086",
+      "scene": 65,
+      "chapter": "ch09",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v087",
+      "scene": 66,
+      "chapter": "ch09",
+      "kind": "text_card"
+    },
+    {
+      "visual_id": "v088",
+      "scene": 67,
+      "chapter": "ch09",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "img_ch08_13",
+      "scene": 68,
+      "chapter": "ch09",
+      "kind": "illustration",
+      "prompt": "Investigative, non-graphic. An envelope of photographs on a polished desk under a green banker's lamp, a lapel pin beside it, no faces visible."
+    },
+    {
+      "visual_id": "v090",
+      "scene": 68,
+      "chapter": "ch09",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v091",
+      "scene": 69,
+      "chapter": "ch09",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v092",
+      "scene": 69,
+      "chapter": "ch09",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v093",
+      "scene": 70,
+      "chapter": "ch09",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v094",
+      "scene": 71,
+      "chapter": "ch10",
+      "kind": "chapter_card"
+    },
+    {
+      "visual_id": "img_foyer",
+      "scene": 71,
+      "chapter": "ch10",
+      "kind": "illustration",
+      "prompt": "Tense, non-graphic. A mansion foyer at night, men in dark coats on a staircase, one older man in front, faces in shadow."
+    },
+    {
+      "visual_id": "v096",
+      "scene": 72,
+      "chapter": "ch10",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "img_faceoff",
+      "scene": 73,
+      "chapter": "ch10",
+      "kind": "illustration",
+      "prompt": "Tense, non-graphic. Two silhouettes facing each other across a long marble floor, a single beam of light between them."
+    },
+    {
+      "visual_id": "v098",
+      "scene": 73,
+      "chapter": "ch10",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v099",
+      "scene": 74,
+      "chapter": "ch10",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v100",
+      "scene": 75,
+      "chapter": "ch10",
+      "kind": "illustration",
+      "prompt": "Somber, non-graphic. A rooftop at night above the city lights, a broken pair of aviator sunglasses on the ledge."
+    },
+    {
+      "visual_id": "v101",
+      "scene": 76,
+      "chapter": "ch10",
+      "kind": "text_card"
+    },
+    {
+      "visual_id": "v102",
+      "scene": 77,
+      "chapter": "ch11",
+      "kind": "chapter_card"
+    },
+    {
+      "visual_id": "img_split",
+      "scene": 77,
+      "chapter": "ch11",
+      "kind": "illustration",
+      "prompt": "Somber, non-graphic. Split composition: a dark harbor pier at night on the left, a mansion balcony at dawn on the right, the same bay between them."
+    },
+    {
+      "visual_id": "v104",
+      "scene": 78,
+      "chapter": "ch11",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v105",
+      "scene": 79,
+      "chapter": "ch11",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v106",
+      "scene": 80,
+      "chapter": "ch11",
+      "kind": "illustration",
+      "prompt": "Somber, non-graphic. A man's hand dropping a ring of keys onto a mahogany desk, a second hand reaching for a door handle, both in shadow."
+    },
+    {
+      "visual_id": "v107",
+      "scene": 81,
+      "chapter": "ch11",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v108",
+      "scene": 81,
+      "chapter": "ch11",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "v109",
+      "scene": 82,
+      "chapter": "ch11",
+      "kind": "reuse"
+    },
+    {
+      "visual_id": "img_badge",
+      "scene": 83,
+      "chapter": "ch11",
+      "kind": "illustration",
+      "prompt": "Somber, dramatic, non-graphic. An old, generic badge with no insignia or lettering lies cracked on a wet seawall railing in the foreground; behind it, out of focus, the neon-lit 1980s coastal skyline at dusk in magenta and teal."
+    },
+    {
+      "visual_id": "v111",
+      "scene": 83,
+      "chapter": "ch11",
+      "kind": "text_card"
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "passed": true
+}

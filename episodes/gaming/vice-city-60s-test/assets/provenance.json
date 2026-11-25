@@ -1,0 +1,125 @@
+{
+  "assets": [
+    {
+      "id": "img_waterfront",
+      "path": "out/images/img_waterfront.png",
+      "kind": "synthetic_test",
+      "source": "dry-run placeholder",
+      "permission_status": "generated",
+      "license_ref": "",
+      "intended_usage": "pipeline test only",
+      "notes": "",
+      "sha256": "dc5bec75b90f25130e35780febce0a88a38cfdd0bfccbe0faea161e6a604017c"
+    },
+    {
+      "id": "img_corporal_base",
+      "path": "out/images/img_corporal_base.png",
+      "kind": "synthetic_test",
+      "source": "dry-run placeholder",
+      "permission_status": "generated",
+      "license_ref": "",
+      "intended_usage": "pipeline test only",
+      "notes": "",
+      "sha256": "83d55a19cbf65dccebeedeebaaa4c20969e03a2745cf0e25c99f28d81879284d"
+    },
+    {
+      "id": "img_corporal_hospital",
+      "path": "out/images/img_corporal_hospital.png",
+      "kind": "synthetic_test",
+      "source": "dry-run placeholder",
+      "permission_status": "generated",
+      "license_ref": "",
+      "intended_usage": "pipeline test only",
+      "notes": "",
+      "sha256": "db1a4d7db9c5d972a31a6fdffe404d0786b0f2e6808a0fc5aba4d175fd206beb"
+    },
+    {
+      "id": "img_corporal_dock",
+      "path": "out/images/img_corporal_dock.png",
+      "kind": "synthetic_test",
+      "source": "dry-run placeholder",
+      "permission_status": "generated",
+      "license_ref": "",
+      "intended_usage": "pipeline test only",
+      "notes": "",
+      "sha256": "2ed88fe2e06399b116fdc6ed9bf54061660e67b08e773543719c178dacdad07e"
+    },
+    {
+      "id": "img_clockwork",
+      "path": "out/images/img_clockwork.png",
+      "kind": "synthetic_test",
+      "source": "dry-run placeholder",
+      "permission_status": "generated",
+      "license_ref": "",
+      "intended_usage": "pipeline test only",
+      "notes": "",
+      "sha256": "2c5e2ecc0ab093858e21697318ec85feebdffe6a4cd2881c46e28289668cb333"
+    },
+    {
+      "id": "thumbnail_bg",
+      "path": "out/images/thumbnail_bg.png",
+      "kind": "synthetic_test",
+      "source": "dry-run placeholder",
+      "permission_status": "generated",
+      "license_ref": "",
+      "intended_usage": "pipeline test only",
+      "notes": "",
+      "sha256": "24922eb51e38e7c1c76519e375064494652bf761573a24ccacfc22ff20f33e00"
+    },
+    {
+      "id": "v002",
+      "path": "out/cards/v002.png",
+      "kind": "chapter_card",
+      "source": "made locally by the pipeline",
+      "permission_status": "generated",
+      "license_ref": "",
+      "intended_usage": "documentary typography",
+      "notes": "",
+      "sha256": "75aa4168b56c1ab16cdfcd273694162fc2d437f5c3e9d34431cb55b74f28e470"
+    },
+    {
+      "id": "v006",
+      "path": "out/cards/v006.png",
+      "kind": "chapter_card",
+      "source": "made locally by the pipeline",
+      "permission_status": "generated",
+      "license_ref": "",
+      "intended_usage": "documentary typography",
+      "notes": "",
+      "sha256": "3560cf76e3efdbe00ad40d746a208a0af8cfb5bf52b904085dd78056ba0d0643"
+    },
+    {
+      "id": "v_rows1984",
+      "path": "out/cards/v_rows1984_3.png",
+      "kind": "chapter_card",
+      "source": "made locally by the pipeline",
+      "permission_status": "generated",
+      "license_ref": "",
+      "intended_usage": "documentary typography",
+      "notes": "",
+      "sha256": "396f4f3df72cea2f4f39d295f8fdecbcd176d3f1b519b34d3eeb3942ada39d43"
+    },
+    {
+      "id": "v012",
+      "path": "out/cards/v012.png",
+      "kind": "chapter_card",
+      "source": "made locally by the pipeline",
+      "permission_status": "generated",
+      "license_ref": "",
+      "intended_usage": "documentary typography",
+      "notes": "",
+      "sha256": "5b3a3b124184456add6727146f2b17f26f81a3652ff5fe0b810a9775e21a48e5"
+    },
+    {
+      "id": "ambient_pad",
+      "path": "assets/ambient_pad.mp3",
+      "kind": "licensed_music",
+      "source": "original pad generated locally with ffmpeg (draft/make_test.py)",
+      "permission_status": "owned",
+      "license_ref": "own work: synthesized tones and noise, no samples",
+      "intended_usage": "ambient bed under narration",
+      "notes": "",
+      "sha256": "97e4826f54496d5c7a6a446687914c37cfb0b6a6cb3997e8d0e4ab00f593f1c4"
+    }
+  ]
+}

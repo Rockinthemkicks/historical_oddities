@@ -1,0 +1,8 @@
+{
+  "mode": "historical",
+  "description": "Original Historical Oddities pipeline. main.py behaves exactly as before; these values document its defaults and are not applied on top of them.",
+  "format": "vertical",
+  "motion": "none",
+  "style_file": "config/style_prompt.txt",
+  "captions": {"max_words": 3, "max_chars": 16, "uppercase": true, "font_size": 58}
+}

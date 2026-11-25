@@ -1,0 +1,710 @@
+{
+  "outline": {
+    "status": "PROPOSED (review 4) - not approved",
+    "title": "The Dark History of Vice City Before GTA 6",
+    "chapters": [
+      {
+        "id": "ch01",
+        "title": "The Man Who Tried to Leave",
+        "purpose": "Hook: Vic tried to escape; Tommy inherited the system.",
+        "target_words": 120,
+        "claim_ids": [
+          "C08",
+          "C10",
+          "C11",
+          "C13",
+          "C14",
+          "C15",
+          "C16",
+          "C20",
+          "C22",
+          "C32",
+          "C39",
+          "C43",
+          "C47",
+          "C48",
+          "C49",
+          "C50"
+        ]
+      },
+      {
+        "id": "ch02",
+        "title": "Which Vice City?",
+        "purpose": "Continuity in about 20-30 seconds.",
+        "target_words": 60,
+        "claim_ids": [
+          "C05",
+          "C08",
+          "C51",
+          "C52"
+        ]
+      },
+      {
+        "id": "ch03",
+        "title": "The Sergeant",
+        "purpose": "An Army sergeant inside the cartel trade.",
+        "target_words": 150,
+        "claim_ids": [
+          "C08",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C31",
+          "C47"
+        ]
+      },
+      {
+        "id": "ch04",
+        "title": "The Reluctant Empire",
+        "purpose": "Even the man who wanted out builds an empire.",
+        "target_words": 140,
+        "claim_ids": [
+          "C11",
+          "C50",
+          "C53",
+          "C54",
+          "C55"
+        ]
+      },
+      {
+        "id": "ch05",
+        "title": "The Agent",
+        "purpose": "An undercover agent selling information; individuals, not institutions.",
+        "target_words": 130,
+        "claim_ids": [
+          "C12",
+          "C39",
+          "C41",
+          "C42"
+        ]
+      },
+      {
+        "id": "ch06",
+        "title": "The Cartel's Tower",
+        "purpose": "The Mendez war, Diaz's maneuvering, Last Stand.",
+        "target_words": 210,
+        "claim_ids": [
+          "C13",
+          "C14",
+          "C15",
+          "C16",
+          "C32",
+          "C34",
+          "C38",
+          "C49",
+          "C50",
+          "C65"
+        ]
+      },
+      {
+        "id": "ch07",
+        "title": "The Exchange",
+        "purpose": "1986: the colonel, the leak, the ambush.",
+        "target_words": 150,
+        "claim_ids": [
+          "C19",
+          "C20",
+          "C32",
+          "C33",
+          "C34",
+          "C49",
+          "C56",
+          "C63"
+        ]
+      },
+      {
+        "id": "ch08",
+        "title": "The Heir",
+        "purpose": "Tommy takes over Diaz's empire.",
+        "target_words": 110,
+        "claim_ids": [
+          "C21",
+          "C22",
+          "C25",
+          "C43",
+          "C48"
+        ]
+      },
+      {
+        "id": "ch09",
+        "title": "The Business of Vice",
+        "purpose": "Economic corruption in 1986.",
+        "target_words": 250,
+        "claim_ids": [
+          "C35",
+          "C36",
+          "C43",
+          "C44",
+          "C45",
+          "C46",
+          "C48",
+          "C57",
+          "C58",
+          "C59",
+          "C60",
+          "C61",
+          "C62"
+        ]
+      },
+      {
+        "id": "ch10",
+        "title": "This Is Business",
+        "purpose": "The finale: what is said, and what is only implied.",
+        "target_words": 120,
+        "claim_ids": [
+          "C18",
+          "C23",
+          "C24",
+          "C25",
+          "C45",
+          "C64"
+        ]
+      },
+      {
+        "id": "ch11",
+        "title": "Built on Crime",
+        "purpose": "Conclusion: the exit and the keys.",
+        "target_words": 110,
+        "claim_ids": [
+          "C08",
+          "C13",
+          "C20",
+          "C32",
+          "C42",
+          "C43",
+          "C47",
+          "C48",
+          "C49",
+          "C55",
+          "C57",
+          "C62"
+        ]
+      }
+    ]
+  },
+  "outline_check": {
+    "errors": [],
+    "warnings": [],
+    "passed": true
+  },
+  "chapter_checks": [
+    {
+      "chapter": "ch01",
+      "errors": [],
+      "warnings": [],
+      "passed": true,
+      "words": 135
+    },
+    {
+      "chapter": "ch02",
+      "errors": [],
+      "warnings": [],
+      "passed": true,
+      "words": 62
+    },
+    {
+      "chapter": "ch03",
+      "errors": [],
+      "warnings": [
+        "ch03: 119 words vs target 150"
+      ],
+      "passed": true,
+      "words": 119
+    },
+    {
+      "chapter": "ch04",
+      "errors": [],
+      "warnings": [
+        "ch04: 103 words vs target 140"
+      ],
+      "passed": true,
+      "words": 103
+    },
+    {
+      "chapter": "ch05",
+      "errors": [],
+      "warnings": [
+        "ch05: 99 words vs target 130"
+      ],
+      "passed": true,
+      "words": 99
+    },
+    {
+      "chapter": "ch06",
+      "errors": [],
+      "warnings": [],
+      "passed": true,
+      "words": 191
+    },
+    {
+      "chapter": "ch07",
+      "errors": [],
+      "warnings": [],
+      "passed": true,
+      "words": 184
+    },
+    {
+      "chapter": "ch08",
+      "errors": [],
+      "warnings": [
+        "ch08: 79 words vs target 110"
+      ],
+      "passed": true,
+      "words": 79
+    },
+    {
+      "chapter": "ch09",
+      "errors": [],
+      "warnings": [
+        "ch09: 314 words vs target 250"
+      ],
+      "passed": true,
+      "words": 314
+    },
+    {
+      "chapter": "ch10",
+      "errors": [],
+      "warnings": [
+        "ch10: 81 words vs target 120"
+      ],
+      "passed": true,
+      "words": 81
+    },
+    {
+      "chapter": "ch11",
+      "errors": [],
+      "warnings": [],
+      "passed": true,
+      "words": 102
+    }
+  ],
+  "dependencies": [
+    {
+      "chapter": "ch01",
+      "unverified": [
+        {
+          "claim": "C08",
+          "standing": "matched"
+        },
+        {
+          "claim": "C10",
+          "standing": "matched"
+        },
+        {
+          "claim": "C11",
+          "standing": "matched"
+        },
+        {
+          "claim": "C13",
+          "standing": "matched"
+        },
+        {
+          "claim": "C14",
+          "standing": "matched"
+        },
+        {
+          "claim": "C15",
+          "standing": "matched"
+        },
+        {
+          "claim": "C16",
+          "standing": "matched"
+        },
+        {
+          "claim": "C20",
+          "standing": "matched"
+        },
+        {
+          "claim": "C22",
+          "standing": "matched"
+        },
+        {
+          "claim": "C32",
+          "standing": "corroborated"
+        },
+        {
+          "claim": "C39",
+          "standing": "corroborated"
+        },
+        {
+          "claim": "C43",
+          "standing": "matched"
+        },
+        {
+          "claim": "C47",
+          "standing": "matched"
+        },
+        {
+          "claim": "C48",
+          "standing": "matched"
+        },
+        {
+          "claim": "C49",
+          "standing": "matched"
+        },
+        {
+          "claim": "C50",
+          "standing": "corroborated"
+        }
+      ],
+      "omit": []
+    },
+    {
+      "chapter": "ch02",
+      "unverified": [
+        {
+          "claim": "C05",
+          "standing": "corroborated"
+        },
+        {
+          "claim": "C08",
+          "standing": "matched"
+        },
+        {
+          "claim": "C51",
+          "standing": "corroborated"
+        },
+        {
+          "claim": "C52",
+          "standing": "matched"
+        }
+      ],
+      "omit": []
+    },
+    {
+      "chapter": "ch03",
+      "unverified": [
+        {
+          "claim": "C08",
+          "standing": "matched"
+        },
+        {
+          "claim": "C10",
+          "standing": "matched"
+        },
+        {
+          "claim": "C11",
+          "standing": "matched"
+        },
+        {
+          "claim": "C12",
+          "standing": "matched"
+        },
+        {
+          "claim": "C13",
+          "standing": "matched"
+        },
+        {
+          "claim": "C31",
+          "standing": "matched"
+        },
+        {
+          "claim": "C47",
+          "standing": "matched"
+        }
+      ],
+      "omit": []
+    },
+    {
+      "chapter": "ch04",
+      "unverified": [
+        {
+          "claim": "C11",
+          "standing": "matched"
+        },
+        {
+          "claim": "C50",
+          "standing": "corroborated"
+        },
+        {
+          "claim": "C53",
+          "standing": "corroborated"
+        },
+        {
+          "claim": "C54",
+          "standing": "corroborated"
+        },
+        {
+          "claim": "C55",
+          "standing": "corroborated"
+        }
+      ],
+      "omit": []
+    },
+    {
+      "chapter": "ch05",
+      "unverified": [
+        {
+          "claim": "C12",
+          "standing": "matched"
+        },
+        {
+          "claim": "C39",
+          "standing": "corroborated"
+        },
+        {
+          "claim": "C41",
+          "standing": "matched"
+        },
+        {
+          "claim": "C42",
+          "standing": "corroborated"
+        }
+      ],
+      "omit": []
+    },
+    {
+      "chapter": "ch06",
+      "unverified": [
+        {
+          "claim": "C13",
+          "standing": "matched"
+        },
+        {
+          "claim": "C14",
+          "standing": "matched"
+        },
+        {
+          "claim": "C15",
+          "standing": "matched"
+        },
+        {
+          "claim": "C16",
+          "standing": "matched"
+        },
+        {
+          "claim": "C32",
+          "standing": "corroborated"
+        },
+        {
+          "claim": "C34",
+          "standing": "corroborated"
+        },
+        {
+          "claim": "C38",
+          "standing": "matched"
+        },
+        {
+          "claim": "C49",
+          "standing": "matched"
+        },
+        {
+          "claim": "C50",
+          "standing": "corroborated"
+        },
+        {
+          "claim": "C65",
+          "standing": "matched"
+        }
+      ],
+      "omit": []
+    },
+    {
+      "chapter": "ch07",
+      "unverified": [
+        {
+          "claim": "C19",
+          "standing": "matched"
+        },
+        {
+          "claim": "C20",
+          "standing": "matched"
+        },
+        {
+          "claim": "C32",
+          "standing": "corroborated"
+        },
+        {
+          "claim": "C33",
+          "standing": "matched"
+        },
+        {
+          "claim": "C34",
+          "standing": "corroborated"
+        },
+        {
+          "claim": "C49",
+          "standing": "matched"
+        },
+        {
+          "claim": "C56",
+          "standing": "corroborated"
+        },
+        {
+          "claim": "C63",
+          "standing": "corroborated"
+        }
+      ],
+      "omit": []
+    },
+    {
+      "chapter": "ch08",
+      "unverified": [
+        {
+          "claim": "C21",
+          "standing": "matched"
+        },
+        {
+          "claim": "C22",
+          "standing": "matched"
+        },
+        {
+          "claim": "C25",
+          "standing": "matched"
+        },
+        {
+          "claim": "C43",
+          "standing": "matched"
+        },
+        {
+          "claim": "C48",
+          "standing": "matched"
+        }
+      ],
+      "omit": []
+    },
+    {
+      "chapter": "ch09",
+      "unverified": [
+        {
+          "claim": "C35",
+          "standing": "matched"
+        },
+        {
+          "claim": "C36",
+          "standing": "corroborated"
+        },
+        {
+          "claim": "C43",
+          "standing": "matched"
+        },
+        {
+          "claim": "C44",
+          "standing": "corroborated"
+        },
+        {
+          "claim": "C45",
+          "standing": "matched"
+        },
+        {
+          "claim": "C46",
+          "standing": "matched"
+        },
+        {
+          "claim": "C48",
+          "standing": "matched"
+        },
+        {
+          "claim": "C57",
+          "standing": "corroborated"
+        },
+        {
+          "claim": "C58",
+          "standing": "corroborated"
+        },
+        {
+          "claim": "C59",
+          "standing": "matched"
+        },
+        {
+          "claim": "C60",
+          "standing": "corroborated"
+        },
+        {
+          "claim": "C61",
+          "standing": "matched"
+        },
+        {
+          "claim": "C62",
+          "standing": "corroborated"
+        }
+      ],
+      "omit": []
+    },
+    {
+      "chapter": "ch10",
+      "unverified": [
+        {
+          "claim": "C18",
+          "standing": "matched"
+        },
+        {
+          "claim": "C23",
+          "standing": "matched"
+        },
+        {
+          "claim": "C24",
+          "standing": "corroborated"
+        },
+        {
+          "claim": "C25",
+          "standing": "matched"
+        },
+        {
+          "claim": "C45",
+          "standing": "matched"
+        },
+        {
+          "claim": "C64",
+          "standing": "corroborated"
+        }
+      ],
+      "omit": []
+    },
+    {
+      "chapter": "ch11",
+      "unverified": [
+        {
+          "claim": "C08",
+          "standing": "matched"
+        },
+        {
+          "claim": "C13",
+          "standing": "matched"
+        },
+        {
+          "claim": "C20",
+          "standing": "matched"
+        },
+        {
+          "claim": "C32",
+          "standing": "corroborated"
+        },
+        {
+          "claim": "C42",
+          "standing": "corroborated"
+        },
+        {
+          "claim": "C43",
+          "standing": "matched"
+        },
+        {
+          "claim": "C47",
+          "standing": "matched"
+        },
+        {
+          "claim": "C48",
+          "standing": "matched"
+        },
+        {
+          "claim": "C49",
+          "standing": "matched"
+        },
+        {
+          "claim": "C55",
+          "standing": "corroborated"
+        },
+        {
+          "claim": "C57",
+          "standing": "corroborated"
+        },
+        {
+          "claim": "C62",
+          "standing": "corroborated"
+        }
+      ],
+      "omit": []
+    }
+  ]
+}

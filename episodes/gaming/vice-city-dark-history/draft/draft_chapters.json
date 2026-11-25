@@ -1,0 +1,1184 @@
+{
+  "status": "DRAFT - not approved",
+  "chapters": [
+    {
+      "chapter_id": "ch01",
+      "summary": "Hook: Vic tried to escape; Tommy inherited the system.",
+      "segments": [
+        {
+          "narration": "Two years before Tommy Vercetti took over Vice City, another man was trying to escape it.",
+          "claim_ids": [
+            "C08",
+            "C32",
+            "C22"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Calm, atmospheric, non-graphic. Wide establishing view of a fictional 1980s subtropical coastal city at dusk: pastel art-deco hotels along a beachfront boulevard, palm silhouettes, the first neon signs flickering on in pink and teal, a single speedboat wake heading out across the calm bay toward open sea. Signs are abstract glowing shapes with no letters.",
+              "id": "img_waterfront",
+              "motion": "zoom_in"
+            }
+          ]
+        },
+        {
+          "narration": "His name was Victor Vance.",
+          "claim_ids": [
+            "C10"
+          ],
+          "visuals": [
+            {
+              "kind": "text_card",
+              "style": "stamp",
+              "heading": "VICTOR VANCE",
+              "lines": [
+                "VICE CITY, 1984"
+              ],
+              "rows": [],
+              "motion": "zoom_in"
+            }
+          ]
+        },
+        {
+          "narration": "A soldier turned drug dealer, Vic had survived a corrupt sergeant, a war with a powerful cartel, and the loss of the woman he loved.",
+          "claim_ids": [
+            "C10",
+            "C11",
+            "C15",
+            "C16",
+            "C50"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Somber, non-graphic. The Corporal from the reference sheet, in his olive army field jacket, standing alone at dawn outside the chain-link fence of a military airbase, hangars and palm trees behind him, looking back over his shoulder.",
+              "id": "img_corporal_base",
+              "motion": "pan_right"
+            },
+            {
+              "kind": "illustration",
+              "prompt": "Somber, non-graphic. The Corporal from the reference sheet, in civilian clothes, sitting alone on a plastic chair in an empty hospital corridor at night, elbows on his knees, rain streaking the window beside him. Quiet grief.",
+              "id": "img_corporal_hospital",
+              "motion": "zoom_in"
+            }
+          ]
+        },
+        {
+          "narration": "By the end of 1984, he was ready to leave it all behind.",
+          "claim_ids": [
+            "C32",
+            "C47"
+          ],
+          "visuals": [
+            {
+              "kind": "reuse",
+              "of": "img_waterfront",
+              "motion": "zoom_to:0.55,0.70,0.45"
+            }
+          ]
+        },
+        {
+          "narration": "Two years later, he was back, at a drug deal that would end his life and begin Tommy Vercetti's rise to power.",
+          "claim_ids": [
+            "C32",
+            "C20",
+            "C48"
+          ],
+          "visuals": [
+            {
+              "kind": "text_card",
+              "style": "stamp",
+              "heading": "1986",
+              "lines": [
+                "TWO YEARS LATER"
+              ],
+              "rows": [],
+              "motion": "zoom_out"
+            },
+            {
+              "kind": "illustration",
+              "prompt": "Tense, non-graphic. The Corporal from the reference sheet, now in his pale blue civilian shirt, two years older, waiting at a folding table on a dark harbor pier at night, a closed briefcase in front of him, harbor lights and a moored freighter behind.",
+              "id": "img_corporal_dock",
+              "motion": "zoom_in"
+            }
+          ]
+        },
+        {
+          "narration": "Vice City tells the story of Tommy building a criminal empire.",
+          "claim_ids": [
+            "C48"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Somber, investigative, non-graphic. Surreal editorial illustration: an enormous brass clockwork mechanism whose gears are built from miniature city blocks, palm trees, hotel towers and neon tubes, glowing softly at dusk. At its center sits a single empty leather executive chair under a spotlight. Wide composition, deep perspective.",
+              "id": "img_clockwork",
+              "motion": "zoom_out"
+            }
+          ]
+        },
+        {
+          "narration": "But the empire was already there.",
+          "claim_ids": [
+            "C22",
+            "C43"
+          ],
+          "visuals": [
+            {
+              "kind": "reuse",
+              "of": "img_clockwork",
+              "motion": "zoom_to:0.5,0.55,0.5"
+            }
+          ]
+        },
+        {
+          "narration": "Behind the neon and the oceanfront mansions, a corrupt sergeant, rival drug lords and an undercover agent working both sides had been shaping the city since at least 1984.",
+          "claim_ids": [
+            "C11",
+            "C13",
+            "C14",
+            "C39",
+            "C49"
+          ],
+          "visuals": [
+            {
+              "kind": "text_card",
+              "style": "rows",
+              "heading": "VICE CITY, 1984",
+              "lines": [],
+              "rows": [
+                [
+                  "THE SERGEANT",
+                  "running drugs for a cartel",
+                  "sergeant"
+                ],
+                [
+                  "THE DRUG LORDS",
+                  "the Mendez brothers, Ricardo Diaz",
+                  "drug"
+                ],
+                [
+                  "THE AGENT",
+                  "selling deal information",
+                  "agent"
+                ]
+              ],
+              "motion": "none",
+              "reveal": true,
+              "id": "v_rows1984"
+            }
+          ]
+        },
+        {
+          "narration": "Tommy didn't invent the system.",
+          "claim_ids": [
+            "C43"
+          ],
+          "visuals": [
+            {
+              "kind": "reuse",
+              "of": "img_clockwork",
+              "motion": "zoom_to:0.5,0.6,0.9"
+            }
+          ],
+          "pause_after": 1.3
+        },
+        {
+          "narration": "He inherited it.",
+          "claim_ids": [
+            "C43"
+          ],
+          "visuals": [
+            {
+              "kind": "text_card",
+              "style": "title",
+              "heading": "THE DARK HISTORY OF VICE CITY",
+              "lines": [
+                "Before GTA 6",
+                "An Unplayed History documentary"
+              ],
+              "rows": [],
+              "motion": "zoom_in",
+              "note": "Illustrations are original artwork, not game footage."
+            }
+          ],
+          "pause_after": 3.0
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch02",
+      "summary": "Continuity in about 20-30 seconds.",
+      "segments": [
+        {
+          "narration": "First, which Vice City is this?",
+          "claim_ids": [
+            "C51",
+            "C52"
+          ],
+          "visuals": [
+            {
+              "kind": "text_card",
+              "style": "rows",
+              "heading": "THREE VICE CITIES",
+              "lines": [],
+              "rows": [
+                [
+                  "1997",
+                  "Grand Theft Auto  \u00b7  2D"
+                ],
+                [
+                  "1984-86",
+                  "Vice City Stories  \u00b7  Vice City  \u00b7  3D"
+                ],
+                [
+                  "2026",
+                  "GTA VI  \u00b7  HD"
+                ]
+              ],
+              "motion": "none",
+              "id": "v_continuity"
+            }
+          ]
+        },
+        {
+          "narration": "Vice City Stories, set in 1984, and Vice City, set in 1986, share one continuity: the series' 3D era.",
+          "claim_ids": [
+            "C08",
+            "C51"
+          ],
+          "visuals": [
+            {
+              "kind": "reuse",
+              "of": "v_continuity",
+              "motion": "zoom_to:0.3,0.5,0.25"
+            }
+          ]
+        },
+        {
+          "narration": "Grand Theft Auto VI's modern Vice City, in the fictional state of Leonida, belongs to a separate continuity.",
+          "claim_ids": [
+            "C05",
+            "C52"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Calm, non-graphic. A modern subtropical city skyline at night reflected in wet asphalt, glass towers and LED billboards with no readable text, clearly present-day, a strong contrast with 1980s pastel architecture.",
+              "id": "img_modern",
+              "motion": "pan_left"
+            }
+          ]
+        },
+        {
+          "narration": "This is the story of the older city. It isn't GTA VI's backstory, and it won't spoil GTA VI.",
+          "claim_ids": [
+            "C51",
+            "C52"
+          ],
+          "visuals": [
+            {
+              "kind": "reuse",
+              "of": "img_waterfront",
+              "motion": "pan_right"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch03",
+      "summary": "An Army sergeant inside the cartel trade.",
+      "segments": [
+        {
+          "narration": "In 1984, Victor Vance is an Army corporal at Fort Baxter, on the edge of Vice City.",
+          "claim_ids": [
+            "C08",
+            "C10"
+          ],
+          "visuals": [
+            {
+              "kind": "chapter_card"
+            },
+            {
+              "kind": "reuse",
+              "of": "img_corporal_base",
+              "motion": "zoom_in"
+            }
+          ]
+        },
+        {
+          "narration": "He needs money for his brother Pete's asthma medication.",
+          "claim_ids": [
+            "C31"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Somber, non-graphic. A small inhaler and a stack of unpaid pharmacy bills on a kitchen table in a cramped apartment, late afternoon light."
+            }
+          ]
+        },
+        {
+          "narration": "His sergeant, Jerry Martinez, runs a secret drug business, and Vic is drawn in as a reluctant middleman.",
+          "claim_ids": [
+            "C11"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Tense, non-graphic. A sergeant's silhouette in a barracks doorway, a duffel bag on the floor, the Corporal from the reference sheet watching warily."
+            }
+          ]
+        },
+        {
+          "narration": "Then Martinez frames him. Drugs are found, there's a sex worker in Vic's car, and Vic is dishonorably discharged.",
+          "claim_ids": [
+            "C11"
+          ],
+          "visuals": [
+            {
+              "kind": "text_card",
+              "style": "stamp",
+              "heading": "DISHONORABLE DISCHARGE",
+              "lines": [
+                "FORT BAXTER, 1984"
+              ],
+              "rows": [],
+              "motion": "zoom_in"
+            }
+          ]
+        },
+        {
+          "narration": "Vic later learns whose cocaine Martinez had been moving: the Mendez brothers', the most powerful drug family in the city.",
+          "claim_ids": [
+            "C12",
+            "C13"
+          ],
+          "visuals": [
+            {
+              "kind": "text_card",
+              "style": "rows",
+              "heading": "THE SUPPLY LINE",
+              "lines": [],
+              "rows": [
+                [
+                  "THE SERGEANT",
+                  "moves the shipment"
+                ],
+                [
+                  "THE CARTEL",
+                  "owns it"
+                ]
+              ],
+              "motion": "zoom_in"
+            }
+          ]
+        },
+        {
+          "narration": "An Army sergeant, working as a courier for a cartel.",
+          "claim_ids": [
+            "C12"
+          ],
+          "visuals": [
+            {
+              "kind": "reuse",
+              "of": "img_corporal_base",
+              "motion": "pan_left"
+            }
+          ]
+        },
+        {
+          "narration": "Vic, meanwhile, keeps saying he wants out of the drug game. When Lance offers him twenty kilos of cocaine to get started, he turns it down.",
+          "claim_ids": [
+            "C47"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Somber, non-graphic. Two brothers in a cramped apartment; one holds out a heavy taped package, the other, the Corporal from the reference sheet, turns away toward the window."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch04",
+      "summary": "An undercover agent selling information; individuals, not institutions.",
+      "segments": [
+        {
+          "narration": "Then there's Bryan Forbes, an undercover agent who sells the Vance brothers information about drug deals.",
+          "claim_ids": [
+            "C39"
+          ],
+          "visuals": [
+            {
+              "kind": "chapter_card"
+            },
+            {
+              "kind": "illustration",
+              "prompt": "Tense, non-graphic. A man in sunglasses and a cheap suit in a diner booth sliding a folded note across the table."
+            }
+          ]
+        },
+        {
+          "narration": "Forbes's own ID becomes part of the scheme. In The Mugshot Longshot, Lance pastes Martinez's photo onto it, to convince the Mendez brothers that their sergeant is working for the law.",
+          "claim_ids": [
+            "C41"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Investigative, non-graphic. Close-up of a laminated ID card on a desk, a photo being replaced with scissors and glue, no readable text."
+            }
+          ]
+        },
+        {
+          "narration": "An agent selling tips to dealers. A sergeant running cocaine for a cartel.",
+          "claim_ids": [
+            "C39",
+            "C12"
+          ],
+          "visuals": [
+            {
+              "kind": "text_card",
+              "style": "rows",
+              "heading": "1984",
+              "lines": [],
+              "rows": [
+                [
+                  "THE AGENT",
+                  "sells deal information"
+                ],
+                [
+                  "THE SERGEANT",
+                  "moves cartel cocaine"
+                ]
+              ],
+              "motion": "zoom_in",
+              "id": "v_agentcard"
+            }
+          ]
+        },
+        {
+          "narration": "Neither proves the whole Army or the whole police force was corrupt, and the games never say so.",
+          "claim_ids": [
+            "C42"
+          ],
+          "visuals": [
+            {
+              "kind": "reuse",
+              "of": "v_agentcard",
+              "motion": "zoom_out"
+            }
+          ]
+        },
+        {
+          "narration": "But in these cases, the men trusted to stand between Vice City and its drug trade were already part of it.",
+          "claim_ids": [
+            "C42"
+          ],
+          "visuals": [
+            {
+              "kind": "reuse",
+              "of": "img_clockwork",
+              "motion": "pan_right"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch05",
+      "summary": "The Mendez war, Diaz's maneuvering, Last Stand.",
+      "segments": [
+        {
+          "narration": "The Mendez brothers, Armando and Diego, run the 1984 drug trade from a downtown tower also known as the Mendez Foundation building.",
+          "claim_ids": [
+            "C13"
+          ],
+          "visuals": [
+            {
+              "kind": "chapter_card"
+            },
+            {
+              "kind": "illustration",
+              "prompt": "Cold, ominous, non-graphic. Night view of an imposing 1980s downtown skyscraper with a smoked-glass facade and a lit marble lobby; a blank polished brass plaque beside the revolving door; two black limousines idle at the curb.",
+              "id": "img_tower"
+            }
+          ]
+        },
+        {
+          "narration": "A charitable-sounding name on a cartel's headquarters. A small detail, and a telling one.",
+          "claim_ids": [
+            "C13"
+          ],
+          "visuals": [
+            {
+              "kind": "reuse",
+              "of": "img_tower",
+              "motion": "zoom_to:0.45,0.8,0.6"
+            }
+          ]
+        },
+        {
+          "narration": "The brothers use the Vances for a few jobs, then betray them, and Vic goes to war with the cartel.",
+          "claim_ids": [
+            "C15"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Tense, non-graphic. A rain-soaked street at night outside a cartel nightclub, the Corporal from the reference sheet stepping out of a car, neon reflections."
+            }
+          ]
+        },
+        {
+          "narration": "It costs him dearly. Louise, the woman he loves, dies after the Mendez brothers kidnap her, and Armando is killed at the Mendez mansion.",
+          "claim_ids": [
+            "C16",
+            "C50"
+          ],
+          "visuals": [
+            {
+              "kind": "reuse",
+              "of": "img_corporal_hospital",
+              "motion": "zoom_out"
+            }
+          ]
+        },
+        {
+          "narration": "Vic's last backer is a rival drug baron, Ricardo Diaz, who gives him work against the Mendez operation.",
+          "claim_ids": [
+            "C14"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Tense, non-graphic. A flamboyant drug baron's office: gold fixtures, a wall of security monitors, a man's silhouette behind a desk, cigar smoke.",
+              "id": "v_diazoffice"
+            }
+          ]
+        },
+        {
+          "narration": "Diaz is already maneuvering. That same year he blackmails Gonzalez, the right-hand man of a retired colonel, for information on the colonel's drug shipments, as part of his plan to become the city's drug baron.",
+          "claim_ids": [
+            "C49",
+            "C34"
+          ],
+          "visuals": [
+            {
+              "kind": "text_card",
+              "style": "rows",
+              "heading": "DIAZ, 1984",
+              "lines": [],
+              "rows": [
+                [
+                  "BLACKMAILS",
+                  "the colonel's right-hand man"
+                ],
+                [
+                  "WANTS",
+                  "the shipment routes"
+                ],
+                [
+                  "GOAL",
+                  "the city's drug trade"
+                ]
+              ],
+              "motion": "zoom_in"
+            }
+          ]
+        },
+        {
+          "narration": "The final mission, Last Stand, is a job for Diaz. Vic attacks the Mendez building from the air and kills Diego Mendez and Martinez on the roof.",
+          "claim_ids": [
+            "C38",
+            "C14"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Somber, non-graphic. A skyscraper rooftop at sunrise after a storm, a military helicopter silhouette pulling away, scattered papers in the wind."
+            }
+          ]
+        },
+        {
+          "narration": "Then Vic and Lance decide to leave town and lay low.",
+          "claim_ids": [
+            "C32"
+          ],
+          "visuals": [
+            {
+              "kind": "reuse",
+              "of": "img_waterfront",
+              "motion": "zoom_to:0.55,0.7,0.6"
+            }
+          ]
+        },
+        {
+          "narration": "Lance suggests hiding the leftover cocaine and selling it later. Vic's answer is flat: he is not interested.",
+          "claim_ids": [
+            "C65"
+          ],
+          "visuals": [
+            {
+              "kind": "text_card",
+              "style": "stamp",
+              "heading": "\u201cI AM NOT INTERESTED.\u201d",
+              "lines": [
+                "VIC VANCE, 1984"
+              ],
+              "rows": [],
+              "motion": "zoom_in"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch06",
+      "summary": "1986: the colonel, the leak, the ambush.",
+      "segments": [
+        {
+          "narration": "Two years later, Vic is back at a deal table. The games never show how he returned.",
+          "claim_ids": [
+            "C32"
+          ],
+          "visuals": [
+            {
+              "kind": "chapter_card"
+            },
+            {
+              "kind": "reuse",
+              "of": "img_corporal_dock",
+              "motion": "zoom_out"
+            }
+          ]
+        },
+        {
+          "narration": "On the other side of that table is Tommy Vercetti. Sonny Forelli has sent him south to keep him out of Liberty City and to get the family a cut of the drug money.",
+          "claim_ids": [
+            "C19",
+            "C63"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Somber, non-graphic. A dimly lit northern restaurant back room, a heavy man's silhouette at a table pushing a plane ticket forward.",
+              "id": "img_backroom"
+            }
+          ]
+        },
+        {
+          "narration": "According to Tommy's lawyer, Ken Rosenberg, the deal was set up with help from a retired colonel, Juan Garcia Cortez.",
+          "claim_ids": [
+            "C33"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Calm, non-graphic. A luxury yacht moored at a marina at golden hour, an older man in a white jacket on deck seen from far away.",
+              "id": "img_yacht"
+            }
+          ]
+        },
+        {
+          "narration": "The deal is ambushed. Vic and two Forelli men are killed, the money and the cocaine are taken, and Lance escapes.",
+          "claim_ids": [
+            "C20"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Somber, non-graphic. An empty dock at night, an open briefcase on the boards, a helicopter's lights pulling away over the water."
+            }
+          ]
+        },
+        {
+          "narration": "Cortez later tells Tommy who talked: his own right-hand man, Gonzalez, gave away information about the deal. Tommy kills him in Treacherous Swine.",
+          "claim_ids": [
+            "C34"
+          ],
+          "visuals": [
+            {
+              "kind": "reuse",
+              "of": "img_yacht",
+              "motion": "zoom_in"
+            }
+          ]
+        },
+        {
+          "narration": "The game never says who Gonzalez talked to. But two years earlier, Diaz had blackmailed him for information on Cortez's shipments.",
+          "claim_ids": [
+            "C34",
+            "C49"
+          ],
+          "visuals": [
+            {
+              "kind": "text_card",
+              "style": "rows",
+              "heading": "THE LEAK",
+              "lines": [],
+              "rows": [
+                [
+                  "1984",
+                  "Diaz blackmails Gonzalez"
+                ],
+                [
+                  "1986",
+                  "Gonzalez leaks the deal"
+                ],
+                [
+                  "RECIPIENT",
+                  "never named"
+                ]
+              ],
+              "motion": "zoom_in"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch07",
+      "summary": "Tommy takes over Diaz's empire.",
+      "segments": [
+        {
+          "narration": "Tommy goes to work for Diaz. Lance, working alongside him, learns that Diaz's gang carried out the ambush.",
+          "claim_ids": [
+            "C21"
+          ],
+          "visuals": [
+            {
+              "kind": "chapter_card"
+            },
+            {
+              "kind": "reuse",
+              "of": "v_diazoffice",
+              "motion": "zoom_in"
+            }
+          ]
+        },
+        {
+          "narration": "Together they storm Diaz's mansion on Starfish Island and kill him, and Tommy takes the mansion and Diaz's empire.",
+          "claim_ids": [
+            "C22"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Somber, non-graphic. A grand island mansion at night, marble staircase, shattered chandelier light across an empty floor.",
+              "id": "img_mansion"
+            }
+          ]
+        },
+        {
+          "narration": "From there, Tommy rises to become Vice City's major criminal power.",
+          "claim_ids": [
+            "C48"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Somber, non-graphic. A broad-shouldered man in an ivory linen suit standing alone in a huge mansion office, his back to us, looking out over a bay at dawn.",
+              "id": "img_newcomer"
+            }
+          ]
+        },
+        {
+          "narration": "But the mansion and the drug empire he builds on belonged to Diaz first.",
+          "claim_ids": [
+            "C22",
+            "C43"
+          ],
+          "visuals": [
+            {
+              "kind": "reuse",
+              "of": "img_mansion",
+              "motion": "pan_left"
+            }
+          ]
+        },
+        {
+          "narration": "Lance stays at his side, but he starts to feel underappreciated in a rise he helped begin.",
+          "claim_ids": [
+            "C25"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Somber, non-graphic. A man in a white suit and aviator sunglasses leaning alone on a balcony rail at a party, the crowd blurred behind him."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch08",
+      "summary": "Economic corruption in 1986.",
+      "segments": [
+        {
+          "narration": "Drugs weren't the only business in Tommy's Vice City.",
+          "claim_ids": [
+            "C46",
+            "C45"
+          ],
+          "visuals": [
+            {
+              "kind": "chapter_card"
+            },
+            {
+              "kind": "reuse",
+              "of": "img_clockwork",
+              "motion": "pan_left"
+            }
+          ]
+        },
+        {
+          "narration": "Avery Carrington is a real-estate developer who gives Tommy work in a set of optional side missions.",
+          "claim_ids": [
+            "C46"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Calm, non-graphic. An architect's scale model of a waterfront district under a desk lamp, a gold pen and a land deed beside it, no readable text.",
+              "id": "img_model"
+            }
+          ]
+        },
+        {
+          "narration": "In Four Iron, a rival developer won't sell Avery some land, and Tommy kills him on a golf course.",
+          "claim_ids": [
+            "C46"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Tense, non-graphic. An empty golf course at dawn, a single golf cart abandoned on the fairway, a dropped club in the grass."
+            }
+          ]
+        },
+        {
+          "narration": "In Demolition Man, a competing construction site is in Avery's way, and Tommy blows it up.",
+          "claim_ids": [
+            "C46"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Tense, non-graphic. A half-built tower wrapped in scaffolding at dusk, a small remote-control helicopter hovering near an upper floor."
+            }
+          ]
+        },
+        {
+          "narration": "In Two Bit Hit, Avery explains that a gang war will drive property prices down.",
+          "claim_ids": [
+            "C36"
+          ],
+          "visuals": [
+            {
+              "kind": "text_card",
+              "style": "rows",
+              "heading": "AVERY'S PLAN",
+              "lines": [],
+              "rows": [
+                [
+                  "STEP 1",
+                  "start a gang war"
+                ],
+                [
+                  "STEP 2",
+                  "prices fall"
+                ],
+                [
+                  "STEP 3",
+                  "buy cheap"
+                ]
+              ],
+              "motion": "zoom_in"
+            }
+          ]
+        },
+        {
+          "narration": "Tommy dresses as a Cuban gang member and attacks a Haitian funeral, so the two gangs go to war.",
+          "claim_ids": [
+            "C35"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Somber, non-graphic. A funeral parlor exterior in the rain, black umbrellas, a lone figure in borrowed colors watching from across the street."
+            }
+          ]
+        },
+        {
+          "narration": "In Avery's plan, violence is simply a way to move the market.",
+          "claim_ids": [
+            "C36"
+          ],
+          "visuals": [
+            {
+              "kind": "reuse",
+              "of": "img_model",
+              "motion": "zoom_to:0.5,0.5,0.5"
+            }
+          ]
+        },
+        {
+          "narration": "Tommy's own businesses run on similar logic. At the Print Works, the foreman suggests printing money, and Tommy steals a courier's printing plates to start counterfeiting.",
+          "claim_ids": [
+            "C45"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Investigative, non-graphic. Sheets of freshly printed banknotes drying on lines in a dim print shop, no readable text or faces on the notes.",
+              "id": "img_printworks"
+            }
+          ]
+        },
+        {
+          "narration": "And when Congressman Alex Shrub moves to ban pornography to win puritan votes, Tommy, who now owns a film studio, gets incriminating photos of the congressman to stop him.",
+          "claim_ids": [
+            "C44"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Investigative, non-graphic. An envelope of photographs on a polished desk under a green banker's lamp, a lapel pin beside it, no faces visible."
+            }
+          ]
+        },
+        {
+          "narration": "A developer who uses murder to win land. A business that prints its own money. A congressman kept in line with photographs.",
+          "claim_ids": [
+            "C46",
+            "C45",
+            "C44"
+          ],
+          "visuals": [
+            {
+              "kind": "reuse",
+              "of": "img_printworks",
+              "motion": "pan_right"
+            }
+          ]
+        },
+        {
+          "narration": "By 1986, Tommy isn't outside Vice City's system. He's fluent in it.",
+          "claim_ids": [
+            "C48",
+            "C43"
+          ],
+          "visuals": [
+            {
+              "kind": "reuse",
+              "of": "img_newcomer",
+              "motion": "zoom_in"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch09",
+      "summary": "The finale: what is said, and what is only implied.",
+      "segments": [
+        {
+          "narration": "The counterfeit money has one destination: Sonny Forelli, who comes south to collect.",
+          "claim_ids": [
+            "C23",
+            "C45"
+          ],
+          "visuals": [
+            {
+              "kind": "chapter_card"
+            },
+            {
+              "kind": "illustration",
+              "prompt": "Tense, non-graphic. A mansion foyer at night, men in dark coats on a staircase, one older man in front, faces in shadow.",
+              "id": "img_foyer"
+            }
+          ]
+        },
+        {
+          "narration": "Sonny arrives joking about Tommy's old nickname: the Harwood Butcher.",
+          "claim_ids": [
+            "C18",
+            "C24"
+          ],
+          "visuals": [
+            {
+              "kind": "reuse",
+              "of": "img_foyer",
+              "motion": "zoom_in"
+            }
+          ]
+        },
+        {
+          "narration": "Tommy says he was sent to kill one man, and they knew he was coming. Sonny's answer: those fifteen years in prison were his to spend.",
+          "claim_ids": [
+            "C24"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Tense, non-graphic. Two silhouettes facing each other across a long marble floor, a single beam of light between them.",
+              "id": "img_faceoff"
+            }
+          ]
+        },
+        {
+          "narration": "It lands as a confession.",
+          "claim_ids": [
+            "C64"
+          ],
+          "visuals": [
+            {
+              "kind": "reuse",
+              "of": "img_faceoff",
+              "motion": "zoom_to:0.5,0.5,0.6"
+            }
+          ],
+          "pause_after": 1.0
+        },
+        {
+          "narration": "Lance has already switched sides. He tells Sonny about the fake money, and Tommy kills them both.",
+          "claim_ids": [
+            "C23"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Somber, non-graphic. A rooftop at night above the city lights, a broken pair of aviator sunglasses on the ledge."
+            }
+          ]
+        },
+        {
+          "narration": "Lance's explanation for the betrayal is short: this is business.",
+          "claim_ids": [
+            "C23",
+            "C25"
+          ],
+          "visuals": [
+            {
+              "kind": "text_card",
+              "style": "stamp",
+              "heading": "\u201cTHIS IS BUSINESS.\u201d",
+              "lines": [
+                ""
+              ],
+              "rows": [],
+              "motion": "zoom_in"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chapter_id": "ch10",
+      "summary": "Conclusion: the exit and the keys.",
+      "segments": [
+        {
+          "narration": "Two men, two years apart.",
+          "claim_ids": [
+            "C08"
+          ],
+          "visuals": [
+            {
+              "kind": "chapter_card"
+            },
+            {
+              "kind": "illustration",
+              "prompt": "Somber, non-graphic. Split composition: a dark harbor pier at night on the left, a mansion balcony at dawn on the right, the same bay between them.",
+              "id": "img_split"
+            }
+          ]
+        },
+        {
+          "narration": "Vic Vance said he wanted out, and the city brought him back to a deal table where he died.",
+          "claim_ids": [
+            "C47",
+            "C32",
+            "C20"
+          ],
+          "visuals": [
+            {
+              "kind": "reuse",
+              "of": "img_corporal_dock",
+              "motion": "zoom_out"
+            }
+          ]
+        },
+        {
+          "narration": "Tommy Vercetti wanted the top, and he got it.",
+          "claim_ids": [
+            "C48"
+          ],
+          "visuals": [
+            {
+              "kind": "reuse",
+              "of": "img_newcomer",
+              "motion": "zoom_out"
+            }
+          ]
+        },
+        {
+          "narration": "The difference is that Vic kept looking for the exit, and Tommy went looking for the keys.",
+          "claim_ids": [
+            "C47",
+            "C48"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Somber, non-graphic. A man's hand dropping a ring of keys onto a mahogany desk, a second hand reaching for a door handle, both in shadow."
+            }
+          ]
+        },
+        {
+          "narration": "The sergeant, the agent, the cartel and the colonel were all there before Tommy arrived.",
+          "claim_ids": [
+            "C42",
+            "C13",
+            "C49"
+          ],
+          "visuals": [
+            {
+              "kind": "reuse",
+              "of": "v_rows1984",
+              "motion": "zoom_in"
+            }
+          ]
+        },
+        {
+          "narration": "The evidence points one way. Tommy didn't corrupt Vice City. He inherited it.",
+          "claim_ids": [
+            "C43"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Somber, dramatic, non-graphic. An old, generic badge with no insignia or lettering lies cracked on a wet seawall railing in the foreground; behind it, out of focus, the neon-lit 1980s coastal skyline at dusk in magenta and teal.",
+              "id": "img_badge"
+            },
+            {
+              "kind": "text_card",
+              "style": "title",
+              "heading": "UNPLAYED HISTORY",
+              "lines": [
+                "Sources for every claim are in the description."
+              ],
+              "rows": [],
+              "motion": "none",
+              "bg_of": "img_badge"
+            }
+          ],
+          "pause_after": 4.0
+        }
+      ]
+    }
+  ]
+}

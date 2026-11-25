@@ -1,0 +1,44 @@
+{
+  "mode": "gaming-lore",
+  "franchise": "gta",
+  "games": [
+    "gta1",
+    "gtavc",
+    "gtavcs",
+    "gtasa",
+    "gta6",
+    "gta3"
+  ],
+  "continuity": [
+    "2D",
+    "3D",
+    "HD"
+  ],
+  "spoiler_level": "full",
+  "thesis": "Vice City was not corrupted by Tommy Vercetti. He inherited an existing system of corruption and criminal power.",
+  "title": "The Dark History of Vice City Before GTA 6 - 60-second test",
+  "target_minutes": [
+    1,
+    2
+  ],
+  "overrides": {
+    "target_minutes_range": [
+      1,
+      60
+    ],
+    "words_per_minute": 150,
+    "narration_speed": 0.8
+  },
+  "description": "Production test of the opening (review 5). Not for publication.",
+  "reference_prompt": "Character reference sheet on a plain warm-grey background for an original character, 'the Corporal': a man in his late twenties with a tired, decent face, short cropped dark hair and light stubble. Three full-body views side by side (front, three-quarter, profile) wearing a plain olive army field jacket over a white T-shirt, plus a fourth view of the same man in civilian clothes: a pale blue short-sleeved shirt and dark trousers. Two small head studies (worried, resolved). Consistent proportions, clean even lighting, no text labels.",
+  "ambient_asset_id": "ambient_pad",
+  "extra_visuals": [
+    {
+      "id": "thumbnail_bg",
+      "prompt": "Somber, dramatic, non-graphic. Dramatic low-angle composition: an old, generic badge with no insignia or lettering lies cracked on a wet seawall railing in the foreground, sharp focus; behind it, out of focus, a neon-lit 1980s coastal skyline at dusk in magenta and teal, palm silhouettes. Strong rim light on the badge's crack. Large empty area of sky on the left for title text."
+    }
+  ],
+  "owner_decisions": {
+    "2026-11-24 (review 5)": "60-second production test approved in principle by the editorial review; paid generation waits for the owner's explicit authorization ($2 test cap)."
+  }
+}

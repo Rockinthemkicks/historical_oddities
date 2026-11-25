@@ -1,0 +1,35 @@
+{
+  "mode": "gaming-lore",
+  "title": "The Neon Harbor Blackout (SYNTHETIC TEST)",
+  "franchise": "neon-harbor",
+  "franchise_file": "franchise.json",
+  "games": [
+    "nh1",
+    "nh-remake"
+  ],
+  "continuity": [
+    "classic",
+    "remake"
+  ],
+  "documentary_format": "fictional investigative history",
+  "target_minutes": 1,
+  "spoiler_level": "light",
+  "description": "Synthetic fixture: every name, claim and source here is invented for tests.",
+  "overrides": {
+    "target_minutes_range": [
+      0.5,
+      60
+    ],
+    "size": [
+      640,
+      360
+    ],
+    "fps": 15,
+    "captions": {
+      "max_words": 7,
+      "max_chars": 42,
+      "uppercase": false,
+      "font_size": 16
+    }
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "errors": [],
+  "warnings": [
+    {
+      "level": "warning",
+      "where": "dossier",
+      "rule": "open_question",
+      "detail": "The owner can't capture gameplay. Human check option: watch the cutscenes in a published playthrough on YouTube (viewing only, nothing downloaded) and note timestamps for S03 (C24), S05 (C32/C38), S35 (C34), S36 (C35/C36) and the Forbes missions (C40)."
+    },
+    {
+      "level": "warning",
+      "where": "dossier",
+      "rule": "open_question",
+      "detail": "Bryan Forbes's agency: DEA (most wikis), VCPD detective (VCS Fandom page) or FBI (official-site news item, reportedly). Needs the in-game line (C40)."
+    },
+    {
+      "level": "warning",
+      "where": "dossier",
+      "rule": "open_question",
+      "detail": "C13: is there in-game support for the Mendez brothers posing as philanthropists, beyond the \"Mendez Foundation\" building name?"
+    },
+    {
+      "level": "warning",
+      "where": "dossier",
+      "rule": "open_question",
+      "detail": "Possible extra thread: a Vice City hitman reportedly works for an unexplained 'Mr. Black' (gta.wiki 'Ricardo Diaz's Hitmen'). Research before using it."
+    },
+    {
+      "level": "warning",
+      "where": "dossier",
+      "rule": "open_question",
+      "detail": "Rights: decide on gameplay footage. Rockstar's posting policy covers occasional non-commercial use only."
+    }
+  ],
+  "passed": true,
+  "structurally_valid": true,
+  "factually_verified": false,
+  "readiness": {
+    "C01": "corroborated",
+    "C02": "corroborated",
+    "C03": "corroborated",
+    "C04": "corroborated",
+    "C05": "corroborated",
+    "C06": "corroborated",
+    "C07": "corroborated",
+    "C08": "matched",
+    "C09": "matched",
+    "C10": "matched",
+    "C11": "matched",
+    "C12": "matched",
+    "C13": "matched",
+    "C14": "matched",
+    "C15": "matched",
+    "C16": "matched",
+    "C17": "unsupported",
+    "C18": "matched",
+    "C19": "matched",
+    "C20": "matched",
+    "C21": "matched",
+    "C22": "matched",
+    "C23": "matched",
+    "C24": "corroborated",
+    "C25": "matched",
+    "C26": "unsupported",
+    "C27": "unsupported",
+    "C28": "unsupported",
+    "C29": "unsupported",
+    "C30": "unsupported",
+    "C31": "matched",
+    "C32": "corroborated",
+    "C33": "matched",
+    "C34": "corroborated",
+    "C35": "matched",
+    "C36": "matched",
+    "C37": "matched",
+    "C38": "matched",
+    "C39": "corroborated",
+    "C40": "disputed",
+    "C41": "matched",
+    "C42": "corroborated",
+    "C43": "matched",
+    "C44": "corroborated",
+    "C45": "matched",
+    "C46": "matched",
+    "C47": "matched",
+    "C48": "matched",
+    "C49": "matched",
+    "C50": "corroborated",
+    "C51": "corroborated",
+    "C52": "matched",
+    "C53": "corroborated",
+    "C54": "corroborated",
+    "C55": "corroborated",
+    "C56": "corroborated",
+    "C57": "corroborated",
+    "C58": "corroborated",
+    "C59": "matched",
+    "C60": "corroborated",
+    "C61": "matched",
+    "C62": "corroborated",
+    "C63": "corroborated",
+    "C64": "corroborated",
+    "C65": "matched"
+  },
+  "readiness_counts": {
+    "verified": 0,
+    "corroborated": 25,
+    "matched": 33,
+    "unsupported": 6,
+    "disputed": 1
+  },
+  "escalate": [
+    {
+      "claim": "C17",
+      "reason": "no supporting passage matched yet"
+    },
+    {
+      "claim": "C26",
+      "reason": "no supporting passage matched yet"
+    },
+    {
+      "claim": "C27",
+      "reason": "no supporting passage matched yet"
+    },
+    {
+      "claim": "C28",
+      "reason": "no supporting passage matched yet"
+    },
+    {
+      "claim": "C29",
+      "reason": "no supporting passage matched yet"
+    },
+    {
+      "claim": "C36",
+      "reason": "high-risk claim without independent or primary support"
+    },
+    {
+      "claim": "C40",
+      "reason": "evidence conflicts"
+    }
+  ],
+  "stats": {
+    "sources": 104,
+    "claims": 65,
+    "confirmed_canon": 49,
+    "interpretation": 10,
+    "fan_theory": 1,
+    "speculation": 1,
+    "real_world_fact": 4
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "outline": {
+    "chapters": [
+      {
+        "id": "ch01",
+        "title": "Three Dark Days",
+        "purpose": "hook + context",
+        "target_words": 50,
+        "claim_ids": [
+          "C1"
+        ]
+      },
+      {
+        "id": "ch02",
+        "title": "Who Ran the Night",
+        "purpose": "investigation",
+        "target_words": 45,
+        "claim_ids": [
+          "C2",
+          "C3"
+        ]
+      },
+      {
+        "id": "ch03",
+        "title": "Staged?",
+        "purpose": "theories + conclusion",
+        "target_words": 45,
+        "claim_ids": [
+          "C4",
+          "C5"
+        ]
+      }
+    ]
+  },
+  "chapter:ch01": {
+    "chapter_id": "ch01",
+    "summary": "Synthetic summary of ch01.",
+    "segments": [
+      {
+        "narration": "For three days in 1987, the harbor district went completely dark. In the classic game, the blackout is not background noise. It is the event that every later mission keeps circling back to, and the reason the city still distrusts the night.",
+        "claim_ids": [
+          "C1"
+        ],
+        "visuals": [
+          {
+            "kind": "chapter_card"
+          },
+          {
+            "kind": "illustration",
+            "prompt": "Atmospheric documentary illustration of a coastal harbor city at night during a citywide power blackout, dark warehouses, a few lanterns, original unnamed dock workers"
+          }
+        ]
+      },
+      {
+        "narration": "So who gained from the dark?",
+        "claim_ids": [],
+        "visuals": [
+          {
+            "kind": "map",
+            "prompt": "Moody documentary map of an invented coastal harbor district, hand-drawn streets, piers and warehouses, no labels"
+          }
+        ]
+      }
+    ]
+  },
+  "chapter:ch02": {
+    "chapter_id": "ch02",
+    "summary": "Synthetic summary of ch02.",
+    "segments": [
+      {
+        "narration": "The answer starts with the Saltworks Syndicate, the crew that ran the harbor's night shipping. Their records from that week are strangely thin, and the mission dialogue hints at why: with the lights out, nobody was counting crates on the docks.",
+        "claim_ids": [
+          "C2",
+          "C3"
+        ],
+        "visuals": [
+          {
+            "kind": "chapter_card"
+          },
+          {
+            "kind": "evidence_board",
+            "prompt": "Tense documentary evidence board on a dim office wall, pinned shipping papers, red string, photos of anonymous cargo crates, no readable text"
+          }
+        ]
+      }
+    ]
+  },
+  "chapter:ch03": {
+    "chapter_id": "ch03",
+    "summary": "Synthetic summary of ch03.",
+    "segments": [
+      {
+        "narration": "Some players go further. Their theory is that the Syndicate staged the blackout itself, though the game never confirms it and the evidence is thin. The remake might finally settle it, perhaps by showing that week from the Syndicate's side.",
+        "claim_ids": [
+          "C4",
+          "C5"
+        ],
+        "visuals": [
+          {
+            "kind": "chapter_card"
+          },
+          {
+            "kind": "illustration",
+            "prompt": "Suspenseful documentary illustration of an original, unnamed figure in a long coat at a harbor fuse box at night, seen from behind"
+          }
+        ]
+      }
+    ]
+  }
+}

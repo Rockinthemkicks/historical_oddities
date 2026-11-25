@@ -24,6 +24,50 @@ def _chunk_words(words, max_words=3, max_chars=16):
     return chunks
 
 
+PHRASE_END = (",", ".", "?", "!", ";", ":")
+
+
+def _chunk_words_phrased(words, max_words=7, max_chars=42, min_words=2):
+    """Like _chunk_words, but prefers to break after punctuation and never leaves a
+    one-word cue: a short tail is merged into the previous cue (or borrows from it)."""
+    chunks, current, chars = [], [], 0
+    for w in words:
+        current.append(w)
+        chars += len(w["word"]) + 1
+        full = len(current) >= max_words or chars >= max_chars
+        phrase = w["word"].endswith(PHRASE_END) and len(current) >= 3
+        if full or phrase:
+            chunks.append(current)
+            current, chars = [], 0
+    if current:
+        chunks.append(current)
+    fixed = []
+    for c in chunks:
+        if fixed and len(c) < min_words:
+            prev = fixed[-1]
+            if len(prev) + len(c) <= max_words + 2:
+                fixed[-1] = prev + c
+                continue
+            if len(prev) > min_words:
+                fixed[-1], c = prev[:-1], prev[-1:] + c
+        fixed.append(c)
+    return fixed
+
+
+def wrap_balanced(text, max_chars=42, max_lines=2):
+    """Two lines of similar length when one line is too long (no one-word second line)."""
+    words = text.split()
+    if len(text) <= max_chars or len(words) < 2 or max_lines < 2:
+        return [text]
+    best, best_score = None, None
+    for i in range(1, len(words)):
+        a, b = " ".join(words[:i]), " ".join(words[i:])
+        score = abs(len(a) - len(b)) + (100 if min(i, len(words) - i) < 2 else 0)
+        if best_score is None or score < best_score:
+            best, best_score = [a, b], score
+    return best
+
+
 def wrap_lines(text, max_chars=16, max_lines=2):
     """Break text into at most max_lines lines for on-screen display. Returns a list of lines."""
     words = text.split()
@@ -42,7 +86,7 @@ def wrap_lines(text, max_chars=16, max_lines=2):
     return [" ".join(line) for line in lines]
 
 
-def build_caption_cues(scenes):
+def build_caption_cues(scenes, max_words=3, max_chars=16, uppercase=True, max_lines=2, phrased=False):
     """
     scenes: list of dicts, each either:
       {"start": float, "words": [{"word": str, "start": float, "end": float}, ...]}
@@ -60,11 +104,15 @@ def build_caption_cues(scenes):
         scene_start = scene["start"]
 
         if "words" in scene and scene["words"]:
-            for chunk in _chunk_words(scene["words"]):
+            chunker = _chunk_words_phrased if phrased else _chunk_words
+            for chunk in chunker(scene["words"], max_words=max_words, max_chars=max_chars):
                 cue_start = scene_start + chunk[0]["start"]
                 cue_end = scene_start + chunk[-1]["end"]
-                text = " ".join(w["word"] for w in chunk).upper()
-                cues.append({"start": cue_start, "end": cue_end, "lines": wrap_lines(text)})
+                text = " ".join(w["word"] for w in chunk)
+                text = text.upper() if uppercase else text
+                lines = (wrap_balanced(text, max_chars=max_chars, max_lines=max_lines) if phrased
+                         else wrap_lines(text, max_chars=max_chars, max_lines=max_lines))
+                cues.append({"start": cue_start, "end": cue_end, "lines": lines})
         else:
             # Fallback: no word timings, split scene text evenly across its duration.
             text = scene.get("text", "").strip()
@@ -72,7 +120,7 @@ def build_caption_cues(scenes):
             words = text.split()
             if not words or duration <= 0:
                 continue
-            chunks = [words[i:i + 3] for i in range(0, len(words), 3)]
+            chunks = [words[i:i + max_words] for i in range(0, len(words), max_words)]
             per_chunk = duration / len(chunks)
             for i, chunk in enumerate(chunks):
                 cue_start = scene_start + i * per_chunk
@@ -80,7 +128,8 @@ def build_caption_cues(scenes):
                 cues.append({
                     "start": cue_start,
                     "end": cue_end,
-                    "lines": wrap_lines(" ".join(chunk).upper()),
+                    "lines": wrap_lines(" ".join(chunk).upper() if uppercase else " ".join(chunk),
+                                        max_chars=max_chars, max_lines=max_lines),
                 })
 
     return cues

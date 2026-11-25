@@ -1,0 +1,19 @@
+{
+  "mode": "gaming-lore",
+  "description": "Long-form fictional investigative documentaries about game worlds.",
+  "format": "landscape",
+  "motion": "kenburns",
+  "style_file": "config/style_gaming_doc.txt",
+  "words_per_minute": 140,
+  "words_per_minute_range": [130, 150],
+  "target_minutes_range": [20, 60],
+  "seconds_per_visual": 12,
+  "captions": {"max_words": 7, "max_chars": 42, "uppercase": false, "font_size": 44, "phrased": true},
+  "narration_speed": 0.9,
+  "pause_seconds": 0.45,
+  "ambient_gain_db": -8,
+  "loudness": {"integrated_lufs": -14, "true_peak_dbtp": -1.5, "lra": 11},
+  "chapter_cards": true,
+  "script_model": "gpt-5.4",
+  "image_quality": "medium"
+}

@@ -1,0 +1,53 @@
+{
+  "franchise_id": "gta",
+  "name": "Grand Theft Auto",
+  "publisher_policy": {
+    "name": "Rockstar Games: Policy on posting copyrighted Rockstar Games material",
+    "url": "https://support.rockstargames.com/articles/7bNaeoMFTV0iUDGhStTXvz",
+    "summary_for_review": "Allows occasional, NON-COMMERCIAL fan use. Monetized use is outside the policy's stated scope. Spoilers (endings, cutscene compilations, big reveals), isolated cinematics, in-game TV/comedy in isolation and pre-release footage are removed. Re-check before every publication; the policy can change.",
+    "checked": "2026-11-23"
+  },
+  "continuities": {
+    "2D": {
+      "label": "2D universe",
+      "note": "The top-down era. Shares city NAMES with later universes but is a separate continuity."
+    },
+    "3D": {
+      "label": "3D universe",
+      "note": "Its Vice City is a 1980s-set city; separate continuity from the 2D and HD universes."
+    },
+    "HD": {
+      "label": "HD universe",
+      "note": "Its cities are reimaginings, not the same places as their 2D or 3D namesakes. Events and characters do not carry across universes unless a source explicitly says so."
+    }
+  },
+  "games": [
+    {"id": "gta1", "title": "Grand Theft Auto", "continuity": "2D"},
+    {"id": "gta-london-1969", "title": "Grand Theft Auto: London 1969", "continuity": "2D"},
+    {"id": "gta-london-1961", "title": "Grand Theft Auto: London 1961", "continuity": "2D"},
+    {"id": "gta2", "title": "Grand Theft Auto 2", "continuity": "2D"},
+    {"id": "gta3", "title": "Grand Theft Auto III", "continuity": "3D"},
+    {"id": "gtavc", "title": "Grand Theft Auto: Vice City", "continuity": "3D"},
+    {"id": "gtasa", "title": "Grand Theft Auto: San Andreas", "continuity": "3D"},
+    {"id": "gta-advance", "title": "Grand Theft Auto Advance", "continuity": "3D"},
+    {"id": "gtalcs", "title": "Grand Theft Auto: Liberty City Stories", "continuity": "3D"},
+    {"id": "gtavcs", "title": "Grand Theft Auto: Vice City Stories", "continuity": "3D"},
+    {"id": "gta4", "title": "Grand Theft Auto IV", "continuity": "HD"},
+    {"id": "gta4-tlad", "title": "Grand Theft Auto IV: The Lost and Damned", "continuity": "HD"},
+    {"id": "gta4-tbogt", "title": "Grand Theft Auto: The Ballad of Gay Tony", "continuity": "HD"},
+    {"id": "gtactw", "title": "Grand Theft Auto: Chinatown Wars", "continuity": "HD"},
+    {"id": "gta5", "title": "Grand Theft Auto V", "continuity": "HD"},
+    {"id": "gtao", "title": "Grand Theft Auto Online", "continuity": "HD"},
+    {"id": "gta6", "title": "Grand Theft Auto VI", "continuity": "HD"}
+  ],
+  "release_info": {
+    "policy": "Release dates and platforms are NOT stored here. Verify them against an official Rockstar or Take-Two source at research time and record that source in the dossier.",
+    "verify_url": "https://www.rockstargames.com/games"
+  },
+  "protected_terms": [
+    "Grand Theft Auto", "GTA", "Rockstar", "Take-Two",
+    "Tommy Vercetti", "Vercetti", "Lance Vance", "Ricardo Diaz", "Sonny Forelli", "Ken Rosenberg",
+    "Victor Vance", "Claude Speed", "Niko Bellic", "Carl Johnson", "Franklin Clinton",
+    "Michael De Santa", "Trevor Philips", "Jason Duval", "Lucia Caminos"
+  ]
+}

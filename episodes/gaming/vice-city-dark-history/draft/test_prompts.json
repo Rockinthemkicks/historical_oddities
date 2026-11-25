@@ -1,0 +1,35 @@
+{
+  "status": "PROPOSED - not generated. Each prompt gets config/style_gaming_doc.txt prepended. gpt-image-2, medium, 1536x1024.",
+  "prompts": [
+    {
+      "id": "T1",
+      "use": "Opening beats 1-3 and thumbnail background",
+      "prompt": "Calm, atmospheric, non-graphic. Wide establishing view of a fictional 1980s subtropical coastal city at dusk: pastel art-deco hotels along a beachfront boulevard, palm silhouettes, the first neon signs flickering on in pink and teal, a lone speedboat wake crossing the calm bay toward the shore. Quiet, expectant mood. Signs are abstract glowing shapes with no letters."
+    },
+    {
+      "id": "T2",
+      "use": "Thumbnail concept (text 'BUILT ON CRIME' added later in layout, not in the image)",
+      "prompt": "Somber, dramatic, non-graphic. Dramatic low-angle composition: an old, generic police-style badge with no insignia or lettering lies cracked on a wet seawall railing in the foreground, sharp focus; behind it, out of focus, a neon-lit 1980s coastal skyline at dusk in magenta and teal. Strong rim light on the badge's crack. Large empty area of sky on the left for title text."
+    },
+    {
+      "id": "T3",
+      "use": "Character reference sheet: 'The Corporal' (original design, used for every Vic-era scene)",
+      "prompt": "Neutral, clean reference style, non-graphic. Character reference sheet on a plain warm-grey background for an original character, 'the Corporal': a man in his late twenties with a tired, decent face, short cropped dark hair and light stubble, wearing a plain olive army field jacket over a white T-shirt, dog tags. Three views side by side: front, three-quarter and profile, plus two small expression studies (worried, resolved). Consistent proportions, clean even lighting, no text labels."
+    },
+    {
+      "id": "T4",
+      "use": "Character reference sheet: 'The Newcomer' (original design for the 1986 protagonist role)",
+      "prompt": "Neutral, clean reference style, non-graphic. Character reference sheet on a plain warm-grey background for an original character, 'the Newcomer': a broad-shouldered man around forty with slicked-back dark hair, a hard jaw and watchful eyes, wearing a ivory linen suit over a dark open-collared shirt, gold wristwatch. Three views side by side: front, three-quarter and profile, plus two small expression studies (calculating, furious). Consistent proportions, clean even lighting, no text labels."
+    },
+    {
+      "id": "T5",
+      "use": "Thesis visual, opening beat 12-13 and conclusion callback",
+      "prompt": "Somber, investigative, non-graphic. Surreal editorial illustration: an enormous brass clockwork mechanism whose gears are built from miniature city blocks, palm trees, hotel towers and neon tubes, glowing softly at dusk. At its center sits a single empty leather executive chair under a spotlight, waiting. Wide composition, deep perspective, investigative documentary tone."
+    },
+    {
+      "id": "T6",
+      "use": "Chapter 5 environment: the cartel tower",
+      "prompt": "Cold, ominous, non-graphic. Night view of an imposing 1980s downtown skyscraper with a smoked-glass facade and a lit marble lobby. At street level, a blank polished brass plaque beside the revolving door; two black limousines idle at the curb with their headlights on. Wet pavement reflections, cold blue and gold palette, sense of quiet power."
+    }
+  ]
+}
