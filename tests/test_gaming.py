@@ -458,3 +458,46 @@ def test_regenerated_assets_missing_on_disk_do_not_block(tmp_path):
     card.unlink()
     rep = provenance.check(str(tmp_path), m, [])
     assert not rep["errors"]
+
+
+# ---------- production test revisions (review 6) ----------
+
+def test_weighted_segments_sum_to_frames_and_default_is_even():
+    from modules.render import segment_frames
+    assert segment_frames([{"path": "a"}, {"path": "b"}, {"path": "c"}], 10) == [4, 3, 3]
+    w = segment_frames([{"weight": 1}, {"weight": 3}], 100)
+    assert w == [25, 75] and sum(w) == 100
+
+
+def test_phrased_captions_leave_no_one_word_cues():
+    from modules.captions import build_caption_cues
+    text = "Behind the neon and the oceanfront mansions, a corrupt sergeant, rival drug lords and an undercover agent working both sides had been shaping the city since at least 1984."
+    words = [{"word": w, "start": i * 0.3, "end": i * 0.3 + 0.25} for i, w in enumerate(text.split())]
+    cues = build_caption_cues([{"start": 0, "words": words}], max_words=7, max_chars=42, uppercase=False, phrased=True)
+    assert all(len(" ".join(c["lines"]).split()) >= 2 for c in cues)
+    assert all(min(len(l.split()) for l in c["lines"]) >= 2 for c in cues if len(c["lines"]) > 1)
+    # original behaviour unchanged when not asked for
+    old = build_caption_cues([{"start": 0, "words": words}], max_words=3, max_chars=16)
+    assert old and all(len(" ".join(c["lines"]).split()) <= 3 for c in old)
+
+
+def test_reveal_steps_follow_cue_words():
+    from modules.gaming.packaging import reveal_steps
+    from modules.gaming.pipeline import _reveal_segments
+    card = {"rows": [["THE SERGEANT", "x", "sergeant"], ["THE AGENT", "y", "agent"]]}
+    steps = [{"path": f"s{k}.png"} for k in range(len(reveal_steps(card)))]
+    assert len(steps) == 3
+    words = [{"word": w, "start": float(i), "end": i + 0.9} for i, w in enumerate("a corrupt sergeant, and an agent".split())]
+    segs = _reveal_segments(steps, card, {"words": words}, 8.0)
+    assert [round(s["weight"], 2) for s in segs] == [2.0, 3.0, 3.0]
+
+
+def test_scene_pause_after_is_carried_into_script():
+    from modules.gaming.script_engine import assemble_script
+    prod = {"title": "t"}
+    outline = {"chapters": [{"id": "ch01", "title": "A"}]}
+    chapters = [{"chapter_id": "ch01", "segments": [
+        {"narration": "One.", "claim_ids": [], "visuals": [{"kind": "chapter_card"}], "pause_after": 1.3},
+        {"narration": "Two.", "claim_ids": [], "visuals": [{"kind": "chapter_card"}]}]}]
+    sc = assemble_script(prod, outline, chapters)["scenes"]
+    assert sc[0]["pause_after"] == 1.3 and "pause_after" not in sc[1]

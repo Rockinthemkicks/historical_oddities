@@ -38,7 +38,7 @@ from . import provenance, workflow
 from .config import ConfigError, load_production, word_budget
 from .dryrun import synthetic_image, synthetic_narration
 from .llm import FixtureLLM, LLMError, OpenAIText
-from .packaging import build_package, chapter_card, text_card, chapter_markers, validate_youtube_chapters
+from .packaging import build_package, chapter_card, text_card, reveal_steps, chapter_markers, validate_youtube_chapters
 from .research import dossier_markdown, validate_dossier
 from .script_engine import (script_estimate, GENERATED_KINDS, assemble_script, chapter_path, outline_prompts,
                             plan_estimate, validate_outline, write_chapters)
@@ -279,7 +279,8 @@ def _estimate(prod, script, args):
     iplan = images_mod.plan_images(pseudo, os.path.join(prod["_dir"], "out", "images"), prompts,
                                    use_reference=True, quality=quality, style=style, **_reference(prod)) if gen else \
         {"to_generate": [], "existing": [], "estimate_usd": 0.0}
-    nplan = narration_mod.plan_narration(_tts_scenes(script), os.path.join(prod["_dir"], "out", "audio"), voice)
+    nplan = narration_mod.plan_narration(_tts_scenes(script), os.path.join(prod["_dir"], "out", "audio"), voice,
+                                         speed=s.get("narration_speed", 1.0))
     total = iplan["estimate_usd"] + nplan["estimate_usd"]
     words = sum(len(sc["narration"].split()) for sc in script["scenes"])
     est = {
@@ -312,6 +313,79 @@ def _reference(prod):
     if ref_img:
         ref_img = os.path.join(prod["_dir"], ref_img)
     return {"reference_prompt": prod.get("reference_prompt"), "reference_image": ref_img}
+
+
+def _card_bg(script, card, files):
+    """Background for a text card: 'bg_of' (a visual id), else the most recent illustration
+    before it in the script ('bg': 'none' for plain black)."""
+    if card.get("bg") == "none":
+        return None
+    by_id = {v["id"]: v for sc in script["scenes"] for v in sc.get("visuals", [])}
+
+    def path_of(vid):
+        v = by_id.get(vid)
+        while v is not None and v["kind"] == "reuse":
+            vid, v = v["of"], by_id.get(v["of"])
+        f = files.get(vid)
+        return (f["path"] if isinstance(f, dict) else f) if f and not (isinstance(f, dict) and "reveal" in f) else None
+
+    if card.get("bg_of"):
+        return path_of(card["bg_of"])
+    prev = None
+    for sc in script["scenes"]:
+        for v in sc.get("visuals", []):
+            if v["id"] == card["id"]:
+                return path_of(prev) if prev else None
+            if v["kind"] in GENERATED_KINDS or v["kind"] == "reuse":
+                prev = v["id"]
+    return None
+
+
+def _norm(w):
+    return "".join(ch for ch in w.lower() if ch.isalnum())
+
+
+def _reveal_segments(steps, card, nar, scene_dur):
+    """Times each reveal step to the narration: step k appears when the cue word of row/line k
+    is spoken (third item of a row, or 'cues': [...]); without cues, steps split evenly."""
+    items = card.get("rows") or card.get("lines") or []
+    cues = card.get("cues") or [(r[2] if isinstance(r, (list, tuple)) and len(r) > 2 else None) for r in items]
+    words = nar.get("words") or []
+    times, wi = [], 0
+    for cue in cues:
+        t_ = None
+        if cue:
+            for j in range(wi, len(words)):
+                if _norm(cue) in _norm(words[j]["word"]):
+                    t_, wi = words[j]["start"], j + 1
+                    break
+        times.append(t_)
+    if not words or any(x is None for x in times):
+        return [dict(s_) for s_ in steps]
+    bounds = [0.0] + [max(0.0, x) for x in times] + [scene_dur]
+    out = []
+    for k, st in enumerate(steps):
+        out.append({**st, "weight": max(bounds[k + 1] - bounds[k], 0.05)})
+    return out
+
+
+def _loudness_report(video, settings):
+    from ..render import measure_loudness
+    try:
+        m = measure_loudness(video)
+    except Exception as e:                       # measurement is informational; never fail the render
+        return {"error": str(e)}
+    target = settings.get("loudness") or {}
+    return {**{k: (round(v, 2) if v != float("-inf") else None) for k, v in m.items()}, "target": target}
+
+
+def _pacing_report(script, nar, total):
+    words = sum(len(sc["narration"].split()) for sc in script["scenes"])
+    speech = sum(nar[sc["scene_number"]]["duration"] for sc in script["scenes"])
+    return {"words": words, "video_seconds": round(total, 2), "speech_seconds": round(speech, 2),
+            "words_per_minute_speech": round(words / speech * 60, 1) if speech else None,
+            "words_per_minute_overall": round(words / total * 60, 1) if total else None,
+            "scenes": len(script["scenes"])}
 
 
 def _extra_visuals(prod):
@@ -371,7 +445,8 @@ def cmd_produce(prod, args):
         nar = synthetic_narration(tts_scenes, os.path.join(out, "audio"), wpm=wpm)
     else:
         nar = narration_mod.generate_all_narration(tts_scenes, os.path.join(out, "audio"),
-                                                   voice_id=prod.get("voice_id"), ledger=ledger)
+                                                   voice_id=prod.get("voice_id"), ledger=ledger,
+                                                   speed=s.get("narration_speed", 1.0))
     nar = {n["scene_number"]: n for n in nar}
 
     # ---- visuals ----
@@ -407,8 +482,16 @@ def cmd_produce(prod, args):
                 provenance.register(prod["_dir"], manifest, v["id"], path, "chapter_card",
                                     "made locally by the pipeline", "generated", "chapter title card")
             elif v["kind"] == "text_card":
-                path = text_card(v, os.path.join(out, "cards", f"{v['id']}.png"), size=_size_fps(prod)[0])
-                files[v["id"]] = {"path": path, "motion": v.get("motion", "zoom_in")}
+                spec = {**v, "_bg_path": _card_bg(script, v, files)}
+                size_ = _size_fps(prod)[0]
+                if v.get("reveal"):
+                    paths = [text_card(st, os.path.join(out, "cards", f"{v['id']}_{k}.png"), size=size_)
+                             for k, st in enumerate(reveal_steps(spec))]
+                    files[v["id"]] = {"reveal": [{"path": p_, "motion": "none"} for p_ in paths]}
+                    path = paths[-1]
+                else:
+                    path = text_card(spec, os.path.join(out, "cards", f"{v['id']}.png"), size=size_)
+                    files[v["id"]] = {"path": path, "motion": v.get("motion", "zoom_in")}
                 provenance.register(prod["_dir"], manifest, v["id"], path, "chapter_card",
                                     "made locally by the pipeline", "generated", "documentary typography")
             elif v["kind"] == "user_asset":
@@ -431,17 +514,35 @@ def cmd_produce(prod, args):
     # ---- assembly ----
     print("[7] Assembly")
     pause = s.get("pause_seconds", 0.35)
-    silence = os.path.join(out, "audio", "pause.mp3")
     from ..assemble import generate_silence
-    generate_silence(pause, silence)
+    silences = {}
+
+    def silence_for(sec):
+        key = round(sec, 2)
+        if key not in silences:
+            silences[key] = generate_silence(key, os.path.join(out, "audio", f"pause_{key:.2f}.mp3")) or \
+                os.path.join(out, "audio", f"pause_{key:.2f}.mp3")
+        return silences[key]
+
     audio_list, specs, cap_scenes, t = [], [], [], 0.0
+    last = len(script["scenes"]) - 1
     for i, sc in enumerate(script["scenes"]):
         n = nar[sc["scene_number"]]
-        dur = n["duration"] + (pause if i < len(script["scenes"]) - 1 else 0)
+        # pause after this scene: a scene's own 'pause_after' (dramatic pause, title hold) or the default
+        gap = sc.get("pause_after", pause if i < last else 0)
+        dur = n["duration"] + gap
         audio_list.append(n["audio_path"])
-        if i < len(script["scenes"]) - 1:
-            audio_list.append(silence)
-        segs = [files[v["id"]] for v in sc.get("visuals", []) if v["id"] in files]
+        if gap > 0:
+            audio_list.append(silence_for(gap))
+        segs = []
+        for v in sc.get("visuals", []):
+            f = files.get(v["id"])
+            if f is None:
+                continue
+            if isinstance(f, dict) and "reveal" in f:
+                segs += _reveal_segments(f["reveal"], v, n, dur)
+            else:
+                segs.append(f)
         if not segs:
             raise SystemExit(f"scene {sc['scene_number']} has no usable visual")
         specs.append({"image_paths": segs, "duration": dur})
@@ -451,7 +552,8 @@ def cmd_produce(prod, args):
     concat_audio(audio_list, full_audio)
     cap_cfg = s.get("captions", {})
     cues = build_caption_cues(cap_scenes, max_words=cap_cfg.get("max_words", 7),
-                              max_chars=cap_cfg.get("max_chars", 42), uppercase=cap_cfg.get("uppercase", False))
+                              max_chars=cap_cfg.get("max_chars", 42), uppercase=cap_cfg.get("uppercase", False),
+                              phrased=cap_cfg.get("phrased", True))
     caps = render_all_captions(cues, os.path.join(out, "captions"), font_size=cap_cfg.get("font_size", 44))
     ambient = None
     bed = s.get("ambient_asset_id") or prod.get("ambient_asset_id")
@@ -464,7 +566,7 @@ def cmd_produce(prod, args):
     size, fps = _size_fps(prod)
     res = render_episode(specs, full_audio, caps, video, os.path.join(out, "render_cache"), size=size,
                          fps=fps, motion=s.get("motion", "kenburns"), bottom_margin_frac=-0.06,
-                         ambient=ambient)
+                         ambient=ambient, loudness=s.get("loudness"))
     print(f"      {len(res['rendered'])} scene clip(s) rendered, {len(res['reused'])} reused")
     total = res["scene_ends"][-1]
     markers = chapter_markers(script, res["scene_starts"], total)
@@ -473,7 +575,9 @@ def cmd_produce(prod, args):
     chapter_problems = validate_youtube_chapters(markers)
     report = {"dry_run": args.dry_run, "video": os.path.relpath(video, prod["_dir"]),
               "duration_seconds": total, "chapters": markers, "chapter_problems": chapter_problems,
-              "qc": qc, "spent_this_run_usd": round(ledger.run_spent, 4)}
+              "qc": qc, "spent_this_run_usd": round(ledger.run_spent, 4),
+              "loudness": _loudness_report(video, s),
+              "pacing": _pacing_report(script, nar, total)}
     _write(prod, "out/qc_report.json", report)
     _write(prod, "out/chapters.json", markers)
     for p in chapter_problems:

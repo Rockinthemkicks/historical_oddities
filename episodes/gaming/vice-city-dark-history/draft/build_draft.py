@@ -62,12 +62,14 @@ CHAPTERS = [
    [reuse("img_clockwork", "zoom_to:0.5,0.55,0.5")]),
   ("Behind the neon and the oceanfront mansions, a corrupt sergeant, rival drug lords and an undercover agent working both sides "
    "had been shaping the city since at least 1984.", ["C11", "C13", "C14", "C39", "C49"],
-   [card("rows", "VICE CITY, 1984", rows=[["THE SERGEANT", "running drugs for a cartel"], ["THE CARTEL", "the Mendez brothers"],
-                                         ["THE RIVAL", "drug baron Ricardo Diaz"], ["THE AGENT", "selling deal information"]])]),
-  ("Tommy didn't invent the system.", ["C43"], [reuse("img_clockwork", "zoom_to:0.5,0.6,0.9")]),
+   [dict(card("rows", "VICE CITY, 1984", rows=[["THE SERGEANT", "running drugs for a cartel", "sergeant"],
+                                              ["THE DRUG LORDS", "the Mendez brothers, Ricardo Diaz", "drug"],
+                                              ["THE AGENT", "selling deal information", "agent"]], motion="none"),
+         reveal=True)]),
+  ("Tommy didn't invent the system.", ["C43"], [reuse("img_clockwork", "zoom_to:0.5,0.6,0.9")], {"pause_after": 1.3}),
   ("He inherited it.", ["C43"],
    [card("title", "THE DARK HISTORY OF VICE CITY", ["Before GTA 6"], motion="zoom_in",
-         note="Illustrations are original artwork, not game footage.")]),
+         note="Illustrations are original artwork, not game footage.")], {"pause_after": 3.0}),
  ]),
  ("ch02", "Which Vice City?", "Continuity in about 20-30 seconds.", 60, [
   ("First, which Vice City is this?", ["C51", "C52"],
@@ -216,7 +218,8 @@ def build():
     chapters, results, earlier = [], [], []
     for (cid, t, p, tw, segs), och in zip(CHAPTERS, outline["chapters"]):
         ch = {"chapter_id": cid, "summary": p,
-              "segments": [{"narration": n, "claim_ids": ids, "visuals": v} for n, ids, v in segs]}
+              "segments": [{"narration": sg[0], "claim_ids": sg[1], "visuals": sg[2], **(sg[3] if len(sg) > 3 else {})}
+                           for sg in segs]}
         r = validate_chapter(ch, och, dossier, earlier)
         results.append({"chapter": cid, **r})
         earlier.append(ch)

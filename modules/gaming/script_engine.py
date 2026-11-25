@@ -304,7 +304,8 @@ def assemble_script(production, outline, chapters):
                 visuals.append({"id": f"v{v:03d}", **vis})
             scenes.append({"scene_number": n, "narration": seg["narration"], "image_prompt": "",
                            "chapter": ch["chapter_id"], "chapter_title": titles.get(ch["chapter_id"], ""),
-                           "claim_ids": seg.get("claim_ids", []), "visuals": visuals})
+                           "claim_ids": seg.get("claim_ids", []), "visuals": visuals,
+                           **({"pause_after": seg["pause_after"]} if seg.get("pause_after") is not None else {})})
     return {"title": production["title"], "mode": "gaming-lore", "scenes": scenes}
 
 

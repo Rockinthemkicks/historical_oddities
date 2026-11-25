@@ -51,9 +51,30 @@ def as_segment(seg):
     if isinstance(seg, dict):
         path = seg["path"]
         kind = seg.get("type") or ("video" if path.lower().endswith(VIDEO_EXTS) else "image")
-        return {"path": path, "type": kind, "motion": seg.get("motion")}
+        out = {"path": path, "type": kind, "motion": seg.get("motion")}
+        if seg.get("weight") is not None:
+            out["weight"] = float(seg["weight"])
+        return out
     kind = "video" if str(seg).lower().endswith(VIDEO_EXTS) else "image"
     return {"path": seg, "type": kind, "motion": None}
+
+
+def segment_frames(segments, frames):
+    """Frames per segment: even split (original behavior) unless segments carry a 'weight'
+    (e.g. a text reveal timed to the narrator's words). Always sums exactly to `frames`."""
+    n = len(segments)
+    weights = [s.get("weight") for s in segments]
+    if all(w is None for w in weights):
+        return [frames // n + (1 if i < frames % n else 0) for i in range(n)]
+    weights = [max(float(w if w is not None else 1.0), 1e-3) for w in weights]
+    total, out, cum, prev = sum(weights), [], 0.0, 0
+    for w in weights:
+        cum += w
+        end = int(round(cum / total * frames))
+        out.append(max(end - prev, 1))
+        prev = end
+    out[-1] += frames - sum(out)
+    return out
 
 
 def _segment_motion(seg, index, mode):
@@ -155,7 +176,7 @@ def render_scene_clip(segments, frames, out_path, size, fps, motion_index, motio
     box_w, box_h, pad_y = _box(size, image_aspect)
     segments = [as_segment(x) for x in segments]
     n = len(segments)
-    seg_frames = [frames // n + (1 if i < frames % n else 0) for i in range(n)]
+    seg_frames = segment_frames(segments, frames)
 
     inputs, filters = [], []
     for i, seg in enumerate(segments):
@@ -203,6 +224,35 @@ def render_scene_clip(segments, frames, out_path, size, fps, motion_index, motio
     return out_path
 
 
+def measure_loudness(path):
+    """Integrated loudness (LUFS), true peak (dBTP) and loudness range of a file's audio (EBU R128)."""
+    import subprocess
+    r = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", path, "-af",
+                        "loudnorm=print_format=json", "-f", "null", "-"], capture_output=True, text=True)
+    txt = r.stderr[r.stderr.rfind("{"):r.stderr.rfind("}") + 1]
+    d = json.loads(txt)
+    f = lambda k: float(d[k]) if d[k] not in ("-inf", "inf") else float("-inf")
+    return {"integrated_lufs": f("input_i"), "true_peak_dbtp": f("input_tp"),
+            "lra": f("input_lra"), "threshold": f("input_thresh")}
+
+
+def normalize_loudness(path, target):
+    """Two-pass linear loudness normalization of the audio track (video is copied untouched).
+    target: {"integrated_lufs": -14, "true_peak_dbtp": -1.5, "lra": 11}."""
+    m = measure_loudness(path)
+    if not (m["integrated_lufs"] > -70):     # silent or near-silent (e.g. a dry run): nothing to normalize
+        return m
+    i, tp, lra = target.get("integrated_lufs", -14), target.get("true_peak_dbtp", -1.5), target.get("lra", 11)
+    af = (f"loudnorm=I={i}:TP={tp}:LRA={lra}:measured_I={m['integrated_lufs']}:measured_TP={m['true_peak_dbtp']}:"
+          f"measured_LRA={m['lra']}:measured_thresh={m['threshold']}:linear=true,aresample=48000")
+    tmp = path + ".norm.mp4"
+    run_ffmpeg(["-i", path, "-map", "0:v", "-map", "0:a", "-c:v", "copy", "-af", af,
+                "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", tmp],
+               description="normalize loudness")
+    os.replace(tmp, path)
+    return measure_loudness(path)
+
+
 def _clip_key(segments, frames, size, fps, motion_index, motion_mode, captions, title_image,
               bottom_margin_frac, image_aspect, crf, preset):
     payload = {
@@ -210,6 +260,7 @@ def _clip_key(segments, frames, size, fps, motion_index, motion_mode, captions, 
         "motions": [_segment_motion(as_segment(x), motion_index + i, motion_mode)
                     for i, x in enumerate(segments)],
         "images": [[as_segment(x)["type"], _sha_file(as_segment(x)["path"])] for x in segments],
+        "weights": [as_segment(x).get("weight") for x in segments],
         "captions": [[round(c["start"], 3), round(c["end"], 3), _sha_file(c["path"])]
                      for c in (captions or [])],
         "title": _sha_file(title_image["path"]) if title_image else None,
@@ -232,7 +283,7 @@ def split_captions(caption_images, scene_starts, scene_ends):
 
 def render_episode(scenes, audio_path, caption_images, out_path, cache_dir, size=(1080, 1920),
                    fps=30, title_image=None, bottom_margin_frac=0.18, motion="none",
-                   image_aspect=(16, 9), crf=20, preset="veryfast", ambient=None):
+                   image_aspect=(16, 9), crf=20, preset="veryfast", ambient=None, loudness=None):
     """
     scenes: list of {"image_paths": [...], "duration": seconds} in order
         (image_paths entries may also be video clips, see as_segment()).
@@ -297,5 +348,7 @@ def render_episode(scenes, audio_path, caption_images, out_path, cache_dir, size
     finally:
         os.unlink(list_path)
     os.replace(tmp, out_path)
+    if loudness:
+        normalize_loudness(out_path, loudness)
     return {"path": out_path, "rendered": rendered, "reused": reused,
             "scene_starts": starts, "scene_ends": ends, "fps": fps}

@@ -30,14 +30,38 @@ def chapter_card(number, title, out_path, size=(1920, 1080)):
     return out_path
 
 
+def _card_background(bg_path, size):
+    """Plain near-black, or a blurred and darkened version of an illustration (so typography
+    sits inside the film's world instead of on a slide)."""
+    from PIL import ImageEnhance, ImageFilter
+    w, h = size
+    if not bg_path or not os.path.exists(bg_path):
+        return Image.new("RGB", size, (12, 13, 18))
+    bg = Image.open(bg_path).convert("RGB")
+    sc = max(w / bg.width, h / bg.height)
+    bg = bg.resize((int(bg.width * sc) + 1, int(bg.height * sc) + 1))
+    left, top = (bg.width - w) // 2, (bg.height - h) // 2
+    bg = bg.crop((left, top, left + w, top + h)).filter(ImageFilter.GaussianBlur(w * 0.012))
+    bg = ImageEnhance.Brightness(bg).enhance(0.58)
+    shade = Image.linear_gradient("L").rotate(90, expand=True).resize(size)   # darker on the left
+    return Image.composite(Image.new("RGB", size, (6, 6, 10)), bg, shade.point(lambda v: int(v * 0.5)))
+
+
+def reveal_steps(spec):
+    """A progressive reveal: the card with 0..N rows (or lines) shown, in order."""
+    key = "rows" if spec.get("rows") else "lines"
+    items = spec.get(key, [])
+    return [{**spec, key: items[:k]} for k in range(0, len(items) + 1)]
+
+
 def text_card(spec, out_path, size=(1920, 1080)):
     """Documentary typography made locally (no paid call). spec:
       {"style": "title"|"stamp"|"rows", "heading": str, "lines": [str], "rows": [[label, text], ...],
        "note": small grey footnote (e.g. an illustration disclosure)}"""
     w, h = size
-    img = Image.new("RGB", size, (12, 13, 18))
+    img = _card_background(spec.get("_bg_path"), size)
     draw = ImageDraw.Draw(img)
-    gold, white, grey = (214, 170, 80), (238, 236, 230), (140, 140, 150)
+    gold, white, grey = (214, 170, 80), (238, 236, 230), (170, 170, 180)
     style = spec.get("style", "title")
     if style == "stamp":
         font = _load_font(int(h * 0.16))
@@ -55,7 +79,8 @@ def text_card(spec, out_path, size=(1920, 1080)):
         rows = spec.get("rows", [])[:5]
         col = w * 0.08 + max([draw.textlength(r[0], font=lab) for r in rows] or [0]) + w * 0.03
         y = h * 0.30
-        for label, text in rows:
+        for row in rows:
+            label, text = row[0], row[1]
             draw.text((w * 0.08, y), label, font=lab, fill=white)
             draw.rectangle([col, y + h * 0.012, col + w * 0.004, y + h * 0.065], fill=gold)
             draw.text((col + w * 0.025, y + h * 0.012), text, font=txt, fill=(205, 205, 210))

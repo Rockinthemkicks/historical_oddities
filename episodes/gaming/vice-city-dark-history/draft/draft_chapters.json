@@ -149,22 +149,22 @@
               "rows": [
                 [
                   "THE SERGEANT",
-                  "running drugs for a cartel"
+                  "running drugs for a cartel",
+                  "sergeant"
                 ],
                 [
-                  "THE CARTEL",
-                  "the Mendez brothers"
-                ],
-                [
-                  "THE RIVAL",
-                  "drug baron Ricardo Diaz"
+                  "THE DRUG LORDS",
+                  "the Mendez brothers, Ricardo Diaz",
+                  "drug"
                 ],
                 [
                   "THE AGENT",
-                  "selling deal information"
+                  "selling deal information",
+                  "agent"
                 ]
               ],
-              "motion": "zoom_in",
+              "motion": "none",
+              "reveal": true,
               "id": "v_rows1984"
             }
           ]
@@ -180,7 +180,8 @@
               "of": "img_clockwork",
               "motion": "zoom_to:0.5,0.6,0.9"
             }
-          ]
+          ],
+          "pause_after": 1.3
         },
         {
           "narration": "He inherited it.",
@@ -199,7 +200,8 @@
               "motion": "zoom_in",
               "note": "Illustrations are original artwork, not game footage."
             }
-          ]
+          ],
+          "pause_after": 3.0
         }
       ]
     },
