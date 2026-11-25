@@ -36,5 +36,12 @@
     "2026-11-24 (review 4)": "Concept approved for draft script development. Title 'The Dark History of Vice City Before GTA 6'; thumbnail: neon skyline with cracked badge, text 'BUILT ON CRIME'. Illustration-only. Pilot ceiling $15 proposed, pending owner authorization. Final script and paid production not approved.",
     "2026-11-25 (review 6/7)": "Runtime target 10-12 minutes (ChatGPT review 6: expand through verified research, no filler). Narration at 0.9 speed measured about 158 wpm in the 60-second test. Expansion proposed in REVIEW7_PACKAGE.md; not yet approved."
   },
-  "thesis": "Vice City was not corrupted by Tommy Vercetti. He inherited an existing system of corruption and criminal power."
+  "thesis": "Vice City was not corrupted by Tommy Vercetti. He inherited an existing system of corruption and criminal power.",
+  "reference_prompt": "Character reference sheet on a plain warm-grey background for an original character, 'the Corporal': a man in his late twenties with a tired, decent face, short cropped dark hair and light stubble. Three full-body views side by side (front, three-quarter, profile) wearing a plain olive army field jacket over a white T-shirt, plus a fourth view of the same man in civilian clothes: a pale blue short-sleeved shirt and dark trousers. Two small head studies (worried, resolved). Consistent proportions, clean even lighting, no text labels.",
+  "extra_visuals": [
+    {
+      "id": "thumbnail_bg",
+      "prompt": "Somber, dramatic, non-graphic. Dramatic low-angle composition: an old, generic badge with no insignia or lettering lies cracked on a wet seawall railing in the foreground, sharp focus; behind it, out of focus, a neon-lit 1980s coastal skyline at dusk in magenta and teal, palm silhouettes. Strong rim light on the badge's crack. Large empty area of sky on the left for title text."
+    }
+  ]
 }

@@ -26,7 +26,8 @@
       1,
       60
     ],
-    "words_per_minute": 150
+    "words_per_minute": 150,
+    "narration_speed": 0.8
   },
   "description": "Production test of the opening (review 5). Not for publication.",
   "reference_prompt": "Character reference sheet on a plain warm-grey background for an original character, 'the Corporal': a man in his late twenties with a tired, decent face, short cropped dark hair and light stubble. Three full-body views side by side (front, three-quarter, profile) wearing a plain olive army field jacket over a white T-shirt, plus a fourth view of the same man in civilian clothes: a pale blue short-sleeved shirt and dark trousers. Two small head studies (worried, resolved). Consistent proportions, clean even lighting, no text labels.",

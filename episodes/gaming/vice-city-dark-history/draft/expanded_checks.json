@@ -93,7 +93,8 @@
           "C34",
           "C38",
           "C49",
-          "C50"
+          "C50",
+          "C65"
         ]
       },
       {
@@ -156,7 +157,8 @@
           "C23",
           "C24",
           "C25",
-          "C45"
+          "C45",
+          "C64"
         ]
       },
       {
@@ -169,11 +171,11 @@
           "C13",
           "C20",
           "C32",
-          "C33",
           "C42",
           "C43",
           "C47",
           "C48",
+          "C49",
           "C55",
           "C57",
           "C62"
@@ -233,14 +235,14 @@
       "errors": [],
       "warnings": [],
       "passed": true,
-      "words": 173
+      "words": 191
     },
     {
       "chapter": "ch07",
       "errors": [],
       "warnings": [],
       "passed": true,
-      "words": 174
+      "words": 184
     },
     {
       "chapter": "ch08",
@@ -254,18 +256,20 @@
     {
       "chapter": "ch09",
       "errors": [],
-      "warnings": [],
+      "warnings": [
+        "ch09: 314 words vs target 250"
+      ],
       "passed": true,
-      "words": 307
+      "words": 314
     },
     {
       "chapter": "ch10",
       "errors": [],
       "warnings": [
-        "ch10: 89 words vs target 120"
+        "ch10: 81 words vs target 120"
       ],
       "passed": true,
-      "words": 89
+      "words": 81
     },
     {
       "chapter": "ch11",
@@ -317,7 +321,7 @@
         },
         {
           "claim": "C32",
-          "standing": "matched"
+          "standing": "corroborated"
         },
         {
           "claim": "C39",
@@ -471,7 +475,7 @@
         },
         {
           "claim": "C32",
-          "standing": "matched"
+          "standing": "corroborated"
         },
         {
           "claim": "C34",
@@ -488,6 +492,10 @@
         {
           "claim": "C50",
           "standing": "corroborated"
+        },
+        {
+          "claim": "C65",
+          "standing": "matched"
         }
       ],
       "omit": []
@@ -505,7 +513,7 @@
         },
         {
           "claim": "C32",
-          "standing": "matched"
+          "standing": "corroborated"
         },
         {
           "claim": "C33",
@@ -525,7 +533,7 @@
         },
         {
           "claim": "C63",
-          "standing": "matched"
+          "standing": "corroborated"
         }
       ],
       "omit": []
@@ -565,7 +573,7 @@
         },
         {
           "claim": "C36",
-          "standing": "matched"
+          "standing": "corroborated"
         },
         {
           "claim": "C43",
@@ -627,7 +635,7 @@
         },
         {
           "claim": "C24",
-          "standing": "matched"
+          "standing": "corroborated"
         },
         {
           "claim": "C25",
@@ -636,6 +644,10 @@
         {
           "claim": "C45",
           "standing": "matched"
+        },
+        {
+          "claim": "C64",
+          "standing": "corroborated"
         }
       ],
       "omit": []
@@ -657,11 +669,7 @@
         },
         {
           "claim": "C32",
-          "standing": "matched"
-        },
-        {
-          "claim": "C33",
-          "standing": "matched"
+          "standing": "corroborated"
         },
         {
           "claim": "C42",
@@ -677,6 +685,10 @@
         },
         {
           "claim": "C48",
+          "standing": "matched"
+        },
+        {
+          "claim": "C49",
           "standing": "matched"
         },
         {

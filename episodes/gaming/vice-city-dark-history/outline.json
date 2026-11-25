@@ -1,0 +1,183 @@
+{
+  "status": "CANDIDATE FINAL (review 8)",
+  "chapters": [
+    {
+      "id": "ch01",
+      "title": "The Man Who Tried to Leave",
+      "purpose": "Hook: Vic tried to escape; Tommy inherited the system.",
+      "target_words": 120,
+      "claim_ids": [
+        "C08",
+        "C10",
+        "C11",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C20",
+        "C22",
+        "C32",
+        "C39",
+        "C43",
+        "C47",
+        "C48",
+        "C49",
+        "C50"
+      ]
+    },
+    {
+      "id": "ch02",
+      "title": "Which Vice City?",
+      "purpose": "Continuity in about 20-30 seconds.",
+      "target_words": 60,
+      "claim_ids": [
+        "C05",
+        "C08",
+        "C51",
+        "C52"
+      ]
+    },
+    {
+      "id": "ch03",
+      "title": "The Sergeant",
+      "purpose": "An Army sergeant inside the cartel trade.",
+      "target_words": 150,
+      "claim_ids": [
+        "C08",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C31",
+        "C47"
+      ]
+    },
+    {
+      "id": "ch04",
+      "title": "The Reluctant Empire",
+      "purpose": "Even the man who wanted out builds an empire.",
+      "target_words": 140,
+      "claim_ids": [
+        "C11",
+        "C50",
+        "C53",
+        "C54",
+        "C55"
+      ]
+    },
+    {
+      "id": "ch05",
+      "title": "The Agent",
+      "purpose": "An undercover agent selling information; individuals, not institutions.",
+      "target_words": 130,
+      "claim_ids": [
+        "C12",
+        "C39",
+        "C41",
+        "C42"
+      ]
+    },
+    {
+      "id": "ch06",
+      "title": "The Cartel's Tower",
+      "purpose": "The Mendez war, Diaz's maneuvering, Last Stand.",
+      "target_words": 210,
+      "claim_ids": [
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C32",
+        "C34",
+        "C38",
+        "C49",
+        "C50",
+        "C65"
+      ]
+    },
+    {
+      "id": "ch07",
+      "title": "The Exchange",
+      "purpose": "1986: the colonel, the leak, the ambush.",
+      "target_words": 150,
+      "claim_ids": [
+        "C19",
+        "C20",
+        "C32",
+        "C33",
+        "C34",
+        "C49",
+        "C56",
+        "C63"
+      ]
+    },
+    {
+      "id": "ch08",
+      "title": "The Heir",
+      "purpose": "Tommy takes over Diaz's empire.",
+      "target_words": 110,
+      "claim_ids": [
+        "C21",
+        "C22",
+        "C25",
+        "C43",
+        "C48"
+      ]
+    },
+    {
+      "id": "ch09",
+      "title": "The Business of Vice",
+      "purpose": "Economic corruption in 1986.",
+      "target_words": 250,
+      "claim_ids": [
+        "C35",
+        "C36",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C48",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62"
+      ]
+    },
+    {
+      "id": "ch10",
+      "title": "This Is Business",
+      "purpose": "The finale: what is said, and what is only implied.",
+      "target_words": 120,
+      "claim_ids": [
+        "C18",
+        "C23",
+        "C24",
+        "C25",
+        "C45",
+        "C64"
+      ]
+    },
+    {
+      "id": "ch11",
+      "title": "Built on Crime",
+      "purpose": "Conclusion: the exit and the keys.",
+      "target_words": 110,
+      "claim_ids": [
+        "C08",
+        "C13",
+        "C20",
+        "C32",
+        "C42",
+        "C43",
+        "C47",
+        "C48",
+        "C49",
+        "C55",
+        "C57",
+        "C62"
+      ]
+    }
+  ]
+}

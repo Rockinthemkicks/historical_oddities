@@ -1032,6 +1032,105 @@
       "verified": false,
       "read_by_assistant": "2026-11-25",
       "notes": "Read as a search-result excerpt (two revisions)."
+    },
+    {
+      "id": "S98",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTA Wiki (gta.wiki) - 'Keep Your Friends Close...' transcript",
+      "url": "https://gta.wiki/w/Keep_Your_Friends_Close.../Transcript",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "Read as a search-result excerpt (review 8 verification pass)."
+    },
+    {
+      "id": "S99",
+      "type": "secondary",
+      "family": "press",
+      "title": "Red Bull - GTA Vice City story overview",
+      "url": "https://www.redbull.com/ch-fr/gta-vice-city",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "Read as a search-result excerpt (review 8 verification pass)."
+    },
+    {
+      "id": "S100",
+      "type": "secondary",
+      "family": "press",
+      "title": "Sportskeeda - 5 best GTA Vice City quotes",
+      "url": "https://www.sportskeeda.com/gta/5-best-gta-vice-city-quotes-players-fond",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "Read as a search-result excerpt (review 8 verification pass)."
+    },
+    {
+      "id": "S101",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "Grand Theft Wiki - Introduction (GTA VC)/Script",
+      "url": "https://www.grandtheftwiki.com/Introduction_%28GTA_VC%29/Script",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "Read as a search-result excerpt (review 8 verification pass)."
+    },
+    {
+      "id": "S102",
+      "type": "secondary",
+      "family": "press",
+      "title": "Digit - GTA Recap #1: Vice City Stories and Vice City",
+      "url": "https://www.digit.in/features/gaming/gta-recap-1-vice-city-stories-and-vice-city.html/amp/",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "Read as a search-result excerpt (review 8 verification pass)."
+    },
+    {
+      "id": "S103",
+      "type": "secondary",
+      "family": "press",
+      "title": "SVG - The endings of every GTA game explained",
+      "url": "https://svg.com/374435/the-endings-of-every-gta-game-explained",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "Read as a search-result excerpt (review 8 verification pass)."
+    },
+    {
+      "id": "S104",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "Grand Theft Wiki - Lance Vance",
+      "url": "https://www.grandtheftwiki.com/Lance_T_Vance",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "Read as a search-result excerpt (review 8 verification pass)."
+    },
+    {
+      "id": "S105",
+      "type": "secondary",
+      "family": "fan_wiki",
+      "title": "GTA Wiki (gta.wiki) - 'Two Bit Hit' (transcript)",
+      "url": "https://gta.wiki/w/Two_Bit_Hit",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "Read as a search-result excerpt (review 8)."
+    },
+    {
+      "id": "S106",
+      "type": "secondary",
+      "family": "press",
+      "title": "GTA Intel - 'Two Bit Hit' mission guide",
+      "url": "https://gtaintel.com/games/vice-city/missions/two-bit-hit-vc",
+      "accessed": "2026-11-25",
+      "verified": false,
+      "read_by_assistant": "2026-11-25",
+      "notes": "Weak: the same page's opening summary describes a different mission (a 'Forelli capo'), so treat as low-reliability corroboration."
     }
   ],
   "claims": [
@@ -1783,7 +1882,7 @@
     },
     {
       "id": "C24",
-      "text": "In the finale Tommy tells Sonny he was sent to kill one man who knew he was coming; Sonny deflects ('Anyone would think you blame me...') rather than admitting or denying it, and says Tommy's fifteen years were his to spend.",
+      "text": "In the finale, Tommy tells Sonny he was sent to kill one man and they knew he was coming; Sonny answers that Tommy's fifteen years in prison were his to spend.",
       "status": "confirmed_canon",
       "continuity": "3D",
       "games": [
@@ -1791,11 +1890,12 @@
       ],
       "source_ids": [
         "S03",
-        "S29"
+        "S29",
+        "S98",
+        "S100"
       ],
       "spoiler": "major",
-      "notes": "Explicit dialogue vs inference: Tommy never says 'Harwood' (Sonny does, as 'the Harwood Butcher'). The setup is implied, not stated. Confirm in the cutscene (S03). Review 4: use only the dialogue as spoken. Do not state that Sonny set Tommy up.",
-      "risk": "high",
+      "notes": "Narrowed 2026-11-25 (review 8). The earlier wording 'Sonny never admits a setup' is withdrawn: Wikipedia says Sonny admits his role, and press and fan recaps read the scene the same way. Whether the line is an explicit admission is now carried by the interpretation C64, not stated as fact.",
       "evidence": [
         {
           "source_id": "S03",
@@ -1804,8 +1904,20 @@
         {
           "source_id": "S29",
           "status": "matched",
-          "passage": "Tommy: 'You sent me to kill one man... They knew I was coming, Sonny'. Sonny: 'Anyone would think you blame me...'",
-          "accessed": "2026-11-23"
+          "passage": "Tommy: 'You sent me to kill one man... They knew I was coming, Sonny.' Sonny: 'Those fifteen years were mine to spend!'",
+          "accessed": "2026-11-25"
+        },
+        {
+          "source_id": "S100",
+          "status": "matched",
+          "passage": "Tommy: 'You took fifteen years from me, Sonny...' Sonny: 'You still don't get it, do you? I OWN you, Tommy. Those fifteen years were mine to spend!'",
+          "accessed": "2026-11-25"
+        },
+        {
+          "source_id": "S98",
+          "status": "matched",
+          "passage": "Transcript: Sonny greets Tommy, joking about the eleven men and the 'Harwood Butcher' name.",
+          "accessed": "2026-11-25"
         }
       ]
     },
@@ -1993,7 +2105,9 @@
         "S12",
         "S39",
         "S40",
-        "S65"
+        "S65",
+        "S102",
+        "S103"
       ],
       "spoiler": "major",
       "risk": "high",
@@ -2025,6 +2139,18 @@
           "status": "matched",
           "passage": "Script: Vic tells Lance 'it's done'.",
           "accessed": "2026-11-24"
+        },
+        {
+          "source_id": "S102",
+          "status": "matched",
+          "passage": "The two leave Vice City together after the attack on the Mendez headquarters.",
+          "accessed": "2026-11-25"
+        },
+        {
+          "source_id": "S103",
+          "status": "matched",
+          "passage": "The ending sees Victor Vance attempt to end his life of crime.",
+          "accessed": "2026-11-25"
         }
       ],
       "notes": "Narrowed 2026-11-24 per review 4. The earlier 'Lance pulls him back in' rests on one wiki (S12) and is no longer claimed."
@@ -2185,7 +2311,9 @@
         "S30",
         "S31",
         "S48",
-        "S50"
+        "S50",
+        "S105",
+        "S106"
       ],
       "spoiler": "minor",
       "risk": "high",
@@ -2209,9 +2337,21 @@
           "status": "matched",
           "passage": "Avery frames the gang war as a business opportunity, with his protege Donald Love listening.",
           "accessed": "2026-11-24"
+        },
+        {
+          "source_id": "S105",
+          "status": "matched",
+          "passage": "Avery: 'Now, nothing brings down real estate prices quicker than a good old-fashioned gang war...'",
+          "accessed": "2026-11-25"
+        },
+        {
+          "source_id": "S106",
+          "status": "matched",
+          "passage": "Avery wants real estate prices in Vice City to go down, so he wants to start a gang war between the Cubans and the Haitians.",
+          "accessed": "2026-11-25"
         }
       ],
-      "notes": "Narrowed 2026-11-24: the motive is Avery's own briefing line; the second half is our reading of that scene only, not a claim about the whole city."
+      "notes": "Narrowed 2026-11-24: the motive is Avery's own briefing line; the second half is our reading of that scene only, not a claim about the whole city. Review 8: Avery's exact briefing line now matched in a transcript; press corroboration (S106) is weak."
     },
     {
       "id": "C37",
@@ -3149,7 +3289,7 @@
         "gtavc"
       ],
       "spoiler": "minor",
-      "text": "In the opening, Sonny Forelli compares Vice City to 24-carat gold because of the money being made there, which is why he sends Tommy south.",
+      "text": "Sonny sends Tommy south to keep him away from Liberty City and to expand into the money being made there: 'Vice City is twenty-four carat gold these days.'",
       "evidence": [
         {
           "source_id": "S02",
@@ -3160,11 +3300,93 @@
           "status": "matched",
           "accessed": "2026-11-25",
           "passage": "Sonny suggests sending Tommy to Vice City, which he compares to 24-carat gold for the money one can earn there; various groups are making lots of money there."
+        },
+        {
+          "source_id": "S101",
+          "status": "matched",
+          "passage": "Script: 'We treat him like an old friend and keep him busy out of town... Vice City is twenty-four carat gold these days.'",
+          "accessed": "2026-11-25"
+        },
+        {
+          "source_id": "S80",
+          "status": "matched",
+          "passage": "The deal was arranged by Sonny to keep Tommy outside Liberty City and to let the Forellis expand into the south.",
+          "accessed": "2026-11-25"
         }
       ],
       "source_ids": [
         "S02",
-        "S97"
+        "S80",
+        "S97",
+        "S101"
+      ]
+    },
+    {
+      "id": "C64",
+      "status": "interpretation",
+      "continuity": "3D",
+      "games": [
+        "gtavc"
+      ],
+      "spoiler": "major",
+      "text": "Sonny's answer, that Tommy's fifteen years were his to spend, lands as a confession that he set Tommy up.",
+      "evidence": [
+        {
+          "source_id": "S80",
+          "status": "matched",
+          "passage": "Sonny admits his role in Tommy's arrest fifteen years prior.",
+          "accessed": "2026-11-25"
+        },
+        {
+          "source_id": "S99",
+          "status": "matched",
+          "passage": "In the final face-off, Forelli reveals he had set a trap fifteen years earlier.",
+          "accessed": "2026-11-25"
+        },
+        {
+          "source_id": "S12",
+          "status": "matched",
+          "passage": "Sonny confirms Tommy's suspicion that he was set up in Harwood.",
+          "accessed": "2026-11-25"
+        }
+      ],
+      "source_ids": [
+        "S12",
+        "S80",
+        "S99"
+      ]
+    },
+    {
+      "id": "C65",
+      "status": "confirmed_canon",
+      "continuity": "3D",
+      "games": [
+        "gtavcs"
+      ],
+      "spoiler": "major",
+      "text": "After Last Stand, Lance suggests hiding the leftover cocaine and selling it later; Vic refuses: 'I am not interested.'",
+      "evidence": [
+        {
+          "source_id": "S05",
+          "status": "discovered"
+        },
+        {
+          "source_id": "S40",
+          "status": "matched",
+          "passage": "Lance: 'We lay low and then we sell it.' Vic: 'No! No, No, I am not interested, got it?'",
+          "accessed": "2026-11-25"
+        },
+        {
+          "source_id": "S104",
+          "status": "matched",
+          "accessed": "2026-11-25",
+          "passage": "After the victory, Vic briefly reminds Lance not to sell any more drugs and leaves Vice City with him by helicopter."
+        }
+      ],
+      "source_ids": [
+        "S05",
+        "S40",
+        "S104"
       ]
     }
   ],

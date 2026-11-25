@@ -11,10 +11,11 @@ BRAND = load_brand()
 PINK, TEAL, CREAM = BRAND["colors"]["accent_2"], BRAND["colors"]["highlight"], (255, 244, 230)
 
 
-def make(bg_path, out_path, lines=("BUILT", "ON CRIME"), side="left", tag="VICE CITY LORE  ·  1984-1986",
+def make(bg_path, out_path, lines=("BUILT", "ON CRIME"), side="left", tag=None,
          size=(1280, 720), zoom=1.0, focus=(0.5, 0.5)):
     """zoom > 1 crops in; focus = the point of the background (0..1) that ends up at the frame centre."""
     W, H = size
+    tag = tag or f"{BRAND['name'].upper()}  ·  VICE CITY 1984-86"
     bg = Image.open(bg_path).convert("RGB")
     s = max(W / bg.width, H / bg.height) * zoom
     bg = bg.resize((int(bg.width * s) + 1, int(bg.height * s) + 1))
@@ -52,4 +53,4 @@ def make(bg_path, out_path, lines=("BUILT", "ON CRIME"), side="left", tag="VICE 
 if __name__ == "__main__":
     a = sys.argv
     lines = a[3].split("|") if len(a) > 3 else ("BUILT", "ON CRIME")
-    print(make(a[1], a[2], lines, a[4] if len(a) > 4 else "left", a[5] if len(a) > 5 else "VICE CITY LORE  ·  1984-1986"))
+    print(make(a[1], a[2], lines, a[4] if len(a) > 4 else "left", a[5] if len(a) > 5 else None))

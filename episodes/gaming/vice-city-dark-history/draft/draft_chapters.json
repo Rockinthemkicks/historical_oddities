@@ -194,7 +194,8 @@
               "style": "title",
               "heading": "THE DARK HISTORY OF VICE CITY",
               "lines": [
-                "Before GTA 6"
+                "Before GTA 6",
+                "An Unplayed History documentary"
               ],
               "rows": [],
               "motion": "zoom_in",
@@ -614,6 +615,24 @@
               "motion": "zoom_to:0.55,0.7,0.6"
             }
           ]
+        },
+        {
+          "narration": "Lance suggests hiding the leftover cocaine and selling it later. Vic's answer is flat: he is not interested.",
+          "claim_ids": [
+            "C65"
+          ],
+          "visuals": [
+            {
+              "kind": "text_card",
+              "style": "stamp",
+              "heading": "\u201cI AM NOT INTERESTED.\u201d",
+              "lines": [
+                "VIC VANCE, 1984"
+              ],
+              "rows": [],
+              "motion": "zoom_in"
+            }
+          ]
         }
       ]
     },
@@ -638,6 +657,20 @@
           ]
         },
         {
+          "narration": "On the other side of that table is Tommy Vercetti. Sonny Forelli has sent him south to keep him out of Liberty City and to get the family a cut of the drug money.",
+          "claim_ids": [
+            "C19",
+            "C63"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Somber, non-graphic. A dimly lit northern restaurant back room, a heavy man's silhouette at a table pushing a plane ticket forward.",
+              "id": "img_backroom"
+            }
+          ]
+        },
+        {
           "narration": "According to Tommy's lawyer, Ken Rosenberg, the deal was set up with help from a retired colonel, Juan Garcia Cortez.",
           "claim_ids": [
             "C33"
@@ -647,18 +680,6 @@
               "kind": "illustration",
               "prompt": "Calm, non-graphic. A luxury yacht moored at a marina at golden hour, an older man in a white jacket on deck seen from far away.",
               "id": "img_yacht"
-            }
-          ]
-        },
-        {
-          "narration": "Sonny Forelli has sent Tommy south to profit from the city's growing drug trade.",
-          "claim_ids": [
-            "C19"
-          ],
-          "visuals": [
-            {
-              "kind": "illustration",
-              "prompt": "Somber, non-graphic. A dimly lit northern restaurant back room, a heavy man's silhouette at a table pushing a plane ticket forward."
             }
           ]
         },
@@ -983,7 +1004,7 @@
           ]
         },
         {
-          "narration": "In the final confrontation, Sonny calls Tommy the Harwood Butcher and says Tommy's fifteen years in prison were his to spend.",
+          "narration": "Sonny arrives joking about Tommy's old nickname: the Harwood Butcher.",
           "claim_ids": [
             "C18",
             "C24"
@@ -997,16 +1018,31 @@
           ]
         },
         {
-          "narration": "Tommy says he was sent to kill one man, and they knew he was coming. Sonny deflects. He never admits a setup, and the game never confirms one.",
+          "narration": "Tommy says he was sent to kill one man, and they knew he was coming. Sonny's answer: those fifteen years in prison were his to spend.",
           "claim_ids": [
             "C24"
           ],
           "visuals": [
             {
               "kind": "illustration",
-              "prompt": "Tense, non-graphic. Two silhouettes facing each other across a long marble floor, a single beam of light between them."
+              "prompt": "Tense, non-graphic. Two silhouettes facing each other across a long marble floor, a single beam of light between them.",
+              "id": "img_faceoff"
             }
           ]
+        },
+        {
+          "narration": "It lands as a confession.",
+          "claim_ids": [
+            "C64"
+          ],
+          "visuals": [
+            {
+              "kind": "reuse",
+              "of": "img_faceoff",
+              "motion": "zoom_to:0.5,0.5,0.6"
+            }
+          ],
+          "pause_after": 1.0
         },
         {
           "narration": "Lance has already switched sides. He tells Sonny about the fake money, and Tommy kills them both.",
@@ -1107,7 +1143,7 @@
           "claim_ids": [
             "C42",
             "C13",
-            "C33"
+            "C49"
           ],
           "visuals": [
             {
@@ -1127,8 +1163,20 @@
               "kind": "illustration",
               "prompt": "Somber, dramatic, non-graphic. An old, generic badge with no insignia or lettering lies cracked on a wet seawall railing in the foreground; behind it, out of focus, the neon-lit 1980s coastal skyline at dusk in magenta and teal.",
               "id": "img_badge"
+            },
+            {
+              "kind": "text_card",
+              "style": "title",
+              "heading": "UNPLAYED HISTORY",
+              "lines": [
+                "Sources for every claim are in the description."
+              ],
+              "rows": [],
+              "motion": "none",
+              "bg_of": "img_badge"
             }
-          ]
+          ],
+          "pause_after": 4.0
         }
       ]
     }

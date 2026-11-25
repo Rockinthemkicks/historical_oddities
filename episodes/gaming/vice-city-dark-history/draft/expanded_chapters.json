@@ -194,7 +194,8 @@
               "style": "title",
               "heading": "THE DARK HISTORY OF VICE CITY",
               "lines": [
-                "Before GTA 6"
+                "Before GTA 6",
+                "An Unplayed History documentary"
               ],
               "rows": [],
               "motion": "zoom_in",
@@ -395,7 +396,13 @@
           "visuals": [
             {
               "kind": "illustration",
-              "prompt": "Somber, non-graphic. Two brothers in a cramped apartment; one holds out a heavy taped package, the other, the Corporal from the reference sheet, turns away toward the window."
+              "prompt": "Somber, non-graphic. Two brothers in a cramped apartment; one holds out a heavy taped package, the other, the Corporal from the reference sheet, turns away toward the window.",
+              "id": "img_ch03_6"
+            },
+            {
+              "kind": "reuse",
+              "of": "img_ch03_6",
+              "motion": "zoom_to:0.3,0.4,0.5"
             }
           ]
         }
@@ -446,6 +453,11 @@
               "kind": "reuse",
               "of": "img_trailer",
               "motion": "zoom_in"
+            },
+            {
+              "kind": "reuse",
+              "of": "img_trailer",
+              "motion": "zoom_to:0.7,0.55,0.5"
             }
           ]
         },
@@ -503,6 +515,11 @@
               "kind": "reuse",
               "of": "img_clockwork",
               "motion": "pan_right"
+            },
+            {
+              "kind": "reuse",
+              "of": "img_clockwork",
+              "motion": "zoom_to:0.5,0.3,0.45"
             }
           ]
         }
@@ -535,7 +552,13 @@
           "visuals": [
             {
               "kind": "illustration",
-              "prompt": "Investigative, non-graphic. Close-up of a laminated ID card on a desk, a photo being replaced with scissors and glue, no readable text."
+              "prompt": "Investigative, non-graphic. Close-up of a laminated ID card on a desk, a photo being replaced with scissors and glue, no readable text.",
+              "id": "img_ch04_1"
+            },
+            {
+              "kind": "reuse",
+              "of": "img_ch04_1",
+              "motion": "zoom_to:0.4,0.65,0.5"
             }
           ]
         },
@@ -650,6 +673,11 @@
               "kind": "reuse",
               "of": "img_corporal_hospital",
               "motion": "zoom_out"
+            },
+            {
+              "kind": "reuse",
+              "of": "img_corporal_hospital",
+              "motion": "zoom_to:0.3,0.4,0.5"
             }
           ]
         },
@@ -692,7 +720,8 @@
                   "the city's drug trade"
                 ]
               ],
-              "motion": "zoom_in"
+              "motion": "none",
+              "reveal": true
             }
           ]
         },
@@ -705,7 +734,13 @@
           "visuals": [
             {
               "kind": "illustration",
-              "prompt": "Somber, non-graphic. A skyscraper rooftop at sunrise after a storm, a military helicopter silhouette pulling away, scattered papers in the wind."
+              "prompt": "Somber, non-graphic. A skyscraper rooftop at sunrise after a storm, a military helicopter silhouette pulling away, scattered papers in the wind.",
+              "id": "img_ch05_6"
+            },
+            {
+              "kind": "reuse",
+              "of": "img_ch05_6",
+              "motion": "zoom_to:0.7,0.55,0.5"
             }
           ]
         },
@@ -719,6 +754,24 @@
               "kind": "reuse",
               "of": "img_waterfront",
               "motion": "zoom_to:0.55,0.7,0.6"
+            }
+          ]
+        },
+        {
+          "narration": "Lance suggests hiding the leftover cocaine and selling it later. Vic's answer is flat: he is not interested.",
+          "claim_ids": [
+            "C65"
+          ],
+          "visuals": [
+            {
+              "kind": "text_card",
+              "style": "stamp",
+              "heading": "“I AM NOT INTERESTED.”",
+              "lines": [
+                "VIC VANCE, 1984"
+              ],
+              "rows": [],
+              "motion": "zoom_in"
             }
           ]
         }
@@ -741,6 +794,43 @@
               "kind": "reuse",
               "of": "img_corporal_dock",
               "motion": "zoom_out"
+            }
+          ]
+        },
+        {
+          "narration": "On the other side of that table is Tommy Vercetti. Sonny Forelli has sent him south to keep him out of Liberty City and to get the family a cut of the drug money.",
+          "claim_ids": [
+            "C19",
+            "C63"
+          ],
+          "visuals": [
+            {
+              "kind": "illustration",
+              "prompt": "Somber, non-graphic. A dimly lit northern restaurant back room, a heavy man's silhouette at a table pushing a plane ticket forward.",
+              "id": "img_backroom"
+            },
+            {
+              "kind": "reuse",
+              "of": "img_backroom",
+              "motion": "zoom_to:0.5,0.3,0.45"
+            }
+          ]
+        },
+        {
+          "narration": "In the opening scene, he says it plainly: Vice City is twenty-four carat gold these days.",
+          "claim_ids": [
+            "C63"
+          ],
+          "visuals": [
+            {
+              "kind": "text_card",
+              "style": "stamp",
+              "heading": "“24-CARAT GOLD”",
+              "lines": [
+                "SONNY FORELLI, ON VICE CITY"
+              ],
+              "rows": [],
+              "motion": "zoom_in"
             }
           ]
         },
@@ -784,36 +874,6 @@
           ]
         },
         {
-          "narration": "Sonny Forelli has sent Tommy south to profit from the city's growing drug trade.",
-          "claim_ids": [
-            "C19"
-          ],
-          "visuals": [
-            {
-              "kind": "illustration",
-              "prompt": "Somber, non-graphic. A dimly lit northern restaurant back room, a heavy man's silhouette at a table pushing a plane ticket forward."
-            }
-          ]
-        },
-        {
-          "narration": "Sonny's reason for sending him says a lot. In the opening, he compares Vice City to twenty-four-carat gold, because of the money being made there.",
-          "claim_ids": [
-            "C63"
-          ],
-          "visuals": [
-            {
-              "kind": "text_card",
-              "style": "stamp",
-              "heading": "“24-CARAT GOLD”",
-              "lines": [
-                "SONNY FORELLI, ON VICE CITY"
-              ],
-              "rows": [],
-              "motion": "zoom_in"
-            }
-          ]
-        },
-        {
           "narration": "The deal is ambushed. Vic and two Forelli men are killed, the money and the cocaine are taken, and Lance escapes.",
           "claim_ids": [
             "C20"
@@ -835,6 +895,11 @@
               "kind": "reuse",
               "of": "img_yacht",
               "motion": "zoom_in"
+            },
+            {
+              "kind": "reuse",
+              "of": "img_yacht",
+              "motion": "zoom_to:0.4,0.65,0.5"
             }
           ]
         },
@@ -1003,7 +1068,7 @@
           ]
         },
         {
-          "narration": "In Two Bit Hit, Avery explains that a gang war will drive property prices down.",
+          "narration": "In Two Bit Hit, Avery puts it plainly: nothing brings down real estate prices quicker than a good old-fashioned gang war.",
           "claim_ids": [
             "C36"
           ],
@@ -1066,6 +1131,11 @@
               "kind": "illustration",
               "prompt": "Calm, non-graphic. A young man in an oversized suit scribbling in a small notepad behind an older developer's shoulder, an architect's model on the desk between them.",
               "id": "img_protege"
+            },
+            {
+              "kind": "reuse",
+              "of": "img_protege",
+              "motion": "zoom_to:0.3,0.4,0.5"
             }
           ]
         },
@@ -1080,6 +1150,11 @@
               "kind": "reuse",
               "of": "img_protege",
               "motion": "zoom_in"
+            },
+            {
+              "kind": "reuse",
+              "of": "img_protege",
+              "motion": "zoom_to:0.7,0.55,0.5"
             }
           ]
         },
@@ -1093,6 +1168,11 @@
               "kind": "illustration",
               "prompt": "Investigative, non-graphic. Sheets of freshly printed banknotes drying on lines in a dim print shop, no readable text or faces on the notes.",
               "id": "img_printworks"
+            },
+            {
+              "kind": "reuse",
+              "of": "img_printworks",
+              "motion": "zoom_to:0.5,0.3,0.45"
             }
           ]
         },
@@ -1106,6 +1186,11 @@
               "kind": "illustration",
               "prompt": "Tense, non-graphic. A grand 1980s bank facade in a Cuban neighborhood at night, marble columns, a blank sign above the doors, an empty getaway van at the curb.",
               "id": "img_bank"
+            },
+            {
+              "kind": "reuse",
+              "of": "img_bank",
+              "motion": "zoom_to:0.4,0.65,0.5"
             }
           ]
         },
@@ -1148,7 +1233,13 @@
           "visuals": [
             {
               "kind": "illustration",
-              "prompt": "Investigative, non-graphic. An envelope of photographs on a polished desk under a green banker's lamp, a lapel pin beside it, no faces visible."
+              "prompt": "Investigative, non-graphic. An envelope of photographs on a polished desk under a green banker's lamp, a lapel pin beside it, no faces visible.",
+              "id": "img_ch08_13"
+            },
+            {
+              "kind": "reuse",
+              "of": "img_ch08_13",
+              "motion": "zoom_to:0.3,0.4,0.5"
             }
           ]
         },
@@ -1164,6 +1255,11 @@
               "kind": "reuse",
               "of": "img_printworks",
               "motion": "pan_right"
+            },
+            {
+              "kind": "reuse",
+              "of": "img_printworks",
+              "motion": "zoom_to:0.7,0.55,0.5"
             }
           ]
         },
@@ -1205,7 +1301,7 @@
           ]
         },
         {
-          "narration": "In the final confrontation, Sonny calls Tommy the Harwood Butcher and says Tommy's fifteen years in prison were his to spend.",
+          "narration": "Sonny arrives joking about Tommy's old nickname: the Harwood Butcher.",
           "claim_ids": [
             "C18",
             "C24"
@@ -1219,16 +1315,36 @@
           ]
         },
         {
-          "narration": "Tommy says he was sent to kill one man, and they knew he was coming. Sonny deflects. He never admits a setup, and the game never confirms one.",
+          "narration": "Tommy says he was sent to kill one man, and they knew he was coming. Sonny's answer: those fifteen years in prison were his to spend.",
           "claim_ids": [
             "C24"
           ],
           "visuals": [
             {
               "kind": "illustration",
-              "prompt": "Tense, non-graphic. Two silhouettes facing each other across a long marble floor, a single beam of light between them."
+              "prompt": "Tense, non-graphic. Two silhouettes facing each other across a long marble floor, a single beam of light between them.",
+              "id": "img_faceoff"
+            },
+            {
+              "kind": "reuse",
+              "of": "img_faceoff",
+              "motion": "zoom_to:0.5,0.3,0.45"
             }
           ]
+        },
+        {
+          "narration": "It lands as a confession.",
+          "claim_ids": [
+            "C64"
+          ],
+          "visuals": [
+            {
+              "kind": "reuse",
+              "of": "img_faceoff",
+              "motion": "zoom_to:0.5,0.5,0.6"
+            }
+          ],
+          "pause_after": 1.0
         },
         {
           "narration": "Lance has already switched sides. He tells Sonny about the fake money, and Tommy kills them both.",
@@ -1336,6 +1452,11 @@
               "kind": "reuse",
               "of": "img_clockwork",
               "motion": "zoom_out"
+            },
+            {
+              "kind": "reuse",
+              "of": "img_clockwork",
+              "motion": "zoom_to:0.4,0.65,0.5"
             }
           ]
         },
@@ -1344,7 +1465,7 @@
           "claim_ids": [
             "C42",
             "C13",
-            "C33"
+            "C49"
           ],
           "visuals": [
             {
@@ -1364,8 +1485,20 @@
               "kind": "illustration",
               "prompt": "Somber, dramatic, non-graphic. An old, generic badge with no insignia or lettering lies cracked on a wet seawall railing in the foreground; behind it, out of focus, the neon-lit 1980s coastal skyline at dusk in magenta and teal.",
               "id": "img_badge"
+            },
+            {
+              "kind": "text_card",
+              "style": "title",
+              "heading": "UNPLAYED HISTORY",
+              "lines": [
+                "Sources for every claim are in the description."
+              ],
+              "rows": [],
+              "motion": "none",
+              "bg_of": "img_badge"
             }
-          ]
+          ],
+          "pause_after": 4.0
         }
       ]
     }

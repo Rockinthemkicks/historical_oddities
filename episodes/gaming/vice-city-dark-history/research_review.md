@@ -5,11 +5,11 @@ Thesis: Vice City was not corrupted by Tommy Vercetti. He inherited an existing 
 ## Readiness
 
 - Structural validation: PASSED (0 error(s), 5 warning(s))
-- Factual verification: NOT COMPLETE (verified 0, corroborated 21, single-family 35, unsupported 6, disputed 1; 9 claim(s) need attention)
+- Factual verification: NOT COMPLETE (verified 0, corroborated 25, single-family 33, unsupported 6, disputed 1; 7 claim(s) need attention)
 - Editorial approval: NOT GIVEN
 - Production approval: NOT GIVEN
 
-Stats: {'sources': 97, 'claims': 63, 'confirmed_canon': 48, 'interpretation': 9, 'fan_theory': 1, 'speculation': 1, 'real_world_fact': 4}
+Stats: {'sources': 104, 'claims': 65, 'confirmed_canon': 49, 'interpretation': 10, 'fan_theory': 1, 'speculation': 1, 'real_world_fact': 4}
 
 ## Real-world facts
 
@@ -64,9 +64,9 @@ Stats: {'sources': 97, 'claims': 63, 'confirmed_canon': 48, 'interpretation': 9,
   Evidence: S02 [game] discovered; S11 [fan_wiki] matched: Tommy and Lance go to Diaz's mansion and kill him.; S13 [fan_wiki] discovered
 - **C23** [3D, spoiler: major, standing: MATCHED] Sonny Forelli comes to Vice City to collect money he considers his; Lance reveals Tommy's plan to Sonny, and Tommy kills both of them in the final mission.  
   Evidence: S03 [game] discovered; S11 [fan_wiki] matched: Sonny comes to collect; Lance reveals Tommy's fake-money plan; Tommy kills Lance, then Sonny.; S29 [fan_wiki] matched: Lance: 'This is Vice City. This is business.'
-- **C24** [3D, spoiler: major, standing: MATCHED, risk: high] In the finale Tommy tells Sonny he was sent to kill one man who knew he was coming; Sonny deflects ('Anyone would think you blame me...') rather than admitting or denying it, and says Tommy's fifteen years were his to spend.  
-  Evidence: S03 [game] discovered; S29 [fan_wiki] matched: Tommy: 'You sent me to kill one man... They knew I was coming, Sonny'. Sonny: 'Anyone would think you blame me...'  
-  Note: Explicit dialogue vs inference: Tommy never says 'Harwood' (Sonny does, as 'the Harwood Butcher'). The setup is implied, not stated. Confirm in the cutscene (S03). Review 4: use only the dialogue as spoken. Do not state that Sonny set Tommy up.
+- **C24** [3D, spoiler: major, standing: CORROBORATED] In the finale, Tommy tells Sonny he was sent to kill one man and they knew he was coming; Sonny answers that Tommy's fifteen years in prison were his to spend.  
+  Evidence: S03 [game] discovered; S29 [fan_wiki] matched: Tommy: 'You sent me to kill one man... They knew I was coming, Sonny.' Sonny: 'Those fifteen years were mine to spend!'; S100 [press] matched: Tommy: 'You took fifteen years from me, Sonny...' Sonny: 'You still don't get it, do you? I OWN you, Tommy. Those fifteen years were mine to spend!'; S98 [fan_wiki] matched: Transcript: Sonny greets Tommy, joking about the eleven men and the 'Harwood Butcher' name.  
+  Note: Narrowed 2026-11-25 (review 8). The earlier wording 'Sonny never admits a setup' is withdrawn: Wikipedia says Sonny admits his role, and press and fan recaps read the scene the same way. Whether the line is an explicit admission is now carried by the interpretation C64, not stated as fact.
 - **C27** [3D, spoiler: minor, standing: UNSUPPORTED] After Sonny's death, Marco Forelli becomes the family's new don.  
   Evidence: S06 [game] discovered; S16 [fan_wiki] discovered
 - **C28** [3D, spoiler: minor, standing: UNSUPPORTED] By 1992 Ken has been through rehab, lost his law license and is running Caligula's Palace casino in Las Venturas for three mafia families.  
@@ -76,8 +76,8 @@ Stats: {'sources': 97, 'claims': 63, 'confirmed_canon': 48, 'interpretation': 9,
   Note: Per the wiki, the Tommy detail comes from San Andreas' 'The Introduction'. Confirm there.
 - **C31** [3D, spoiler: none, standing: MATCHED] Vic needs money for his brother Pete's asthma medication, which is why he goes along with Martinez's schemes.  
   Evidence: S04 [game] discovered; S12 [fan_wiki] matched: Vic is 'desperate to raise money for his brother's asthma medication'; later sends money to Pete.
-- **C32** [3D, spoiler: major, standing: MATCHED, risk: high] Vice City Stories ends with Vic and Lance deciding to leave town and lay low, yet two years later Vic is the dealer at the 1986 exchange where he is killed. The games don't show how he got back in.  
-  Evidence: S05 [game] discovered; S12 [fan_wiki] matched: Vic refuses Lance's cocaine and wants out; Lance later drags him back; they set up a deal with the Forelli family.; S39 [fan_wiki] matched: After 'Last Stand' the brothers take out their remaining enemies and decide to get out of town and lay low.; S65 [fan_wiki] matched: Vic decides to retire from criminal life and leaves Vice City with Lance.; S40 [fan_wiki] matched: Script: Vic tells Lance 'it's done'.  
+- **C32** [3D, spoiler: major, standing: CORROBORATED, risk: high] Vice City Stories ends with Vic and Lance deciding to leave town and lay low, yet two years later Vic is the dealer at the 1986 exchange where he is killed. The games don't show how he got back in.  
+  Evidence: S05 [game] discovered; S12 [fan_wiki] matched: Vic refuses Lance's cocaine and wants out; Lance later drags him back; they set up a deal with the Forelli family.; S39 [fan_wiki] matched: After 'Last Stand' the brothers take out their remaining enemies and decide to get out of town and lay low.; S65 [fan_wiki] matched: Vic decides to retire from criminal life and leaves Vice City with Lance.; S40 [fan_wiki] matched: Script: Vic tells Lance 'it's done'.; S102 [press] matched: The two leave Vice City together after the attack on the Mendez headquarters.; S103 [press] matched: The ending sees Victor Vance attempt to end his life of crime.  
   Note: Narrowed 2026-11-24 per review 4. The earlier 'Lance pulls him back in' rests on one wiki (S12) and is no longer claimed.
 - **C33** [3D, spoiler: minor, standing: MATCHED] Retired colonel Juan Garcia Cortez helped set up the 1986 exchange; the VCS wiki attributes this to Ken Rosenberg ('apparently').  
   Evidence: S35 [game] discovered; S11 [fan_wiki] matched: Cortez is a retired colonel who helped set up the deal.; S12 [fan_wiki] matched: The Forelli deal was set up 'apparently with the help of Colonel Cortez according to Ken Rosenberg'.; S32 [encyclopedia] discovered  
@@ -134,8 +134,10 @@ Stats: {'sources': 97, 'claims': 63, 'confirmed_canon': 48, 'interpretation': 9,
   Evidence: S36 [game] discovered; S88 [fan_wiki] matched: Donald is Avery's protégé, following him with pen and paper, learning real estate.; S89 [fan_wiki] matched: Love becomes Avery's protégé, often following him with a notepad and pen.; S90 [fan_wiki] matched: He writes down Avery's tactic of creating a gang war to decrease real estate prices in Two Bit Hit.
 - **C60** [3D, spoiler: major, standing: CORROBORATED] In Grand Theft Auto III (2001), Donald Love is a real-estate developer and the owner of Love Media.  
   Evidence: S96 [game] discovered; S91 [fan_wiki] matched: Donald is the owner of Love Media and a real estate developer (GTA 3).; S93 [press] matched: In GTA III, Donald Love is the owner and operator of Love Media.
-- **C63** [3D, spoiler: minor, standing: MATCHED] In the opening, Sonny Forelli compares Vice City to 24-carat gold because of the money being made there, which is why he sends Tommy south.  
-  Evidence: S02 [game] discovered; S97 [fan_wiki] matched: Sonny suggests sending Tommy to Vice City, which he compares to 24-carat gold for the money one can earn there; various groups are making lots of money there.
+- **C63** [3D, spoiler: minor, standing: CORROBORATED] Sonny sends Tommy south to keep him away from Liberty City and to expand into the money being made there: 'Vice City is twenty-four carat gold these days.'  
+  Evidence: S02 [game] discovered; S97 [fan_wiki] matched: Sonny suggests sending Tommy to Vice City, which he compares to 24-carat gold for the money one can earn there; various groups are making lots of money there.; S101 [fan_wiki] matched: Script: 'We treat him like an old friend and keep him busy out of town... Vice City is twenty-four carat gold these days.'; S80 [encyclopedia] matched: The deal was arranged by Sonny to keep Tommy outside Liberty City and to let the Forellis expand into the south.
+- **C65** [3D, spoiler: major, standing: MATCHED] After Last Stand, Lance suggests hiding the leftover cocaine and selling it later; Vic refuses: 'I am not interested.'  
+  Evidence: S05 [game] discovered; S40 [fan_wiki] matched: Lance: 'We lay low and then we sell it.' Vic: 'No! No, No, I am not interested, got it?'; S104 [fan_wiki] matched: After the victory, Vic briefly reminds Lance not to sell any more drugs and leaves Vice City with him by helicopter.
 
 ## Interpretation
 
@@ -160,6 +162,8 @@ Stats: {'sources': 97, 'claims': 63, 'confirmed_canon': 48, 'interpretation': 9,
   Evidence: S85 [fan_wiki] matched: The name, 'The Big Corrupt Bank', suggests the bank is illegitimate.
 - **C62** [3D, spoiler: major, standing: CORROBORATED] Avery's methods outlive Vice City: his protégé carries the criminal real-estate playbook into GTA III.  
   Evidence: S92 [press] matched: In Vice City it appears Donald Love has learned a lot from his mentor Avery.; S90 [fan_wiki] matched: He uses criminal tactics, taught by Avery Carrington, to increase his profits.
+- **C64** [3D, spoiler: major, standing: CORROBORATED] Sonny's answer, that Tommy's fifteen years were his to spend, lands as a confession that he set Tommy up.  
+  Evidence: S80 [encyclopedia] matched: Sonny admits his role in Tommy's arrest fifteen years prior.; S99 [press] matched: In the final face-off, Forelli reveals he had set a trap fifteen years earlier.; S12 [fan_wiki] matched: Sonny confirms Tommy's suspicion that he was set up in Harwood.
 
 ## Fan theory
 
@@ -367,16 +371,28 @@ Stats: {'sources': 97, 'claims': 63, 'confirmed_canon': 48, 'interpretation': 9,
   Note: Not checked in-game.
 - **S97** (secondary, fan_wiki) GTA Wiki (gta.wiki) - 'In The Beginning...' walkthrough: https://gta.wiki/w/In_The_Beginning.../Walkthrough (READ BY ASSISTANT, not human-verified)  
   Note: Read as a search-result excerpt (two revisions).
+- **S98** (secondary, fan_wiki) GTA Wiki (gta.wiki) - 'Keep Your Friends Close...' transcript: https://gta.wiki/w/Keep_Your_Friends_Close.../Transcript (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt (review 8 verification pass).
+- **S99** (secondary, press) Red Bull - GTA Vice City story overview: https://www.redbull.com/ch-fr/gta-vice-city (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt (review 8 verification pass).
+- **S100** (secondary, press) Sportskeeda - 5 best GTA Vice City quotes: https://www.sportskeeda.com/gta/5-best-gta-vice-city-quotes-players-fond (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt (review 8 verification pass).
+- **S101** (secondary, fan_wiki) Grand Theft Wiki - Introduction (GTA VC)/Script: https://www.grandtheftwiki.com/Introduction_%28GTA_VC%29/Script (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt (review 8 verification pass).
+- **S102** (secondary, press) Digit - GTA Recap #1: Vice City Stories and Vice City: https://www.digit.in/features/gaming/gta-recap-1-vice-city-stories-and-vice-city.html/amp/ (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt (review 8 verification pass).
+- **S103** (secondary, press) SVG - The endings of every GTA game explained: https://svg.com/374435/the-endings-of-every-gta-game-explained (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt (review 8 verification pass).
+- **S104** (secondary, fan_wiki) Grand Theft Wiki - Lance Vance: https://www.grandtheftwiki.com/Lance_T_Vance (READ BY ASSISTANT, not human-verified)  
+  Note: Read as a search-result excerpt (review 8 verification pass).
 
 ## Claims needing attention before scripting
 
 - C17: no supporting passage matched yet
-- C24: high-risk claim without independent or primary support
 - C26: no supporting passage matched yet
 - C27: no supporting passage matched yet
 - C28: no supporting passage matched yet
 - C29: no supporting passage matched yet
-- C32: high-risk claim without independent or primary support
 - C36: high-risk claim without independent or primary support
 - C40: evidence conflicts
 

@@ -59,7 +59,7 @@
     "C21": "matched",
     "C22": "matched",
     "C23": "matched",
-    "C24": "matched",
+    "C24": "corroborated",
     "C25": "matched",
     "C26": "unsupported",
     "C27": "unsupported",
@@ -67,7 +67,7 @@
     "C29": "unsupported",
     "C30": "unsupported",
     "C31": "matched",
-    "C32": "matched",
+    "C32": "corroborated",
     "C33": "matched",
     "C34": "corroborated",
     "C35": "matched",
@@ -98,12 +98,14 @@
     "C60": "corroborated",
     "C61": "matched",
     "C62": "corroborated",
-    "C63": "matched"
+    "C63": "corroborated",
+    "C64": "corroborated",
+    "C65": "matched"
   },
   "readiness_counts": {
     "verified": 0,
-    "corroborated": 21,
-    "matched": 35,
+    "corroborated": 25,
+    "matched": 33,
     "unsupported": 6,
     "disputed": 1
   },
@@ -111,10 +113,6 @@
     {
       "claim": "C17",
       "reason": "no supporting passage matched yet"
-    },
-    {
-      "claim": "C24",
-      "reason": "high-risk claim without independent or primary support"
     },
     {
       "claim": "C26",
@@ -133,10 +131,6 @@
       "reason": "no supporting passage matched yet"
     },
     {
-      "claim": "C32",
-      "reason": "high-risk claim without independent or primary support"
-    },
-    {
       "claim": "C36",
       "reason": "high-risk claim without independent or primary support"
     },
@@ -146,10 +140,10 @@
     }
   ],
   "stats": {
-    "sources": 97,
-    "claims": 63,
-    "confirmed_canon": 48,
-    "interpretation": 9,
+    "sources": 104,
+    "claims": 65,
+    "confirmed_canon": 49,
+    "interpretation": 10,
     "fan_theory": 1,
     "speculation": 1,
     "real_world_fact": 4

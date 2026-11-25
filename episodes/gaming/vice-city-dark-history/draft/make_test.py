@@ -19,7 +19,9 @@ test = {k: pilot[k] for k in ("mode", "franchise", "games", "continuity", "spoil
 test.update({
     "title": pilot["title"] + " - 60-second test",
     "target_minutes": [1, 2],
-    "overrides": {"target_minutes_range": [1, 60], "words_per_minute": 150},
+    # Speed comparison (review 8): this run renders at 0.8. The 0.9 version is in run 45547596599's results.
+    # Narration is cached per speed, so switching back to 0.9 later costs nothing.
+    "overrides": {"target_minutes_range": [1, 60], "words_per_minute": 150, "narration_speed": 0.8},
     "description": "Production test of the opening (review 5). Not for publication.",
     "reference_prompt": REFERENCE_PROMPT,
     "ambient_asset_id": "ambient_pad",

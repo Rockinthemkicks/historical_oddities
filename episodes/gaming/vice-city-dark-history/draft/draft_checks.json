@@ -42,16 +42,14 @@
       "errors": [],
       "warnings": [],
       "passed": true,
-      "words": 173
+      "words": 191
     },
     {
       "chapter": "ch06",
       "errors": [],
-      "warnings": [
-        "ch06: 117 words vs target 150"
-      ],
+      "warnings": [],
       "passed": true,
-      "words": 117
+      "words": 137
     },
     {
       "chapter": "ch07",
@@ -75,10 +73,10 @@
       "chapter": "ch09",
       "errors": [],
       "warnings": [
-        "ch09: 89 words vs target 120"
+        "ch09: 81 words vs target 120"
       ],
       "passed": true,
-      "words": 89
+      "words": 81
     },
     {
       "chapter": "ch10",
@@ -132,7 +130,7 @@
         },
         {
           "claim": "C32",
-          "standing": "matched"
+          "standing": "corroborated"
         },
         {
           "claim": "C39",
@@ -260,7 +258,7 @@
         },
         {
           "claim": "C32",
-          "standing": "matched"
+          "standing": "corroborated"
         },
         {
           "claim": "C34",
@@ -277,6 +275,10 @@
         {
           "claim": "C50",
           "standing": "corroborated"
+        },
+        {
+          "claim": "C65",
+          "standing": "matched"
         }
       ],
       "omit": []
@@ -294,7 +296,7 @@
         },
         {
           "claim": "C32",
-          "standing": "matched"
+          "standing": "corroborated"
         },
         {
           "claim": "C33",
@@ -307,6 +309,10 @@
         {
           "claim": "C49",
           "standing": "matched"
+        },
+        {
+          "claim": "C63",
+          "standing": "corroborated"
         }
       ],
       "omit": []
@@ -384,7 +390,7 @@
         },
         {
           "claim": "C24",
-          "standing": "matched"
+          "standing": "corroborated"
         },
         {
           "claim": "C25",
@@ -393,6 +399,10 @@
         {
           "claim": "C45",
           "standing": "matched"
+        },
+        {
+          "claim": "C64",
+          "standing": "corroborated"
         }
       ],
       "omit": []
@@ -414,11 +424,7 @@
         },
         {
           "claim": "C32",
-          "standing": "matched"
-        },
-        {
-          "claim": "C33",
-          "standing": "matched"
+          "standing": "corroborated"
         },
         {
           "claim": "C42",
@@ -434,6 +440,10 @@
         },
         {
           "claim": "C48",
+          "standing": "matched"
+        },
+        {
+          "claim": "C49",
           "standing": "matched"
         }
       ],

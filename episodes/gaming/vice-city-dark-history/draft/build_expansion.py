@@ -33,7 +33,7 @@ INSERT_CH06 = [
 ]
 
 INSERT_CH06_GOLD = [
-  ("Sonny's reason for sending him says a lot. In the opening, he compares Vice City to twenty-four-carat gold, because of the money being made there.",
+  ("In the opening scene, he says it plainly: Vice City is twenty-four carat gold these days.",
    ["C63"], [card("stamp", "\u201c24-CARAT GOLD\u201d", ["SONNY FORELLI, ON VICE CITY"])]),
 ]
 
@@ -58,6 +58,34 @@ INSERT_CH10 = [
 ]
 
 
+SPEECH_WPS = 179 / 60          # measured in the revised 60-second test
+MAX_HOLD = 7.5                  # seconds on one shot before it should move on (house pacing rule)
+REFRAMES = ["zoom_to:0.3,0.4,0.5", "zoom_to:0.7,0.55,0.5", "zoom_to:0.5,0.3,0.45", "zoom_to:0.4,0.65,0.5"]
+
+
+def engagement_pass(chs):
+    """Free visual variety for long lines: a second, reframed shot of the line's own image, or a
+    row-by-row reveal for list cards. Never adds a paid image."""
+    k = 0
+    for cid, _, _, _, segs in chs:
+        for i, sg in enumerate(segs):
+            visuals = sg[2]
+            secs = len(sg[0].split()) / SPEECH_WPS + (sg[3].get("pause_after", 0.45) if len(sg) > 3 else 0.45)
+            if secs / max(len(visuals), 1) <= MAX_HOLD:
+                continue
+            for v in visuals:
+                if v.get("kind") == "text_card" and v.get("rows") and not v.get("reveal"):
+                    v["reveal"], v["motion"] = True, "none"
+            src = next((v for v in reversed(visuals) if v.get("kind") in ("illustration", "reuse")), None)
+            if src is None:
+                continue
+            if src.get("kind") == "illustration" and not src.get("id"):
+                src["id"] = f"img_{cid}_{i}"
+            of = src["of"] if src.get("kind") == "reuse" else src["id"]
+            visuals.append(reuse(of, REFRAMES[k % len(REFRAMES)]))
+            k += 1
+
+
 def find(segs, start):
     for i, sg in enumerate(segs):
         if sg[0].startswith(start):
@@ -72,15 +100,17 @@ def expanded_chapters():
     chs.insert([c[0] for c in chs].index("ch03") + 1, NEW_CHAPTER)
     s6 = by["ch06"][4]
     i = find(s6, "According to Tommy's lawyer")
+    s6[find(s6, "On the other side"):find(s6, "On the other side") + 1] = [
+        s6[find(s6, "On the other side")], INSERT_CH06_GOLD[0]]
+    i = find(s6, "According to Tommy's lawyer")
     s6[i] = (s6[i][0].replace("According to Tommy's lawyer, Ken Rosenberg,", "According to Rosenberg,"),) + tuple(s6[i][1:])
     s6[i:i] = INSERT_CH06
-    j = find(s6, "Sonny Forelli has sent Tommy")
-    s6[j + 1:j + 1] = INSERT_CH06_GOLD
     s8 = by["ch08"][4]
     s8[find(s8, "And when Congressman"):find(s8, "And when Congressman")] = INSERT_CH08_BANK
     s8[find(s8, "Tommy's own businesses"):find(s8, "Tommy's own businesses")] = INSERT_CH08_APPRENTICE
     s10 = by["ch10"][4]
     s10[find(s10, "The sergeant, the agent"):find(s10, "The sergeant, the agent")] = INSERT_CH10
+    engagement_pass(chs)
     # renumber so chapter ids stay sequential (ch01..ch11)
     return [(f"ch{i + 1:02d}",) + tuple(c[1:]) for i, c in enumerate(chs)]
 

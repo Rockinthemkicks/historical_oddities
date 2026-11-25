@@ -1,6 +1,6 @@
 # Pilot: The Dark History of Vice City Before GTA 6
 
-**Review 5 (Nov 24): see [REVIEW5_TEST.md](REVIEW5_TEST.md) (revised narration, 60-second test plan). Review 4: [DRAFT_PACKAGE.md](DRAFT_PACKAGE.md). Review 3: [EDITORIAL_PACKAGE.md](EDITORIAL_PACKAGE.md). Draft script waiting for script and visual-direction approval.**
+**Review 8 (Nov 25, final production approval): see [REVIEW8_PACKAGE.md](REVIEW8_PACKAGE.md).** Review 5 (Nov 24): see [REVIEW5_TEST.md](REVIEW5_TEST.md) (revised narration, 60-second test plan). Review 4: [DRAFT_PACKAGE.md](DRAFT_PACKAGE.md). Review 3: [EDITORIAL_PACKAGE.md](EDITORIAL_PACKAGE.md). Draft script waiting for script and visual-direction approval.**
 
 Gaming-lore pilot (20–25 min, fictional investigative history).
 
