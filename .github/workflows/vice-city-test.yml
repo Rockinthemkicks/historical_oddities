@@ -1,4 +1,4 @@
-name: Vice City 60-second test (paid, max $2)
+name: Vice City 60-second test (paid, test cap $2)
 
 # Manual button: Actions tab -> "Vice City 60-second test" -> Run workflow, type RUN.
 # Only people with write access to the repo can start it. It spends real money (OpenAI images,
@@ -29,7 +29,9 @@ jobs:
       ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
       ELEVENLABS_VOICE_ID: ${{ secrets.ELEVENLABS_VOICE_ID }}
       T: episodes/gaming/vice-city-60s-test
-      CAPS: --max-run-cost 2 --episode-budget 2
+      # The test's $2 cap: $1.03 was spent before the episode ledger was carried between runs
+      # (runs 45521790385, 45547596599 and the first failed run), so only $0.95 remains for this episode.
+      CAPS: --max-run-cost 2 --episode-budget 0.95
     steps:
       - name: Check approval and keys
         env:
@@ -57,9 +59,13 @@ jobs:
       - name: Restore spend ledger
         uses: actions/cache/restore@v4
         with:
-          path: ~/.historical_oddities
-          key: spend-ledger-${{ github.run_id }}
-          restore-keys: spend-ledger-
+          path: |
+            ~/.historical_oddities
+            ${{ env.T }}/costs.jsonl
+          key: spend-ledger-v2-${{ github.run_id }}
+          restore-keys: |
+            spend-ledger-v2-
+            spend-ledger-
 
       # Keep paid outputs (narration clips, images and their hash manifests) between runs, so a re-run
       # after a failure reuses what was already paid for. Files are only reused when their inputs match.
@@ -98,8 +104,10 @@ jobs:
         if: always()
         uses: actions/cache/save@v4
         with:
-          path: ~/.historical_oddities
-          key: spend-ledger-${{ github.run_id }}
+          path: |
+            ~/.historical_oddities
+            ${{ env.T }}/costs.jsonl
+          key: spend-ledger-v2-${{ github.run_id }}
 
       - name: Save paid media
         if: always()
@@ -115,6 +123,7 @@ jobs:
         run: |
           if [ -f "$T/out/qc_report.json" ]; then
             python3 -c "import json;r=json.load(open('$T/out/qc_report.json'));print(f\"Spent this run: \${r['spent_this_run_usd']:.2f}; video {r['duration_seconds']:.1f} s; QC {'passed' if r['qc']['passed'] else 'FAILED'}\")" | tee -a "$GITHUB_STEP_SUMMARY"
+            python3 -c "import json;r=json.load(open('$T/out/qc_report.json'));print('loudness:', json.dumps(r.get('loudness')));print('pacing:', json.dumps(r.get('pacing')))" | tee -a "$GITHUB_STEP_SUMMARY"
           fi
           tail -n 20 ~/.historical_oddities/spend_ledger.jsonl 2>/dev/null > ledger_tail.jsonl || true
 
